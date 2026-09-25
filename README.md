@@ -55,8 +55,30 @@ channel and folders on our machine, and some sentences describe plans that later
 would be published; that was decided afterwards). Where a document names `~/temp/m37-needle3-sealed/sealed-v2/`,
 the files are in `sealed-v2/` here.
 
-The test requests were sealed with a salted commitment (`custodian/COMMITMENT.md`) before scoring. The salt and the
-sealed manifest are not part of this release, so the commitment cannot be recomputed from this repository alone.
+## Checking the sealed-test commitment
+
+Before any system saw a test request, the test's custodian sealed the requests, the gold answers and the record of
+how they were built, and committed to them with a salted hash (`custodian/COMMITMENT.md`, committed to our working
+repository on 2026-09-22). The commitment is `sha256(salt + "\n" + manifest)`, where the manifest lists every sealed
+file as `<sha256>  <bytes>  <path>`, one per line. The salts and manifests were kept private until the results were
+final and are now in `custodian/reveal/`.
+
+To check the commitment that the scored test used (v2), run from the repository root:
+
+```sh
+(printf '%s\n' "$(cat custodian/reveal/salt-v2.hex)"; cat custodian/reveal/MANIFEST.sealed-v2.txt) | shasum -a 256
+```
+
+It must print `f73c32e4807e793ab0be3bd1a943a01f4f9239a79fae1094ac9dda0e7ced55fe`, the v2 commitment in
+`custodian/COMMITMENT.md`. v1, the first seal, was replaced before any system ran because the correctness contract
+changed; its salt and manifest are revealed too, and the same command with `salt.hex` and `MANIFEST.sealed.txt`
+must print `96d2bc70bbf917bbfdf1d2da8d1044a278fd4b8caf3f7c1596a96c3a2cb26367`.
+
+`python3 custodian/reveal/verify_commitment.py` checks both commitments and also checks every file in `sealed-v2/`
+(the request files, the gold-answer files and `SEALED-RECORD-v2.md`) against its own line in the v2 manifest. The
+other 172 lines of that manifest name the custodian's working files (writer prompts, annotation passes, overlap
+scans), which are not published; for those, the manifest records what was sealed.
+
 
 ## Layout
 
@@ -76,7 +98,7 @@ sealed manifest are not part of this release, so the commitment cannot be recomp
 | `frontier/`, `FRONTIER.md` | the screen of cheap hosted models that chose llm-a, with every screened model's raw answers |
 | `preflight/` | checks run on the engine before configuring anything (determinism, known-answer controls) |
 | `canary/` | the contamination check (crowd phrasings against fresh ones) |
-| `custodian/` | the sealing record and overlap scans |
+| `custodian/` | the sealing record, overlap scans, and in `reveal/` the salts and manifests behind the commitment |
 | `snapshot/` | pinned hashes of the Needle 3 files, the OpenRouter endpoint records on the day, the engine's `--help` |
 | `sources/` | the MASSIVE and CLINC150 files the configuration partitions were drawn from |
 | `docs/PATH-REWRITES.md` | the lines changed for publication, and how to check the frozen hashes |
