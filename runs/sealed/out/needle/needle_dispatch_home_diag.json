@@ -1,0 +1,2225 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "home_control",
+     "description": "Control the home: lights (power, brightness, colour), the robot vacuum and the smart plug.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "action": {
+        "type": "string",
+        "enum": [
+         "lights power",
+         "lights brightness",
+         "lights colour",
+         "vacuum",
+         "plug"
+        ],
+        "description": "what to control"
+       },
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in)."
+       },
+       "power": {
+        "type": "string",
+        "enum": [
+         "on",
+         "off"
+        ],
+        "description": "on or off, for lights power and plug"
+       },
+       "brightness": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100,
+        "description": "percent, for lights brightness"
+       },
+       "color": {
+        "type": "string",
+        "enum": [
+         "red",
+         "orange",
+         "yellow",
+         "green",
+         "blue",
+         "purple",
+         "pink",
+         "white",
+         "warm white",
+         "cool white"
+        ],
+        "description": "for lights colour"
+       },
+       "vacuum_action": {
+        "type": "string",
+        "enum": [
+         "start",
+         "stop",
+         "dock"
+        ],
+        "description": "for vacuum"
+       }
+      },
+      "required": [
+       "action"
+      ]
+     }
+    }
+   }
+  ],
+  "system": null,
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true,
+  "require_cpu": "GenuineIntel fam 6 model 85"
+ },
+ "chunk_attempts": 21,
+ "containers": [
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp7ctrgj1p/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpr65ejket/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpy3gharxk/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpuhgccr8b/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpy6ar70j5/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp420xvdsw/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "n3-705f050b0d",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "make the lights darker",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights colour\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"'darker' -> color 'blue' (default darker). 'lights' -> action 'lights'.\",\"confidence\":0.8138,\"prefill_tps\":111.9,\"decode_tps\":112.3,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.592014627,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights colour",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'darker' -> color 'blue' (default darker). 'lights' -> action 'lights'.",
+    "confidence": 0.8138,
+    "prefill_tps": 111.9,
+    "decode_tps": 112.3,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-81b22ef0a5",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "olly is light colour blue",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights colour\",\"room\":\"living room\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"'olly' -> room 'living room'; 'light colour' -> color 'blue'; 'color' -> color 'yellow'; action 'lights'\",\"confidence\":0.8116,\"prefill_tps\":98.6,\"decode_tps\":97.2,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2012171970000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights colour",
+       "room": "living room",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'olly' -> room 'living room'; 'light colour' -> color 'blue'; 'color' -> color 'yellow'; action 'lights'",
+    "confidence": 0.8116,
+    "prefill_tps": 98.6,
+    "decode_tps": 97.2,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-9829bf5847",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "turn off the socket",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"study\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn off' -> action 'lights', 'socket' -> room 'socket'\",\"confidence\":0.6791,\"prefill_tps\":96.0,\"decode_tps\":93.8,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0555337730000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "study"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn off' -> action 'lights', 'socket' -> room 'socket'",
+    "confidence": 0.6791,
+    "prefill_tps": 96.0,
+    "decode_tps": 93.8,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-247c8569e3",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "brighten the light of hall to seventy percent",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'brighten' -> action 'lights'; 'hall' -> room 'hall'; 'seventy percent' -> brightness 70\",\"confidence\":0.2100,\"prefill_tps\":101.0,\"decode_tps\":98.0,\"peak_ram_mb\":80.9}\n",
+   "stderr": "",
+   "wall_s": 3.1892790270000004,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'brighten' -> action 'lights'; 'hall' -> room 'hall'; 'seventy percent' -> brightness 70",
+    "confidence": 0.21,
+    "prefill_tps": 101.0,
+    "decode_tps": 98.0,
+    "peak_ram_mb": 80.9
+   }
+  },
+  {
+   "id": "n3-47ee1c98d1",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "brighter",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\"}}],\"suppressed_calls\":[],\"reasoning\":\"'brighter' means increase brightness -> brightness 100. No room specified, use 'living room' as default.\",\"confidence\":0.8954,\"prefill_tps\":95.6,\"decode_tps\":93.4,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.127341458,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'brighter' means increase brightness -> brightness 100. No room specified, use 'living room' as default.",
+    "confidence": 0.8954,
+    "prefill_tps": 95.6,
+    "decode_tps": 93.4,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-8fcca827bf",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "have you started vacuuming",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"vacuum\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start' -> action 'start'; 'vacuuming' -> action 'dock'; room omitted.\",\"confidence\":0.7323,\"prefill_tps\":107.0,\"decode_tps\":101.3,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.8450578990000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "vacuum"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start' -> action 'start'; 'vacuuming' -> action 'dock'; room omitted.",
+    "confidence": 0.7323,
+    "prefill_tps": 107.0,
+    "decode_tps": 101.3,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-2028a91587",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "Turn off the upstairs lights.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"bedroom\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn off'; room 'upstairs' from 'upstairs lights'.\",\"confidence\":0.6306,\"prefill_tps\":115.8,\"decode_tps\":118.0,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.5579819370000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "bedroom"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn off'; room 'upstairs' from 'upstairs lights'.",
+    "confidence": 0.6306,
+    "prefill_tps": 115.8,
+    "decode_tps": 118.0,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-5be17988b2",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "turn down lights to ten percent",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\",\"brightness\":10}}],\"suppressed_calls\":[],\"reasoning\":\"'turn down lights' -> action 'lights', 'ten percent' -> brightness 10.\",\"confidence\":0.5711,\"prefill_tps\":101.0,\"decode_tps\":98.4,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9647094129999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room",
+       "brightness": 10
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn down lights' -> action 'lights', 'ten percent' -> brightness 10.",
+    "confidence": 0.5711,
+    "prefill_tps": 101.0,
+    "decode_tps": 98.4,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-7010c1e7ec",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "switch over to whisper mode",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'switch over to whisper mode' means lights brightness -> action 'lights', brightness 100.\",\"confidence\":0.7756,\"prefill_tps\":96.9,\"decode_tps\":91.7,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.998990449,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'switch over to whisper mode' means lights brightness -> action 'lights', brightness 100.",
+    "confidence": 0.7756,
+    "prefill_tps": 96.9,
+    "decode_tps": 91.7,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-59e56067a7",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "raise the lights to full",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"brightness\":100}}],\"suppressed_calls\":[],\"reasoning\":\"'raise' -> action 'lights'; 'full' -> brightness 100.\",\"confidence\":0.5023,\"prefill_tps\":98.9,\"decode_tps\":102.4,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[\"home_control.brightness\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.893033785,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "brightness": 100
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'raise' -> action 'lights'; 'full' -> brightness 100.",
+    "confidence": 0.5023,
+    "prefill_tps": 98.9,
+    "decode_tps": 102.4,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [
+      "home_control.brightness"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-315920684a",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "Can you please switch of the lights?",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'switch of the lights' -> action 'lights'. No room specified, so omit room.\",\"confidence\":0.9071,\"prefill_tps\":97.7,\"decode_tps\":95.2,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9900037359999994,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'switch of the lights' -> action 'lights'. No room specified, so omit room.",
+    "confidence": 0.9071,
+    "prefill_tps": 97.7,
+    "decode_tps": 95.2,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-05e5ef10ba",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "please turn up the screen brightness all the way",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\",\"brightness\":100}}],\"suppressed_calls\":[],\"reasoning\":\"'turn up the screen brightness all the way' -> brightness 100. 'all the way' -> all the lights.\",\"confidence\":0.4956,\"prefill_tps\":107.8,\"decode_tps\":109.0,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[\"home_control.brightness\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9817075429999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room",
+       "brightness": 100
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn up the screen brightness all the way' -> brightness 100. 'all the way' -> all the lights.",
+    "confidence": 0.4956,
+    "prefill_tps": 107.8,
+    "decode_tps": 109.0,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [
+      "home_control.brightness"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-529ed3ce39",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "turn my lights down to a lower level of brightness",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lights down to a lower level' -> action 'lights', brightness lower; no specific room mentioned so omit room\",\"confidence\":0.2586,\"prefill_tps\":114.8,\"decode_tps\":96.0,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.704206644000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lights down to a lower level' -> action 'lights', brightness lower; no specific room mentioned so omit room",
+    "confidence": 0.2586,
+    "prefill_tps": 114.8,
+    "decode_tps": 96.0,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-0f28eade40",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "Make the lights in my home yellow.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights colour\",\"room\":\"living room\",\"color\":\"yellow\"}}],\"suppressed_calls\":[],\"reasoning\":\"'yellow' -> color 'yellow'. 'lights' -> action 'lights'. 'home' -> room 'home'.\",\"confidence\":0.8870,\"prefill_tps\":99.9,\"decode_tps\":93.3,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.108117815,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights colour",
+       "room": "living room",
+       "color": "yellow"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'yellow' -> color 'yellow'. 'lights' -> action 'lights'. 'home' -> room 'home'.",
+    "confidence": 0.887,
+    "prefill_tps": 99.9,
+    "decode_tps": 93.3,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-16fe780041",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "Can you brighten the lights to sixty percent for me?",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"brightness\":60}}],\"suppressed_calls\":[],\"reasoning\":\"'brighten' -> action 'lights'; 'sixty percent' -> brightness 60; no room specified so whole house\",\"confidence\":0.5770,\"prefill_tps\":100.9,\"decode_tps\":96.0,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1248635190000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "brightness": 60
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'brighten' -> action 'lights'; 'sixty percent' -> brightness 60; no room specified so whole house",
+    "confidence": 0.577,
+    "prefill_tps": 100.9,
+    "decode_tps": 96.0,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-95543b2342",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "Could you please turn off the overhead light in the kitchen",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"kitchen\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn off'; room 'kitchen' from 'kitchen'; action 'off' from 'turn off'.\",\"confidence\":0.7234,\"prefill_tps\":100.3,\"decode_tps\":93.5,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1364041559999993,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "kitchen"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn off'; room 'kitchen' from 'kitchen'; action 'off' from 'turn off'.",
+    "confidence": 0.7234,
+    "prefill_tps": 100.3,
+    "decode_tps": 93.5,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-9541070000",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "please power down",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"'power down' -> action 'lights', 'power' -> brightness 0, 'power' -> color 'blue'\",\"confidence\":0.5102,\"prefill_tps\":95.7,\"decode_tps\":93.3,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0948315730000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'power down' -> action 'lights', 'power' -> brightness 0, 'power' -> color 'blue'",
+    "confidence": 0.5102,
+    "prefill_tps": 95.7,
+    "decode_tps": 93.3,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-a001814cab",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "power off the wemo plug",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'power off'; room 'wemo' from 'wemo plug'; power 'off' from 'off'.\",\"confidence\":0.3296,\"prefill_tps\":102.9,\"decode_tps\":95.6,\"peak_ram_mb\":81.4}\n",
+   "stderr": "",
+   "wall_s": 3.0719716099999994,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'power off'; room 'wemo' from 'wemo plug'; power 'off' from 'off'.",
+    "confidence": 0.3296,
+    "prefill_tps": 102.9,
+    "decode_tps": 95.6,
+    "peak_ram_mb": 81.4
+   }
+  },
+  {
+   "id": "n3-d158f90431",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "brighten the lights in the hallway to eighty percent",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"hallway\",\"brightness\":80}}],\"suppressed_calls\":[],\"reasoning\":\"'brighten' -> action 'lights'; 'hallway' -> room 'hallway'; 'eighty percent' -> brightness 80\",\"confidence\":0.7069,\"prefill_tps\":115.9,\"decode_tps\":105.0,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.886979759000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "hallway",
+       "brightness": 80
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'brighten' -> action 'lights'; 'hallway' -> room 'hallway'; 'eighty percent' -> brightness 80",
+    "confidence": 0.7069,
+    "prefill_tps": 115.9,
+    "decode_tps": 105.0,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-0d6b5a7553",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "It's too dark in here",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\"}}],\"suppressed_calls\":[],\"reasoning\":\"'too dark' implies need for light -> control lights with brightness low.\",\"confidence\":0.5626,\"prefill_tps\":91.5,\"decode_tps\":89.2,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.128948745999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'too dark' implies need for light -> control lights with brightness low.",
+    "confidence": 0.5626,
+    "prefill_tps": 91.5,
+    "decode_tps": 89.2,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-c3b5a0077b",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "start cleaning floors",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights power\",\"room\":\"bedroom\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start cleaning' -> action 'start', room 'floors'.\",\"confidence\":0.2983,\"prefill_tps\":95.8,\"decode_tps\":95.7,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.923168382,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights power",
+       "room": "bedroom"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start cleaning' -> action 'start', room 'floors'.",
+    "confidence": 0.2983,
+    "prefill_tps": 95.8,
+    "decode_tps": 95.7,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-de0b34e21e",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "Reduce the strength of the bedroom lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"bedroom\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reduce' -> action 'red'; 'bedroom' -> room 'bedroom'; 'lights' -> action 'lights'\",\"confidence\":0.4379,\"prefill_tps\":100.1,\"decode_tps\":93.1,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.100378039999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "bedroom"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reduce' -> action 'red'; 'bedroom' -> room 'bedroom'; 'lights' -> action 'lights'",
+    "confidence": 0.4379,
+    "prefill_tps": 100.1,
+    "decode_tps": 93.1,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-3016b6cc7d",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "What if I activate my vacuum to clean the living room?",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"vacuum\",\"room\":\"living room\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'activate'; room 'living room' from 'living room'; power 'on' from 'activate'.\",\"confidence\":0.8030,\"prefill_tps\":98.7,\"decode_tps\":84.7,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2593959189999993,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "vacuum",
+       "room": "living room"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'activate'; room 'living room' from 'living room'; power 'on' from 'activate'.",
+    "confidence": 0.803,
+    "prefill_tps": 98.7,
+    "decode_tps": 84.7,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-bfb6530aa5",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "make the house lights amber at six p. m.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\",\"color\":\"blue\",\"brightness\":6,\"power\":\"on\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lights amber' -> action 'lights color amber'; 'six p. m.' -> brightness 6; 'm.' -> color 'blue'\",\"confidence\":0.5484,\"prefill_tps\":107.2,\"decode_tps\":101.5,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.226389061000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room",
+       "color": "blue",
+       "brightness": 6,
+       "power": "on"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lights amber' -> action 'lights color amber'; 'six p. m.' -> brightness 6; 'm.' -> color 'blue'",
+    "confidence": 0.5484,
+    "prefill_tps": 107.2,
+    "decode_tps": 101.5,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-0506843cbf",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "download all the photos off my phone into the cloud",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No file management or cloud storage tool available.\",\"confidence\":1.0000,\"prefill_tps\":114.9,\"decode_tps\":111.1,\"peak_ram_mb\":81.7}\n",
+   "stderr": "",
+   "wall_s": 2.398549381999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No file management or cloud storage tool available.",
+    "confidence": 1.0,
+    "prefill_tps": 114.9,
+    "decode_tps": 111.1,
+    "peak_ram_mb": 81.7
+   }
+  },
+  {
+   "id": "n3-176b04ef2a",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "my dad said have the roomba run the living room",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'run'; room 'living room' from 'living room'; power 'on' from 'run'\",\"confidence\":0.8242,\"prefill_tps\":99.4,\"decode_tps\":83.0,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.4437476369999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'run'; room 'living room' from 'living room'; power 'on' from 'run'",
+    "confidence": 0.8242,
+    "prefill_tps": 99.4,
+    "decode_tps": 83.0,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-7810429516",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "please start",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights power\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start' -> action 'start'. No room specified, so room omitted.\",\"confidence\":0.5488,\"prefill_tps\":98.3,\"decode_tps\":98.8,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.8540889420000024,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights power"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start' -> action 'start'. No room specified, so room omitted.",
+    "confidence": 0.5488,
+    "prefill_tps": 98.3,
+    "decode_tps": 98.8,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-a4808f1d4e",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "make the lights off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lights off' -> action 'lights', room omitted, action 'off'.\",\"confidence\":0.5717,\"prefill_tps\":96.3,\"decode_tps\":96.4,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.871757840999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lights off' -> action 'lights', room omitted, action 'off'.",
+    "confidence": 0.5717,
+    "prefill_tps": 96.3,
+    "decode_tps": 96.4,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-a647e09126",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "hey PDA turn up the lights a little",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn up the lights' -> action 'lights'; 'a little' -> brightness 100; no room specified so whole house\",\"confidence\":0.5250,\"prefill_tps\":98.9,\"decode_tps\":91.3,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1209462389999985,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn up the lights' -> action 'lights'; 'a little' -> brightness 100; no room specified so whole house",
+    "confidence": 0.525,
+    "prefill_tps": 98.9,
+    "decode_tps": 91.3,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-a43d561542",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "start a vacuum cleaner",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"vacuum\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'start' from 'start'; room omitted as 'vacuum cleaner' is not a specific room name; action 'start' from 'start'\",\"confidence\":0.9979,\"prefill_tps\":97.6,\"decode_tps\":97.4,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0003992109999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "vacuum"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'start' from 'start'; room omitted as 'vacuum cleaner' is not a specific room name; action 'start' from 'start'",
+    "confidence": 0.9979,
+    "prefill_tps": 97.6,
+    "decode_tps": 97.4,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-8af939fc73",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "enable my plug",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"plug\"}}],\"suppressed_calls\":[],\"reasoning\":\"'enable' -> action 'lights', 'plug' -> room 'study', no brightness or color specified\",\"confidence\":0.8890,\"prefill_tps\":110.8,\"decode_tps\":105.1,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.6105618029999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "plug"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'enable' -> action 'lights', 'plug' -> room 'study', no brightness or color specified",
+    "confidence": 0.889,
+    "prefill_tps": 110.8,
+    "decode_tps": 105.1,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-1ca36abae1",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "turn on vacuum cleaner",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"vacuum\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn on'; room 'kitchen' from 'cleaner'\",\"confidence\":0.9138,\"prefill_tps\":97.1,\"decode_tps\":89.8,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0535172950000025,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "vacuum"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn on'; room 'kitchen' from 'cleaner'",
+    "confidence": 0.9138,
+    "prefill_tps": 97.1,
+    "decode_tps": 89.8,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-f1f9ad6162",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "how is the temperature at ac",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No tool available for weather or temperature data.\",\"confidence\":1.0000,\"prefill_tps\":98.2,\"decode_tps\":89.7,\"peak_ram_mb\":81.6}\n",
+   "stderr": "",
+   "wall_s": 2.7009640919999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No tool available for weather or temperature data.",
+    "confidence": 1.0,
+    "prefill_tps": 98.2,
+    "decode_tps": 89.7,
+    "peak_ram_mb": 81.6
+   }
+  },
+  {
+   "id": "n3-20d9068def",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "Is \"Lights, color red.\" a full sentence?",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights power\",\"room\":\"living room\",\"color\":\"red\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Lights, color red' -> color 'red'. 'full sentence' -> brightness 100.\",\"confidence\":0.3775,\"prefill_tps\":100.7,\"decode_tps\":92.0,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.131098282,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights power",
+       "room": "living room",
+       "color": "red"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Lights, color red' -> color 'red'. 'full sentence' -> brightness 100.",
+    "confidence": 0.3775,
+    "prefill_tps": 100.7,
+    "decode_tps": 92.0,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-10c0800993",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "my husband said start robo vac",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights power\",\"room\":\"hallway\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start robo vac' -> action 'start', room 'hallway' (husband's husband's house).\",\"confidence\":0.6988,\"prefill_tps\":97.4,\"decode_tps\":85.9,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2925072449999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights power",
+       "room": "hallway"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start robo vac' -> action 'start', room 'hallway' (husband's husband's house).",
+    "confidence": 0.6988,
+    "prefill_tps": 97.4,
+    "decode_tps": 85.9,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-9785b5a0b0",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "Turn the security light off.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"study\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn the security light off'; room 'security light' from 'security light off'.\",\"confidence\":0.8126,\"prefill_tps\":99.0,\"decode_tps\":100.2,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.036655732,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "study"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn the security light off'; room 'security light' from 'security light off'.",
+    "confidence": 0.8126,
+    "prefill_tps": 99.0,
+    "decode_tps": 100.2,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-67a8c59c9a",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "please turn off the lights in patio",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"bedroom\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn off'; room 'patio' from 'patio'; power 'off' from 'off'.\",\"confidence\":0.7529,\"prefill_tps\":112.5,\"decode_tps\":106.0,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.7628922019999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "bedroom",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn off'; room 'patio' from 'patio'; power 'off' from 'off'.",
+    "confidence": 0.7529,
+    "prefill_tps": 112.5,
+    "decode_tps": 106.0,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-e6d4d817f6",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "turn on the microwave for 3 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"kitchen\",\"brightness\":3}}],\"suppressed_calls\":[],\"reasoning\":\"'turn on' -> action 'lights', 'microwave' -> room 'kitchen', '3 minutes' -> brightness 3\",\"confidence\":0.6901,\"prefill_tps\":99.5,\"decode_tps\":94.5,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1344118230000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "kitchen",
+       "brightness": 3
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn on' -> action 'lights', 'microwave' -> room 'kitchen', '3 minutes' -> brightness 3",
+    "confidence": 0.6901,
+    "prefill_tps": 99.5,
+    "decode_tps": 94.5,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-2fc7a56d76",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "turn off the dining room",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"kitchen\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn off'; room 'dining room' from query; power 'off' from 'off'.\",\"confidence\":0.8092,\"prefill_tps\":98.5,\"decode_tps\":92.4,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1153723719999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "kitchen",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn off'; room 'dining room' from query; power 'off' from 'off'.",
+    "confidence": 0.8092,
+    "prefill_tps": 98.5,
+    "decode_tps": 92.4,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-4faac1b880",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "Please switch off/on the wenmo plug socket.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"plug\",\"room\":\"whole house\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'switch off/on'; room 'wenmo' from 'wenmo plug'; power 'off' from 'off'.\",\"confidence\":0.5671,\"prefill_tps\":100.5,\"decode_tps\":87.8,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.381467477000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "plug",
+       "room": "whole house",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'switch off/on'; room 'wenmo' from 'wenmo plug'; power 'off' from 'off'.",
+    "confidence": 0.5671,
+    "prefill_tps": 100.5,
+    "decode_tps": 87.8,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-2e22b9c1c1",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "lower lights in kitchen to twenty",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"kitchen\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lower lights' -> action 'lights'; 'kitchen' -> room 'kitchen'; 'twenty' -> brightness 20\",\"confidence\":0.7321,\"prefill_tps\":89.1,\"decode_tps\":79.2,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.7347017330000014,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "kitchen"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lower lights' -> action 'lights'; 'kitchen' -> room 'kitchen'; 'twenty' -> brightness 20",
+    "confidence": 0.7321,
+    "prefill_tps": 89.1,
+    "decode_tps": 79.2,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-8afdfe1680",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "I do not like these colours in the house",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights colour\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"Colours in the house -> control lights. 'colours' -> color 'blue'. No specific room mentioned, so omit room. action 'lights'.\",\"confidence\":0.9102,\"prefill_tps\":103.4,\"decode_tps\":94.8,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 3.1405084489999986,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights colour",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Colours in the house -> control lights. 'colours' -> color 'blue'. No specific room mentioned, so omit room. action 'lights'.",
+    "confidence": 0.9102,
+    "prefill_tps": 103.4,
+    "decode_tps": 94.8,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "n3-f2fa894921",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "Vacuum the floor if it gets dirty",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"vacuum\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'vacuum'; room 'floor' from 'floor'; no brightness or color specified\",\"confidence\":0.7898,\"prefill_tps\":114.7,\"decode_tps\":106.4,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.6348188890000017,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "vacuum"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'vacuum'; room 'floor' from 'floor'; no brightness or color specified",
+    "confidence": 0.7898,
+    "prefill_tps": 114.7,
+    "decode_tps": 106.4,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-df5252b27d",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "shut off lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'shut off lights' -> action 'lights', room omitted (no room specified).\",\"confidence\":0.8371,\"prefill_tps\":96.3,\"decode_tps\":95.1,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.907713245,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'shut off lights' -> action 'lights', room omitted (no room specified).",
+    "confidence": 0.8371,
+    "prefill_tps": 96.3,
+    "decode_tps": 95.1,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-a811f9d502",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "how do you spell \"on vacuum cleaner\"",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No tool available for spelling or general knowledge.\",\"confidence\":1.0000,\"prefill_tps\":99.2,\"decode_tps\":89.7,\"peak_ram_mb\":81.4}\n",
+   "stderr": "",
+   "wall_s": 2.763845890999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No tool available for spelling or general knowledge.",
+    "confidence": 1.0,
+    "prefill_tps": 99.2,
+    "decode_tps": 89.7,
+    "peak_ram_mb": 81.4
+   }
+  },
+  {
+   "id": "n3-23fcb235a4",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "i need to change my house lights color to blue",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights colour\",\"room\":\"hallway\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"'change' -> action 'lights color blue'; 'house' -> room 'house'; 'blue' -> color 'blue'\",\"confidence\":0.9415,\"prefill_tps\":98.8,\"decode_tps\":93.5,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1978498529999975,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights colour",
+       "room": "hallway",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'change' -> action 'lights color blue'; 'house' -> room 'house'; 'blue' -> color 'blue'",
+    "confidence": 0.9415,
+    "prefill_tps": 98.8,
+    "decode_tps": 93.5,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-831b404aeb",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "activate the roomba",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'activate'; room 'living room' from 'roomba'\",\"confidence\":0.9529,\"prefill_tps\":97.2,\"decode_tps\":95.6,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1913499180000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'activate'; room 'living room' from 'roomba'",
+    "confidence": 0.9529,
+    "prefill_tps": 97.2,
+    "decode_tps": 95.6,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-ba1a79f1af",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "change the lights olly",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights colour\",\"color\":\"orange\"}}],\"suppressed_calls\":[],\"reasoning\":\"'olly' -> color 'orange', 'on' -> action 'on', room omitted.\",\"confidence\":0.8206,\"prefill_tps\":99.9,\"decode_tps\":101.3,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9311837930000024,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights colour",
+       "color": "orange"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'olly' -> color 'orange', 'on' -> action 'on', room omitted.",
+    "confidence": 0.8206,
+    "prefill_tps": 99.9,
+    "decode_tps": 101.3,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-997990df43",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "turn off smart plug socket",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn off'; room 'socket' from 'socket'; power 'off' from 'off'.\",\"confidence\":0.2232,\"prefill_tps\":110.3,\"decode_tps\":108.8,\"peak_ram_mb\":80.3}\n",
+   "stderr": "",
+   "wall_s": 2.7293076989999996,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn off'; room 'socket' from 'socket'; power 'off' from 'off'.",
+    "confidence": 0.2232,
+    "prefill_tps": 110.3,
+    "decode_tps": 108.8,
+    "peak_ram_mb": 80.3
+   }
+  },
+  {
+   "id": "n3-d1e9946bfc",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "please turn lights off and turn on new smart socket",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"bedroom\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn lights off'; room 'bedroom' from 'bedroom'; action 'lights' from 'turn on'; color 'blue' from 'new smart socket'\",\"confidence\":0.6705,\"prefill_tps\":100.4,\"decode_tps\":98.3,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2375422510000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "bedroom",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn lights off'; room 'bedroom' from 'bedroom'; action 'lights' from 'turn on'; color 'blue' from 'new smart socket'",
+    "confidence": 0.6705,
+    "prefill_tps": 100.4,
+    "decode_tps": 98.3,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-ff28ecb557",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "what happens if you initiate vacuum clener",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"vacuum\"}}],\"suppressed_calls\":[],\"reasoning\":\"'initiate vacuum' -> action 'start', room omitted.\",\"confidence\":0.9984,\"prefill_tps\":99.5,\"decode_tps\":90.8,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9328087310000015,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "vacuum"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'initiate vacuum' -> action 'start', room omitted.",
+    "confidence": 0.9984,
+    "prefill_tps": 99.5,
+    "decode_tps": 90.8,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-86d69d358c",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "Can you please off the light?",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'off' -> action 'lights', room omitted.\",\"confidence\":0.8830,\"prefill_tps\":97.0,\"decode_tps\":92.9,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.8711602299999974,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'off' -> action 'lights', room omitted.",
+    "confidence": 0.883,
+    "prefill_tps": 97.0,
+    "decode_tps": 92.9,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-4c82b67211",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "PDA, change the color of my hallway lights to green.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights colour\",\"room\":\"hallway\",\"color\":\"green\"}}],\"suppressed_calls\":[],\"reasoning\":\"'color' -> color 'green'; 'hallway' -> room 'hallway'; action 'lights' from 'change the color'.\",\"confidence\":0.5831,\"prefill_tps\":100.7,\"decode_tps\":86.1,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.393009739,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights colour",
+       "room": "hallway",
+       "color": "green"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'color' -> color 'green'; 'hallway' -> room 'hallway'; action 'lights' from 'change the color'.",
+    "confidence": 0.5831,
+    "prefill_tps": 100.7,
+    "decode_tps": 86.1,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-aef77e9ebe",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512bw,fma | flags#31a41c863a | ncpu 17 | task ta-01M35SDSJAH9G67RESAJ2VGQ0R",
+   "prompt": "what does \"vaccuum start\" mean",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No tool available for factual query or answer.\",\"confidence\":1.0000,\"prefill_tps\":100.9,\"decode_tps\":90.8,\"peak_ram_mb\":80.9}\n",
+   "stderr": "",
+   "wall_s": 2.7749555729999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No tool available for factual query or answer.",
+    "confidence": 1.0,
+    "prefill_tps": 100.9,
+    "decode_tps": 90.8,
+    "peak_ram_mb": 80.9
+   }
+  },
+  {
+   "id": "n3-55c7603fea",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35TDADZR1PWQHPVZBYK877R",
+   "prompt": "house lights blue",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"hallway\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"'house lights' -> room 'house', 'blue' -> color 'blue', action 'lights'\",\"confidence\":0.9168,\"prefill_tps\":111.8,\"decode_tps\":113.4,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.6041964469999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "hallway",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'house lights' -> room 'house', 'blue' -> color 'blue', action 'lights'",
+    "confidence": 0.9168,
+    "prefill_tps": 111.8,
+    "decode_tps": 113.4,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-d5e0b11048",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SJQ9X1HVECCT37KZ7H1TR",
+   "prompt": "please have vacuum go for 1 hoir.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"vacuum\",\"room\":\"hallway\",\"power\":\"on\",\"brightness\":1}}],\"suppressed_calls\":[],\"reasoning\":\"action 'start' from 'go'; room 'hallway' from 'hoir'; power 'on' from 'go'; brightness 1 from '1 hoir'.\",\"confidence\":0.7186,\"prefill_tps\":99.8,\"decode_tps\":95.1,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2718695610000026,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "vacuum",
+       "room": "hallway",
+       "power": "on",
+       "brightness": 1
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'start' from 'go'; room 'hallway' from 'hoir'; power 'on' from 'go'; brightness 1 from '1 hoir'.",
+    "confidence": 0.7186,
+    "prefill_tps": 99.8,
+    "decode_tps": 95.1,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-95b8c1e344",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SGSFXF40MTAYXJWZ57QDR",
+   "prompt": "turn off hallway light",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"hallway\"}}],\"suppressed_calls\":[],\"reasoning\":\"action 'lights' from 'turn off'; room 'hallway' from 'hallway'; power 'off' from 'off'.\",\"confidence\":0.7041,\"prefill_tps\":98.1,\"decode_tps\":86.8,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1805792349999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "hallway"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "action 'lights' from 'turn off'; room 'hallway' from 'hallway'; power 'off' from 'off'.",
+    "confidence": 0.7041,
+    "prefill_tps": 98.1,
+    "decode_tps": 86.8,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-b38d68b06f",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35T4Q3VRKKFG9N36SWAEDKR",
+   "prompt": "put the lights off now",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lights off' -> action 'lights', room omitted.\",\"confidence\":0.6905,\"prefill_tps\":96.9,\"decode_tps\":92.8,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.926003686999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lights off' -> action 'lights', room omitted.",
+    "confidence": 0.6905,
+    "prefill_tps": 96.9,
+    "decode_tps": 92.8,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-4d14627984",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35SCCER3GVB328BEGG0WBAR",
+   "prompt": "make it red in here",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"home_control\",\"arguments\":{\"action\":\"lights brightness\",\"room\":\"living room\",\"color\":\"red\"}}],\"suppressed_calls\":[],\"reasoning\":\"'red' -> color 'red'; 'in here' -> room 'living room' (default); action 'lights'\",\"confidence\":0.9231,\"prefill_tps\":96.9,\"decode_tps\":90.9,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.3756293559999975,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "home_control",
+      "arguments": {
+       "action": "lights brightness",
+       "room": "living room",
+       "color": "red"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'red' -> color 'red'; 'in here' -> room 'living room' (default); action 'lights'",
+    "confidence": 0.9231,
+    "prefill_tps": 96.9,
+    "decode_tps": 90.9,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ],
+ "missing": []
+}

@@ -1,0 +1,155 @@
+{"id": "massive-dev-11", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "off"}}]], "stratum": "A1", "rule": "light_power, room default here"}
+{"id": "massive-train-5738", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "red"}}]], "stratum": "A1", "rule": "set_light_color, room default here"}
+{"id": "edit-hwu-2838", "gold": [[]], "stratum": "N3", "rule": "R3 quotation / translation question"}
+{"id": "massive-train-3508", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start, default whole house"}
+{"id": "massive-train-4469", "gold": [[]], "stratum": "N1", "rule": "weather: capability the home app lacks (\u00a72, R4)"}
+{"id": "clinc-train-10566", "gold": [[]], "stratum": "N1", "rule": "TV: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-4514", "gold": [[]], "stratum": "N2", "rule": "colour required, none named (R4)"}
+{"id": "massive-dev-4573", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "clinc-train-10501", "gold": [[]], "stratum": "N1", "rule": "oven: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-5381", "gold": [[]], "stratum": "N1", "rule": "news: capability the home app lacks (\u00a72, R4)"}
+{"id": "join-home-021", "gold": [[{"action": "set_light_level", "args": {"room": "here", "level": 100}}, {"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A3", "rule": "R2 two actions; full power = 100"}
+{"id": "massive-train-731", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "off"}}]], "stratum": "A2", "rule": "'turn out the lights' = off (\u00a72)"}
+{"id": "massive-train-249", "gold": [[]], "stratum": "N1", "rule": "music: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-dev-2576", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "edit-hwu-2256", "gold": [[]], "stratum": "N3", "rule": "R3 quotation, not a request"}
+{"id": "edit-hwu-4857", "gold": [[]], "stratum": "N3", "rule": "R3 negation"}
+{"id": "edit-hwu-5475", "gold": [[]], "stratum": "N3", "rule": "R3 quotation / translation question"}
+{"id": "massive-dev-4515", "gold": [[]], "stratum": "N2", "rule": "colour required, none named (R4)"}
+{"id": "massive-train-704", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "join-home-000", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}, {"action": "light_power", "args": {"room": "bathroom", "state": "off"}}]], "stratum": "A3", "rule": "R2 two actions"}
+{"id": "massive-train-3672", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-dev-4398", "gold": [[]], "stratum": "N1", "rule": "volume/speakers: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-4765", "gold": [[]], "stratum": "N1", "rule": "weather: capability the home app lacks (\u00a72, R4)"}
+{"id": "edit-hwu-6001", "gold": [[]], "stratum": "N3", "rule": "R3 question about state"}
+{"id": "massive-train-1967", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "yellow"}}]], "stratum": "A1", "rule": "set_light_color, room default here"}
+{"id": "massive-dev-3281", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "clinc-train-10555", "gold": [[]], "stratum": "N1", "rule": "door locks; question: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-3673", "gold": [[]], "stratum": "N2", "rule": "colour required, none named (R4)"}
+{"id": "clinc-train-10534", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-1709", "gold": [[]], "stratum": "N1", "rule": "speakers: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-853", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-4211", "gold": [[]], "stratum": "N1", "rule": "weather: capability the home app lacks (\u00a72, R4)"}
+{"id": "join-home-022", "gold": [[]], "stratum": "N1", "rule": "R1 partial: information question the app cannot serve + light off"}
+{"id": "massive-train-5885", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "edit-hwu-2715", "gold": [[]], "stratum": "N3", "rule": "R3 question about state"}
+{"id": "massive-train-643", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start, default whole house (R8 filler)"}
+{"id": "massive-train-12549", "gold": [[]], "stratum": "N1", "rule": "directions: capability the home app lacks (\u00a72, R4)"}
+{"id": "edit-hwu-3667", "gold": [[]], "stratum": "N3", "rule": "R3 negation"}
+{"id": "clinc-train-10537", "gold": [[]], "stratum": "N1", "rule": "door/camera: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-5442", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A2", "rule": "smart_plug off"}
+{"id": "massive-train-6280", "gold": [[]], "stratum": "N1", "rule": "temperature history: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-1562", "gold": [[]], "stratum": "N1", "rule": "relative level request; 'dark in here' is a reason (R8), R4"}
+{"id": "join-home-025", "gold": [[{"action": "set_light_color", "args": {"room": "whole house", "color": "blue"}}, {"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A3", "rule": "R2 two actions; house = whole house; reason ignored R8"}
+{"id": "massive-train-3816", "gold": [[]], "stratum": "N1", "rule": "music: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-2045", "gold": [[]], "stratum": "N1", "rule": "too bright = [] under main (\u00a72 indirect)"}
+{"id": "massive-train-14611", "gold": [[]], "stratum": "N1", "rule": "geo info: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-6046", "gold": [[]], "stratum": "N1", "rule": "weather: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-dev-678", "gold": [[]], "stratum": "N3", "rule": "R3 conditional ('when i arrive home')"}
+{"id": "massive-train-4203", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A2", "rule": "wemo = smart plug, off"}
+{"id": "edit-hwu-5946", "gold": [[]], "stratum": "N3", "rule": "R3 reported speech"}
+{"id": "join-home-033", "gold": [[]], "stratum": "N1", "rule": "R1 partial: relative brighten + plug on"}
+{"id": "massive-train-5766", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start"}
+{"id": "edit-hwu-5492", "gold": [[]], "stratum": "N3", "rule": "R3 conditional; 'bed room 2' also not a room"}
+{"id": "join-home-014", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "on"}}, {"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A3", "rule": "R2 two actions"}
+{"id": "massive-train-4149", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "join-home-004", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "off"}}, {"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A3", "rule": "R2 two actions"}
+{"id": "massive-train-1290", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A2", "rule": "smart_plug on, terse"}
+{"id": "massive-train-6639", "gold": [[]], "stratum": "N1", "rule": "not a request for any action"}
+{"id": "massive-train-10836", "gold": [[]], "stratum": "N1", "rule": "query: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-4441", "gold": [[]], "stratum": "N1", "rule": "'romantic' not a colour (\u00a72 COLORS)"}
+{"id": "massive-train-1152", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "hallway"}}]], "stratum": "A2", "rule": "vacuum start; hall = hallway"}
+{"id": "massive-train-2232", "gold": [[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]], "stratum": "A1", "rule": "light_power"}
+{"id": "edit-hwu-956", "gold": [[]], "stratum": "N3", "rule": "R3 conditional ('when I leave')"}
+{"id": "massive-train-4101", "gold": [[]], "stratum": "N1", "rule": "query: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-2186", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power; bed room = bedroom"}
+{"id": "massive-train-2001", "gold": [[]], "stratum": "N3", "rule": "R3 conditional"}
+{"id": "massive-train-5048", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A2", "rule": "plug named by what is plugged in (\u00a72)"}
+{"id": "edit-hwu-3807", "gold": [[]], "stratum": "N3", "rule": "R3 negation; locks absent"}
+{"id": "edit-hwu-7064", "gold": [[]], "stratum": "N3", "rule": "R3 quotation"}
+{"id": "massive-train-2053", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "living room"}}]], "stratum": "A2", "rule": "vacuum start living room"}
+{"id": "edit-hwu-1327", "gold": [[]], "stratum": "N3", "rule": "R3 conditional"}
+{"id": "edit-hwu-7180", "gold": [[]], "stratum": "N3", "rule": "R3 question about state"}
+{"id": "massive-train-4172", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "surface not room -> start default room (\u00a72 Vacuum)"}
+{"id": "massive-train-6311", "gold": [[]], "stratum": "N1", "rule": "not a request for any action"}
+{"id": "edit-hwu-403", "gold": [[]], "stratum": "N3", "rule": "R3 question about state"}
+{"id": "massive-train-1154", "gold": [[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]], "stratum": "A1", "rule": "light_power"}
+{"id": "massive-train-3659", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "vacuum start; reason ignored (R8)"}
+{"id": "massive-train-2815", "gold": [[{"action": "set_light_level", "args": {"room": "living room", "level": 1}}]], "stratum": "A3", "rule": "number word one = 1"}
+{"id": "join-home-012", "gold": [[]], "stratum": "N2", "rule": "R1 partial: colour missing + vacuum"}
+{"id": "massive-train-2488", "gold": [[]], "stratum": "N1", "rule": "volume: capability the home app lacks (\u00a72, R4)"}
+{"id": "join-home-011", "gold": [[]], "stratum": "N1", "rule": "R1: relative level + patio not a room"}
+{"id": "massive-train-579", "gold": [[]], "stratum": "N1", "rule": "porch not a room; single fixture (R1/R4)"}
+{"id": "massive-train-3279", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-dev-2318", "gold": [[]], "stratum": "N1", "rule": "'minimize' no declared absolute level (R4)"}
+{"id": "massive-train-2256", "gold": [[]], "stratum": "N1", "rule": "weather: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-dev-1545", "gold": [[]], "stratum": "N1", "rule": "music: capability the home app lacks (\u00a72, R4)"}
+{"id": "clinc-val-2105", "gold": [[]], "stratum": "N1", "rule": "TV: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-5315", "gold": [[]], "stratum": "N1", "rule": "news: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-1717", "gold": [[]], "stratum": "N1", "rule": "'upstairs bathroom' is a room outside ROOMS (cf. kids bedroom)"}
+{"id": "massive-train-844", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start"}
+{"id": "clinc-train-10538", "gold": [[]], "stratum": "N1", "rule": "fan: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-1292", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A2", "rule": "smart_plug on"}
+{"id": "massive-train-5539", "gold": [[]], "stratum": "N1", "rule": "coffee maker: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-554", "gold": [[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]], "stratum": "A1", "rule": "light_power"}
+{"id": "massive-train-5395", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A1", "rule": "smart_plug off"}
+{"id": "massive-train-2884", "gold": [[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]], "stratum": "A1", "rule": "all lights in house = whole house"}
+{"id": "join-home-017", "gold": [[]], "stratum": "N1", "rule": "R1: desk lamp is a single fixture + vacuum"}
+{"id": "clinc-train-10540", "gold": [[]], "stratum": "N1", "rule": "door locks; question: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-dev-4287", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-2469", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-dev-1943", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "house cleanup -> vacuum start whole house"}
+{"id": "massive-train-3009", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-3763", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-5233", "gold": [[]], "stratum": "N1", "rule": "general knowledge: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-6030", "gold": [[]], "stratum": "N1", "rule": "not a request for any action"}
+{"id": "massive-train-3376", "gold": [[{"action": "set_light_level", "args": {"room": "here", "level": 50}}]], "stratum": "A3", "rule": "fifty percent = 50"}
+{"id": "massive-train-14186", "gold": [[]], "stratum": "N1", "rule": "movies: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-2614", "gold": [[]], "stratum": "N1", "rule": "weather: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-2712", "gold": [[]], "stratum": "N2", "rule": "no colour named"}
+{"id": "edit-hwu-5790", "gold": [[]], "stratum": "N3", "rule": "R3 quotation"}
+{"id": "massive-train-2502", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A1", "rule": "smart_plug on"}
+{"id": "join-home-027", "gold": [[]], "stratum": "N1", "rule": "R1: relative raise + vacuum"}
+{"id": "massive-train-2231", "gold": [[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]], "stratum": "A1", "rule": "light_power"}
+{"id": "massive-train-3502", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power"}
+{"id": "clinc-train-10529", "gold": [[]], "stratum": "N1", "rule": "TV: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-13010", "gold": [[]], "stratum": "N1", "rule": "general knowledge: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-dev-17", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-907", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start"}
+{"id": "massive-train-4652", "gold": [[]], "stratum": "N1", "rule": "speakers: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-5608", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-1852", "gold": [[]], "stratum": "N1", "rule": "too bright = [] under main (\u00a72 indirect)"}
+{"id": "massive-train-2442", "gold": [[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]], "stratum": "A1", "rule": "light_power"}
+{"id": "massive-dev-2470", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "on"}}]], "stratum": "A1", "rule": "light_power"}
+{"id": "massive-dev-5854", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start"}
+{"id": "massive-dev-2518", "gold": [[]], "stratum": "N3", "rule": "R3 question (how-to)"}
+{"id": "massive-train-3083", "gold": [[]], "stratum": "N1", "rule": "'surprise me' not a colour (\u00a72 COLORS)"}
+{"id": "massive-train-1028", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-dev-4277", "gold": [[]], "stratum": "N1", "rule": "R1 single fixture (desk lamp)"}
+{"id": "massive-train-3467", "gold": [[]], "stratum": "N1", "rule": "volume: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-2251", "gold": [[]], "stratum": "N1", "rule": "R1 time qualifier (schedule)"}
+{"id": "massive-train-2130", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-6130", "gold": [[]], "stratum": "N1", "rule": "music: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-dev-6571", "gold": [[]], "stratum": "N1", "rule": "news: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-2233", "gold": [[]], "stratum": "N1", "rule": "R1: on + relative brighter qualifier"}
+{"id": "massive-train-4076", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power; bed room = bedroom"}
+{"id": "join-home-002", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "clinc-train-10573", "gold": [[]], "stratum": "N1", "rule": "thermostat: capability the home app lacks (\u00a72, R4)"}
+{"id": "edit-hwu-1051", "gold": [[]], "stratum": "N3", "rule": "R3 negation"}
+{"id": "massive-dev-2946", "gold": [[]], "stratum": "N1", "rule": "fan; master bedroom: capability the home app lacks (\u00a72, R4)"}
+{"id": "edit-hwu-4302", "gold": [[]], "stratum": "N3", "rule": "R3 reported speech"}
+{"id": "massive-train-5519", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "off"}}]], "stratum": "A1", "rule": "the room = here"}
+{"id": "edit-hwu-3188", "gold": [[]], "stratum": "N3", "rule": "R3 reported speech"}
+{"id": "massive-train-3415", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start; house = whole house"}
+{"id": "massive-train-3500", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "off"}}]], "stratum": "A2", "rule": "room lights = here"}
+{"id": "edit-hwu-3934", "gold": [[]], "stratum": "N3", "rule": "R3 negation"}
+{"id": "massive-train-2580", "gold": [[]], "stratum": "N1", "rule": "not a device action"}
+{"id": "edit-hwu-3851", "gold": [[]], "stratum": "N3", "rule": "R3 conditional"}
+{"id": "massive-train-926", "gold": [[]], "stratum": "N1", "rule": "relative level amount, no absolute value (\u00a72 Levels, R4)"}
+{"id": "massive-train-5921", "gold": [[]], "stratum": "N1", "rule": "traffic: capability the home app lacks (\u00a72, R4)"}
+{"id": "massive-train-15390", "gold": [[]], "stratum": "N1", "rule": "social media: capability the home app lacks (\u00a72, R4)"}
+{"id": "edit-hwu-6288", "gold": [[]], "stratum": "N3", "rule": "R3 quotation"}
+{"id": "edit-hwu-6501", "gold": [[]], "stratum": "N3", "rule": "R3 question about state"}
+{"id": "massive-train-959", "gold": [[]], "stratum": "N2", "rule": "unintelligible, no action named"}
+{"id": "edit-hwu-1804", "gold": [[]], "stratum": "N3", "rule": "R3 conditional"}
+{"id": "massive-train-6066", "gold": [[]], "stratum": "N1", "rule": "not a device action"}

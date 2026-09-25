@@ -1,0 +1,81 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "home_control",
+      "description": "Control the home: lights (power, brightness, colour), the robot vacuum and the smart plug.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "lights power",
+              "lights brightness",
+              "lights colour",
+              "vacuum",
+              "plug"
+            ],
+            "description": "what to control"
+          },
+          "room": {
+            "type": "string",
+            "enum": [
+              "living room",
+              "kitchen",
+              "bedroom",
+              "bathroom",
+              "hallway",
+              "study",
+              "whole house",
+              "this room"
+            ],
+            "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in)."
+          },
+          "power": {
+            "type": "string",
+            "enum": [
+              "on",
+              "off"
+            ],
+            "description": "on or off, for lights power and plug"
+          },
+          "brightness": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "percent, for lights brightness"
+          },
+          "color": {
+            "type": "string",
+            "enum": [
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "blue",
+              "purple",
+              "pink",
+              "white",
+              "warm white",
+              "cool white"
+            ],
+            "description": "for lights colour"
+          },
+          "vacuum_action": {
+            "type": "string",
+            "enum": [
+              "start",
+              "stop",
+              "dock"
+            ],
+            "description": "for vacuum"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "set_lights_power": "lumen_switch",
+  "set_lights_brightness": "lumen_level",
+  "set_lights_color": "lumen_hue",
+  "control_vacuum": "floorbot",
+  "set_plug_power": "outlet_toggle",
+  "set_alarm": "wake_bell_add",
+  "remove_alarm": "wake_bell_drop",
+  "add_list_item": "ledger_push",
+  "remove_list_item": "ledger_pull",
+  "create_reminder": "nudge_note"
+}

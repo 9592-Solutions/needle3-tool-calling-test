@@ -1,0 +1,9 @@
+{"id": "edit-hwu-2626", "kind": "question_about_state", "seed": "Start cleaner"}
+{"id": "join2-home-001", "kind": "join", "seeds": ["take it in hand", "turn off lights in all bathrooms"]}
+{"id": "join2-home-002", "kind": "join", "seeds": ["turn on this socket", "want to have vibrant colors"]}
+{"id": "join2-home-003", "kind": "join", "seeds": ["switch off", "time constrain"]}
+{"id": "join2-desk-004", "kind": "join", "seeds": ["could you please check if i am free on thursday afternoon if so add a reminder to go to the food festival", "set a reminder today at one p. m. to send the presentation"]}
+{"id": "edit-hwu-8920", "kind": "reported_speech", "seed": "Make a note to pay the electricity bill and remind me on Saturday at 9:00 a.m."}
+{"id": "edit-hwu-7915", "kind": "negation", "seed": "Add to my reminders to watch new movie today at 9pm"}
+{"id": "edit-hwu-10657", "kind": "question_about_state", "seed": "remind me about shopping 30 minutes later."}
+{"id": "edit-hwu-9880", "kind": "negation", "seed": "Olly, please set dinner plans at 7pm for every Friday in April."}

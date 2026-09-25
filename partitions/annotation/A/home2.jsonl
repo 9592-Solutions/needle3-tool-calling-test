@@ -1,0 +1,155 @@
+{"id": "massive-train-1244", "gold": [[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]], "stratum": "A2", "rule": "indirect: 'my home' = whole house, red is a colour (\u00a72 COLORS, R6)"}
+{"id": "massive-train-11573", "gold": [[]], "stratum": "N1", "rule": "events query out of scope"}
+{"id": "massive-train-228", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A1", "rule": "plug named by appliance ('rice cooker socket', \u00a72 Smart plug)"}
+{"id": "massive-train-72", "gold": [[]], "stratum": "N1", "rule": "music: no speakers"}
+{"id": "massive-dev-345", "gold": [[]], "stratum": "N1", "rule": "weather out of scope"}
+{"id": "edit-hwu-4902", "gold": [[]], "stratum": "N3", "rule": "question about quoted text (R3)"}
+{"id": "massive-train-12858", "gold": [[]], "stratum": "N1", "rule": "maps out of scope"}
+{"id": "massive-dev-2122", "gold": [[{"action": "set_light_color", "args": {"room": "living room", "color": "red"}}]], "stratum": "A1", "rule": "set_light_color living room red"}
+{"id": "edit-hwu-6436", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "join-home-031", "gold": [[]], "stratum": "N2", "rule": "'lower the lights' is relative, request partial (R1, R4)"}
+{"id": "clinc-train-10500", "gold": [[]], "stratum": "N1", "rule": "no furnace/thermostat (\u00a72)"}
+{"id": "join-home-039", "gold": [[]], "stratum": "N1", "rule": "porch light not addressable, request partial (R1)"}
+{"id": "massive-train-2977", "gold": [[]], "stratum": "N1", "rule": "'something different' is not a colour (\u00a72 COLORS, R4)"}
+{"id": "edit-hwu-3359", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "edit-hwu-6516", "gold": [[]], "stratum": "N3", "rule": "negation (R3)"}
+{"id": "massive-train-1561", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-5389", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A1", "rule": "smart socket = plug (\u00a72)"}
+{"id": "edit-hwu-6651", "gold": [[]], "stratum": "N3", "rule": "negation (R3)"}
+{"id": "massive-dev-331", "gold": [[]], "stratum": "N2", "rule": "'softer' named as not a colour; no action decidable (\u00a72 COLORS)"}
+{"id": "edit-hwu-5321", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-train-2836", "gold": [[]], "stratum": "N2", "rule": "no colour given (R4)"}
+{"id": "massive-train-1821", "gold": [[]], "stratum": "N1", "rule": "vacuum with schedule 'in an hour' (R1, \u00a72 Vacuum)"}
+{"id": "massive-train-1896", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power bedroom off"}
+{"id": "massive-dev-5382", "gold": [[]], "stratum": "N1", "rule": "news out of scope"}
+{"id": "massive-dev-2863", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A1", "rule": "set_light_color default room here"}
+{"id": "clinc-train-10527", "gold": [[]], "stratum": "N3", "rule": "question about state, no AC (R3)"}
+{"id": "massive-train-1755", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-2121", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power bedroom off"}
+{"id": "clinc-train-10599", "gold": [[]], "stratum": "N1", "rule": "no thermostat (\u00a72)"}
+{"id": "edit-hwu-3166", "gold": [[]], "stratum": "N3", "rule": "reported speech (R3)"}
+{"id": "massive-train-2559", "gold": [[]], "stratum": "N1", "rule": "music: no speakers"}
+{"id": "massive-train-1502", "gold": [[]], "stratum": "N1", "rule": "single fixture 'left light' (R1, \u00a72 Light words)"}
+{"id": "massive-train-5613", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "edit-hwu-1113", "gold": [[]], "stratum": "N3", "rule": "reported speech (R3)"}
+{"id": "massive-train-1001", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A1", "rule": "smart plug on"}
+{"id": "massive-train-4597", "gold": [[]], "stratum": "N1", "rule": "no radio"}
+{"id": "clinc-train-10570", "gold": [[]], "stratum": "N1", "rule": "no TV"}
+{"id": "massive-train-4802", "gold": [[]], "stratum": "N2", "rule": "no colour given (R4)"}
+{"id": "clinc-train-10591", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-3449", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A1", "rule": "target colour blue, default room here"}
+{"id": "edit-hwu-2761", "gold": [[]], "stratum": "N3", "rule": "negation fragment (R3)"}
+{"id": "edit-hwu-6846", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "edit-hwu-6808", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "massive-train-2601", "gold": [[]], "stratum": "N1", "rule": "porch light not addressable (R1/R4)"}
+{"id": "massive-train-3278", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "clinc-train-10577", "gold": [[]], "stratum": "N1", "rule": "door camera/lock not in app"}
+{"id": "clinc-oos_train-92", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "edit-hwu-703", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-dev-2621", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start, default room whole house"}
+{"id": "massive-train-3427", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-dev-1925", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start, default room whole house"}
+{"id": "massive-train-5095", "gold": [[]], "stratum": "N1", "rule": "single fixture 'corner light' (R1)"}
+{"id": "edit-hwu-3704", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-train-3786", "gold": [[]], "stratum": "N1", "rule": "guest room not in ROOMS (R4)"}
+{"id": "massive-train-5723", "gold": [[]], "stratum": "N1", "rule": "weather out of scope"}
+{"id": "edit-hwu-3134", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-train-5346", "gold": [[]], "stratum": "N2", "rule": "'dark' is not a colour; off vs dim not decided by wording (R6 needs exactly one call)"}
+{"id": "massive-dev-4012", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "indirect wording for vacuum start (\u00a72 Vacuum)"}
+{"id": "massive-train-646", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "join-home-009", "gold": [[]], "stratum": "N2", "rule": "'dim the lights in the hall' relative, request partial (R1, R4)"}
+{"id": "massive-train-12221", "gold": [[]], "stratum": "N1", "rule": "directions out of scope"}
+{"id": "clinc-train-10515", "gold": [[]], "stratum": "N1", "rule": "no furnace"}
+{"id": "edit-hwu-6126", "gold": [[]], "stratum": "N3", "rule": "reported speech (R3)"}
+{"id": "massive-train-2331", "gold": [[]], "stratum": "N1", "rule": "weather out of scope"}
+{"id": "massive-dev-4979", "gold": [[]], "stratum": "N1", "rule": "assistant voice volume not in app"}
+{"id": "massive-train-4010", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "clinc-val-2103", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "edit-hwu-2527", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-dev-10196", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "massive-train-4082", "gold": [[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]], "stratum": "A1", "rule": "light_power kitchen off"}
+{"id": "join-home-018", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}, {"action": "light_power", "args": {"room": "here", "state": "off"}}]], "stratum": "A3", "rule": "two actions (R2); reason ignored (R8)"}
+{"id": "massive-train-4769", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A1", "rule": "wemo = plug"}
+{"id": "edit-hwu-4650", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "join-home-020", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "purple"}}, {"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A3", "rule": "two actions (R2)"}
+{"id": "massive-train-3518", "gold": "ambiguous", "stratum": "N2", "rule": "ambiguous: 'can't see' is declared light_power(on) (R6) but the explicit ask 'make it brighter' is relative [] (R4)"}
+{"id": "massive-dev-3377", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "join-home-038", "gold": [[{"action": "light_power", "args": {"room": "whole house", "state": "on"}}, {"action": "light_power", "args": {"room": "whole house", "state": "off"}}]], "stratum": "A3", "rule": "two supported actions as multiset (R2); 'all lights' and 'my house' = whole house"}
+{"id": "massive-train-1751", "gold": [[]], "stratum": "N1", "rule": "subset of fixtures 'on the right side' (R1)"}
+{"id": "edit-hwu-6317", "gold": [[]], "stratum": "N3", "rule": "negation (R3)"}
+{"id": "edit-hwu-3216", "gold": [[]], "stratum": "N3", "rule": "negation (R3)"}
+{"id": "clinc-oos_train-29", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "massive-train-5855", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A1", "rule": "vacuum start"}
+{"id": "massive-train-4202", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A1", "rule": "plug on"}
+{"id": "massive-train-5317", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-14813", "gold": [[]], "stratum": "N1", "rule": "effects/party mode not a capability (\u00a72 COLORS)"}
+{"id": "massive-train-4298", "gold": [[]], "stratum": "N1", "rule": "no speakers"}
+{"id": "massive-train-4229", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "'lamp' = room's lights (\u00a72 Light words)"}
+{"id": "massive-train-13794", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "clinc-oos_train-85", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "edit-hwu-5061", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "edit-hwu-5853", "gold": [[]], "stratum": "N3", "rule": "question (R3)"}
+{"id": "edit-hwu-3145", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "massive-train-404", "gold": [[]], "stratum": "N1", "rule": "'dark' not a colour (\u00a72 COLORS)"}
+{"id": "massive-dev-4387", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-32", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "surface 'carpets' = start, default room (\u00a72 Vacuum)"}
+{"id": "massive-train-13344", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "edit-hwu-3116", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "edit-hwu-2597", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-train-4726", "gold": [[]], "stratum": "N1", "rule": "no speakers/volume"}
+{"id": "clinc-train-10551", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "clinc-train-10572", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-train-757", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A1", "rule": "plug on; reason ignored (R8)"}
+{"id": "massive-train-4954", "gold": [[]], "stratum": "N2", "rule": "unintelligible"}
+{"id": "massive-train-3010", "gold": [[]], "stratum": "N2", "rule": "'retrieve the light' does not name a state or action"}
+{"id": "massive-train-3842", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "roomba start cleaning"}
+{"id": "edit-hwu-5121", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "edit-hwu-4197", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "massive-train-14264", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "massive-train-4737", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A1", "rule": "set_light_color here blue"}
+{"id": "massive-train-5713", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "off"}}]], "stratum": "A1", "rule": "'room light' = the room's lights, here (\u00a72 ROOMS)"}
+{"id": "massive-train-5013", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-3172", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "edit-hwu-4126", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-train-18", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power bedroom off"}
+{"id": "edit-hwu-4533", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "edit-hwu-2158", "gold": [[]], "stratum": "N3", "rule": "reported speech (R3)"}
+{"id": "join-home-030", "gold": [[]], "stratum": "N2", "rule": "'turn up lights' relative, request partial (R1, R4)"}
+{"id": "massive-train-287", "gold": [[]], "stratum": "N1", "rule": "single fixture 'lamp next to the sofa' (R1)"}
+{"id": "clinc-train-10556", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-323", "gold": [[]], "stratum": "N1", "rule": "names an appliance, not the plug (\u00a72 Smart plug)"}
+{"id": "massive-train-5571", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "'open vacuum cleaner' read as start"}
+{"id": "massive-train-4459", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "'start cleaning' = vacuum start"}
+{"id": "massive-train-5752", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "on"}}]], "stratum": "A1", "rule": "light_power here on"}
+{"id": "massive-train-2083", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-4964", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A1", "rule": "wemo plug off"}
+{"id": "massive-train-5364", "gold": [[{"action": "light_power", "args": {"room": "here", "state": "off"}}]], "stratum": "A2", "rule": "'close the light' = off"}
+{"id": "edit-hwu-3874", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "massive-dev-5728", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "clinc-train-10574", "gold": [[]], "stratum": "N1", "rule": "door camera not in app"}
+{"id": "edit-hwu-4184", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-train-11731", "gold": [[]], "stratum": "N1", "rule": "events out of scope"}
+{"id": "massive-train-1091", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-2077", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-260", "gold": [[]], "stratum": "N1", "rule": "assistant volume not in app"}
+{"id": "massive-dev-851", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "clinc-train-10507", "gold": [[]], "stratum": "N1", "rule": "no TV"}
+{"id": "massive-train-2883", "gold": [[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]], "stratum": "A1", "rule": "light_power kitchen off"}
+{"id": "edit-hwu-1029", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-train-3913", "gold": [[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]], "stratum": "A1", "rule": "light_power living room off"}
+{"id": "edit-hwu-5924", "gold": [[]], "stratum": "N3", "rule": "reported speech (R3)"}
+{"id": "edit-hwu-4173", "gold": [[]], "stratum": "N3", "rule": "reported speech (R3)"}
+{"id": "massive-dev-2814", "gold": [[]], "stratum": "N1", "rule": "no coffee maker"}
+{"id": "massive-train-1218", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A1", "rule": "set_light_color here blue"}
+{"id": "massive-train-13973", "gold": [[]], "stratum": "N1", "rule": "out of scope"}
+{"id": "edit-hwu-2492", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-train-1613", "gold": [[]], "stratum": "N2", "rule": "'dim' relative, no absolute level (R4)"}
+{"id": "massive-train-5879", "gold": [[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]], "stratum": "A2", "rule": "irobot = vacuum, start"}
+{"id": "massive-train-1368", "gold": [[]], "stratum": "N2", "rule": "relative amount, no absolute level (R4, \u00a72 Levels)"}
+{"id": "massive-train-3325", "gold": [[{"action": "smart_plug", "args": {"state": "on"}}]], "stratum": "A1", "rule": "plug on"}
+{"id": "edit-hwu-3768", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "join-home-023", "gold": [[]], "stratum": "N1", "rule": "'upstairs' not a room, request partial (R1, R4)"}
+{"id": "massive-dev-4481", "gold": [[]], "stratum": "N1", "rule": "weather out of scope"}
+{"id": "massive-train-4748", "gold": [[{"action": "smart_plug", "args": {"state": "off"}}]], "stratum": "A2", "rule": "indirect wording for plug off"}
+{"id": "clinc-train-10585", "gold": [[]], "stratum": "N1", "rule": "no fan"}
+{"id": "edit-hwu-2074", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}

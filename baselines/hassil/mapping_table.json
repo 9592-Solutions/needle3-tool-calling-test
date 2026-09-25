@@ -1,0 +1,62 @@
+{
+  "_about": "Declared BEFORE any evaluation data was seen (2026-09-22). Inputs: CONTRACT.md §2 and mapping.py only. HA intent + slot conditions -> canonical Home-app calls. Anything not listed maps to [] (no call). See MAPPING.md for the reasoning.",
+  "pins": {
+    "hassil": "3.12.1",
+    "OHF-Voice/intents": "f8cdbb0b6601cde140b9a40c297363c6137d219d"
+  },
+  "satellite_context": {
+    "_about": "Passed to hassil as intent_context on every request: the speaker's satellite is in the room the contract calls 'here'. Templates whose slot combination is context_area copy it into the area slot.",
+    "area": "here"
+  },
+  "areas": {
+    "_about": "HA areas = our six rooms. key = area value_out (canonical room); list = every text_in hassil accepts for it (the name itself + CONTRACT §2 synonyms as area aliases). 'whole house' and 'here' are NOT areas: they come from the upstream <everywhere> / <here> rules and the satellite context.",
+    "living room": ["living room", "lounge", "sitting room"],
+    "kitchen": ["kitchen"],
+    "bedroom": ["bedroom", "bed room", "my bedroom"],
+    "bathroom": ["bathroom"],
+    "hallway": ["hallway", "hall", "corridor"],
+    "study": ["study"]
+  },
+  "floors": {"_about": "No floors are declared (the contract has none), so every {floor} template can never match."},
+  "entities": {
+    "_about": "The {name} slot list. One light entity per area (HA-style entity name), one vacuum, one smart plug. Aliases for the vacuum and plug are exactly the device words of CONTRACT §2. The plug and vacuum have no area.",
+    "light.living_room": {"domain": "light", "area": "living room", "names": ["living room light"]},
+    "light.kitchen": {"domain": "light", "area": "kitchen", "names": ["kitchen light"]},
+    "light.bedroom": {"domain": "light", "area": "bedroom", "names": ["bedroom light"]},
+    "light.bathroom": {"domain": "light", "area": "bathroom", "names": ["bathroom light"]},
+    "light.hallway": {"domain": "light", "area": "hallway", "names": ["hallway light"]},
+    "light.study": {"domain": "light", "area": "study", "names": ["study light"]},
+    "vacuum.robot": {"domain": "vacuum", "area": null, "names": ["vacuum", "robot vacuum", "roomba", "cleaner", "hoover"]},
+    "switch.smart_plug": {"domain": "switch", "area": null, "names": ["smart plug", "plug", "socket", "smart socket", "outlet", "wemo", "power socket"]}
+  },
+  "rules": [
+    {"intent": ["HassTurnOn", "HassTurnOff"], "when": "domain == light, no name, area slot present",
+     "emit": {"action": "light_power", "args": {"room": "<area>", "state": "on|off by intent"}}},
+    {"intent": ["HassTurnOn", "HassTurnOff"], "when": "domain == light, no name, no area slot (the domain_all combination)",
+     "emit": {"action": "light_power", "args": {"room": "whole house", "state": "on|off by intent"}}},
+    {"intent": ["HassTurnOn", "HassTurnOff"], "when": "name resolves to a light entity; if an area slot is also present it must equal the entity's area, else []",
+     "emit": {"action": "light_power", "args": {"room": "<entity area>", "state": "on|off by intent"}}},
+    {"intent": ["HassTurnOn", "HassTurnOff"], "when": "name resolves to switch.smart_plug and no area slot",
+     "emit": {"action": "smart_plug", "args": {"state": "on|off by intent"}}},
+    {"intent": ["HassLightSet"], "when": "brightness slot present; integer 1..100 else []; target = area slot | here-context | named light entity's area",
+     "emit": {"action": "set_light_level", "args": {"room": "<target>", "level": "<brightness>"}}},
+    {"intent": ["HassLightSet"], "when": "color slot present and in COLORS (white, red, orange, yellow, green, blue, purple, pink); black, brown, turquoise -> []",
+     "emit": {"action": "set_light_color", "args": {"room": "<target>", "color": "<color>"}}},
+    {"intent": ["HassLightSet"], "when": "temperature slot matched by NAME: 'warm white' -> warm white; 'cool white'/'cold white'/'daylight'/'day light' -> cool white; 'candle light' and any numeric kelvin -> []",
+     "emit": {"action": "set_light_color", "args": {"room": "<target>", "color": "warm white|cool white"}}},
+    {"intent": ["HassVacuumStart"], "when": "name resolves to vacuum.robot",
+     "emit": {"action": "vacuum", "args": {"command": "start", "room": "whole house"}}},
+    {"intent": ["HassVacuumCleanArea"], "when": "area slot (spoken, or 'here' from the satellite context); a name, if present, must be vacuum.robot",
+     "emit": {"action": "vacuum", "args": {"command": "start", "room": "<area>"}}},
+    {"intent": ["HassVacuumReturnToBase"], "when": "name resolves to vacuum.robot",
+     "emit": {"action": "vacuum", "args": {"command": "dock"}}}
+  ],
+  "unmapped_intents": {
+    "_about": "Deliberately unmapped: every other intent in the shipped English grammar (HassGetState, HassClimate*, HassFanSetSpeed, HassMedia*, HassSetVolume*, timers, lists, HassNevermind, HassRespond, HassBroadcast, HassSetPosition, HassLawnMower*, HassGetWeather, HassGetCurrentDate/Time, HassShoppingList*, HassList*). A match on any of them returns []. Also []: HassTurnOn/Off on domain fan, on cover device classes, on scenes/scripts.",
+    "reason": "None of them corresponds to one of the five Home-app actions; a match on them is the grammar correctly declining (e.g. 'are the lights on' -> HassGetState)."
+  },
+  "unreachable_canonical": {
+    "vacuum stop": "No English intent stops a vacuum (no HassVacuumStop / pause; HassTurnOff's name domains exclude vacuum).",
+    "set_light_color warm/cool white via 'warm'/'cooler' etc.": "Only the named colour temperatures above exist upstream."
+  }
+}

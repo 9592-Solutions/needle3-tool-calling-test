@@ -1,0 +1,176 @@
+{
+ "app": "desk",
+ "containers": [
+  {
+   "k": 0,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35A7XF7Z2PTQ9A31AKPHMTR",
+   "id": "n3-00ef2096c9",
+   "first_request": {
+    "t_s": 7.8653281790000005,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 72.9,
+    "decode_tps": 92.8,
+    "peak_ram_mb": 80.2,
+    "confidence": 0.9932
+   },
+   "entry_to_decision_s": 7.974538465999999
+  },
+  {
+   "k": 3,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35A7X23948YC7GPB7GCF32R",
+   "id": "n3-01cf676258",
+   "first_request": {
+    "t_s": 9.196778149,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 65.8,
+    "decode_tps": 81.5,
+    "peak_ram_mb": 80.6,
+    "confidence": 1.0
+   },
+   "entry_to_decision_s": 9.354939350999999
+  },
+  {
+   "k": 6,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35A7YY6W3FXRZBQB5BGD3ZR",
+   "id": "n3-045fe8f9fb",
+   "first_request": {
+    "t_s": 8.076295372,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 72.9,
+    "decode_tps": 85.7,
+    "peak_ram_mb": 81.7,
+    "confidence": 0.7148
+   },
+   "entry_to_decision_s": 8.190147933
+  },
+  {
+   "k": 8,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35A8GBT0J30TG4FF8XJV5ER",
+   "id": "n3-0732b2ec94",
+   "first_request": {
+    "t_s": 8.192091795,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 76.8,
+    "decode_tps": 96.8,
+    "peak_ram_mb": 80.4,
+    "confidence": 0.9628
+   },
+   "entry_to_decision_s": 8.304582687
+  },
+  {
+   "k": 9,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35A8GMBQV3DERS58P3HR1BR",
+   "id": "n3-080fcbce2a",
+   "first_request": {
+    "t_s": 7.639018473,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 75.1,
+    "decode_tps": 89.2,
+    "peak_ram_mb": 80.9,
+    "confidence": 0.7085
+   },
+   "entry_to_decision_s": 7.740067997000001
+  },
+  {
+   "k": 7,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35A96PAYHZGZBETHGF2D2TR",
+   "id": "n3-069e415b34",
+   "first_request": {
+    "t_s": 7.94810951,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 73.4,
+    "decode_tps": 96.1,
+    "peak_ram_mb": 80.3,
+    "confidence": 0.9879
+   },
+   "entry_to_decision_s": 8.043079024999999
+  },
+  {
+   "k": 1,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35A96GDEB8ZK2FAHJTE6SKR",
+   "id": "n3-0118c8b91e",
+   "first_request": {
+    "t_s": 8.658070766000002,
+    "rc": 0,
+    "returned": true,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 72.3,
+    "decode_tps": 79.6,
+    "peak_ram_mb": 80.1,
+    "confidence": 0.9936
+   },
+   "entry_to_decision_s": 8.778420137999998
+  },
+  {
+   "k": 4,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35ABS7GMKZJ6SXE9449M4DR",
+   "id": "n3-024b7dfc5b",
+   "first_request": {
+    "t_s": 8.212525958,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 74.0,
+    "decode_tps": 90.0,
+    "peak_ram_mb": 80.7,
+    "confidence": 0.6533
+   },
+   "entry_to_decision_s": 8.31906405
+  },
+  {
+   "k": 5,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35ABT86GAN736SYHF44SS2R",
+   "id": "n3-03fa5ddf96",
+   "first_request": {
+    "t_s": 8.559819702,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 69.9,
+    "decode_tps": 88.0,
+    "peak_ram_mb": 80.1,
+    "confidence": 0.9892
+   },
+   "entry_to_decision_s": 8.66231309
+  },
+  {
+   "k": 2,
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 2 | task ta-01M35AC53XY5NCRWXTNJ9WWJ7R",
+   "id": "n3-01647b6800",
+   "first_request": {
+    "t_s": 8.143463602000004,
+    "rc": 0,
+    "returned": false,
+    "tech_fail": false,
+    "valid": true,
+    "prefill_tps": 71.5,
+    "decode_tps": 82.6,
+    "peak_ram_mb": 81.8,
+    "confidence": 0.8473
+   },
+   "entry_to_decision_s": 8.292189656999998
+  }
+ ],
+ "unlanded": []
+}

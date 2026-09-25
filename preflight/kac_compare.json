@@ -1,0 +1,7365 @@
+{
+ "totals": {
+  "py": 172,
+  "nat": 172,
+  "n": 192,
+  "agree_outcome": 192,
+  "same_calls": 192,
+  "same_conf": 178,
+  "nat_fail": 0
+ },
+ "per_env": {
+  "smart_home": [
+   27,
+   27,
+   32
+  ],
+  "media_player": [
+   26,
+   26,
+   32
+  ],
+  "productivity": [
+   32,
+   32,
+   32
+  ],
+  "wearable": [
+   27,
+   27,
+   32
+  ],
+  "kitchen_appliance": [
+   30,
+   30,
+   32
+  ],
+  "data_capture": [
+   30,
+   30,
+   32
+  ]
+ },
+ "rows": [
+  {
+   "env": "smart_home",
+   "i": 0,
+   "category": "positive",
+   "query": "turn on the kitchen lights",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "kitchen",
+      "action": "on"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "kitchen",
+      "action": "on"
+     }
+    }
+   ],
+   "py_conf": 0.9726,
+   "nat_conf": 0.9705,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 8.280531451
+  },
+  {
+   "env": "smart_home",
+   "i": 1,
+   "category": "positive",
+   "query": "switch off the lights in the bedroom",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "off"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "off"
+     }
+    }
+   ],
+   "py_conf": 0.977,
+   "nat_conf": 0.977,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 16.373233543
+  },
+  {
+   "env": "smart_home",
+   "i": 2,
+   "category": "positive",
+   "query": "dim the living room lights to 35 percent",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "living_room",
+      "action": "dim",
+      "brightness_percent": 35
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "living_room",
+      "action": "dim",
+      "brightness_percent": 35
+     }
+    }
+   ],
+   "py_conf": 0.4947,
+   "nat_conf": 0.5233,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.9768552669999995
+  },
+  {
+   "env": "smart_home",
+   "i": 3,
+   "category": "positive",
+   "query": "turn on the study lights in warm white",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "study",
+      "action": "on",
+      "color": "warm white"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "study",
+      "action": "on",
+      "color": "warm white"
+     }
+    }
+   ],
+   "py_conf": 0.9038,
+   "nat_conf": 0.9038,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.589650796000001
+  },
+  {
+   "env": "smart_home",
+   "i": 4,
+   "category": "positive",
+   "query": "put the bedroom lights on in blue",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "on",
+      "color": "blue"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "on",
+      "color": "blue"
+     }
+    }
+   ],
+   "py_conf": 0.9544,
+   "nat_conf": 0.9554,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.984354708
+  },
+  {
+   "env": "smart_home",
+   "i": 5,
+   "category": "positive",
+   "query": "set the thermostat to 22 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 22
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 22
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.26249262
+  },
+  {
+   "env": "smart_home",
+   "i": 6,
+   "category": "positive",
+   "query": "warm the house to 24 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 24
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 24
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.803886145
+  },
+  {
+   "env": "smart_home",
+   "i": 7,
+   "category": "positive",
+   "query": "cool the whole home down to 19 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 19
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 19
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.392360561
+  },
+  {
+   "env": "smart_home",
+   "i": 8,
+   "category": "positive",
+   "query": "turn on the bedroom fan",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "bedroom",
+      "action": "on"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "bedroom",
+      "action": "on"
+     }
+    }
+   ],
+   "py_conf": 0.9746,
+   "nat_conf": 0.971,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.224844363999999
+  },
+  {
+   "env": "smart_home",
+   "i": 9,
+   "category": "positive",
+   "query": "switch the study fan off",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "study",
+      "action": "off"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "study",
+      "action": "off"
+     }
+    }
+   ],
+   "py_conf": 0.9935,
+   "nat_conf": 0.9935,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.478952091000004
+  },
+  {
+   "env": "smart_home",
+   "i": 10,
+   "category": "positive",
+   "query": "turn on the living room fan at high speed",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "living_room",
+      "action": "on",
+      "speed": "high"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "living_room",
+      "action": "on",
+      "speed": "high"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.245199143000001
+  },
+  {
+   "env": "smart_home",
+   "i": 11,
+   "category": "positive",
+   "query": "run the study fan on low",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "study",
+      "action": "on",
+      "speed": "low"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "study",
+      "action": "on",
+      "speed": "low"
+     }
+    }
+   ],
+   "py_conf": 0.9908,
+   "nat_conf": 0.9908,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.5782098399999995
+  },
+  {
+   "env": "smart_home",
+   "i": 12,
+   "category": "positive",
+   "query": "open the kitchen blinds",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "kitchen",
+      "action": "open"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "kitchen",
+      "action": "open"
+     }
+    }
+   ],
+   "py_conf": 0.9849,
+   "nat_conf": 0.9855,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.923993672000002
+  },
+  {
+   "env": "smart_home",
+   "i": 13,
+   "category": "positive",
+   "query": "close the blinds in the living room",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "close"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "close"
+     }
+    }
+   ],
+   "py_conf": 0.9941,
+   "nat_conf": 0.9941,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.516103687000005
+  },
+  {
+   "env": "smart_home",
+   "i": 14,
+   "category": "positive",
+   "query": "open up the bedroom blinds",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "bedroom",
+      "action": "open"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "bedroom",
+      "action": "open"
+     }
+    }
+   ],
+   "py_conf": 0.9861,
+   "nat_conf": 0.9856,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.985809090000004
+  },
+  {
+   "env": "smart_home",
+   "i": 15,
+   "category": "positive",
+   "query": "start the robot vacuum",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start"
+     }
+    }
+   ],
+   "py_conf": 0.9966,
+   "nat_conf": 0.9966,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.436551537999996
+  },
+  {
+   "env": "smart_home",
+   "i": 16,
+   "category": "positive",
+   "query": "start vacuuming the bedroom",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start",
+      "room": "bedroom"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start",
+      "room": "bedroom"
+     }
+    }
+   ],
+   "py_conf": 0.9599,
+   "nat_conf": 0.9612,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.2101480289999955
+  },
+  {
+   "env": "smart_home",
+   "i": 17,
+   "category": "positive",
+   "query": "stop the robot vacuum",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "stop"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "stop"
+     }
+    }
+   ],
+   "py_conf": 0.9994,
+   "nat_conf": 0.9994,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.358020238000002
+  },
+  {
+   "env": "smart_home",
+   "i": 18,
+   "category": "missing",
+   "query": "turn on the lights",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.9915,
+   "nat_conf": 0.9922,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "living_room",
+      "action": "on"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "living_room",
+      "action": "on"
+     }
+    }
+   ],
+   "wall_s": 6.278548102000002
+  },
+  {
+   "env": "smart_home",
+   "i": 19,
+   "category": "missing",
+   "query": "set the thermostat to something comfortable",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.0,
+   "nat_conf": 0.0,
+   "py_val": {
+    "ungrounded": [
+     "set_thermostat.temperature"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_thermostat.temperature"
+    ],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 25
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 25
+     }
+    }
+   ],
+   "wall_s": 5.781568653000001
+  },
+  {
+   "env": "smart_home",
+   "i": 20,
+   "category": "missing",
+   "query": "open the blinds",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.9969,
+   "nat_conf": 0.8144,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "open"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "open"
+     }
+    }
+   ],
+   "wall_s": 6.324764947000006
+  },
+  {
+   "env": "smart_home",
+   "i": 21,
+   "category": "missing",
+   "query": "turn the fan on",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.9884,
+   "nat_conf": 0.9884,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "living_room",
+      "action": "on"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "control_fan",
+     "arguments": {
+      "room": "living_room",
+      "action": "on"
+     }
+    }
+   ],
+   "wall_s": 5.473591886000008
+  },
+  {
+   "env": "smart_home",
+   "i": 22,
+   "category": "irrelevant",
+   "query": "lock the back door",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "dock"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "dock"
+     }
+    }
+   ],
+   "py_conf": 0.9192,
+   "nat_conf": 0.9207,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.3374948889999985
+  },
+  {
+   "env": "smart_home",
+   "i": 23,
+   "category": "irrelevant",
+   "query": "check whether the robot vacuum is charging",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start",
+      "room": "living_room"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start",
+      "room": "living_room"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.655405905999999
+  },
+  {
+   "env": "smart_home",
+   "i": 24,
+   "category": "irrelevant",
+   "query": "play some jazz in the living room",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "open"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "open"
+     }
+    }
+   ],
+   "py_conf": 0.7065,
+   "nat_conf": 0.7295,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.5522981410000085
+  },
+  {
+   "env": "smart_home",
+   "i": 25,
+   "category": "negation",
+   "query": "don't turn on the study lights",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "study",
+      "action": "on"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "study",
+      "action": "on"
+     }
+    }
+   ],
+   "py_conf": 0.9749,
+   "nat_conf": 0.9749,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.612350019999994
+  },
+  {
+   "env": "smart_home",
+   "i": 26,
+   "category": "negation",
+   "query": "do not close the living room blinds",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "close"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "living_room",
+      "action": "close"
+     }
+    }
+   ],
+   "py_conf": 0.9968,
+   "nat_conf": 0.9966,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.1104415260000025
+  },
+  {
+   "env": "smart_home",
+   "i": 27,
+   "category": "negation",
+   "query": "never run the vacuum while I am on a call",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start"
+     }
+    }
+   ],
+   "wall_s": 5.635339407999993
+  },
+  {
+   "env": "smart_home",
+   "i": 28,
+   "category": "invalid",
+   "query": "dim the bedroom lights to 150 percent",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "dim"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "dim"
+     }
+    }
+   ],
+   "py_conf": 0.6199,
+   "nat_conf": 0.6766,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.289342120000001
+  },
+  {
+   "env": "smart_home",
+   "i": 29,
+   "category": "invalid",
+   "query": "set the thermostat to 40 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.0,
+   "nat_conf": 0.0,
+   "py_val": {
+    "ungrounded": [
+     "set_thermostat.temperature"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_thermostat.temperature"
+    ],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 20
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 20
+     }
+    }
+   ],
+   "wall_s": 5.59858697899999
+  },
+  {
+   "env": "smart_home",
+   "i": 30,
+   "category": "parallel",
+   "query": "turn off the bedroom lights and set the thermostat to 18 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "off"
+     }
+    },
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 18
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_lights",
+     "arguments": {
+      "room": "bedroom",
+      "action": "off"
+     }
+    },
+    {
+     "name": "set_thermostat",
+     "arguments": {
+      "temperature": 18
+     }
+    }
+   ],
+   "py_conf": 0.9648,
+   "nat_conf": 0.9604,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.320560842000006
+  },
+  {
+   "env": "smart_home",
+   "i": 31,
+   "category": "parallel",
+   "query": "start the vacuum in the kitchen and open the living room blinds",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start",
+      "room": "kitchen"
+     }
+    },
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "kitchen",
+      "action": "open"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_robot_vacuum",
+     "arguments": {
+      "action": "start",
+      "room": "kitchen"
+     }
+    },
+    {
+     "name": "control_blinds",
+     "arguments": {
+      "room": "kitchen",
+      "action": "open"
+     }
+    }
+   ],
+   "py_conf": 0.8913,
+   "nat_conf": 0.8913,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 6.033958612000006
+  },
+  {
+   "env": "media_player",
+   "i": 0,
+   "category": "positive",
+   "query": "play Purple Rain by Prince",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Purple Rain by Prince"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Purple Rain by Prince"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.362128287
+  },
+  {
+   "env": "media_player",
+   "i": 1,
+   "category": "positive",
+   "query": "put on some smooth jazz",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "smooth jazz"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "smooth jazz"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.023411567
+  },
+  {
+   "env": "media_player",
+   "i": 2,
+   "category": "positive",
+   "query": "queue up Blinding Lights by The Weeknd",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Blinding Lights by The Weeknd"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Blinding Lights by The Weeknd"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.3355279180000004
+  },
+  {
+   "env": "media_player",
+   "i": 3,
+   "category": "positive",
+   "query": "play some lofi beats",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "lofi beats"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "lofi beats"
+     }
+    }
+   ],
+   "py_conf": 0.9905,
+   "nat_conf": 0.9905,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.288045309
+  },
+  {
+   "env": "media_player",
+   "i": 4,
+   "category": "positive",
+   "query": "put on Hotel California by the Eagles",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Hotel California by the Eagles"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Hotel California by the Eagles"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.2578928530000004
+  },
+  {
+   "env": "media_player",
+   "i": 5,
+   "category": "positive",
+   "query": "play Bohemian Rhapsody by Queen",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Bohemian Rhapsody by Queen"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Bohemian Rhapsody by Queen"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.529762057000001
+  },
+  {
+   "env": "media_player",
+   "i": 6,
+   "category": "positive",
+   "query": "set the volume to 40",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 40
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 40
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.0275120310000005
+  },
+  {
+   "env": "media_player",
+   "i": 7,
+   "category": "positive",
+   "query": "turn the volume up to 85",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 85
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 85
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.2949950460000004
+  },
+  {
+   "env": "media_player",
+   "i": 8,
+   "category": "positive",
+   "query": "lower the volume to 15",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 15
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 15
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.0982660400000004
+  },
+  {
+   "env": "media_player",
+   "i": 9,
+   "category": "positive",
+   "query": "set the speaker volume to 60",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 60
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 60
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.289914608
+  },
+  {
+   "env": "media_player",
+   "i": 10,
+   "category": "positive",
+   "query": "crank the volume up to 95",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 95
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 95
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.092640899000001
+  },
+  {
+   "env": "media_player",
+   "i": 11,
+   "category": "positive",
+   "query": "pause the music",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.227807999999998
+  },
+  {
+   "env": "media_player",
+   "i": 12,
+   "category": "positive",
+   "query": "hit pause on the song",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "resume_media",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "resume_media",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.0672902540000013
+  },
+  {
+   "env": "media_player",
+   "i": 13,
+   "category": "positive",
+   "query": "pause playback while I take this call",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.237688374000001
+  },
+  {
+   "env": "media_player",
+   "i": 14,
+   "category": "positive",
+   "query": "resume the music",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "resume_media",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "resume_media",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.012858242
+  },
+  {
+   "env": "media_player",
+   "i": 15,
+   "category": "positive",
+   "query": "resume playback where it left off",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "resume_media",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "resume_media",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.2768072209999985
+  },
+  {
+   "env": "media_player",
+   "i": 16,
+   "category": "positive",
+   "query": "skip this song",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "skip_track",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "skip_track",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.0306667649999994
+  },
+  {
+   "env": "media_player",
+   "i": 17,
+   "category": "positive",
+   "query": "skip to the next track",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "skip_track",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "skip_track",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.2625241359999997
+  },
+  {
+   "env": "media_player",
+   "i": 18,
+   "category": "missing",
+   "query": "turn up the volume a little",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 100
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 100
+     }
+    }
+   ],
+   "wall_s": 2.082004154
+  },
+  {
+   "env": "media_player",
+   "i": 19,
+   "category": "missing",
+   "query": "play something for me",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "something"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "something"
+     }
+    }
+   ],
+   "py_conf": 0.9866,
+   "nat_conf": 0.9866,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.3575277660000005
+  },
+  {
+   "env": "media_player",
+   "i": 20,
+   "category": "missing",
+   "query": "turn the music down a bit",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.1618,
+   "nat_conf": 0.1618,
+   "py_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 50
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 50
+     }
+    }
+   ],
+   "wall_s": 2.103090162000001
+  },
+  {
+   "env": "media_player",
+   "i": 21,
+   "category": "missing",
+   "query": "play whatever you think I'd like",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "skip_track",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "skip_track",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.323531687999999
+  },
+  {
+   "env": "media_player",
+   "i": 22,
+   "category": "irrelevant",
+   "query": "put on the podcast Hard Fork",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Hard Fork"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Hard Fork"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.1068817630000005
+  },
+  {
+   "env": "media_player",
+   "i": 23,
+   "category": "irrelevant",
+   "query": "tune into the radio station Jazz FM",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Jazz FM"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Jazz FM"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.3080837269999996
+  },
+  {
+   "env": "media_player",
+   "i": 24,
+   "category": "irrelevant",
+   "query": "add this song to my favorites playlist",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "favorites playlist"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "favorites playlist"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.1312726689999977
+  },
+  {
+   "env": "media_player",
+   "i": 25,
+   "category": "negation",
+   "query": "don't pause the song, I love this part",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "wall_s": 2.282734725000001
+  },
+  {
+   "env": "media_player",
+   "i": 26,
+   "category": "negation",
+   "query": "do not turn the volume up to 90",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 90
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 90
+     }
+    }
+   ],
+   "wall_s": 2.078033349000002
+  },
+  {
+   "env": "media_player",
+   "i": 27,
+   "category": "negation",
+   "query": "never play Baby Shark on this speaker again",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.3314463469999964
+  },
+  {
+   "env": "media_player",
+   "i": 28,
+   "category": "invalid",
+   "query": "set the volume to 140",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 14
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 14
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.035113436000003
+  },
+  {
+   "env": "media_player",
+   "i": 29,
+   "category": "invalid",
+   "query": "turn the volume up to 500",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 5
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 5
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_volume.level"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.2534336249999996
+  },
+  {
+   "env": "media_player",
+   "i": 30,
+   "category": "parallel",
+   "query": "set the volume to 55 and play Clair de Lune by Debussy",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 55
+     }
+    },
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Clair de Lune by Debussy"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 55
+     }
+    },
+    {
+     "name": "play_music",
+     "arguments": {
+      "query": "Clair de Lune by Debussy"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.4484892600000023
+  },
+  {
+   "env": "media_player",
+   "i": 31,
+   "category": "parallel",
+   "query": "pause the music and turn the volume down to 20",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    },
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 20
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "pause_media",
+     "arguments": {}
+    },
+    {
+     "name": "set_volume",
+     "arguments": {
+      "level": 20
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.3600815920000002
+  },
+  {
+   "env": "productivity",
+   "i": 0,
+   "category": "positive",
+   "query": "start a timer for 25 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "25 minutes"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "25 minutes"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.945855712999999
+  },
+  {
+   "env": "productivity",
+   "i": 1,
+   "category": "positive",
+   "query": "run a timer for 90 seconds",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "90 seconds"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "90 seconds"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.050352126
+  },
+  {
+   "env": "productivity",
+   "i": 2,
+   "category": "positive",
+   "query": "set a timer that goes off at 9:15pm",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "9:15pm"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "9:15pm"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.0005053660000005
+  },
+  {
+   "env": "productivity",
+   "i": 3,
+   "category": "positive",
+   "query": "remind me at 6pm to water the plants",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Water the plants",
+      "date_time_human": "6pm"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Water the plants",
+      "date_time_human": "6pm"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.152253599
+  },
+  {
+   "env": "productivity",
+   "i": 4,
+   "category": "positive",
+   "query": "set a reminder for Sunday morning to call Grandma",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Call Grandma",
+      "date_time_human": "Sunday morning"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Call Grandma",
+      "date_time_human": "Sunday morning"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.290524043000001
+  },
+  {
+   "env": "productivity",
+   "i": 5,
+   "category": "positive",
+   "query": "remind me tomorrow at noon to renew the car insurance",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Renew the car insurance",
+      "date_time_human": "tomorrow at noon"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Renew the car insurance",
+      "date_time_human": "tomorrow at noon"
+     }
+    }
+   ],
+   "py_conf": 0.9928,
+   "nat_conf": 0.9928,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.212852123000001
+  },
+  {
+   "env": "productivity",
+   "i": 6,
+   "category": "positive",
+   "query": "could you remind me at 8:15am to take my vitamins",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Take my vitamins",
+      "date_time_human": "8:15am"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Take my vitamins",
+      "date_time_human": "8:15am"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.172002838000001
+  },
+  {
+   "env": "productivity",
+   "i": 7,
+   "category": "positive",
+   "query": "add dentist appointment to my calendar tomorrow at 3pm",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Dentist appointment",
+      "start_time_human": "tomorrow at 3pm"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Dentist appointment",
+      "start_time_human": "tomorrow at 3pm"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.333683780000001
+  },
+  {
+   "env": "productivity",
+   "i": 8,
+   "category": "positive",
+   "query": "schedule team standup for Monday at 9am",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Team standup",
+      "start_time_human": "Monday at 9am"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Team standup",
+      "start_time_human": "Monday at 9am"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.169411137000001
+  },
+  {
+   "env": "productivity",
+   "i": 9,
+   "category": "positive",
+   "query": "put book club on my calendar Wednesday at 7pm at Riverside Library",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Book club",
+      "start_time_human": "Wednesday at 7pm",
+      "location": "Riverside Library"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Book club",
+      "start_time_human": "Wednesday at 7pm",
+      "location": "Riverside Library"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.763213829999998
+  },
+  {
+   "env": "productivity",
+   "i": 10,
+   "category": "positive",
+   "query": "schedule lunch with Sam for Friday at 1pm at Cafe Roma",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Lunch with Sam",
+      "start_time_human": "Friday at 1pm",
+      "location": "Cafe Roma"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Lunch with Sam",
+      "start_time_human": "Friday at 1pm",
+      "location": "Cafe Roma"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.535452294999999
+  },
+  {
+   "env": "productivity",
+   "i": 11,
+   "category": "positive",
+   "query": "add renew my passport to my to-do list",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Renew my passport"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Renew my passport"
+     }
+    }
+   ],
+   "py_conf": 0.9894,
+   "nat_conf": 0.9894,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.558397025000001
+  },
+  {
+   "env": "productivity",
+   "i": 12,
+   "category": "positive",
+   "query": "add descale the kettle to my tasks",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Descale the kettle"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Descale the kettle"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.213526801
+  },
+  {
+   "env": "productivity",
+   "i": 13,
+   "category": "positive",
+   "query": "add file the insurance claim as a high priority task",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "File the insurance claim",
+      "priority": "high"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "File the insurance claim",
+      "priority": "high"
+     }
+    }
+   ],
+   "py_conf": 0.9974,
+   "nat_conf": 0.9974,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.287131858000002
+  },
+  {
+   "env": "productivity",
+   "i": 14,
+   "category": "positive",
+   "query": "add a low priority task to organize the garage",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Organize the garage",
+      "priority": "low"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Organize the garage",
+      "priority": "low"
+     }
+    }
+   ],
+   "py_conf": 0.9984,
+   "nat_conf": 0.9984,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.238927902999997
+  },
+  {
+   "env": "productivity",
+   "i": 15,
+   "category": "positive",
+   "query": "make a note that sunflower42 is the wifi password",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "sunflower42 is the wifi password"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "sunflower42 is the wifi password"
+     }
+    }
+   ],
+   "py_conf": 0.9907,
+   "nat_conf": 0.9907,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.240426593999999
+  },
+  {
+   "env": "productivity",
+   "i": 16,
+   "category": "positive",
+   "query": "save a note titled Packing List saying bring the hiking boots",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "bring the hiking boots",
+      "title": "Packing List"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "bring the hiking boots",
+      "title": "Packing List"
+     }
+    }
+   ],
+   "py_conf": 0.7376,
+   "nat_conf": 0.7376,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.366041662999997
+  },
+  {
+   "env": "productivity",
+   "i": 17,
+   "category": "positive",
+   "query": "write a note titled Garden that says plant the tulip bulbs in October",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "plant the tulip bulbs in October",
+      "title": "Garden"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "plant the tulip bulbs in October",
+      "title": "Garden"
+     }
+    }
+   ],
+   "py_conf": 0.7237,
+   "nat_conf": 0.7237,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.707523974000004
+  },
+  {
+   "env": "productivity",
+   "i": 18,
+   "category": "missing",
+   "query": "remind me to take out the recycling",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Take out the recycling",
+      "date_time_human": "today 09:58"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Take out the recycling",
+      "date_time_human": "today 09:58"
+     }
+    }
+   ],
+   "py_conf": 0.8321,
+   "nat_conf": 0.8321,
+   "py_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.371830049000003
+  },
+  {
+   "env": "productivity",
+   "i": 19,
+   "category": "missing",
+   "query": "set a timer for the pasta",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "45 minutes"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "45 minutes"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_timer.time_human"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_timer.time_human"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.108908544000002
+  },
+  {
+   "env": "productivity",
+   "i": 20,
+   "category": "missing",
+   "query": "put dinner with Alex on my calendar",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Dinner with Alex",
+      "start_time_human": "today at 9"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Dinner with Alex",
+      "start_time_human": "today at 9"
+     }
+    }
+   ],
+   "py_conf": 0.779,
+   "nat_conf": 0.779,
+   "py_val": {
+    "ungrounded": [
+     "create_calendar_event.start_time_human"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "create_calendar_event.start_time_human"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.643624043000003
+  },
+  {
+   "env": "productivity",
+   "i": 21,
+   "category": "missing",
+   "query": "set a reminder about picking up the dry cleaning",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Picking up the dry cleaning",
+      "date_time_human": "tomorrow at 9"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Picking up the dry cleaning",
+      "date_time_human": "tomorrow at 9"
+     }
+    }
+   ],
+   "py_conf": 0.9158,
+   "nat_conf": 0.9158,
+   "py_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.378565842
+  },
+  {
+   "env": "productivity",
+   "i": 22,
+   "category": "irrelevant",
+   "query": "email the shopping list to my roommate",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": null,
+   "nat_val": null,
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.019673320999999
+  },
+  {
+   "env": "productivity",
+   "i": 23,
+   "category": "irrelevant",
+   "query": "check my calendar for this weekend",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Check calendar",
+      "start_time_human": "2026-09-25"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Check calendar",
+      "start_time_human": "2026-09-25"
+     }
+    }
+   ],
+   "py_conf": 0.3977,
+   "nat_conf": 0.3977,
+   "py_val": {
+    "ungrounded": [
+     "create_calendar_event.title",
+     "create_calendar_event.start_time_human"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "create_calendar_event.title",
+     "create_calendar_event.start_time_human"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.6226242160000055
+  },
+  {
+   "env": "productivity",
+   "i": 24,
+   "category": "irrelevant",
+   "query": "delete the reminder about the oil change",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.989,
+   "nat_conf": 0.989,
+   "py_val": null,
+   "nat_val": null,
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.999014783000007
+  },
+  {
+   "env": "productivity",
+   "i": 25,
+   "category": "negation",
+   "query": "don't set a timer for 20 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "20 minutes"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "20 minutes"
+     }
+    }
+   ],
+   "wall_s": 5.124173897000006
+  },
+  {
+   "env": "productivity",
+   "i": 26,
+   "category": "negation",
+   "query": "do not put yoga class on my calendar for Saturday at 8am",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Yoga class",
+      "start_time_human": "Saturday at 8am"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_calendar_event",
+     "arguments": {
+      "title": "Yoga class",
+      "start_time_human": "Saturday at 8am"
+     }
+    }
+   ],
+   "py_conf": 0.9904,
+   "nat_conf": 0.9904,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.319264360999995
+  },
+  {
+   "env": "productivity",
+   "i": 27,
+   "category": "negation",
+   "query": "never remind me about the water bill again",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Water bill",
+      "date_time_human": "next day"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Water bill",
+      "date_time_human": "next day"
+     }
+    }
+   ],
+   "py_conf": 0.9805,
+   "nat_conf": 0.9805,
+   "py_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.609656963999996
+  },
+  {
+   "env": "productivity",
+   "i": 28,
+   "category": "invalid",
+   "query": "set a timer for negative 5 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "05 minutes"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "05 minutes"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_timer.time_human"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_timer.time_human"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.0740677430000005
+  },
+  {
+   "env": "productivity",
+   "i": 29,
+   "category": "invalid",
+   "query": "remind me yesterday at 4pm to submit the timesheet",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Submit the timesheet",
+      "date_time_human": "2026-09-23 16:00"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Submit the timesheet",
+      "date_time_human": "2026-09-23 16:00"
+     }
+    }
+   ],
+   "py_conf": 0.8144,
+   "nat_conf": 0.8144,
+   "py_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "create_reminder.date_time_human"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.764565853999997
+  },
+  {
+   "env": "productivity",
+   "i": 30,
+   "category": "parallel",
+   "query": "set a timer for 10 minutes and remind me at 5pm to hydrate",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "10 minutes"
+     }
+    },
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Hydrate",
+      "date_time_human": "5pm"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_timer",
+     "arguments": {
+      "time_human": "10 minutes"
+     }
+    },
+    {
+     "name": "create_reminder",
+     "arguments": {
+      "message": "Hydrate",
+      "date_time_human": "5pm"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.378740339000004
+  },
+  {
+   "env": "productivity",
+   "i": 31,
+   "category": "parallel",
+   "query": "add buy candles to my task list and note that rent is due Friday",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Buy candles"
+     }
+    },
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "rent is due Friday"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "add_task",
+     "arguments": {
+      "title": "Buy candles"
+     }
+    },
+    {
+     "name": "create_note",
+     "arguments": {
+      "text": "rent is due Friday"
+     }
+    }
+   ],
+   "py_conf": 0.9904,
+   "nat_conf": 0.9904,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 5.417691404999999
+  },
+  {
+   "env": "wearable",
+   "i": 0,
+   "category": "positive",
+   "query": "reply to Maya saying be there in 10 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "be there in 10 minutes"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "be there in 10 minutes"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.090354691
+  },
+  {
+   "env": "wearable",
+   "i": 1,
+   "category": "positive",
+   "query": "reply to Dr. Patel with See you Thursday",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Dr. Patel",
+      "text": "See you Thursday"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Dr. Patel",
+      "text": "See you Thursday"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.5599942749999998
+  },
+  {
+   "env": "wearable",
+   "i": 2,
+   "category": "positive",
+   "query": "answer the Cactus Team message saying the build is green",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Cactus Team",
+      "text": "the build is green"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Cactus Team",
+      "text": "the build is green"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.1038773950000005
+  },
+  {
+   "env": "wearable",
+   "i": 3,
+   "category": "positive",
+   "query": "send Leo a reply that says lunch works for me",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Leo",
+      "text": "lunch works for me"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Leo",
+      "text": "lunch works for me"
+     }
+    }
+   ],
+   "py_conf": 0.9827,
+   "nat_conf": 0.9827,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.460254956
+  },
+  {
+   "env": "wearable",
+   "i": 4,
+   "category": "positive",
+   "query": "dismiss the notification from Leo",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Leo"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Leo"
+     }
+    }
+   ],
+   "py_conf": 0.973,
+   "nat_conf": 0.973,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.8810143109999995
+  },
+  {
+   "env": "wearable",
+   "i": 5,
+   "category": "positive",
+   "query": "swipe away the alert from Maya",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Maya"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Maya"
+     }
+    }
+   ],
+   "py_conf": 0.9811,
+   "nat_conf": 0.9811,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.4273647179999998
+  },
+  {
+   "env": "wearable",
+   "i": 6,
+   "category": "positive",
+   "query": "clear the Dr. Patel notification",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Dr. Patel"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Dr. Patel"
+     }
+    }
+   ],
+   "py_conf": 0.9952,
+   "nat_conf": 0.9952,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.923539968
+  },
+  {
+   "env": "wearable",
+   "i": 7,
+   "category": "positive",
+   "query": "get rid of the Cactus Team notification",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Cactus Team"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Cactus Team"
+     }
+    }
+   ],
+   "py_conf": 0.9955,
+   "nat_conf": 0.9955,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.4995083190000003
+  },
+  {
+   "env": "wearable",
+   "i": 8,
+   "category": "positive",
+   "query": "start a running workout",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "running"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "running"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.8211964910000003
+  },
+  {
+   "env": "wearable",
+   "i": 9,
+   "category": "positive",
+   "query": "begin a swimming session on my watch",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "swimming"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "swimming"
+     }
+    }
+   ],
+   "py_conf": 0.9973,
+   "nat_conf": 0.9973,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.4578298269999994
+  },
+  {
+   "env": "wearable",
+   "i": 10,
+   "category": "positive",
+   "query": "kick off some strength training",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "strength"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "strength"
+     }
+    }
+   ],
+   "py_conf": 0.9983,
+   "nat_conf": 0.9983,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.900739875000001
+  },
+  {
+   "env": "wearable",
+   "i": 11,
+   "category": "positive",
+   "query": "track a cycling workout",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "cycling"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "cycling"
+     }
+    }
+   ],
+   "py_conf": 0.9948,
+   "nat_conf": 0.9948,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.3120678430000012
+  },
+  {
+   "env": "wearable",
+   "i": 12,
+   "category": "positive",
+   "query": "go ahead and start a walking workout",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "walking"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "walking"
+     }
+    }
+   ],
+   "py_conf": 0.9942,
+   "nat_conf": 0.9942,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.860145512999999
+  },
+  {
+   "env": "wearable",
+   "i": 13,
+   "category": "positive",
+   "query": "end my workout",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.1996356279999993
+  },
+  {
+   "env": "wearable",
+   "i": 14,
+   "category": "positive",
+   "query": "finish the current workout session",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.776406002999998
+  },
+  {
+   "env": "wearable",
+   "i": 15,
+   "category": "positive",
+   "query": "wrap up my workout now",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.235106996999999
+  },
+  {
+   "env": "wearable",
+   "i": 16,
+   "category": "positive",
+   "query": "find my phone",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.7995162170000008
+  },
+  {
+   "env": "wearable",
+   "i": 17,
+   "category": "positive",
+   "query": "make my phone ring so I can locate it",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.2880946559999984
+  },
+  {
+   "env": "wearable",
+   "i": 18,
+   "category": "missing",
+   "query": "send a reply to Maya",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "reply"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "reply"
+     }
+    }
+   ],
+   "py_conf": 0.8805,
+   "nat_conf": 0.8805,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.9726396489999978
+  },
+  {
+   "env": "wearable",
+   "i": 19,
+   "category": "missing",
+   "query": "dismiss the latest notification",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Maya"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Maya"
+     }
+    }
+   ],
+   "wall_s": 3.377275724999997
+  },
+  {
+   "env": "wearable",
+   "i": 20,
+   "category": "missing",
+   "query": "start a workout",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "running"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "running"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.8247465490000003
+  },
+  {
+   "env": "wearable",
+   "i": 21,
+   "category": "missing",
+   "query": "reply saying I am stuck in a meeting",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "I am stuck in a meeting"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "I am stuck in a meeting"
+     }
+    }
+   ],
+   "wall_s": 3.569033136999998
+  },
+  {
+   "env": "wearable",
+   "i": 22,
+   "category": "irrelevant",
+   "query": "check my heart rate on the watch",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.818953512
+  },
+  {
+   "env": "wearable",
+   "i": 23,
+   "category": "irrelevant",
+   "query": "call Maya from my watch",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "call Maya from my watch"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "call Maya from my watch"
+     }
+    }
+   ],
+   "py_conf": 0.9643,
+   "nat_conf": 0.9643,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.5646159819999994
+  },
+  {
+   "env": "wearable",
+   "i": 24,
+   "category": "irrelevant",
+   "query": "show my step count for today",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": null,
+   "nat_val": null,
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.7007399469999953
+  },
+  {
+   "env": "wearable",
+   "i": 25,
+   "category": "negation",
+   "query": "don't reply to the message from Leo",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.9519,
+   "nat_conf": 0.9519,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Leo",
+      "text": "don't reply"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Leo",
+      "text": "don't reply"
+     }
+    }
+   ],
+   "wall_s": 3.582701456999999
+  },
+  {
+   "env": "wearable",
+   "i": 26,
+   "category": "negation",
+   "query": "do not start a running workout yet",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "end_workout",
+     "arguments": {}
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.860434434999995
+  },
+  {
+   "env": "wearable",
+   "i": 27,
+   "category": "negation",
+   "query": "never dismiss notifications from Dr. Patel",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Dr. Patel"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Dr. Patel"
+     }
+    }
+   ],
+   "py_conf": 0.9926,
+   "nat_conf": 0.9926,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.486860567000001
+  },
+  {
+   "env": "wearable",
+   "i": 28,
+   "category": "invalid",
+   "query": "reply to Priya saying happy birthday",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.9903,
+   "nat_conf": 0.9903,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "happy birthday"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "happy birthday"
+     }
+    }
+   ],
+   "wall_s": 2.937686937999999
+  },
+  {
+   "env": "wearable",
+   "i": 29,
+   "category": "invalid",
+   "query": "start a pilates workout",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "walking"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "walking"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.3152820729999988
+  },
+  {
+   "env": "wearable",
+   "i": 30,
+   "category": "parallel",
+   "query": "dismiss the notification from Leo and start a strength workout",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Leo"
+     }
+    },
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "strength"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "dismiss_notification",
+     "arguments": {
+      "notification_match": "Leo"
+     }
+    },
+    {
+     "name": "start_workout",
+     "arguments": {
+      "workout_type": "strength"
+     }
+    }
+   ],
+   "py_conf": 0.9966,
+   "nat_conf": 0.9966,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.0777848090000006
+  },
+  {
+   "env": "wearable",
+   "i": 31,
+   "category": "parallel",
+   "query": "find my phone and reply to Maya saying almost home",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    },
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "almost home"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "find_my_phone",
+     "arguments": {}
+    },
+    {
+     "name": "reply_to_notification",
+     "arguments": {
+      "notification_match": "Maya",
+      "text": "almost home"
+     }
+    }
+   ],
+   "py_conf": 0.9579,
+   "nat_conf": 0.9579,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.5951069580000024
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 0,
+   "category": "positive",
+   "query": "preheat the oven to 180 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 180
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 180
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.830054572
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 1,
+   "category": "positive",
+   "query": "set the oven to 220 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 220
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 220
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.2113102890000005
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 2,
+   "category": "positive",
+   "query": "bake at 200 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 200
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 200
+     }
+    }
+   ],
+   "py_conf": 0.9683,
+   "nat_conf": 0.9683,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.633951691
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 3,
+   "category": "positive",
+   "query": "bring the oven up to 160 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 160
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 160
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.9871794830000002
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 4,
+   "category": "positive",
+   "query": "brew a fresh pot of coffee",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    }
+   ],
+   "py_conf": 0.8422,
+   "nat_conf": 0.8422,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.725202331
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 5,
+   "category": "positive",
+   "query": "start brewing another batch of coffee",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    }
+   ],
+   "py_conf": 0.9586,
+   "nat_conf": 0.9586,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.0616410299999997
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 6,
+   "category": "positive",
+   "query": "stop the coffee maker",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "stop"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "stop"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.6097559939999986
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 7,
+   "category": "positive",
+   "query": "keep my coffee warm",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "warm"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "warm"
+     }
+    }
+   ],
+   "py_conf": 0.9938,
+   "nat_conf": 0.9938,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.917147966
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 8,
+   "category": "positive",
+   "query": "run the dishwasher on the eco cycle",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "eco"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "eco"
+     }
+    }
+   ],
+   "py_conf": 0.9958,
+   "nat_conf": 0.9958,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.670361841
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 9,
+   "category": "positive",
+   "query": "start a heavy dishwasher cycle",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "heavy"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "heavy"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.9785877790000015
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 10,
+   "category": "positive",
+   "query": "run a quick cycle on the dishwasher",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.6673938260000014
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 11,
+   "category": "positive",
+   "query": "set a pasta timer for 10 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Pasta",
+      "minutes": 10
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Pasta",
+      "minutes": 10
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.0452418710000018
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 12,
+   "category": "positive",
+   "query": "start a 90 minute timer for the brisket",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Brisket",
+      "minutes": 90
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Brisket",
+      "minutes": 90
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.747069142000001
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 13,
+   "category": "positive",
+   "query": "give me a 5 minute timer for the eggs",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Eggs",
+      "minutes": 5
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Eggs",
+      "minutes": 5
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.134036942999998
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 14,
+   "category": "positive",
+   "query": "the cookies need a 12 minute timer",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Cookies",
+      "minutes": 12
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Cookies",
+      "minutes": 12
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.7368633319999986
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 15,
+   "category": "positive",
+   "query": "check the oven",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "get_appliance_status",
+     "arguments": {
+      "appliance": "oven"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "get_appliance_status",
+     "arguments": {
+      "appliance": "oven"
+     }
+    }
+   ],
+   "py_conf": 0.993,
+   "nat_conf": 0.993,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.0833777139999974
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 16,
+   "category": "positive",
+   "query": "check on the dishwasher",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "get_appliance_status",
+     "arguments": {
+      "appliance": "dishwasher"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "get_appliance_status",
+     "arguments": {
+      "appliance": "dishwasher"
+     }
+    }
+   ],
+   "py_conf": 0.9877,
+   "nat_conf": 0.9877,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.763215743
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 17,
+   "category": "positive",
+   "query": "check the coffee maker for me",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "get_appliance_status",
+     "arguments": {
+      "appliance": "coffee_maker"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "get_appliance_status",
+     "arguments": {
+      "appliance": "coffee_maker"
+     }
+    }
+   ],
+   "py_conf": 0.9983,
+   "nat_conf": 0.9983,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.148509237999999
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 18,
+   "category": "missing",
+   "query": "heat up the oven for the garlic bread",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_oven.temperature"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_oven.temperature"
+    ],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 250
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 250
+     }
+    }
+   ],
+   "wall_s": 2.7013800619999984
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 19,
+   "category": "missing",
+   "query": "set a cooking timer for the rice",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Rice",
+      "minutes": 1
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Rice",
+      "minutes": 1
+     }
+    }
+   ],
+   "wall_s": 3.0302542779999975
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 20,
+   "category": "missing",
+   "query": "start a timer for 25 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Oven",
+      "minutes": 25
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Oven",
+      "minutes": 25
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_cooking_timer.label"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_cooking_timer.label"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.7275143349999986
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 21,
+   "category": "missing",
+   "query": "change the coffee maker setting",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.0785879679999937
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 22,
+   "category": "irrelevant",
+   "query": "defrost some chicken in the microwave",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "py_conf": 0.565,
+   "nat_conf": 0.565,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.758335019000004
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 23,
+   "category": "irrelevant",
+   "query": "boil the kettle for tea",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.2126,
+   "nat_conf": 0.2126,
+   "py_val": {
+    "ungrounded": [
+     "set_cooking_timer.minutes"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_cooking_timer.minutes"
+    ],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    },
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Tea",
+      "minutes": 40
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    },
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Tea",
+      "minutes": 40
+     }
+    }
+   ],
+   "wall_s": 3.354799051999997
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 24,
+   "category": "irrelevant",
+   "query": "turn the fridge down to 3 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": null,
+   "nat_val": null,
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.643781433000001
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 25,
+   "category": "negation",
+   "query": "don't preheat the oven to 220 degrees tonight",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 220
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 220
+     }
+    }
+   ],
+   "wall_s": 3.1468863499999955
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 26,
+   "category": "negation",
+   "query": "do not run the dishwasher on heavy today",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.9969,
+   "nat_conf": 0.9969,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "heavy"
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "heavy"
+     }
+    }
+   ],
+   "wall_s": 2.761962820000001
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 27,
+   "category": "negation",
+   "query": "never brew coffee this late at night",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.141322878000004
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 28,
+   "category": "invalid",
+   "query": "get the oven up to 300 degrees",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": null,
+   "nat_val": null,
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.6369699319999995
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 29,
+   "category": "invalid",
+   "query": "set a stew timer for 500 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Stew",
+      "minutes": 5
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Stew",
+      "minutes": 5
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "set_cooking_timer.minutes"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "set_cooking_timer.minutes"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.1659730510000017
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 30,
+   "category": "parallel",
+   "query": "set the oven to 180 degrees and start a pizza timer for 15 minutes",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 180
+     }
+    },
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Pizza",
+      "minutes": 15
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "set_oven",
+     "arguments": {
+      "temperature": 180
+     }
+    },
+    {
+     "name": "set_cooking_timer",
+     "arguments": {
+      "label": "Pizza",
+      "minutes": 15
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 2.9372406150000003
+  },
+  {
+   "env": "kitchen_appliance",
+   "i": 31,
+   "category": "parallel",
+   "query": "brew coffee and run the dishwasher on quick",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    },
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "control_coffee_maker",
+     "arguments": {
+      "action": "brew"
+     }
+    },
+    {
+     "name": "start_dishwasher",
+     "arguments": {
+      "cycle": "quick"
+     }
+    }
+   ],
+   "py_conf": 0.9898,
+   "nat_conf": 0.9898,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.2558463939999953
+  },
+  {
+   "env": "data_capture",
+   "i": 0,
+   "category": "positive",
+   "query": "add Maya Chen to my contacts",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Maya Chen"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Maya Chen"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.437394978
+  },
+  {
+   "env": "data_capture",
+   "i": 1,
+   "category": "positive",
+   "query": "save Leo Park to contacts, phone 555-0134",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Leo Park",
+      "phone": "555-0134"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Leo Park",
+      "phone": "555-0134"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.340592536
+  },
+  {
+   "env": "data_capture",
+   "i": 2,
+   "category": "positive",
+   "query": "create a contact for Nadia Osei, number 917-555-0188, email nadia@osei.dev",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Nadia Osei",
+      "phone": "917-555-0188",
+      "email": "nadia@osei.dev"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Nadia Osei",
+      "phone": "917-555-0188",
+      "email": "nadia@osei.dev"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.741035090999999
+  },
+  {
+   "env": "data_capture",
+   "i": 3,
+   "category": "positive",
+   "query": "put Tom\u00e1s Rivera in my contacts",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Tom\u00e1s Rivera"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Tom\u00e1s Rivera"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.956334973999999
+  },
+  {
+   "env": "data_capture",
+   "i": 4,
+   "category": "positive",
+   "query": "log an expense of 23 for transport",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 23.0,
+      "category": "transport"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 23.0,
+      "category": "transport"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.3088065570000005
+  },
+  {
+   "env": "data_capture",
+   "i": 5,
+   "category": "positive",
+   "query": "record an 85.99 groceries expense from FreshMart",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 85.99,
+      "category": "groceries",
+      "merchant": "FreshMart"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 85.99,
+      "category": "groceries",
+      "merchant": "FreshMart"
+     }
+    }
+   ],
+   "py_conf": 0.7891,
+   "nat_conf": 0.7891,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.276417110000001
+  },
+  {
+   "env": "data_capture",
+   "i": 6,
+   "category": "positive",
+   "query": "track 142.75 spent on utilities",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 142.75,
+      "category": "utilities"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 142.75,
+      "category": "utilities"
+     }
+    }
+   ],
+   "py_conf": 0.9981,
+   "nat_conf": 0.9981,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.351523904
+  },
+  {
+   "env": "data_capture",
+   "i": 7,
+   "category": "positive",
+   "query": "capture 260 in shopping spend from Uniqlo",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 260.0,
+      "category": "shopping",
+      "merchant": "Uniqlo"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 260.0,
+      "category": "shopping",
+      "merchant": "Uniqlo"
+     }
+    }
+   ],
+   "py_conf": 0.9862,
+   "nat_conf": 0.9862,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.078889903
+  },
+  {
+   "env": "data_capture",
+   "i": 8,
+   "category": "positive",
+   "query": "log 18.75 for entertainment",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 18.75,
+      "category": "entertainment"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 18.75,
+      "category": "entertainment"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.354226912999998
+  },
+  {
+   "env": "data_capture",
+   "i": 9,
+   "category": "positive",
+   "query": "log a meal, grilled salmon with rice",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "grilled salmon with rice"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "grilled salmon with rice"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.058243617000002
+  },
+  {
+   "env": "data_capture",
+   "i": 10,
+   "category": "positive",
+   "query": "log lunch, leftover pad thai",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "leftover pad thai",
+      "meal_type": "lunch"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "leftover pad thai",
+      "meal_type": "lunch"
+     }
+    }
+   ],
+   "py_conf": 0.9927,
+   "nat_conf": 0.9927,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.433395918999999
+  },
+  {
+   "env": "data_capture",
+   "i": 11,
+   "category": "positive",
+   "query": "record oatmeal with berries for breakfast",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "oatmeal with berries",
+      "meal_type": "breakfast"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "oatmeal with berries",
+      "meal_type": "breakfast"
+     }
+    }
+   ],
+   "py_conf": 0.9995,
+   "nat_conf": 0.9995,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.096748177999999
+  },
+  {
+   "env": "data_capture",
+   "i": 12,
+   "category": "positive",
+   "query": "jot down what i ate, rice cakes with peanut butter",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "rice cakes with peanut butter"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "rice cakes with peanut butter"
+     }
+    }
+   ],
+   "py_conf": 0.9746,
+   "nat_conf": 0.9746,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.4751028199999965
+  },
+  {
+   "env": "data_capture",
+   "i": 13,
+   "category": "positive",
+   "query": "log 750 ml of water",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 750
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 750
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.9890326020000018
+  },
+  {
+   "env": "data_capture",
+   "i": 14,
+   "category": "positive",
+   "query": "record 500 ml of water intake",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 500
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 500
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.316245847000005
+  },
+  {
+   "env": "data_capture",
+   "i": 15,
+   "category": "positive",
+   "query": "i drank 1200 ml of water, log it",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 1200
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 1200
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.021085334999999
+  },
+  {
+   "env": "data_capture",
+   "i": 16,
+   "category": "positive",
+   "query": "log my weight at 82.5 kg",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 82.5
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 82.5
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.218726271000001
+  },
+  {
+   "env": "data_capture",
+   "i": 17,
+   "category": "positive",
+   "query": "record a weight of 74 kg",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 74.0
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 74.0
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.913971857
+  },
+  {
+   "env": "data_capture",
+   "i": 18,
+   "category": "missing",
+   "query": "log an expense of 45 from this afternoon",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "this afternoon",
+      "meal_type": "lunch"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "this afternoon",
+      "meal_type": "lunch"
+     }
+    }
+   ],
+   "py_conf": 0.6453,
+   "nat_conf": 0.6453,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.2908952020000015
+  },
+  {
+   "env": "data_capture",
+   "i": 19,
+   "category": "missing",
+   "query": "record my transport spending from today as an expense",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 0.0,
+      "category": "transport"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 0.0,
+      "category": "transport"
+     }
+    }
+   ],
+   "py_conf": 0.9326,
+   "nat_conf": 0.9326,
+   "py_val": {
+    "ungrounded": [
+     "log_expense.amount"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "log_expense.amount"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.013215749000004
+  },
+  {
+   "env": "data_capture",
+   "i": 20,
+   "category": "missing",
+   "query": "log my water intake from this morning",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 500
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 500
+     }
+    }
+   ],
+   "py_conf": 0.3206,
+   "nat_conf": 0.3206,
+   "py_val": {
+    "ungrounded": [
+     "log_water_intake.amount_ml"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "log_water_intake.amount_ml"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.478202469000003
+  },
+  {
+   "env": "data_capture",
+   "i": 21,
+   "category": "missing",
+   "query": "log my current weight for me",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "log_weight.weight_kg"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "log_weight.weight_kg"
+    ],
+    "negation": false
+   },
+   "py_supp": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 20.0
+     }
+    }
+   ],
+   "nat_supp": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 20.0
+     }
+    }
+   ],
+   "wall_s": 3.8654042599999983
+  },
+  {
+   "env": "data_capture",
+   "i": 22,
+   "category": "irrelevant",
+   "query": "text Marcus to ask about his new number",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": null,
+   "nat_val": null,
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.032028046999997
+  },
+  {
+   "env": "data_capture",
+   "i": 23,
+   "category": "irrelevant",
+   "query": "how much have i spent on groceries this month",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 0.0,
+      "category": "groceries"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 0.0,
+      "category": "groceries"
+     }
+    }
+   ],
+   "py_conf": 0.659,
+   "nat_conf": 0.659,
+   "py_val": {
+    "ungrounded": [
+     "log_expense.amount"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "log_expense.amount"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.0472369499999985
+  },
+  {
+   "env": "data_capture",
+   "i": 24,
+   "category": "irrelevant",
+   "query": "delete yesterday's lunch entry from the log",
+   "py_ok": false,
+   "nat_ok": false,
+   "py_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "lunch",
+      "meal_type": "lunch"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "lunch",
+      "meal_type": "lunch"
+     }
+    }
+   ],
+   "py_conf": 0.9843,
+   "nat_conf": 0.9843,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.408669963000001
+  },
+  {
+   "env": "data_capture",
+   "i": 25,
+   "category": "negation",
+   "query": "don't log the 15.40 i spent on transport",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 15.4,
+      "category": "transport"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_expense",
+     "arguments": {
+      "amount": 15.4,
+      "category": "transport"
+     }
+    }
+   ],
+   "py_conf": 0.9424,
+   "nat_conf": 0.9424,
+   "py_val": {
+    "ungrounded": [
+     "log_expense.amount"
+    ],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [
+     "log_expense.amount"
+    ],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.9962334780000006
+  },
+  {
+   "env": "data_capture",
+   "i": 26,
+   "category": "negation",
+   "query": "do not add Ravi Kumar at 415-555-0162 to my contacts",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Ravi Kumar",
+      "phone": "415-555-0162"
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "create_contact",
+     "arguments": {
+      "name": "Ravi Kumar",
+      "phone": "415-555-0162"
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.642932580999997
+  },
+  {
+   "env": "data_capture",
+   "i": 27,
+   "category": "negation",
+   "query": "never log 79.4 kg as my weight",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 79.4
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 79.4
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": true
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 3.9882011799999972
+  },
+  {
+   "env": "data_capture",
+   "i": 28,
+   "category": "invalid",
+   "query": "log my weight as 500 kg",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [],
+   "nat_calls": [],
+   "py_conf": 0.1569,
+   "nat_conf": 0.1569,
+   "py_val": null,
+   "nat_val": null,
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.320185711999997
+  },
+  {
+   "env": "data_capture",
+   "i": 29,
+   "category": "invalid",
+   "query": "log 9000 ml of water for today",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 900
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 900
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [
+     "log_water_intake.amount_ml"
+    ],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [
+     "log_water_intake.amount_ml"
+    ],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.047857143000002
+  },
+  {
+   "env": "data_capture",
+   "i": 30,
+   "category": "parallel",
+   "query": "log lunch, turkey sandwich on rye, and 600 ml of water",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "turkey sandwich on rye",
+      "meal_type": "lunch"
+     }
+    },
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 600
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_meal",
+     "arguments": {
+      "description": "turkey sandwich on rye",
+      "meal_type": "lunch"
+     }
+    },
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 600
+     }
+    }
+   ],
+   "py_conf": 0.9238,
+   "nat_conf": 0.9238,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.693145729999998
+  },
+  {
+   "env": "data_capture",
+   "i": 31,
+   "category": "parallel",
+   "query": "log my weight of 78.4 kg and 350 ml of water",
+   "py_ok": true,
+   "nat_ok": true,
+   "py_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 78.4
+     }
+    },
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 350
+     }
+    }
+   ],
+   "nat_calls": [
+    {
+     "name": "log_weight",
+     "arguments": {
+      "weight_kg": 78.4
+     }
+    },
+    {
+     "name": "log_water_intake",
+     "arguments": {
+      "amount_ml": 350
+     }
+    }
+   ],
+   "py_conf": 1.0,
+   "nat_conf": 1.0,
+   "py_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "nat_val": {
+    "ungrounded": [],
+    "negation": false
+   },
+   "py_supp": [],
+   "nat_supp": [],
+   "wall_s": 4.181721411999995
+  }
+ ]
+}

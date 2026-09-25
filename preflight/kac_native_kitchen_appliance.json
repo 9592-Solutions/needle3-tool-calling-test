@@ -1,0 +1,1217 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "name": "set_oven",
+    "description": "Preheat or set the oven to a temperature in degrees Celsius. Use get_appliance_status to check on it.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "temperature": {
+       "type": "integer",
+       "description": "Target temperature in degrees Celsius.",
+       "minimum": 50,
+       "maximum": 250
+      }
+     },
+     "required": [
+      "temperature"
+     ]
+    }
+   },
+   {
+    "name": "control_coffee_maker",
+    "description": "Control the coffee maker. Never use this for the oven or the dishwasher.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "action": {
+       "type": "string",
+       "enum": [
+        "brew",
+        "stop",
+        "warm"
+       ],
+       "description": "brew, stop, or warm."
+      }
+     },
+     "required": [
+      "action"
+     ]
+    }
+   },
+   {
+    "name": "start_dishwasher",
+    "description": "Start the dishwasher, optionally on a stated wash cycle.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "cycle": {
+       "type": "string",
+       "enum": [
+        "eco",
+        "heavy",
+        "quick"
+       ],
+       "description": "The wash cycle; include only when stated."
+      }
+     }
+    }
+   },
+   {
+    "name": "set_cooking_timer",
+    "description": "Set a named cooking timer.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "label": {
+       "type": "string",
+       "description": "Label for the timer, copied from the user.",
+       "minLength": 1,
+       "maxLength": 40
+      },
+      "minutes": {
+       "type": "integer",
+       "description": "Timer duration in minutes.",
+       "minimum": 1,
+       "maximum": 360
+      }
+     },
+     "required": [
+      "label",
+      "minutes"
+     ]
+    }
+   },
+   {
+    "name": "get_appliance_status",
+    "description": "Read an appliance's current status. This changes nothing; any request to change settings uses the other tools.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "appliance": {
+       "type": "string",
+       "enum": [
+        "oven",
+        "coffee_maker",
+        "dishwasher"
+       ],
+       "description": "Which appliance to check."
+      }
+     },
+     "required": [
+      "appliance"
+     ]
+    }
+   }
+  ],
+  "system": "date: 2026-09-22 Tue 09:58; Map each explicit supported appliance action to exactly one declared call; never duplicate an action. Do not guess missing values. Unsupported, invalid, ambiguous, and negated requests return no call.",
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpv98q1ep0/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpv98q1ep0/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp8nipoqxc/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmp8nipoqxc/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "kitchen_appliance-00",
+   "prompt": "preheat the oven to 180 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_oven\",\"arguments\":{\"temperature\":180}}],\"suppressed_calls\":[],\"reasoning\":\"temperature 180 from '180 degrees'\",\"confidence\":1.0000,\"prefill_tps\":153.5,\"decode_tps\":144.3,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.830054572,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_oven",
+      "arguments": {
+       "temperature": 180
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "temperature 180 from '180 degrees'",
+    "confidence": 1.0,
+    "prefill_tps": 153.5,
+    "decode_tps": 144.3,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-01",
+   "prompt": "set the oven to 220 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_oven\",\"arguments\":{\"temperature\":220}}],\"suppressed_calls\":[],\"reasoning\":\"temperature 220 from '220 degrees'\",\"confidence\":1.0000,\"prefill_tps\":137.8,\"decode_tps\":126.9,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2113102890000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_oven",
+      "arguments": {
+       "temperature": 220
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "temperature 220 from '220 degrees'",
+    "confidence": 1.0,
+    "prefill_tps": 137.8,
+    "decode_tps": 126.9,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-02",
+   "prompt": "bake at 200 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_oven\",\"arguments\":{\"temperature\":200}}],\"suppressed_calls\":[],\"reasoning\":\"'bake' -> set_oven temperature 200; '200 degrees' -> temperature 200.\",\"confidence\":0.9683,\"prefill_tps\":152.7,\"decode_tps\":144.9,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.633951691,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_oven",
+      "arguments": {
+       "temperature": 200
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'bake' -> set_oven temperature 200; '200 degrees' -> temperature 200.",
+    "confidence": 0.9683,
+    "prefill_tps": 152.7,
+    "decode_tps": 144.9,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-03",
+   "prompt": "bring the oven up to 160 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_oven\",\"arguments\":{\"temperature\":160}}],\"suppressed_calls\":[],\"reasoning\":\"'oven up to 160 degrees' -> temperature 160; set_oven tool.\",\"confidence\":1.0000,\"prefill_tps\":138.8,\"decode_tps\":130.2,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9871794830000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_oven",
+      "arguments": {
+       "temperature": 160
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'oven up to 160 degrees' -> temperature 160; set_oven tool.",
+    "confidence": 1.0,
+    "prefill_tps": 138.8,
+    "decode_tps": 130.2,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-04",
+   "prompt": "brew a fresh pot of coffee",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_coffee_maker\",\"arguments\":{\"action\":\"brew\"}}],\"suppressed_calls\":[],\"reasoning\":\"'brew' -> action 'brew'; 'fresh pot' -> cycle 'quick'\",\"confidence\":0.8422,\"prefill_tps\":154.0,\"decode_tps\":138.9,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.725202331,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_coffee_maker",
+      "arguments": {
+       "action": "brew"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'brew' -> action 'brew'; 'fresh pot' -> cycle 'quick'",
+    "confidence": 0.8422,
+    "prefill_tps": 154.0,
+    "decode_tps": 138.9,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-05",
+   "prompt": "start brewing another batch of coffee",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_coffee_maker\",\"arguments\":{\"action\":\"brew\"}}],\"suppressed_calls\":[],\"reasoning\":\"'brewing' -> action 'brew'; 'coffee' -> control_coffee_maker action 'brew'\",\"confidence\":0.9586,\"prefill_tps\":138.5,\"decode_tps\":130.5,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0616410299999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_coffee_maker",
+      "arguments": {
+       "action": "brew"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'brewing' -> action 'brew'; 'coffee' -> control_coffee_maker action 'brew'",
+    "confidence": 0.9586,
+    "prefill_tps": 138.5,
+    "decode_tps": 130.5,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-06",
+   "prompt": "stop the coffee maker",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_coffee_maker\",\"arguments\":{\"action\":\"stop\"}}],\"suppressed_calls\":[],\"reasoning\":\"'stop' -> action 'stop'\",\"confidence\":1.0000,\"prefill_tps\":153.5,\"decode_tps\":140.5,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.6097559939999986,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_coffee_maker",
+      "arguments": {
+       "action": "stop"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'stop' -> action 'stop'",
+    "confidence": 1.0,
+    "prefill_tps": 153.5,
+    "decode_tps": 140.5,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-07",
+   "prompt": "keep my coffee warm",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_coffee_maker\",\"arguments\":{\"action\":\"warm\"}}],\"suppressed_calls\":[],\"reasoning\":\"'warm' -> action 'warm'\",\"confidence\":0.9938,\"prefill_tps\":137.5,\"decode_tps\":122.6,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.917147966,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_coffee_maker",
+      "arguments": {
+       "action": "warm"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'warm' -> action 'warm'",
+    "confidence": 0.9938,
+    "prefill_tps": 137.5,
+    "decode_tps": 122.6,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-08",
+   "prompt": "run the dishwasher on the eco cycle",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_dishwasher\",\"arguments\":{\"cycle\":\"eco\"}}],\"suppressed_calls\":[],\"reasoning\":\"'eco cycle' -> cycle 'eco'. start_dishwasher tool.\",\"confidence\":0.9958,\"prefill_tps\":154.3,\"decode_tps\":140.9,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.670361841,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_dishwasher",
+      "arguments": {
+       "cycle": "eco"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'eco cycle' -> cycle 'eco'. start_dishwasher tool.",
+    "confidence": 0.9958,
+    "prefill_tps": 154.3,
+    "decode_tps": 140.9,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-09",
+   "prompt": "start a heavy dishwasher cycle",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_dishwasher\",\"arguments\":{\"cycle\":\"heavy\"}}],\"suppressed_calls\":[],\"reasoning\":\"'heavy' -> cycle 'heavy'. start_dishwasher tool.\",\"confidence\":1.0000,\"prefill_tps\":137.2,\"decode_tps\":123.9,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9785877790000015,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_dishwasher",
+      "arguments": {
+       "cycle": "heavy"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'heavy' -> cycle 'heavy'. start_dishwasher tool.",
+    "confidence": 1.0,
+    "prefill_tps": 137.2,
+    "decode_tps": 123.9,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-10",
+   "prompt": "run a quick cycle on the dishwasher",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_dishwasher\",\"arguments\":{\"cycle\":\"quick\"}}],\"suppressed_calls\":[],\"reasoning\":\"'quick cycle' -> cycle 'quick'. start_dishwasher tool.\",\"confidence\":1.0000,\"prefill_tps\":154.4,\"decode_tps\":140.6,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.6673938260000014,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_dishwasher",
+      "arguments": {
+       "cycle": "quick"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'quick cycle' -> cycle 'quick'. start_dishwasher tool.",
+    "confidence": 1.0,
+    "prefill_tps": 154.4,
+    "decode_tps": 140.6,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-11",
+   "prompt": "set a pasta timer for 10 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Pasta\",\"minutes\":10}}],\"suppressed_calls\":[],\"reasoning\":\"'pasta timer' -> label 'pasta', '10 minutes' -> minutes 10.\",\"confidence\":1.0000,\"prefill_tps\":136.4,\"decode_tps\":131.0,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0452418710000018,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Pasta",
+       "minutes": 10
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pasta timer' -> label 'pasta', '10 minutes' -> minutes 10.",
+    "confidence": 1.0,
+    "prefill_tps": 136.4,
+    "decode_tps": 131.0,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-12",
+   "prompt": "start a 90 minute timer for the brisket",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Brisket\",\"minutes\":90}}],\"suppressed_calls\":[],\"reasoning\":\"'90 minute timer' -> set_cooking_timer with label 'brisket' and minutes 90.\",\"confidence\":1.0000,\"prefill_tps\":154.5,\"decode_tps\":145.1,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.747069142000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Brisket",
+       "minutes": 90
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'90 minute timer' -> set_cooking_timer with label 'brisket' and minutes 90.",
+    "confidence": 1.0,
+    "prefill_tps": 154.5,
+    "decode_tps": 145.1,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-13",
+   "prompt": "give me a 5 minute timer for the eggs",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Eggs\",\"minutes\":5}}],\"suppressed_calls\":[],\"reasoning\":\"'give me a 5 minute timer for the eggs' -> set_cooking_timer with label 'eggs' and minutes 5.\",\"confidence\":1.0000,\"prefill_tps\":139.4,\"decode_tps\":128.8,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.134036942999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Eggs",
+       "minutes": 5
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'give me a 5 minute timer for the eggs' -> set_cooking_timer with label 'eggs' and minutes 5.",
+    "confidence": 1.0,
+    "prefill_tps": 139.4,
+    "decode_tps": 128.8,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-14",
+   "prompt": "the cookies need a 12 minute timer",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Cookies\",\"minutes\":12}}],\"suppressed_calls\":[],\"reasoning\":\"'12 minute timer' -> set_cooking_timer with label 'cookies' and minutes 12.\",\"confidence\":1.0000,\"prefill_tps\":154.1,\"decode_tps\":143.6,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.7368633319999986,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Cookies",
+       "minutes": 12
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'12 minute timer' -> set_cooking_timer with label 'cookies' and minutes 12.",
+    "confidence": 1.0,
+    "prefill_tps": 154.1,
+    "decode_tps": 143.6,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-15",
+   "prompt": "check the oven",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"get_appliance_status\",\"arguments\":{\"appliance\":\"oven\"}}],\"suppressed_calls\":[],\"reasoning\":\"'check the oven' -> get_appliance_status; 'oven' -> appliance 'oven'.\",\"confidence\":0.9930,\"prefill_tps\":134.3,\"decode_tps\":124.9,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0833777139999974,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "get_appliance_status",
+      "arguments": {
+       "appliance": "oven"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'check the oven' -> get_appliance_status; 'oven' -> appliance 'oven'.",
+    "confidence": 0.993,
+    "prefill_tps": 134.3,
+    "decode_tps": 124.9,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-16",
+   "prompt": "check on the dishwasher",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"get_appliance_status\",\"arguments\":{\"appliance\":\"dishwasher\"}}],\"suppressed_calls\":[],\"reasoning\":\"'check on the dishwasher' -> get_appliance_status; no appliance specified, default to 'oven'\",\"confidence\":0.9877,\"prefill_tps\":153.0,\"decode_tps\":134.7,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.763215743,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "get_appliance_status",
+      "arguments": {
+       "appliance": "dishwasher"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'check on the dishwasher' -> get_appliance_status; no appliance specified, default to 'oven'",
+    "confidence": 0.9877,
+    "prefill_tps": 153.0,
+    "decode_tps": 134.7,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-17",
+   "prompt": "check the coffee maker for me",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"get_appliance_status\",\"arguments\":{\"appliance\":\"coffee_maker\"}}],\"suppressed_calls\":[],\"reasoning\":\"'check the coffee maker' -> get_appliance_status; 'coffee maker' -> appliance 'coffee_maker'.\",\"confidence\":0.9983,\"prefill_tps\":137.6,\"decode_tps\":118.8,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.148509237999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "get_appliance_status",
+      "arguments": {
+       "appliance": "coffee_maker"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'check the coffee maker' -> get_appliance_status; 'coffee maker' -> appliance 'coffee_maker'.",
+    "confidence": 0.9983,
+    "prefill_tps": 137.6,
+    "decode_tps": 118.8,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-18",
+   "prompt": "heat up the oven for the garlic bread",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_oven\",\"arguments\":{\"temperature\":250}}],\"reasoning\":\"'heat up' -> set_oven; 'garlic bread' -> temperature 250 (default warm).\",\"confidence\":1.0000,\"prefill_tps\":154.6,\"decode_tps\":145.6,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[\"set_oven.temperature\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.7013800619999984,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_oven",
+      "arguments": {
+       "temperature": 250
+      }
+     }
+    ],
+    "reasoning": "'heat up' -> set_oven; 'garlic bread' -> temperature 250 (default warm).",
+    "confidence": 1.0,
+    "prefill_tps": 154.6,
+    "decode_tps": 145.6,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [
+      "set_oven.temperature"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-19",
+   "prompt": "set a cooking timer for the rice",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Rice\",\"minutes\":1}}],\"reasoning\":\"'rice' -> label 'rice'; no minutes given so default 1\",\"confidence\":1.0000,\"prefill_tps\":133.8,\"decode_tps\":125.4,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0302542779999975,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Rice",
+       "minutes": 1
+      }
+     }
+    ],
+    "reasoning": "'rice' -> label 'rice'; no minutes given so default 1",
+    "confidence": 1.0,
+    "prefill_tps": 133.8,
+    "decode_tps": 125.4,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-20",
+   "prompt": "start a timer for 25 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Oven\",\"minutes\":25}}],\"suppressed_calls\":[],\"reasoning\":\"'25 minutes' -> minutes 25; label not specified, use 'oven' as default.\",\"confidence\":1.0000,\"prefill_tps\":152.5,\"decode_tps\":137.7,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[\"set_cooking_timer.label\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.7275143349999986,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Oven",
+       "minutes": 25
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'25 minutes' -> minutes 25; label not specified, use 'oven' as default.",
+    "confidence": 1.0,
+    "prefill_tps": 152.5,
+    "decode_tps": 137.7,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [
+      "set_cooking_timer.label"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-21",
+   "prompt": "change the coffee maker setting",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_coffee_maker\",\"arguments\":{\"action\":\"brew\"}}],\"suppressed_calls\":[],\"reasoning\":\"'change the coffee maker setting' -> action 'brew' (default brew).\",\"confidence\":1.0000,\"prefill_tps\":136.1,\"decode_tps\":122.5,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0785879679999937,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_coffee_maker",
+      "arguments": {
+       "action": "brew"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'change the coffee maker setting' -> action 'brew' (default brew).",
+    "confidence": 1.0,
+    "prefill_tps": 136.1,
+    "decode_tps": 122.5,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-22",
+   "prompt": "defrost some chicken in the microwave",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_dishwasher\",\"arguments\":{\"cycle\":\"quick\"}}],\"suppressed_calls\":[],\"reasoning\":\"'defrost' -> start_dishwasher cycle 'quick'; 'chicken' -> label 'chicken'\",\"confidence\":0.5650,\"prefill_tps\":154.3,\"decode_tps\":141.1,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.758335019000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_dishwasher",
+      "arguments": {
+       "cycle": "quick"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'defrost' -> start_dishwasher cycle 'quick'; 'chicken' -> label 'chicken'",
+    "confidence": 0.565,
+    "prefill_tps": 154.3,
+    "decode_tps": 141.1,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-23",
+   "prompt": "boil the kettle for tea",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"control_coffee_maker\",\"arguments\":{\"action\":\"brew\"}},{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Tea\",\"minutes\":40}}],\"reasoning\":\"'boil' -> action 'brew'; 'tea' -> label 'tea'; no temperature given so defaults to 50\",\"confidence\":0.2126,\"prefill_tps\":135.6,\"decode_tps\":113.2,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[\"set_cooking_timer.minutes\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.354799051999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "control_coffee_maker",
+      "arguments": {
+       "action": "brew"
+      }
+     },
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Tea",
+       "minutes": 40
+      }
+     }
+    ],
+    "reasoning": "'boil' -> action 'brew'; 'tea' -> label 'tea'; no temperature given so defaults to 50",
+    "confidence": 0.2126,
+    "prefill_tps": 135.6,
+    "decode_tps": 113.2,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [
+      "set_cooking_timer.minutes"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-24",
+   "prompt": "turn the fridge down to 3 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'turn the fridge down to 3 degrees' -> set_oven temperature 35.\",\"confidence\":1.0000,\"prefill_tps\":154.5,\"decode_tps\":141.8,\"peak_ram_mb\":81.2}\n",
+   "stderr": "",
+   "wall_s": 2.643781433000001,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'turn the fridge down to 3 degrees' -> set_oven temperature 35.",
+    "confidence": 1.0,
+    "prefill_tps": 154.5,
+    "decode_tps": 141.8,
+    "peak_ram_mb": 81.2
+   }
+  },
+  {
+   "id": "kitchen_appliance-25",
+   "prompt": "don't preheat the oven to 220 degrees tonight",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_oven\",\"arguments\":{\"temperature\":220}}],\"reasoning\":\"Prohibited action: set_oven. Alternative: set_oven with temperature 220 from '220 degrees'.\",\"confidence\":1.0000,\"prefill_tps\":135.7,\"decode_tps\":123.1,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 3.1468863499999955,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_oven",
+      "arguments": {
+       "temperature": 220
+      }
+     }
+    ],
+    "reasoning": "Prohibited action: set_oven. Alternative: set_oven with temperature 220 from '220 degrees'.",
+    "confidence": 1.0,
+    "prefill_tps": 135.7,
+    "decode_tps": 123.1,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-26",
+   "prompt": "do not run the dishwasher on heavy today",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"start_dishwasher\",\"arguments\":{\"cycle\":\"heavy\"}}],\"reasoning\":\"Prohibition on start_dishwasher with cycle 'heavy'. Alternative request start_dishwasher with cycle 'heavy'.\",\"confidence\":0.9969,\"prefill_tps\":154.3,\"decode_tps\":140.4,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 2.761962820000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "start_dishwasher",
+      "arguments": {
+       "cycle": "heavy"
+      }
+     }
+    ],
+    "reasoning": "Prohibition on start_dishwasher with cycle 'heavy'. Alternative request start_dishwasher with cycle 'heavy'.",
+    "confidence": 0.9969,
+    "prefill_tps": 154.3,
+    "decode_tps": 140.4,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-27",
+   "prompt": "never brew coffee this late at night",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_dishwasher\",\"arguments\":{\"cycle\":\"quick\"}}],\"suppressed_calls\":[],\"reasoning\":\"Prohibition on brew. Alternative: start dishwasher with cycle 'quick' from 'quick'.\",\"confidence\":1.0000,\"prefill_tps\":134.3,\"decode_tps\":120.6,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 3.141322878000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_dishwasher",
+      "arguments": {
+       "cycle": "quick"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Prohibition on brew. Alternative: start dishwasher with cycle 'quick' from 'quick'.",
+    "confidence": 1.0,
+    "prefill_tps": 134.3,
+    "decode_tps": 120.6,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-28",
+   "prompt": "get the oven up to 300 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'oven up to 300 degrees' -> temperature 300. set_oven tool.\",\"confidence\":1.0000,\"prefill_tps\":151.5,\"decode_tps\":140.7,\"peak_ram_mb\":81.2}\n",
+   "stderr": "",
+   "wall_s": 2.6369699319999995,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'oven up to 300 degrees' -> temperature 300. set_oven tool.",
+    "confidence": 1.0,
+    "prefill_tps": 151.5,
+    "decode_tps": 140.7,
+    "peak_ram_mb": 81.2
+   }
+  },
+  {
+   "id": "kitchen_appliance-29",
+   "prompt": "set a stew timer for 500 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Stew\",\"minutes\":5}}],\"suppressed_calls\":[],\"reasoning\":\"'stew timer' -> label 'stew', '500 minutes' -> minutes 500.\",\"confidence\":1.0000,\"prefill_tps\":135.3,\"decode_tps\":119.9,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[\"set_cooking_timer.minutes\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1659730510000017,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Stew",
+       "minutes": 5
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'stew timer' -> label 'stew', '500 minutes' -> minutes 500.",
+    "confidence": 1.0,
+    "prefill_tps": 135.3,
+    "decode_tps": 119.9,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [
+      "set_cooking_timer.minutes"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-30",
+   "prompt": "set the oven to 180 degrees and start a pizza timer for 15 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_oven\",\"arguments\":{\"temperature\":180}},{\"name\":\"set_cooking_timer\",\"arguments\":{\"label\":\"Pizza\",\"minutes\":15}}],\"suppressed_calls\":[],\"reasoning\":\"'180 degrees' -> temperature 180; 'pizza timer for 15 minutes' -> label 'pizza', minutes 15\",\"confidence\":1.0000,\"prefill_tps\":149.4,\"decode_tps\":148.0,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9372406150000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_oven",
+      "arguments": {
+       "temperature": 180
+      }
+     },
+     {
+      "name": "set_cooking_timer",
+      "arguments": {
+       "label": "Pizza",
+       "minutes": 15
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'180 degrees' -> temperature 180; 'pizza timer for 15 minutes' -> label 'pizza', minutes 15",
+    "confidence": 1.0,
+    "prefill_tps": 149.4,
+    "decode_tps": 148.0,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "kitchen_appliance-31",
+   "prompt": "brew coffee and run the dishwasher on quick",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_coffee_maker\",\"arguments\":{\"action\":\"brew\"}},{\"name\":\"start_dishwasher\",\"arguments\":{\"cycle\":\"quick\"}}],\"suppressed_calls\":[],\"reasoning\":\"'brew' -> action 'brew'; 'quick' -> cycle 'quick'\",\"confidence\":0.9898,\"prefill_tps\":137.9,\"decode_tps\":114.1,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2558463939999953,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_coffee_maker",
+      "arguments": {
+       "action": "brew"
+      }
+     },
+     {
+      "name": "start_dishwasher",
+      "arguments": {
+       "cycle": "quick"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'brew' -> action 'brew'; 'quick' -> cycle 'quick'",
+    "confidence": 0.9898,
+    "prefill_tps": 137.9,
+    "decode_tps": 114.1,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "K0": {
+  "desk act correct_action": 17,
+  "desk act needless_refusal": 5,
+  "desk act wrong_call": 16,
+  "desk noact correct_nonaction": 80,
+  "desk noact wrong_call": 49,
+  "home act correct_action": 41,
+  "home act needless_refusal": 10,
+  "home act wrong_call": 6,
+  "home noact correct_nonaction": 65,
+  "home noact wrong_call": 36
+ },
+ "K1": {
+  "desk act correct_action": 15,
+  "desk act needless_refusal": 6,
+  "desk act wrong_call": 17,
+  "desk noact correct_nonaction": 58,
+  "desk noact wrong_call": 71,
+  "home act correct_action": 31,
+  "home act needless_refusal": 22,
+  "home act wrong_call": 4,
+  "home noact correct_nonaction": 69,
+  "home noact wrong_call": 32
+ }
+}

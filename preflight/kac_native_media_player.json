@@ -1,0 +1,1159 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "name": "play_music",
+    "description": "Play music by song name, artist, album, or genre. Copy the request word for word. Use the playback tools for pausing, resuming, or skipping.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "query": {
+       "type": "string",
+       "description": "The song, artist, album, or genre, copied word for word.",
+       "minLength": 1,
+       "maxLength": 80
+      }
+     },
+     "required": [
+      "query"
+     ]
+    }
+   },
+   {
+    "name": "pause_media",
+    "description": "Pause the currently playing media. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   },
+   {
+    "name": "resume_media",
+    "description": "Resume the paused media playback. Starting something new is play_music. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   },
+   {
+    "name": "skip_track",
+    "description": "Skip to the next track. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   },
+   {
+    "name": "set_volume",
+    "description": "Set the speaker volume. This never pauses or skips anything.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "level": {
+       "type": "integer",
+       "description": "Volume level from 0 to 100.",
+       "minimum": 0,
+       "maximum": 100
+      }
+     },
+     "required": [
+      "level"
+     ]
+    }
+   }
+  ],
+  "system": "date: 2026-09-22 Tue 09:58; Map each explicit supported media action to exactly one declared call; never duplicate an action. Do not guess missing values. Unsupported, invalid, ambiguous, and negated requests return no call.",
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpz2qp8xj7/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpz2qp8xj7/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpv11x1pn4/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpv11x1pn4/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "media_player-00",
+   "prompt": "play Purple Rain by Prince",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Purple Rain by Prince\"}}],\"suppressed_calls\":[],\"reasoning\":\"query 'Purple Rain by Prince' -> query 'Purple Rain by Prince' for play_music\",\"confidence\":1.0000,\"prefill_tps\":166.4,\"decode_tps\":148.3,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.362128287,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Purple Rain by Prince"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "query 'Purple Rain by Prince' -> query 'Purple Rain by Prince' for play_music",
+    "confidence": 1.0,
+    "prefill_tps": 166.4,
+    "decode_tps": 148.3,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-01",
+   "prompt": "put on some smooth jazz",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"smooth jazz\"}}],\"suppressed_calls\":[],\"reasoning\":\"'smooth jazz' is a genre query -> play_music with query 'smooth jazz'\",\"confidence\":1.0000,\"prefill_tps\":152.2,\"decode_tps\":136.7,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.023411567,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "smooth jazz"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'smooth jazz' is a genre query -> play_music with query 'smooth jazz'",
+    "confidence": 1.0,
+    "prefill_tps": 152.2,
+    "decode_tps": 136.7,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-02",
+   "prompt": "queue up Blinding Lights by The Weeknd",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Blinding Lights by The Weeknd\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Blinding Lights by The Weeknd' is a song by artist. play_music with query 'Blinding Lights by The Weeknd'.\",\"confidence\":1.0000,\"prefill_tps\":157.2,\"decode_tps\":150.9,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.3355279180000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Blinding Lights by The Weeknd"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Blinding Lights by The Weeknd' is a song by artist. play_music with query 'Blinding Lights by The Weeknd'.",
+    "confidence": 1.0,
+    "prefill_tps": 157.2,
+    "decode_tps": 150.9,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-03",
+   "prompt": "play some lofi beats",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"lofi beats\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lofi beats' is a genre query for play_music.\",\"confidence\":0.9905,\"prefill_tps\":152.3,\"decode_tps\":137.9,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.288045309,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "lofi beats"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lofi beats' is a genre query for play_music.",
+    "confidence": 0.9905,
+    "prefill_tps": 152.3,
+    "decode_tps": 137.9,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-04",
+   "prompt": "put on Hotel California by the Eagles",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Hotel California by the Eagles\"}}],\"suppressed_calls\":[],\"reasoning\":\"'put on' -> play_music; 'Hotel California by the Eagles' -> query 'Hotel California by the Eagles'\",\"confidence\":1.0000,\"prefill_tps\":166.6,\"decode_tps\":154.6,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.2578928530000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Hotel California by the Eagles"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'put on' -> play_music; 'Hotel California by the Eagles' -> query 'Hotel California by the Eagles'",
+    "confidence": 1.0,
+    "prefill_tps": 166.6,
+    "decode_tps": 154.6,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-05",
+   "prompt": "play Bohemian Rhapsody by Queen",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Bohemian Rhapsody by Queen\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Bohemian Rhapsody by Queen' -> query 'Bohemian Rhapsody by Queen' for play_music.\",\"confidence\":1.0000,\"prefill_tps\":153.2,\"decode_tps\":136.0,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.529762057000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Bohemian Rhapsody by Queen"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Bohemian Rhapsody by Queen' -> query 'Bohemian Rhapsody by Queen' for play_music.",
+    "confidence": 1.0,
+    "prefill_tps": 153.2,
+    "decode_tps": 136.0,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-06",
+   "prompt": "set the volume to 40",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":40}}],\"suppressed_calls\":[],\"reasoning\":\"'40' -> level 40; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":162.8,\"decode_tps\":148.8,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.0275120310000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 40
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'40' -> level 40; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 162.8,
+    "decode_tps": 148.8,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-07",
+   "prompt": "turn the volume up to 85",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":85}}],\"suppressed_calls\":[],\"reasoning\":\"'volume up to 85' -> level 85; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":151.8,\"decode_tps\":137.4,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.2949950460000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 85
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume up to 85' -> level 85; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 151.8,
+    "decode_tps": 137.4,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-08",
+   "prompt": "lower the volume to 15",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":15}}],\"suppressed_calls\":[],\"reasoning\":\"'lower the volume to 15' -> level 15. set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":164.4,\"decode_tps\":151.3,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.0982660400000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 15
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lower the volume to 15' -> level 15. set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 164.4,
+    "decode_tps": 151.3,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-09",
+   "prompt": "set the speaker volume to 60",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":60}}],\"suppressed_calls\":[],\"reasoning\":\"'60' -> level 60; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":150.1,\"decode_tps\":118.4,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.289914608,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 60
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'60' -> level 60; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 150.1,
+    "decode_tps": 118.4,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-10",
+   "prompt": "crank the volume up to 95",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":95}}],\"suppressed_calls\":[],\"reasoning\":\"'volume up to 95' -> level 95; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":166.1,\"decode_tps\":153.0,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.092640899000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 95
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume up to 95' -> level 95; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 166.1,
+    "decode_tps": 153.0,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-11",
+   "prompt": "pause the music",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'pause the music' -> pause_media. No arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":149.3,\"decode_tps\":134.8,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.227807999999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pause the music' -> pause_media. No arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 149.3,
+    "decode_tps": 134.8,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-12",
+   "prompt": "hit pause on the song",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"resume_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'hit pause on the song' means resume playback -> resume_media with empty arguments.\",\"confidence\":1.0000,\"prefill_tps\":164.5,\"decode_tps\":153.9,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.0672902540000013,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "resume_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'hit pause on the song' means resume playback -> resume_media with empty arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 164.5,
+    "decode_tps": 153.9,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-13",
+   "prompt": "pause playback while I take this call",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'pause playback' -> pause_media; no arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":152.3,\"decode_tps\":134.1,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.237688374000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pause playback' -> pause_media; no arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 152.3,
+    "decode_tps": 134.1,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-14",
+   "prompt": "resume the music",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"resume_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'resume the music' -> resume_media. No arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":163.3,\"decode_tps\":154.0,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.012858242,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "resume_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'resume the music' -> resume_media. No arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 163.3,
+    "decode_tps": 154.0,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-15",
+   "prompt": "resume playback where it left off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"resume_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'resume playback' -> resume_media; no arguments needed\",\"confidence\":1.0000,\"prefill_tps\":150.3,\"decode_tps\":131.2,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.2768072209999985,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "resume_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'resume playback' -> resume_media; no arguments needed",
+    "confidence": 1.0,
+    "prefill_tps": 150.3,
+    "decode_tps": 131.2,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-16",
+   "prompt": "skip this song",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"skip_track\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'skip this song' -> skip_track. No arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":163.5,\"decode_tps\":154.6,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.0306667649999994,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "skip_track",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'skip this song' -> skip_track. No arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 163.5,
+    "decode_tps": 154.6,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-17",
+   "prompt": "skip to the next track",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"skip_track\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'skip to the next track' -> skip_track with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":148.3,\"decode_tps\":133.7,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.2625241359999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "skip_track",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'skip to the next track' -> skip_track with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 148.3,
+    "decode_tps": 133.7,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-18",
+   "prompt": "turn up the volume a little",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":100}}],\"reasoning\":\"'turn up the volume' -> set_volume; 'a little' -> level 100.\",\"confidence\":1.0000,\"prefill_tps\":164.7,\"decode_tps\":152.4,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.082004154,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 100
+      }
+     }
+    ],
+    "reasoning": "'turn up the volume' -> set_volume; 'a little' -> level 100.",
+    "confidence": 1.0,
+    "prefill_tps": 164.7,
+    "decode_tps": 152.4,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-19",
+   "prompt": "play something for me",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"something\"}}],\"suppressed_calls\":[],\"reasoning\":\"'play something' -> play_music; query 'something' from user's words.\",\"confidence\":0.9866,\"prefill_tps\":148.8,\"decode_tps\":131.3,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.3575277660000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "something"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'play something' -> play_music; query 'something' from user's words.",
+    "confidence": 0.9866,
+    "prefill_tps": 148.8,
+    "decode_tps": 131.3,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-20",
+   "prompt": "turn the music down a bit",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":50}}],\"reasoning\":\"'down a bit' means lower volume -> set_volume level lower.\",\"confidence\":0.1618,\"prefill_tps\":165.6,\"decode_tps\":127.7,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.103090162000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 50
+      }
+     }
+    ],
+    "reasoning": "'down a bit' means lower volume -> set_volume level lower.",
+    "confidence": 0.1618,
+    "prefill_tps": 165.6,
+    "decode_tps": 127.7,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-21",
+   "prompt": "play whatever you think I'd like",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"skip_track\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'play whatever you think I'd like' means skip to next track -> skip_track with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":152.6,\"decode_tps\":135.2,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.323531687999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "skip_track",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'play whatever you think I'd like' means skip to next track -> skip_track with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 152.6,
+    "decode_tps": 135.2,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-22",
+   "prompt": "put on the podcast Hard Fork",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Hard Fork\"}}],\"suppressed_calls\":[],\"reasoning\":\"'put on the podcast' -> play_music with query 'Hard Fork'\",\"confidence\":1.0000,\"prefill_tps\":166.5,\"decode_tps\":152.9,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.1068817630000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Hard Fork"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'put on the podcast' -> play_music with query 'Hard Fork'",
+    "confidence": 1.0,
+    "prefill_tps": 166.5,
+    "decode_tps": 152.9,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-23",
+   "prompt": "tune into the radio station Jazz FM",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Jazz FM\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Jazz FM' is the query for play_music.\",\"confidence\":1.0000,\"prefill_tps\":151.2,\"decode_tps\":131.7,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.3080837269999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Jazz FM"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Jazz FM' is the query for play_music.",
+    "confidence": 1.0,
+    "prefill_tps": 151.2,
+    "decode_tps": 131.7,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-24",
+   "prompt": "add this song to my favorites playlist",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"favorites playlist\"}}],\"suppressed_calls\":[],\"reasoning\":\"'add this song to my favorites playlist' -> play_music with query 'favorites playlist'\",\"confidence\":1.0000,\"prefill_tps\":166.3,\"decode_tps\":152.9,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.1312726689999977,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "favorites playlist"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'add this song to my favorites playlist' -> play_music with query 'favorites playlist'",
+    "confidence": 1.0,
+    "prefill_tps": 166.3,
+    "decode_tps": 152.9,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-25",
+   "prompt": "don't pause the song, I love this part",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"reasoning\":\"'don't pause the song' -> pause_media.\",\"confidence\":1.0000,\"prefill_tps\":152.2,\"decode_tps\":132.8,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 2.282734725000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "reasoning": "'don't pause the song' -> pause_media.",
+    "confidence": 1.0,
+    "prefill_tps": 152.2,
+    "decode_tps": 132.8,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "media_player-26",
+   "prompt": "do not turn the volume up to 90",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":90}}],\"reasoning\":\"'do not turn the volume up to 90' -> set_volume level 90.\",\"confidence\":1.0000,\"prefill_tps\":165.9,\"decode_tps\":153.5,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 2.078033349000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 90
+      }
+     }
+    ],
+    "reasoning": "'do not turn the volume up to 90' -> set_volume level 90.",
+    "confidence": 1.0,
+    "prefill_tps": 165.9,
+    "decode_tps": 153.5,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "media_player-27",
+   "prompt": "never play Baby Shark on this speaker again",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"Prohibited action: play_music with query 'Baby Shark'. Alternative request: pause_media.\",\"confidence\":1.0000,\"prefill_tps\":153.4,\"decode_tps\":135.8,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 2.3314463469999964,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Prohibited action: play_music with query 'Baby Shark'. Alternative request: pause_media.",
+    "confidence": 1.0,
+    "prefill_tps": 153.4,
+    "decode_tps": 135.8,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "media_player-28",
+   "prompt": "set the volume to 140",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":14}}],\"suppressed_calls\":[],\"reasoning\":\"'140' -> level 140. set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":164.6,\"decode_tps\":153.9,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.035113436000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 14
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'140' -> level 140. set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 164.6,
+    "decode_tps": 153.9,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-29",
+   "prompt": "turn the volume up to 500",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":5}}],\"suppressed_calls\":[],\"reasoning\":\"'volume up to 500' -> level 500. set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":151.6,\"decode_tps\":136.3,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.2534336249999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 5
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume up to 500' -> level 500. set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 151.6,
+    "decode_tps": 136.3,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-30",
+   "prompt": "set the volume to 55 and play Clair de Lune by Debussy",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":55}},{\"name\":\"play_music\",\"arguments\":{\"query\":\"Clair de Lune by Debussy\"}}],\"suppressed_calls\":[],\"reasoning\":\"'volume to 55' -> level 55; 'play Clair de Lune by Debussy' -> query 'Clair de Lune by Debussy'\",\"confidence\":1.0000,\"prefill_tps\":164.1,\"decode_tps\":155.1,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.4484892600000023,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 55
+      }
+     },
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Clair de Lune by Debussy"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume to 55' -> level 55; 'play Clair de Lune by Debussy' -> query 'Clair de Lune by Debussy'",
+    "confidence": 1.0,
+    "prefill_tps": 164.1,
+    "decode_tps": 155.1,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-31",
+   "prompt": "pause the music and turn the volume down to 20",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}},{\"name\":\"set_volume\",\"arguments\":{\"level\":20}}],\"suppressed_calls\":[],\"reasoning\":\"'pause the music' -> pause_media; 'volume down to 20' -> level 20\",\"confidence\":1.0000,\"prefill_tps\":152.7,\"decode_tps\":139.0,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.3600815920000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     },
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 20
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pause the music' -> pause_media; 'volume down to 20' -> level 20",
+    "confidence": 1.0,
+    "prefill_tps": 152.7,
+    "decode_tps": 139.0,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

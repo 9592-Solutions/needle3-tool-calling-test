@@ -1,0 +1,1505 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_power",
+     "description": "Turn a room's lights on or off (switch on, switch off, turn out).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "power": {
+        "type": "string",
+        "enum": [
+         "on",
+         "off"
+        ],
+        "description": "on or off"
+       }
+      },
+      "required": [
+       "power"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_brightness",
+     "description": "Set a room's lights to a brightness percentage from 1 to 100 (full or max is 100, half is 50).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "brightness": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100,
+        "description": "brightness in percent, a whole number from 1 to 100"
+       }
+      },
+      "required": [
+       "brightness"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_color",
+     "description": "Change the colour of a room's lights.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "color": {
+        "type": "string",
+        "enum": [
+         "red",
+         "orange",
+         "yellow",
+         "green",
+         "blue",
+         "purple",
+         "pink",
+         "white",
+         "warm white",
+         "cool white"
+        ],
+        "description": "the colour: red, orange, yellow, green, blue, purple (violet), pink, white, warm white (warm, soft white), cool white (cool, daylight)"
+       }
+      },
+      "required": [
+       "color"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "control_vacuum",
+     "description": "Start the robot vacuum (roomba, hoover) cleaning, stop it, or send it back to its dock.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "action": {
+        "type": "string",
+        "enum": [
+         "start",
+         "stop",
+         "dock"
+        ],
+        "description": "start cleaning, stop, or dock (go back to its base)"
+       },
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "the room to clean when starting: living room, kitchen, bedroom, bathroom, hallway, study, whole house, or this room",
+        "default": "whole house"
+       }
+      },
+      "required": [
+       "action"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_plug_power",
+     "description": "Switch the smart plug (socket, outlet, wemo) on or off.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "power": {
+        "type": "string",
+        "enum": [
+         "on",
+         "off"
+        ],
+        "description": "on or off"
+       }
+      },
+      "required": [
+       "power"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_heating",
+     "description": "Set the heating (thermostat) to a temperature in degrees Celsius.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "temperature": {
+        "type": "integer",
+        "minimum": 10,
+        "maximum": 30,
+        "description": "degrees Celsius, 10 to 30"
+       }
+      },
+      "required": [
+       "temperature"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_blinds",
+     "description": "Open or close the blinds (shades, curtains).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "position": {
+        "type": "string",
+        "description": "open or closed",
+        "enum": [
+         "open",
+         "closed"
+        ]
+       }
+      },
+      "required": [
+       "position"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "lock_front_door",
+     "description": "Lock or unlock the front door.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "state": {
+        "type": "string",
+        "description": "locked or unlocked",
+        "enum": [
+         "locked",
+         "unlocked"
+        ]
+       }
+      },
+      "required": [
+       "state"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "start_coffee",
+     "description": "Make a coffee with the coffee machine.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "drink": {
+        "type": "string",
+        "description": "espresso, americano or cappuccino",
+        "enum": [
+         "espresso",
+         "americano",
+         "cappuccino"
+        ]
+       }
+      },
+      "required": [
+       "drink"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_fan_speed",
+     "description": "Set the ceiling fan speed.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "speed": {
+        "type": "string",
+        "description": "off, low, medium or high",
+        "enum": [
+         "off",
+         "low",
+         "medium",
+         "high"
+        ]
+       }
+      },
+      "required": [
+       "speed"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_tv_power",
+     "description": "Switch the TV (television) on or off.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "power": {
+        "type": "string",
+        "description": "on or off",
+        "enum": [
+         "on",
+         "off"
+        ]
+       }
+      },
+      "required": [
+       "power"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_speaker_volume",
+     "description": "Set the speaker volume in percent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "volume": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "percent, 0 to 100"
+       }
+      },
+      "required": [
+       "volume"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "arm_alarm_system",
+     "description": "Arm or disarm the home security system.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "mode": {
+        "type": "string",
+        "description": "armed or disarmed",
+        "enum": [
+         "armed",
+         "disarmed"
+        ]
+       }
+      },
+      "required": [
+       "mode"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "open_garage",
+     "description": "Open or close the garage door.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "position": {
+        "type": "string",
+        "description": "open or closed",
+        "enum": [
+         "open",
+         "closed"
+        ]
+       }
+      },
+      "required": [
+       "position"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "water_garden",
+     "description": "Water the garden for a number of minutes.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "minutes": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 60,
+        "description": "minutes, 1 to 60"
+       }
+      },
+      "required": [
+       "minutes"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "start_dishwasher",
+     "description": "Start the dishwasher on a programme.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "programme": {
+        "type": "string",
+        "description": "eco, normal or intensive",
+        "enum": [
+         "eco",
+         "normal",
+         "intensive"
+        ]
+       }
+      },
+      "required": [
+       "programme"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_oven",
+     "description": "Heat the oven to a temperature in degrees Celsius.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "temperature": {
+        "type": "integer",
+        "minimum": 50,
+        "maximum": 250,
+        "description": "degrees Celsius, 50 to 250"
+       }
+      },
+      "required": [
+       "temperature"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "feed_pet",
+     "description": "Dispense food from the pet feeder.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "portions": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5,
+        "description": "number of portions, 1 to 5"
+       }
+      },
+      "required": [
+       "portions"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_humidifier",
+     "description": "Switch the humidifier on or off.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "power": {
+        "type": "string",
+        "description": "on or off",
+        "enum": [
+         "on",
+         "off"
+        ]
+       }
+      },
+      "required": [
+       "power"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "play_doorbell_camera",
+     "description": "Show the doorbell camera on a screen.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "screen": {
+        "type": "string",
+        "description": "tv or phone",
+        "enum": [
+         "tv",
+         "phone"
+        ]
+       }
+      },
+      "required": [
+       "screen"
+      ]
+     }
+    }
+   }
+  ],
+  "system": null,
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpr9ppjj9l/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmppvb3c0s_/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp0wklhbv3/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpfyex9zvq/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "pf-h-5394",
+   "prompt": "turn socket off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"room\":\"study\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn socket off' -> set_lights_power with room 'socket' and power 'off'.\",\"confidence\":0.9233,\"prefill_tps\":79.1,\"decode_tps\":99.9,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.033982027,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "room": "study",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn socket off' -> set_lights_power with room 'socket' and power 'off'.",
+    "confidence": 0.9233,
+    "prefill_tps": 79.1,
+    "decode_tps": 99.9,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-3659",
+   "prompt": "company coming over turn on the vacuum cleaner right now",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_vacuum\",\"arguments\":{\"action\":\"start\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn on the vacuum cleaner' -> action 'start', room omitted (defaults to home).\",\"confidence\":0.9918,\"prefill_tps\":78.5,\"decode_tps\":100.6,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.308842089,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_vacuum",
+      "arguments": {
+       "action": "start"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn on the vacuum cleaner' -> action 'start', room omitted (defaults to home).",
+    "confidence": 0.9918,
+    "prefill_tps": 78.5,
+    "decode_tps": 100.6,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-5807",
+   "prompt": "you can also add additional switches to your home to control more devices",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_color\",\"arguments\":{\"color\":\"blue\",\"room\":\"living room\"}}],\"reasoning\":\"'add additional switches to your home' -> set_lights_color with color 'blue' (default blue) and brightness 100 (maximum).\",\"confidence\":0.6355,\"prefill_tps\":81.4,\"decode_tps\":96.8,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.634578755,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_color",
+      "arguments": {
+       "color": "blue",
+       "room": "living room"
+      }
+     }
+    ],
+    "reasoning": "'add additional switches to your home' -> set_lights_color with color 'blue' (default blue) and brightness 100 (maximum).",
+    "confidence": 0.6355,
+    "prefill_tps": 81.4,
+    "decode_tps": 96.8,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-2945",
+   "prompt": "turn off the lamp in the living room",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'turn off the lamp' -> set_lights_brightness with brightness 0 (off). 'living room' -> room 'living room'.\",\"confidence\":0.9310,\"prefill_tps\":78.8,\"decode_tps\":97.8,\"peak_ram_mb\":80.4}\n",
+   "stderr": "",
+   "wall_s": 16.241829511,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'turn off the lamp' -> set_lights_brightness with brightness 0 (off). 'living room' -> room 'living room'.",
+    "confidence": 0.931,
+    "prefill_tps": 78.8,
+    "decode_tps": 97.8,
+    "peak_ram_mb": 80.4
+   }
+  },
+  {
+   "id": "pf-h-1612",
+   "prompt": "time constrain",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_color\",\"arguments\":{\"color\":\"warm white\"}}],\"reasoning\":\"'time constrain' means set lights to warm color. set_lights_color with color 'warm white' from 'constrain'.\",\"confidence\":0.9208,\"prefill_tps\":79.0,\"decode_tps\":104.3,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.917629558999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_color",
+      "arguments": {
+       "color": "warm white"
+      }
+     }
+    ],
+    "reasoning": "'time constrain' means set lights to warm color. set_lights_color with color 'warm white' from 'constrain'.",
+    "confidence": 0.9208,
+    "prefill_tps": 79.0,
+    "decode_tps": 104.3,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-2037",
+   "prompt": "change lights to red",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_color\",\"arguments\":{\"color\":\"red\"}}],\"suppressed_calls\":[],\"reasoning\":\"'red' -> color 'red'; no brightness specified so defaults to 100%\",\"confidence\":0.8576,\"prefill_tps\":78.1,\"decode_tps\":94.5,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.182435255999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_color",
+      "arguments": {
+       "color": "red"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'red' -> color 'red'; no brightness specified so defaults to 100%",
+    "confidence": 0.8576,
+    "prefill_tps": 78.1,
+    "decode_tps": 94.5,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-2349",
+   "prompt": "replace the current light colors in the house with dark ones",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_color\",\"arguments\":{\"color\":\"red\"}}],\"reasoning\":\"'replace the current light colors in the house with dark ones' -> set_lights_color color 'dark'.\",\"confidence\":0.9617,\"prefill_tps\":80.4,\"decode_tps\":93.8,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.556690156999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_color",
+      "arguments": {
+       "color": "red"
+      }
+     }
+    ],
+    "reasoning": "'replace the current light colors in the house with dark ones' -> set_lights_color color 'dark'.",
+    "confidence": 0.9617,
+    "prefill_tps": 80.4,
+    "decode_tps": 93.8,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-2750",
+   "prompt": "i need one cup of coffee",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"start_coffee\",\"arguments\":{\"drink\":\"cappuccino\"}}],\"reasoning\":\"'one cup' -> drink 'coffee'\",\"confidence\":0.9941,\"prefill_tps\":79.0,\"decode_tps\":102.5,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.853247969000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "start_coffee",
+      "arguments": {
+       "drink": "cappuccino"
+      }
+     }
+    ],
+    "reasoning": "'one cup' -> drink 'coffee'",
+    "confidence": 0.9941,
+    "prefill_tps": 79.0,
+    "decode_tps": 102.5,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-3042",
+   "prompt": "turn light off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'turn light off' -> set_lights_brightness with brightness 0 (off).\",\"confidence\":0.5057,\"prefill_tps\":78.6,\"decode_tps\":102.8,\"peak_ram_mb\":81.5}\n",
+   "stderr": "",
+   "wall_s": 15.782435641999996,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'turn light off' -> set_lights_brightness with brightness 0 (off).",
+    "confidence": 0.5057,
+    "prefill_tps": 78.6,
+    "decode_tps": 102.8,
+    "peak_ram_mb": 81.5
+   }
+  },
+  {
+   "id": "pf-h-4245",
+   "prompt": "please make me a coffee using the coffee machine",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"start_coffee\",\"arguments\":{\"drink\":\"cappuccino\"}}],\"reasoning\":\"'coffee' -> start_coffee with drink 'coffee' from query.\",\"confidence\":0.9875,\"prefill_tps\":78.4,\"decode_tps\":97.2,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.156022889,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "start_coffee",
+      "arguments": {
+       "drink": "cappuccino"
+      }
+     }
+    ],
+    "reasoning": "'coffee' -> start_coffee with drink 'coffee' from query.",
+    "confidence": 0.9875,
+    "prefill_tps": 78.4,
+    "decode_tps": 97.2,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-3501",
+   "prompt": "turn house lights off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'off' -> brightness 0; 'house' -> room 'house'; set_lights_brightness tool\",\"confidence\":1.0000,\"prefill_tps\":82.4,\"decode_tps\":102.8,\"peak_ram_mb\":81.7}\n",
+   "stderr": "",
+   "wall_s": 15.268746579999998,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'off' -> brightness 0; 'house' -> room 'house'; set_lights_brightness tool",
+    "confidence": 1.0,
+    "prefill_tps": 82.4,
+    "decode_tps": 102.8,
+    "peak_ram_mb": 81.7
+   }
+  },
+  {
+   "id": "pf-h-865",
+   "prompt": "robot do the whole house now",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_vacuum\",\"arguments\":{\"action\":\"start\",\"room\":\"whole house\"}}],\"suppressed_calls\":[],\"reasoning\":\"'robot' -> action 'start'; 'whole house' -> room 'whole house'; control_vacuum is the only vacuum tool.\",\"confidence\":1.0000,\"prefill_tps\":79.1,\"decode_tps\":97.6,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.077204492999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_vacuum",
+      "arguments": {
+       "action": "start",
+       "room": "whole house"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'robot' -> action 'start'; 'whole house' -> room 'whole house'; control_vacuum is the only vacuum tool.",
+    "confidence": 1.0,
+    "prefill_tps": 79.1,
+    "decode_tps": 97.6,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-3430",
+   "prompt": "can you please put the vacuum on",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_vacuum\",\"arguments\":{\"action\":\"start\"}}],\"suppressed_calls\":[],\"reasoning\":\"'put the vacuum on' -> action 'start'. No room specified, so omit optional room parameter.\",\"confidence\":1.0000,\"prefill_tps\":79.1,\"decode_tps\":104.5,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.883333632000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_vacuum",
+      "arguments": {
+       "action": "start"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'put the vacuum on' -> action 'start'. No room specified, so omit optional room parameter.",
+    "confidence": 1.0,
+    "prefill_tps": 79.1,
+    "decode_tps": 104.5,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-3324",
+   "prompt": "please turn off the wemo plug",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_plug_power\",\"arguments\":{\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn off the wemo plug' -> set_plug_power with power 'off'.\",\"confidence\":1.0000,\"prefill_tps\":77.0,\"decode_tps\":82.7,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.534232254999992,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_plug_power",
+      "arguments": {
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn off the wemo plug' -> set_plug_power with power 'off'.",
+    "confidence": 1.0,
+    "prefill_tps": 77.0,
+    "decode_tps": 82.7,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-3733",
+   "prompt": "olly make the lights blue please",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_color\",\"arguments\":{\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"'blue' -> color 'blue'. 'lights' -> set_lights_color.\",\"confidence\":0.9796,\"prefill_tps\":82.5,\"decode_tps\":100.0,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.278745733000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_color",
+      "arguments": {
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'blue' -> color 'blue'. 'lights' -> set_lights_color.",
+    "confidence": 0.9796,
+    "prefill_tps": 82.5,
+    "decode_tps": 100.0,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-209",
+   "prompt": "please make the lights reading friendly",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_color\",\"arguments\":{\"color\":\"red\"}}],\"reasoning\":\"'reading friendly' -> color 'red'; set_lights_color with color 'red'.\",\"confidence\":0.9346,\"prefill_tps\":77.7,\"decode_tps\":99.3,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.083337647999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_color",
+      "arguments": {
+       "color": "red"
+      }
+     }
+    ],
+    "reasoning": "'reading friendly' -> color 'red'; set_lights_color with color 'red'.",
+    "confidence": 0.9346,
+    "prefill_tps": 77.7,
+    "decode_tps": 99.3,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-664",
+   "prompt": "turn the lights down",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_brightness\",\"arguments\":{\"room\":\"bedroom\",\"brightness\":100}}],\"reasoning\":\"'down' -> brightness 100. 'lights' -> room 'bedroom'.\",\"confidence\":0.9667,\"prefill_tps\":79.2,\"decode_tps\":104.9,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[\"set_lights_brightness.brightness\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.783560594999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_brightness",
+      "arguments": {
+       "room": "bedroom",
+       "brightness": 100
+      }
+     }
+    ],
+    "reasoning": "'down' -> brightness 100. 'lights' -> room 'bedroom'.",
+    "confidence": 0.9667,
+    "prefill_tps": 79.2,
+    "decode_tps": 104.9,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [
+      "set_lights_brightness.brightness"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-2836",
+   "prompt": "switch up the color of the lights in the house",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_color\",\"arguments\":{\"color\":\"blue\"}}],\"reasoning\":\"'switch up the color' -> set_lights_color color 'blue'. No room specified, so default to living room.\",\"confidence\":0.8379,\"prefill_tps\":78.8,\"decode_tps\":102.7,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.502948087000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_color",
+      "arguments": {
+       "color": "blue"
+      }
+     }
+    ],
+    "reasoning": "'switch up the color' -> set_lights_color color 'blue'. No room specified, so default to living room.",
+    "confidence": 0.8379,
+    "prefill_tps": 78.8,
+    "decode_tps": 102.7,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-2310",
+   "prompt": "turn the lights down to seven",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_brightness\",\"arguments\":{\"room\":\"living room\",\"brightness\":70}}],\"suppressed_calls\":[],\"reasoning\":\"'turn the lights down to seven' -> set_lights_brightness with brightness 70.\",\"confidence\":0.5793,\"prefill_tps\":82.4,\"decode_tps\":103.1,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[\"set_lights_brightness.brightness\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.325548554000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_brightness",
+      "arguments": {
+       "room": "living room",
+       "brightness": 70
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn the lights down to seven' -> set_lights_brightness with brightness 70.",
+    "confidence": 0.5793,
+    "prefill_tps": 82.4,
+    "decode_tps": 103.1,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [
+      "set_lights_brightness.brightness"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-5803",
+   "prompt": "more light",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_brightness\",\"arguments\":{\"brightness\":50}}],\"reasoning\":\"'more light' means lower brightness -> set_lights_brightness with brightness=50 (more than 50).\",\"confidence\":0.5817,\"prefill_tps\":78.3,\"decode_tps\":104.7,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[\"set_lights_brightness.brightness\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.940142269000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_brightness",
+      "arguments": {
+       "brightness": 50
+      }
+     }
+    ],
+    "reasoning": "'more light' means lower brightness -> set_lights_brightness with brightness=50 (more than 50).",
+    "confidence": 0.5817,
+    "prefill_tps": 78.3,
+    "decode_tps": 104.7,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [
+      "set_lights_brightness.brightness"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-1502",
+   "prompt": "turn the left light off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'turn the left light off' -> set_lights_brightness with brightness 0 (off).\",\"confidence\":0.5541,\"prefill_tps\":78.3,\"decode_tps\":99.9,\"peak_ram_mb\":80.0}\n",
+   "stderr": "",
+   "wall_s": 15.905569702999998,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'turn the left light off' -> set_lights_brightness with brightness 0 (off).",
+    "confidence": 0.5541,
+    "prefill_tps": 78.3,
+    "decode_tps": 99.9,
+    "peak_ram_mb": 80.0
+   }
+  },
+  {
+   "id": "pf-h-1853",
+   "prompt": "i would love a less bright up room",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_brightness\",\"arguments\":{\"room\":\"bedroom\",\"brightness\":100}}],\"reasoning\":\"'less bright up' -> brightness 100. 'room' -> room 'bedroom'.\",\"confidence\":0.9167,\"prefill_tps\":78.5,\"decode_tps\":100.6,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[\"set_lights_brightness.brightness\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.081089552999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_brightness",
+      "arguments": {
+       "room": "bedroom",
+       "brightness": 100
+      }
+     }
+    ],
+    "reasoning": "'less bright up' -> brightness 100. 'room' -> room 'bedroom'.",
+    "confidence": 0.9167,
+    "prefill_tps": 78.5,
+    "decode_tps": 100.6,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [
+      "set_lights_brightness.brightness"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-1152",
+   "prompt": "use vacuum cleaner in the hall",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_vacuum\",\"arguments\":{\"action\":\"start\",\"room\":\"hallway\"}}],\"suppressed_calls\":[],\"reasoning\":\"'vacuum cleaner' -> action 'start', 'hall' -> room 'hall'.\",\"confidence\":1.0000,\"prefill_tps\":82.8,\"decode_tps\":104.6,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.328175035000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_vacuum",
+      "arguments": {
+       "action": "start",
+       "room": "hallway"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'vacuum cleaner' -> action 'start', 'hall' -> room 'hall'.",
+    "confidence": 1.0,
+    "prefill_tps": 82.8,
+    "decode_tps": 104.6,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-4556",
+   "prompt": "please make some coffee for me",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"start_coffee\",\"arguments\":{\"drink\":\"cappuccino\"}}],\"reasoning\":\"'make some coffee' -> start_coffee with drink 'coffee'\",\"confidence\":0.9987,\"prefill_tps\":78.7,\"decode_tps\":103.5,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.842055787000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "start_coffee",
+      "arguments": {
+       "drink": "cappuccino"
+      }
+     }
+    ],
+    "reasoning": "'make some coffee' -> start_coffee with drink 'coffee'",
+    "confidence": 0.9987,
+    "prefill_tps": 78.7,
+    "decode_tps": 103.5,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-x1",
+   "prompt": "set the heating to 21 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_heating\",\"arguments\":{\"temperature\":21}}],\"suppressed_calls\":[],\"reasoning\":\"'21 degrees' -> temperature 21; set_heating tool.\",\"confidence\":1.0000,\"prefill_tps\":78.8,\"decode_tps\":101.3,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.89702912899999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_heating",
+      "arguments": {
+       "temperature": 21
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'21 degrees' -> temperature 21; set_heating tool.",
+    "confidence": 1.0,
+    "prefill_tps": 78.8,
+    "decode_tps": 101.3,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-x2",
+   "prompt": "close the blinds",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_blinds\",\"arguments\":{\"position\":\"closed\"}}],\"suppressed_calls\":[],\"reasoning\":\"'close the blinds' -> position 'close'.\",\"confidence\":0.5711,\"prefill_tps\":78.7,\"decode_tps\":101.1,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.804436471999992,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_blinds",
+      "arguments": {
+       "position": "closed"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'close the blinds' -> position 'close'.",
+    "confidence": 0.5711,
+    "prefill_tps": 78.7,
+    "decode_tps": 101.1,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-x3",
+   "prompt": "show the doorbell camera on the tv",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_doorbell_camera\",\"arguments\":{\"screen\":\"tv\"}}],\"suppressed_calls\":[],\"reasoning\":\"'show the doorbell camera on the tv' -> screen 'tv'\",\"confidence\":0.9953,\"prefill_tps\":82.9,\"decode_tps\":96.7,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.29244931000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_doorbell_camera",
+      "arguments": {
+       "screen": "tv"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'show the doorbell camera on the tv' -> screen 'tv'",
+    "confidence": 0.9953,
+    "prefill_tps": 82.9,
+    "decode_tps": 96.7,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-x4",
+   "prompt": "feed the cat two portions",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"feed_pet\",\"arguments\":{\"portions\":2}}],\"suppressed_calls\":[],\"reasoning\":\"'feed the cat' -> feed_pet; 'two portions' -> portions 2\",\"confidence\":1.0000,\"prefill_tps\":79.6,\"decode_tps\":105.5,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 15.765373806,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "feed_pet",
+      "arguments": {
+       "portions": 2
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'feed the cat' -> feed_pet; 'two portions' -> portions 2",
+    "confidence": 1.0,
+    "prefill_tps": 79.6,
+    "decode_tps": 105.5,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-h-x5",
+   "prompt": "turn off the kitchen lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'turn off' -> brightness 0; 'kitchen' -> room 'kitchen'; set_lights_brightness tool\",\"confidence\":0.8729,\"prefill_tps\":79.0,\"decode_tps\":99.4,\"peak_ram_mb\":81.7}\n",
+   "stderr": "",
+   "wall_s": 15.97983185199999,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'turn off' -> brightness 0; 'kitchen' -> room 'kitchen'; set_lights_brightness tool",
+    "confidence": 0.8729,
+    "prefill_tps": 79.0,
+    "decode_tps": 99.4,
+    "peak_ram_mb": 81.7
+   }
+  }
+ ]
+}

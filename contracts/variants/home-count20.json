@@ -1,0 +1,523 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "set_lights_power",
+      "description": "Turn a room's lights on or off (switch on, switch off, turn out).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "enum": [
+              "living room",
+              "kitchen",
+              "bedroom",
+              "bathroom",
+              "hallway",
+              "study",
+              "whole house",
+              "this room"
+            ],
+            "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+            "default": "this room"
+          },
+          "power": {
+            "type": "string",
+            "enum": [
+              "on",
+              "off"
+            ],
+            "description": "on or off"
+          }
+        },
+        "required": [
+          "power"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_lights_brightness",
+      "description": "Set a room's lights to a brightness percentage from 1 to 100 (full or max is 100, half is 50).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "enum": [
+              "living room",
+              "kitchen",
+              "bedroom",
+              "bathroom",
+              "hallway",
+              "study",
+              "whole house",
+              "this room"
+            ],
+            "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+            "default": "this room"
+          },
+          "brightness": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "brightness in percent, a whole number from 1 to 100"
+          }
+        },
+        "required": [
+          "brightness"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_lights_color",
+      "description": "Change the colour of a room's lights.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "enum": [
+              "living room",
+              "kitchen",
+              "bedroom",
+              "bathroom",
+              "hallway",
+              "study",
+              "whole house",
+              "this room"
+            ],
+            "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+            "default": "this room"
+          },
+          "color": {
+            "type": "string",
+            "enum": [
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "blue",
+              "purple",
+              "pink",
+              "white",
+              "warm white",
+              "cool white"
+            ],
+            "description": "the colour: red, orange, yellow, green, blue, purple (violet), pink, white, warm white (warm, soft white), cool white (cool, daylight)"
+          }
+        },
+        "required": [
+          "color"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "control_vacuum",
+      "description": "Start the robot vacuum (roomba, hoover) cleaning, stop it, or send it back to its dock.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "start",
+              "stop",
+              "dock"
+            ],
+            "description": "start cleaning, stop, or dock (go back to its base)"
+          },
+          "room": {
+            "type": "string",
+            "enum": [
+              "living room",
+              "kitchen",
+              "bedroom",
+              "bathroom",
+              "hallway",
+              "study",
+              "whole house",
+              "this room"
+            ],
+            "description": "the room to clean when starting: living room, kitchen, bedroom, bathroom, hallway, study, whole house, or this room",
+            "default": "whole house"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_plug_power",
+      "description": "Switch the smart plug (socket, outlet, wemo) on or off.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "power": {
+            "type": "string",
+            "enum": [
+              "on",
+              "off"
+            ],
+            "description": "on or off"
+          }
+        },
+        "required": [
+          "power"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_heating",
+      "description": "Set the heating (thermostat) to a temperature in degrees Celsius.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "temperature": {
+            "type": "integer",
+            "minimum": 10,
+            "maximum": 30,
+            "description": "degrees Celsius, 10 to 30"
+          }
+        },
+        "required": [
+          "temperature"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_blinds",
+      "description": "Open or close the blinds (shades, curtains).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "string",
+            "description": "open or closed",
+            "enum": [
+              "open",
+              "closed"
+            ]
+          }
+        },
+        "required": [
+          "position"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "lock_front_door",
+      "description": "Lock or unlock the front door.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "description": "locked or unlocked",
+            "enum": [
+              "locked",
+              "unlocked"
+            ]
+          }
+        },
+        "required": [
+          "state"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "start_coffee",
+      "description": "Make a coffee with the coffee machine.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "drink": {
+            "type": "string",
+            "description": "espresso, americano or cappuccino",
+            "enum": [
+              "espresso",
+              "americano",
+              "cappuccino"
+            ]
+          }
+        },
+        "required": [
+          "drink"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_fan_speed",
+      "description": "Set the ceiling fan speed.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "speed": {
+            "type": "string",
+            "description": "off, low, medium or high",
+            "enum": [
+              "off",
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        },
+        "required": [
+          "speed"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_tv_power",
+      "description": "Switch the TV (television) on or off.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "power": {
+            "type": "string",
+            "description": "on or off",
+            "enum": [
+              "on",
+              "off"
+            ]
+          }
+        },
+        "required": [
+          "power"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_speaker_volume",
+      "description": "Set the speaker volume in percent.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "volume": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "percent, 0 to 100"
+          }
+        },
+        "required": [
+          "volume"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "arm_alarm_system",
+      "description": "Arm or disarm the home security system.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "description": "armed or disarmed",
+            "enum": [
+              "armed",
+              "disarmed"
+            ]
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "open_garage",
+      "description": "Open or close the garage door.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "string",
+            "description": "open or closed",
+            "enum": [
+              "open",
+              "closed"
+            ]
+          }
+        },
+        "required": [
+          "position"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "water_garden",
+      "description": "Water the garden for a number of minutes.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "minutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 60,
+            "description": "minutes, 1 to 60"
+          }
+        },
+        "required": [
+          "minutes"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "start_dishwasher",
+      "description": "Start the dishwasher on a programme.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "programme": {
+            "type": "string",
+            "description": "eco, normal or intensive",
+            "enum": [
+              "eco",
+              "normal",
+              "intensive"
+            ]
+          }
+        },
+        "required": [
+          "programme"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_oven",
+      "description": "Heat the oven to a temperature in degrees Celsius.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "temperature": {
+            "type": "integer",
+            "minimum": 50,
+            "maximum": 250,
+            "description": "degrees Celsius, 50 to 250"
+          }
+        },
+        "required": [
+          "temperature"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "feed_pet",
+      "description": "Dispense food from the pet feeder.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "portions": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "number of portions, 1 to 5"
+          }
+        },
+        "required": [
+          "portions"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_humidifier",
+      "description": "Switch the humidifier on or off.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "power": {
+            "type": "string",
+            "description": "on or off",
+            "enum": [
+              "on",
+              "off"
+            ]
+          }
+        },
+        "required": [
+          "power"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "play_doorbell_camera",
+      "description": "Show the doorbell camera on a screen.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "screen": {
+            "type": "string",
+            "description": "tv or phone",
+            "enum": [
+              "tv",
+              "phone"
+            ]
+          }
+        },
+        "required": [
+          "screen"
+        ]
+      }
+    }
+  }
+]

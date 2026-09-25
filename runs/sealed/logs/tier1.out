@@ -1,0 +1,6 @@
+<python>/lib/python3.13/asyncio/events.py:89: DeprecationError: 2026-06-18: The `modal.billing.workspace_billing_report()` function is deprecated. Use the `workspace.billing.report()` method on the `modal.Workspace` object instead.
+  self._context.run(self._callback, *self._args)
+<python>/lib/python3.13/asyncio/events.py:89: DeprecationError: 2026-06-18: The `modal.billing.workspace_billing_report()` function is deprecated. Use the `workspace.billing.report()` method on the `modal.Workspace` object instead.
+  self._context.run(self._callback, *self._args)
+<python>/lib/python3.13/asyncio/events.py:89: DeprecationError: 2026-06-18: The `modal.billing.workspace_billing_report()` function is deprecated. Use the `workspace.billing.report()` method on the `modal.Workspace` object instead.
+  self._context.run(self._callback, *self._args)

@@ -1,0 +1,1014 @@
+{
+ "K0|S0|desk|correct_action": {
+  "n": 55,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "K0|S0|desk|correct_nonaction": {
+  "n": 96,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-815f5d0667",
+   "n3-5c0d853baf"
+  ]
+ },
+ "K0|S0|desk|needless_refusal": {
+  "n": 42,
+  "ids": [
+   "n3-64a073f01e",
+   "n3-a4b6a1e827",
+   "n3-7e134e762e"
+  ]
+ },
+ "K0|S0|desk|wrong_call": {
+  "n": 107,
+  "ids": [
+   "n3-5914808891",
+   "n3-7fc71e8b78",
+   "n3-dd83b5e2e8"
+  ]
+ },
+ "K0|S0|home|correct_action": {
+  "n": 65,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-a7fd20e693"
+  ]
+ },
+ "K0|S0|home|correct_nonaction": {
+  "n": 110,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "K0|S0|home|needless_refusal": {
+  "n": 64,
+  "ids": [
+   "n3-920e72fa8f",
+   "n3-f6d57880a1",
+   "n3-61ad69de38"
+  ]
+ },
+ "K0|S0|home|wrong_call": {
+  "n": 61,
+  "ids": [
+   "n3-677ca19725",
+   "n3-6d35fdda9c",
+   "n3-6ff8e556c9"
+  ]
+ },
+ "K0|S1|desk|correct_action": {
+  "n": 66,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "K0|S1|desk|correct_nonaction": {
+  "n": 73,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-815f5d0667",
+   "n3-6d7384c612"
+  ]
+ },
+ "K0|S1|desk|needless_refusal": {
+  "n": 23,
+  "ids": [
+   "n3-a4b6a1e827",
+   "n3-7e134e762e",
+   "n3-e76706aaaa"
+  ]
+ },
+ "K0|S1|desk|wrong_call": {
+  "n": 138,
+  "ids": [
+   "n3-5914808891",
+   "n3-5c0d853baf",
+   "n3-7fc71e8b78"
+  ]
+ },
+ "K0|S1|home|correct_action": {
+  "n": 103,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-59348ddbd7"
+  ]
+ },
+ "K0|S1|home|correct_nonaction": {
+  "n": 91,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "K0|S1|home|needless_refusal": {
+  "n": 28,
+  "ids": [
+   "n3-920e72fa8f",
+   "n3-f6d57880a1",
+   "n3-51925e927d"
+  ]
+ },
+ "K0|S1|home|wrong_call": {
+  "n": 78,
+  "ids": [
+   "n3-677ca19725",
+   "n3-6d35fdda9c",
+   "n3-a7fd20e693"
+  ]
+ },
+ "K1-firstbank-none|S0|desk|correct_action": {
+  "n": 21,
+  "ids": [
+   "n3-f92bd8664c",
+   "n3-e470a2901a",
+   "n3-6aa561fc74"
+  ]
+ },
+ "K1-firstbank-none|S0|desk|correct_nonaction": {
+  "n": 118,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5914808891",
+   "n3-815f5d0667"
+  ]
+ },
+ "K1-firstbank-none|S0|desk|needless_refusal": {
+  "n": 108,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "K1-firstbank-none|S0|desk|wrong_call": {
+  "n": 53,
+  "ids": [
+   "n3-7fc71e8b78",
+   "n3-45d242e420",
+   "n3-9cc5764e08"
+  ]
+ },
+ "K1-firstbank-none|S0|home|correct_action": {
+  "n": 34,
+  "ids": [
+   "n3-4d379bb7b1",
+   "n3-890bf5be5c",
+   "n3-a0e4cb8678"
+  ]
+ },
+ "K1-firstbank-none|S0|home|correct_nonaction": {
+  "n": 137,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6d35fdda9c",
+   "n3-41baa5d642"
+  ]
+ },
+ "K1-firstbank-none|S0|home|needless_refusal": {
+  "n": 100,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-a7fd20e693"
+  ]
+ },
+ "K1-firstbank-none|S0|home|wrong_call": {
+  "n": 29,
+  "ids": [
+   "n3-677ca19725",
+   "n3-8123d15074",
+   "n3-9d8700fbd8"
+  ]
+ },
+ "K1-firstbank-none|S1|desk|correct_action": {
+  "n": 25,
+  "ids": [
+   "n3-f92bd8664c",
+   "n3-e470a2901a",
+   "n3-6aa561fc74"
+  ]
+ },
+ "K1-firstbank-none|S1|desk|correct_nonaction": {
+  "n": 117,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5914808891",
+   "n3-815f5d0667"
+  ]
+ },
+ "K1-firstbank-none|S1|desk|needless_refusal": {
+  "n": 101,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "K1-firstbank-none|S1|desk|wrong_call": {
+  "n": 57,
+  "ids": [
+   "n3-7fc71e8b78",
+   "n3-45d242e420",
+   "n3-9cc5764e08"
+  ]
+ },
+ "K1-firstbank-none|S1|home|correct_action": {
+  "n": 34,
+  "ids": [
+   "n3-4d379bb7b1",
+   "n3-890bf5be5c",
+   "n3-a0e4cb8678"
+  ]
+ },
+ "K1-firstbank-none|S1|home|correct_nonaction": {
+  "n": 137,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6d35fdda9c",
+   "n3-41baa5d642"
+  ]
+ },
+ "K1-firstbank-none|S1|home|needless_refusal": {
+  "n": 100,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-a7fd20e693"
+  ]
+ },
+ "K1-firstbank-none|S1|home|wrong_call": {
+  "n": 29,
+  "ids": [
+   "n3-677ca19725",
+   "n3-8123d15074",
+   "n3-9d8700fbd8"
+  ]
+ },
+ "K1-firstbank|S0|desk|correct_action": {
+  "n": 44,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f92bd8664c"
+  ]
+ },
+ "K1-firstbank|S0|desk|correct_nonaction": {
+  "n": 91,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5c0d853baf",
+   "n3-6d7384c612"
+  ]
+ },
+ "K1-firstbank|S0|desk|needless_refusal": {
+  "n": 40,
+  "ids": [
+   "n3-64a073f01e",
+   "n3-e7cb30b7e6",
+   "n3-932a54b8a2"
+  ]
+ },
+ "K1-firstbank|S0|desk|wrong_call": {
+  "n": 125,
+  "ids": [
+   "n3-5914808891",
+   "n3-815f5d0667",
+   "n3-7fc71e8b78"
+  ]
+ },
+ "K1-firstbank|S0|home|correct_action": {
+  "n": 68,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-a7fd20e693"
+  ]
+ },
+ "K1-firstbank|S0|home|correct_nonaction": {
+  "n": 104,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "K1-firstbank|S0|home|needless_refusal": {
+  "n": 60,
+  "ids": [
+   "n3-920e72fa8f",
+   "n3-753700e65b",
+   "n3-accb9af07e"
+  ]
+ },
+ "K1-firstbank|S0|home|wrong_call": {
+  "n": 68,
+  "ids": [
+   "n3-677ca19725",
+   "n3-6d35fdda9c",
+   "n3-6ff8e556c9"
+  ]
+ },
+ "K1-firstbank|S1|desk|correct_action": {
+  "n": 54,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f92bd8664c"
+  ]
+ },
+ "K1-firstbank|S1|desk|correct_nonaction": {
+  "n": 82,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-6d7384c612",
+   "n3-67054bf89b"
+  ]
+ },
+ "K1-firstbank|S1|desk|needless_refusal": {
+  "n": 26,
+  "ids": [
+   "n3-e7cb30b7e6",
+   "n3-daed111382",
+   "n3-a4b6a1e827"
+  ]
+ },
+ "K1-firstbank|S1|desk|wrong_call": {
+  "n": 138,
+  "ids": [
+   "n3-5914808891",
+   "n3-815f5d0667",
+   "n3-5c0d853baf"
+  ]
+ },
+ "K1-firstbank|S1|home|correct_action": {
+  "n": 69,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-a7fd20e693"
+  ]
+ },
+ "K1-firstbank|S1|home|correct_nonaction": {
+  "n": 104,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "K1-firstbank|S1|home|needless_refusal": {
+  "n": 60,
+  "ids": [
+   "n3-920e72fa8f",
+   "n3-753700e65b",
+   "n3-accb9af07e"
+  ]
+ },
+ "K1-firstbank|S1|home|wrong_call": {
+  "n": 67,
+  "ids": [
+   "n3-677ca19725",
+   "n3-6d35fdda9c",
+   "n3-6ff8e556c9"
+  ]
+ },
+ "K1|S0|desk|correct_action": {
+  "n": 35,
+  "ids": [
+   "n3-4cc02c82ee",
+   "n3-f92bd8664c",
+   "n3-e7cb30b7e6"
+  ]
+ },
+ "K1|S0|desk|correct_nonaction": {
+  "n": 92,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5c0d853baf",
+   "n3-6d7384c612"
+  ]
+ },
+ "K1|S0|desk|needless_refusal": {
+  "n": 50,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-df4102f629",
+   "n3-64a073f01e"
+  ]
+ },
+ "K1|S0|desk|wrong_call": {
+  "n": 123,
+  "ids": [
+   "n3-5914808891",
+   "n3-815f5d0667",
+   "n3-7fc71e8b78"
+  ]
+ },
+ "K1|S0|home|correct_action": {
+  "n": 63,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-59348ddbd7"
+  ]
+ },
+ "K1|S0|home|correct_nonaction": {
+  "n": 111,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "K1|S0|home|needless_refusal": {
+  "n": 77,
+  "ids": [
+   "n3-a7fd20e693",
+   "n3-920e72fa8f",
+   "n3-f6d57880a1"
+  ]
+ },
+ "K1|S0|home|wrong_call": {
+  "n": 49,
+  "ids": [
+   "n3-677ca19725",
+   "n3-6d35fdda9c",
+   "n3-6ff8e556c9"
+  ]
+ },
+ "K1|S1|desk|correct_action": {
+  "n": 53,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f92bd8664c"
+  ]
+ },
+ "K1|S1|desk|correct_nonaction": {
+  "n": 62,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-6d7384c612",
+   "n3-67054bf89b"
+  ]
+ },
+ "K1|S1|desk|needless_refusal": {
+  "n": 17,
+  "ids": [
+   "n3-8e6da48d03",
+   "n3-c043877fce",
+   "n3-ac6efd8c7f"
+  ]
+ },
+ "K1|S1|desk|wrong_call": {
+  "n": 168,
+  "ids": [
+   "n3-5914808891",
+   "n3-815f5d0667",
+   "n3-5c0d853baf"
+  ]
+ },
+ "K1|S1|home|correct_action": {
+  "n": 76,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-59348ddbd7"
+  ]
+ },
+ "K1|S1|home|correct_nonaction": {
+  "n": 102,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "K1|S1|home|needless_refusal": {
+  "n": 58,
+  "ids": [
+   "n3-a7fd20e693",
+   "n3-920e72fa8f",
+   "n3-f6d57880a1"
+  ]
+ },
+ "K1|S1|home|wrong_call": {
+  "n": 64,
+  "ids": [
+   "n3-677ca19725",
+   "n3-6d35fdda9c",
+   "n3-bdea1bb477"
+  ]
+ },
+ "always-decline|S0|desk|correct_nonaction": {
+  "n": 150,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5914808891",
+   "n3-815f5d0667"
+  ]
+ },
+ "always-decline|S0|desk|needless_refusal": {
+  "n": 150,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "always-decline|S0|home|correct_nonaction": {
+  "n": 150,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6d35fdda9c",
+   "n3-41baa5d642"
+  ]
+ },
+ "always-decline|S0|home|needless_refusal": {
+  "n": 150,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "always-decline|S1|desk|correct_nonaction": {
+  "n": 150,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5914808891",
+   "n3-815f5d0667"
+  ]
+ },
+ "always-decline|S1|desk|needless_refusal": {
+  "n": 150,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "always-decline|S1|home|correct_nonaction": {
+  "n": 150,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6d35fdda9c",
+   "n3-41baa5d642"
+  ]
+ },
+ "always-decline|S1|home|needless_refusal": {
+  "n": 150,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "hassil|S1|home|correct_action": {
+  "n": 21,
+  "ids": [
+   "n3-d04563d41a",
+   "n3-05607cc4e0",
+   "n3-a0e4cb8678"
+  ]
+ },
+ "hassil|S1|home|correct_nonaction": {
+  "n": 150,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6d35fdda9c",
+   "n3-41baa5d642"
+  ]
+ },
+ "hassil|S1|home|needless_refusal": {
+  "n": 129,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "llm-a|S0|desk|correct_action": {
+  "n": 128,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "llm-a|S0|desk|correct_nonaction": {
+  "n": 87,
+  "ids": [
+   "n3-5914808891",
+   "n3-5c0d853baf",
+   "n3-45d242e420"
+  ]
+ },
+ "llm-a|S0|desk|needless_refusal": {
+  "n": 5,
+  "ids": [
+   "n3-d69b23b84d",
+   "n3-6464e8cc20",
+   "n3-b4f910be49"
+  ]
+ },
+ "llm-a|S0|desk|wrong_call": {
+  "n": 80,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-815f5d0667",
+   "n3-7fc71e8b78"
+  ]
+ },
+ "llm-a|S0|home|correct_action": {
+  "n": 125,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "llm-a|S0|home|correct_nonaction": {
+  "n": 101,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6ff8e556c9",
+   "n3-bdea1bb477"
+  ]
+ },
+ "llm-a|S0|home|needless_refusal": {
+  "n": 3,
+  "ids": [
+   "n3-51925e927d",
+   "n3-f7210d6829",
+   "n3-7110c4589b"
+  ]
+ },
+ "llm-a|S0|home|wrong_call": {
+  "n": 71,
+  "ids": [
+   "n3-6d35fdda9c",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "llm-a|S1|desk|correct_action": {
+  "n": 136,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "llm-a|S1|desk|correct_nonaction": {
+  "n": 91,
+  "ids": [
+   "n3-5914808891",
+   "n3-5c0d853baf",
+   "n3-45d242e420"
+  ]
+ },
+ "llm-a|S1|desk|needless_refusal": {
+  "n": 4,
+  "ids": [
+   "n3-6464e8cc20",
+   "n3-29d3ac1024",
+   "n3-cf3e7055d0"
+  ]
+ },
+ "llm-a|S1|desk|wrong_call": {
+  "n": 69,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-815f5d0667",
+   "n3-7fc71e8b78"
+  ]
+ },
+ "llm-a|S1|home|correct_action": {
+  "n": 140,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "llm-a|S1|home|correct_nonaction": {
+  "n": 98,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6ff8e556c9",
+   "n3-bdea1bb477"
+  ]
+ },
+ "llm-a|S1|home|needless_refusal": {
+  "n": 1,
+  "ids": [
+   "n3-7110c4589b"
+  ]
+ },
+ "llm-a|S1|home|wrong_call": {
+  "n": 61,
+  "ids": [
+   "n3-6d35fdda9c",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "llm-named|S0|desk|correct_action": {
+  "n": 122,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "llm-named|S0|desk|correct_nonaction": {
+  "n": 63,
+  "ids": [
+   "n3-5914808891",
+   "n3-5c0d853baf",
+   "n3-45d242e420"
+  ]
+ },
+ "llm-named|S0|desk|needless_refusal": {
+  "n": 2,
+  "ids": [
+   "n3-6464e8cc20",
+   "n3-3ef88eaad4"
+  ]
+ },
+ "llm-named|S0|desk|wrong_call": {
+  "n": 113,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-815f5d0667",
+   "n3-7fc71e8b78"
+  ]
+ },
+ "llm-named|S0|home|correct_action": {
+  "n": 145,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "llm-named|S0|home|correct_nonaction": {
+  "n": 91,
+  "ids": [
+   "n3-41baa5d642",
+   "n3-bdea1bb477",
+   "n3-b77f03d6f0"
+  ]
+ },
+ "llm-named|S0|home|needless_refusal": {
+  "n": 2,
+  "ids": [
+   "n3-faf5a5fe1e",
+   "n3-d59019e535"
+  ]
+ },
+ "llm-named|S0|home|wrong_call": {
+  "n": 62,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-6d35fdda9c",
+   "n3-22c9468fc9"
+  ]
+ },
+ "llm-named|S1|desk|correct_action": {
+  "n": 121,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-f9486acbd6"
+  ]
+ },
+ "llm-named|S1|desk|correct_nonaction": {
+  "n": 67,
+  "ids": [
+   "n3-5c0d853baf",
+   "n3-45d242e420",
+   "n3-6d7384c612"
+  ]
+ },
+ "llm-named|S1|desk|needless_refusal": {
+  "n": 3,
+  "ids": [
+   "n3-6464e8cc20",
+   "n3-b36ec44ba4",
+   "n3-3ef88eaad4"
+  ]
+ },
+ "llm-named|S1|desk|wrong_call": {
+  "n": 109,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5914808891",
+   "n3-815f5d0667"
+  ]
+ },
+ "llm-named|S1|home|correct_action": {
+  "n": 129,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "llm-named|S1|home|correct_nonaction": {
+  "n": 106,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-bdea1bb477"
+  ]
+ },
+ "llm-named|S1|home|needless_refusal": {
+  "n": 10,
+  "ids": [
+   "n3-accb9af07e",
+   "n3-798cd087ac",
+   "n3-4e94fcb211"
+  ]
+ },
+ "llm-named|S1|home|wrong_call": {
+  "n": 55,
+  "ids": [
+   "n3-6d35fdda9c",
+   "n3-22c9468fc9",
+   "n3-6ff8e556c9"
+  ]
+ },
+ "needle|S0|desk|correct_action": {
+  "n": 30,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-dd83b5e2e8"
+  ]
+ },
+ "needle|S0|desk|correct_nonaction": {
+  "n": 121,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5914808891",
+   "n3-5c0d853baf"
+  ]
+ },
+ "needle|S0|desk|needless_refusal": {
+  "n": 90,
+  "ids": [
+   "n3-f9486acbd6",
+   "n3-64a073f01e",
+   "n3-e7cb30b7e6"
+  ]
+ },
+ "needle|S0|desk|technical_failure": {
+  "n": 27,
+  "ids": [
+   "n3-815f5d0667",
+   "n3-9cc5764e08",
+   "n3-62a873306c"
+  ]
+ },
+ "needle|S0|desk|wrong_call": {
+  "n": 32,
+  "ids": [
+   "n3-9548bac38c",
+   "n3-80d17e3751",
+   "n3-d69b23b84d"
+  ]
+ },
+ "needle|S0|home|correct_action": {
+  "n": 95,
+  "ids": [
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c",
+   "n3-a7fd20e693"
+  ]
+ },
+ "needle|S0|home|correct_nonaction": {
+  "n": 81,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "needle|S0|home|needless_refusal": {
+  "n": 16,
+  "ids": [
+   "n3-1086efbecd",
+   "n3-51925e927d",
+   "n3-0dafabf94b"
+  ]
+ },
+ "needle|S0|home|technical_failure": {
+  "n": 22,
+  "ids": [
+   "n3-6d35fdda9c",
+   "n3-59348ddbd7",
+   "n3-05607cc4e0"
+  ]
+ },
+ "needle|S0|home|wrong_call": {
+  "n": 86,
+  "ids": [
+   "n3-677ca19725",
+   "n3-8123d15074",
+   "n3-bdea1bb477"
+  ]
+ },
+ "needle|S1|desk|correct_action": {
+  "n": 32,
+  "ids": [
+   "n3-310393f6bc",
+   "n3-4cc02c82ee",
+   "n3-dd83b5e2e8"
+  ]
+ },
+ "needle|S1|desk|correct_nonaction": {
+  "n": 128,
+  "ids": [
+   "n3-ad4fe902ac",
+   "n3-5914808891",
+   "n3-815f5d0667"
+  ]
+ },
+ "needle|S1|desk|needless_refusal": {
+  "n": 99,
+  "ids": [
+   "n3-f9486acbd6",
+   "n3-64a073f01e",
+   "n3-e7cb30b7e6"
+  ]
+ },
+ "needle|S1|desk|technical_failure": {
+  "n": 17,
+  "ids": [
+   "n3-9cc5764e08",
+   "n3-62a873306c",
+   "n3-f92bd8664c"
+  ]
+ },
+ "needle|S1|desk|wrong_call": {
+  "n": 24,
+  "ids": [
+   "n3-9548bac38c",
+   "n3-80d17e3751",
+   "n3-d69b23b84d"
+  ]
+ },
+ "needle|S1|home|correct_action": {
+  "n": 85,
+  "ids": [
+   "n3-677ca19725",
+   "n3-0e6e5f1631",
+   "n3-2d752cae3c"
+  ]
+ },
+ "needle|S1|home|correct_nonaction": {
+  "n": 82,
+  "ids": [
+   "n3-0e4522be09",
+   "n3-41baa5d642",
+   "n3-22c9468fc9"
+  ]
+ },
+ "needle|S1|home|needless_refusal": {
+  "n": 15,
+  "ids": [
+   "n3-51925e927d",
+   "n3-0dafabf94b",
+   "n3-9b6c643276"
+  ]
+ },
+ "needle|S1|home|technical_failure": {
+  "n": 24,
+  "ids": [
+   "n3-59348ddbd7",
+   "n3-1086efbecd",
+   "n3-05607cc4e0"
+  ]
+ },
+ "needle|S1|home|wrong_call": {
+  "n": 94,
+  "ids": [
+   "n3-6d35fdda9c",
+   "n3-6ff8e556c9",
+   "n3-8123d15074"
+  ]
+ }
+}

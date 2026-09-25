@@ -1,0 +1,2713 @@
+{
+ "kept": 882,
+ "new": [
+  {
+   "id": "massive-train-758",
+   "text": "turn on the wemo plug socket to plug in my dongle",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-3299"
+  },
+  {
+   "id": "massive-dev-30",
+   "text": "cleaning is good dust is so bad do now your magic clean my carpet",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-83"
+  },
+  {
+   "id": "massive-train-6042",
+   "text": "i want the light to be switched off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-6158"
+  },
+  {
+   "id": "massive-train-2691",
+   "text": "i do not want to use the socket anymore",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-2310"
+  },
+  {
+   "id": "massive-train-5470",
+   "text": "alexa please turn on the lights",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-3913"
+  },
+  {
+   "id": "massive-train-1298",
+   "text": "olly louder",
+   "source": "audio_volume_up",
+   "bucket": "near",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-1411"
+  },
+  {
+   "id": "massive-train-6063",
+   "text": "turn on the fan socket",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-1553"
+  },
+  {
+   "id": "massive-train-1315",
+   "text": "hey can you make it blue in here",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-5242"
+  },
+  {
+   "id": "massive-train-2976",
+   "text": "change your colors to green",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-4076"
+  },
+  {
+   "id": "massive-train-455",
+   "text": "fix the lights in the living room to red",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-2473"
+  },
+  {
+   "id": "massive-train-2185",
+   "text": "turn off the light of my bed room please",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-3010"
+  },
+  {
+   "id": "massive-train-1032",
+   "text": "change the media room lights from purple to green",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-2863"
+  },
+  {
+   "id": "clinc-train-10597",
+   "text": "who is at the door",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "clinc-train-10501"
+  },
+  {
+   "id": "massive-train-1724",
+   "text": "what is the highest temperature of delhi",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-2256"
+  },
+  {
+   "id": "massive-train-5857",
+   "text": "deactivate smart plug socket",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-3666"
+  },
+  {
+   "id": "massive-train-1926",
+   "text": "initiate to operate robot vacuum cleaner",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-915"
+  },
+  {
+   "id": "massive-dev-5154",
+   "text": "it's too bright in here can you turn a light off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-4946"
+  },
+  {
+   "id": "massive-train-1973",
+   "text": "turn off lobby light",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-5420"
+  },
+  {
+   "id": "massive-train-2002",
+   "text": "hurriedly activates my robot vacuum cleaner",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-4769"
+  },
+  {
+   "id": "massive-train-958",
+   "text": "asking for this technology",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-1561"
+  },
+  {
+   "id": "massive-train-5560",
+   "text": "turn off my desk lamp",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-3183"
+  },
+  {
+   "id": "massive-train-3597",
+   "text": "i want to sleep",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-5766"
+  },
+  {
+   "id": "massive-train-679",
+   "text": "i want you to turn off the plug socket before the cell phone is charged",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-15"
+  },
+  {
+   "id": "massive-train-3501",
+   "text": "turn house lights off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-1476"
+  },
+  {
+   "id": "massive-train-497",
+   "text": "confirm whether the color is blue",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-563"
+  },
+  {
+   "id": "massive-train-5527",
+   "text": "activate the cleaner for furniture cleaning",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-678"
+  },
+  {
+   "id": "massive-train-9",
+   "text": "make the lighting bit more warm here",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-5855"
+  },
+  {
+   "id": "massive-dev-4497",
+   "text": "mute the settings",
+   "source": "audio_volume_mute",
+   "bucket": "near",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-3678"
+  },
+  {
+   "id": "massive-train-3594",
+   "text": "good night",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-851"
+  },
+  {
+   "id": "massive-train-3896",
+   "text": "it is dark",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-2519"
+  },
+  {
+   "id": "massive-dev-5025",
+   "text": "show us red",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-5651"
+  },
+  {
+   "id": "massive-train-2019",
+   "text": "transition lights to blue to green to yellow",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-4647"
+  },
+  {
+   "id": "massive-train-265",
+   "text": "olly good night lights off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-4644"
+  },
+  {
+   "id": "massive-train-25",
+   "text": "olly clean the flat",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-5613"
+  },
+  {
+   "id": "massive-dev-2187",
+   "text": "can you please turn off the light of my bed room",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-977"
+  },
+  {
+   "id": "massive-train-873",
+   "text": "shutoff light in the kitchen",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-2620"
+  },
+  {
+   "id": "massive-train-414",
+   "text": "change my room lights to some romantic color",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-5389"
+  },
+  {
+   "id": "massive-train-3991",
+   "text": "can you turn off the lights",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-5592"
+  },
+  {
+   "id": "massive-train-264",
+   "text": "make the lights shine blue",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-4939"
+  },
+  {
+   "id": "massive-train-191",
+   "text": "switch on the plug",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-2232"
+  },
+  {
+   "id": "massive-train-3093",
+   "text": "can you turn off one of my lights in my bathroom",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-2572"
+  },
+  {
+   "id": "massive-train-1648",
+   "text": "turn all lights off during the day",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-train-3182"
+  },
+  {
+   "id": "massive-train-13246",
+   "text": "would you provide me with the answer to this question",
+   "source": "general_quirky",
+   "bucket": "far",
+   "partition": "dev",
+   "app": "home",
+   "replaces": "massive-dev-10196"
+  },
+  {
+   "id": "massive-train-3024",
+   "text": "turn on plug",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-2501"
+  },
+  {
+   "id": "massive-train-4749",
+   "text": "is it gonna rain",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-4652"
+  },
+  {
+   "id": "massive-train-1972",
+   "text": "switch off main light",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5228"
+  },
+  {
+   "id": "massive-train-4862",
+   "text": "bed room two switch off the lights",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5309"
+  },
+  {
+   "id": "clinc-val-2116",
+   "text": "check if the doors are locked",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "clinc-val-2108"
+  },
+  {
+   "id": "massive-train-4847",
+   "text": "activate the wemo plug socket",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5571"
+  },
+  {
+   "id": "massive-train-5124",
+   "text": "is it hot or cold outside",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-260"
+  },
+  {
+   "id": "massive-train-12026",
+   "text": "any runs on the west side",
+   "source": "recommendation_events",
+   "bucket": "far",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-15668"
+  },
+  {
+   "id": "massive-train-1597",
+   "text": "start roomba",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-3763"
+  },
+  {
+   "id": "massive-train-2947",
+   "text": "alexa turn off the wemo socket in the kitchen",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-4768"
+  },
+  {
+   "id": "massive-dev-1215",
+   "text": "olly make the living room blue",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-4802"
+  },
+  {
+   "id": "massive-train-5329",
+   "text": "i want to clean my bedroom put the vacuum on and go to my room",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5469"
+  },
+  {
+   "id": "massive-dev-1988",
+   "text": "hey alexa turn on disco lights in my apartment and let the party begin",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-2712"
+  },
+  {
+   "id": "massive-train-4036",
+   "text": "light green",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-2945"
+  },
+  {
+   "id": "massive-train-1291",
+   "text": "off the plug",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-dev-2576"
+  },
+  {
+   "id": "massive-train-5819",
+   "text": "play some blues by atif aslam",
+   "source": "play_music",
+   "bucket": "far",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5233"
+  },
+  {
+   "id": "massive-train-6062",
+   "text": "turn on the light socket",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-3279"
+  },
+  {
+   "id": "massive-train-3544",
+   "text": "can this room have green light",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-4246"
+  },
+  {
+   "id": "massive-train-7",
+   "text": "pause for ten seconds",
+   "source": "audio_volume_mute",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5924"
+  },
+  {
+   "id": "massive-dev-6089",
+   "text": "do i need to take an umbrella with me this afternoon",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-dev-318"
+  },
+  {
+   "id": "massive-train-5155",
+   "text": "olly it's too bright in here can you turn a light off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5738"
+  },
+  {
+   "id": "massive-train-1060",
+   "text": "does the robot vacuum cleaner have to be plugged in",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-852"
+  },
+  {
+   "id": "massive-train-3240",
+   "text": "change color of the light to red outside the house",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-963"
+  },
+  {
+   "id": "massive-dev-5094",
+   "text": "it's dark in here",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-dev-3094"
+  },
+  {
+   "id": "massive-train-4300",
+   "text": "make the living room light orange",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-1755"
+  },
+  {
+   "id": "massive-train-6056",
+   "text": "bedroom light off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-2864"
+  },
+  {
+   "id": "massive-train-370",
+   "text": "i want the light switched off can you do it for me",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-2958"
+  },
+  {
+   "id": "massive-dev-4619",
+   "text": "start new smart socket",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-844"
+  },
+  {
+   "id": "massive-train-1644",
+   "text": "change the light in the bathroom to yellow",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-2281"
+  },
+  {
+   "id": "massive-train-5049",
+   "text": "on all the button on dashboard",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-1418"
+  },
+  {
+   "id": "massive-train-3076",
+   "text": "shut down the plug",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-211"
+  },
+  {
+   "id": "massive-train-5484",
+   "text": "is it too hot for pants",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-dev-3402"
+  },
+  {
+   "id": "massive-train-12398",
+   "text": "when are the next three trains to boise",
+   "source": "transport_query",
+   "bucket": "far",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-13117"
+  },
+  {
+   "id": "massive-train-4037",
+   "text": "sandle",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "massive-train-5713"
+  },
+  {
+   "id": "massive-train-1131",
+   "text": "tell me the humidity level downtown today",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-3197"
+  },
+  {
+   "id": "massive-train-4945",
+   "text": "vacuum living room",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-5317"
+  },
+  {
+   "id": "massive-train-983",
+   "text": "change the color of the lights in my bedroom to red",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-496"
+  },
+  {
+   "id": "massive-train-2896",
+   "text": "turn off smart lamp in den",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-4964"
+  },
+  {
+   "id": "clinc-val-2106",
+   "text": "i need you to turn the tv on now",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "clinc-train-10529"
+  },
+  {
+   "id": "massive-train-16054",
+   "text": "send mail to john for money",
+   "source": "email_sendemail",
+   "bucket": "far",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-72"
+  },
+  {
+   "id": "massive-train-2000",
+   "text": "please activate my vacuum cleaner",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-dev-4515"
+  },
+  {
+   "id": "massive-train-4356",
+   "text": "vacuum the living room carpet",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-4082"
+  },
+  {
+   "id": "massive-train-1481",
+   "text": "choose a brighter color for reading",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-2442"
+  },
+  {
+   "id": "massive-train-3023",
+   "text": "turn on socket",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-dev-925"
+  },
+  {
+   "id": "massive-train-383",
+   "text": "turn off the garage light",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-3523"
+  },
+  {
+   "id": "massive-train-5629",
+   "text": "turn on the geyser",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-2231"
+  },
+  {
+   "id": "massive-train-209",
+   "text": "please make the lights reading friendly",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-2121"
+  },
+  {
+   "id": "massive-train-993",
+   "text": "play irene from tobymac",
+   "source": "play_music",
+   "bucket": "far",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-2559"
+  },
+  {
+   "id": "massive-train-429",
+   "text": "lights off bathroom",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-1147"
+  },
+  {
+   "id": "massive-train-5806",
+   "text": "you can set schedules for your devices and control them remotely using a mobile internet connection",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-dev-1702"
+  },
+  {
+   "id": "massive-dev-2821",
+   "text": "change light colors from blue to white",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-2785"
+  },
+  {
+   "id": "massive-train-5842",
+   "text": "activate silent",
+   "source": "audio_volume_mute",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-4298"
+  },
+  {
+   "id": "massive-train-3239",
+   "text": "please turn off all the lights in the house",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-2349"
+  },
+  {
+   "id": "massive-train-4746",
+   "text": "deactivate the socket",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-dev-1925"
+  },
+  {
+   "id": "massive-train-5767",
+   "text": "vacuum on",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-3009"
+  },
+  {
+   "id": "massive-train-3791",
+   "text": "give me red lights",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-3502"
+  },
+  {
+   "id": "clinc-train-10564",
+   "text": "on turn tv",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "clinc-train-10526"
+  },
+  {
+   "id": "massive-train-1966",
+   "text": "chane light color to green",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-dev-1945"
+  },
+  {
+   "id": "clinc-train-10503",
+   "text": "tell me who is by the garage door",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "clinc-train-10518"
+  },
+  {
+   "id": "massive-train-1535",
+   "text": "is it raining in toledo right now",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-1813"
+  },
+  {
+   "id": "massive-train-5431",
+   "text": "put out the lights",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-4239"
+  },
+  {
+   "id": "massive-train-227",
+   "text": "turn on the rice cooker socket",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-1502"
+  },
+  {
+   "id": "clinc-train-10543",
+   "text": "warm up my car for me",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "clinc-train-10504"
+  },
+  {
+   "id": "massive-train-3342",
+   "text": "this room lights off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-2883"
+  },
+  {
+   "id": "massive-train-4163",
+   "text": "please turn the porch light to blue",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-3395"
+  },
+  {
+   "id": "massive-train-3795",
+   "text": "how many degrees is it in houston right now",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-4556"
+  },
+  {
+   "id": "massive-train-3777",
+   "text": "i would like orange lights now",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "home",
+   "replaces": "massive-train-1154"
+  },
+  {
+   "id": "massive-dev-4494",
+   "text": "turn my lights to some random color",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-1218"
+  },
+  {
+   "id": "massive-train-1550",
+   "text": "switch off wemo",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-3427"
+  },
+  {
+   "id": "massive-train-1974",
+   "text": "turn off garage light",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-3804"
+  },
+  {
+   "id": "massive-dev-26",
+   "text": "clean the flat",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-4459"
+  },
+  {
+   "id": "massive-dev-2069",
+   "text": "touch the mute button",
+   "source": "audio_volume_mute",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-5750"
+  },
+  {
+   "id": "massive-dev-4796",
+   "text": "shut off the lights in the bedroom",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-3042"
+  },
+  {
+   "id": "massive-train-908",
+   "text": "please set the vacuum to start going now",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-157"
+  },
+  {
+   "id": "massive-train-1153",
+   "text": "remove dust with vacuum cleaner",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-2503"
+  },
+  {
+   "id": "massive-train-677",
+   "text": "please turn off the plug socket of my phone when it'll be charged",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-2728"
+  },
+  {
+   "id": "massive-train-12599",
+   "text": "what is the longest time to a location",
+   "source": "transport_query",
+   "bucket": "far",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-13344"
+  },
+  {
+   "id": "massive-train-2054",
+   "text": "have my iroomba clean the house",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-3281"
+  },
+  {
+   "id": "massive-train-2324",
+   "text": "make the volume to zero",
+   "source": "audio_volume_mute",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-2813"
+  },
+  {
+   "id": "massive-dev-1259",
+   "text": "what will be the weather on monday this week",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-3285"
+  },
+  {
+   "id": "massive-train-3641",
+   "text": "please turn on the lights in my house",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-1368"
+  },
+  {
+   "id": "massive-train-2436",
+   "text": "switch on robot vacuum cleaner",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-553"
+  },
+  {
+   "id": "massive-train-1944",
+   "text": "shift the light off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-3508"
+  },
+  {
+   "id": "massive-train-2018",
+   "text": "switch lights to red tone",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-926"
+  },
+  {
+   "id": "massive-train-190",
+   "text": "turn on the plug",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-5519"
+  },
+  {
+   "id": "massive-train-1649",
+   "text": "during the daytime all lights has to be turned off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-4078"
+  },
+  {
+   "id": "massive-train-874",
+   "text": "switch the light off in bedroom",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-4284"
+  },
+  {
+   "id": "massive-train-2581",
+   "text": "silent mode",
+   "source": "audio_volume_mute",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-6316"
+  },
+  {
+   "id": "massive-train-10",
+   "text": "please set the lighting suitable for reading",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-565"
+  },
+  {
+   "id": "massive-dev-5064",
+   "text": "replace color from light to dark",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-18"
+  },
+  {
+   "id": "massive-train-6175",
+   "text": "i can't see anything",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-1967"
+  },
+  {
+   "id": "massive-train-1598",
+   "text": "please turn on roomba",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-2601"
+  },
+  {
+   "id": "massive-train-3800",
+   "text": "what will be weather for tomorrow in mumbai",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-2331"
+  },
+  {
+   "id": "massive-train-5887",
+   "text": "switch off the power",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-4993"
+  },
+  {
+   "id": "massive-train-5390",
+   "text": "turn off the nearest light",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-5765"
+  },
+  {
+   "id": "clinc-train-10523",
+   "text": "can you set the temp to 69",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "clinc-train-10502"
+  },
+  {
+   "id": "massive-train-5226",
+   "text": "switch off the smart socket",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-5471"
+  },
+  {
+   "id": "clinc-train-10505",
+   "text": "make sure all doors are locked",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "clinc-train-10591"
+  },
+  {
+   "id": "massive-train-1718",
+   "text": "i want the light in the kitchen powered off",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-5048"
+  },
+  {
+   "id": "massive-train-2294",
+   "text": "will the u. v. index be above eight today",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-6066"
+  },
+  {
+   "id": "massive-train-28",
+   "text": "vacuum the house",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-2621"
+  },
+  {
+   "id": "massive-train-9950",
+   "text": "get me a recipe",
+   "source": "cooking_recipe",
+   "bucket": "far",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-5381"
+  },
+  {
+   "id": "clinc-val-2113",
+   "text": "set all doors to locked",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "clinc-train-10534"
+  },
+  {
+   "id": "massive-train-1706",
+   "text": "please turn off only right side light",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-1244"
+  },
+  {
+   "id": "massive-train-5477",
+   "text": "olly rotate the light colors",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-11"
+  },
+  {
+   "id": "massive-train-7331",
+   "text": "turn off wifi when you leave home to save power",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-3672"
+  },
+  {
+   "id": "massive-train-1889",
+   "text": "put the disco lights on",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-2820"
+  },
+  {
+   "id": "massive-train-3334",
+   "text": "have the vacuum cleaner clean the room",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-3500"
+  },
+  {
+   "id": "massive-train-1723",
+   "text": "what will the weather conditions of lucknow on ninth february two thousand and seventeen",
+   "source": "weather_query",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-1686"
+  },
+  {
+   "id": "massive-train-2038",
+   "text": "switch from blue to yellow lights",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-5383"
+  },
+  {
+   "id": "massive-train-4027",
+   "text": "make light color red",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-3840"
+  },
+  {
+   "id": "clinc-train-10550",
+   "text": "what's the ac set to",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "clinc-train-10556"
+  },
+  {
+   "id": "massive-train-2044",
+   "text": "i don't need the lights",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-4042"
+  },
+  {
+   "id": "massive-train-1643",
+   "text": "make all the lights in the house orange",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-3172"
+  },
+  {
+   "id": "massive-train-3882",
+   "text": "i would like the house lights to be pink",
+   "source": "iot_hue_lightchange",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-2518"
+  },
+  {
+   "id": "clinc-val-2110",
+   "text": "can you verify the doors are locked",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "clinc-val-2101"
+  },
+  {
+   "id": "massive-train-13541",
+   "text": "start the laundry",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-2469"
+  },
+  {
+   "id": "clinc-train-10587",
+   "text": "can you please start my car",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "clinc-val-2105"
+  },
+  {
+   "id": "massive-train-5605",
+   "text": "start vacuum bot",
+   "source": "iot_cleaning",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-1507"
+  },
+  {
+   "id": "massive-train-5441",
+   "text": "turn the wemo off",
+   "source": "iot_wemo_off",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-1028"
+  },
+  {
+   "id": "massive-train-2076",
+   "text": "switch on all the lights",
+   "source": "iot_hue_lighton",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-579"
+  },
+  {
+   "id": "massive-train-5807",
+   "text": "you can also add additional switches to your home to control more devices",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-454"
+  },
+  {
+   "id": "massive-train-390",
+   "text": "switch the smart plug socket",
+   "source": "iot_wemo_on",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-dev-312"
+  },
+  {
+   "id": "massive-train-3521",
+   "text": "please turn off all the lights outdoor",
+   "source": "iot_hue_lightoff",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "home",
+   "replaces": "massive-train-4737"
+  },
+  {
+   "id": "massive-train-7126",
+   "text": "remind me to send the presentation today at one p. m.",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-3693"
+  },
+  {
+   "id": "massive-train-6758",
+   "text": "add to my reminders to watch new movie today at nine p. m.",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-7267"
+  },
+  {
+   "id": "massive-train-10933",
+   "text": "put wash the car to my to do list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-dev-6741"
+  },
+  {
+   "id": "massive-train-234",
+   "text": "olly alert me at three p. m. to go to the concert",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-dev-10896"
+  },
+  {
+   "id": "massive-train-603",
+   "text": "change alarm to start at midnight",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-10708"
+  },
+  {
+   "id": "clinc-train-2017",
+   "text": "is bacon on my shopping list, add if it's not",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "clinc-train-10182"
+  },
+  {
+   "id": "massive-dev-9097",
+   "text": "remind the required events to be reset",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-5073"
+  },
+  {
+   "id": "massive-train-3445",
+   "text": "let me know when it is ten",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-10530"
+  },
+  {
+   "id": "massive-dev-7300",
+   "text": "set a reminder that i have to visit my father tomorrow",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-dev-7458"
+  },
+  {
+   "id": "massive-train-7624",
+   "text": "remind me to pay the electricity bill on this weekend at nine am",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-dev-10854"
+  },
+  {
+   "id": "massive-train-8036",
+   "text": "remind me to start the crock pot at two hundred p. m.",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-7705"
+  },
+  {
+   "id": "massive-train-10514",
+   "text": "i want to make next week's to do list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-7370"
+  },
+  {
+   "id": "massive-dev-8903",
+   "text": "tell about latest events",
+   "source": "calendar_query",
+   "bucket": "near",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-8010"
+  },
+  {
+   "id": "clinc-train-5082",
+   "text": "did i set up a reminder to clean the bathroom",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "clinc-train-5005"
+  },
+  {
+   "id": "massive-train-7197",
+   "text": "remind me of my sister's birthday party tomorrow an hour before it starts",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-8247"
+  },
+  {
+   "id": "massive-train-10536",
+   "text": "create a new grocery list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-7586"
+  },
+  {
+   "id": "massive-train-6855",
+   "text": "set an alarm at ten am tomorrow and label it as meeting",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-1133"
+  },
+  {
+   "id": "massive-dev-8039",
+   "text": "please set a reminder for me to go to work in ten minutes",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-8291"
+  },
+  {
+   "id": "massive-train-7841",
+   "text": "remind me to pick up more dog food at petco tomorrow at seven twenty p. m.",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-7010"
+  },
+  {
+   "id": "massive-train-8159",
+   "text": "set reminder for seven am for the city team meeting",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-10576"
+  },
+  {
+   "id": "clinc-train-13212",
+   "text": "i need anniversary dinner added to my schedule for march 7",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "clinc-train-8306"
+  },
+  {
+   "id": "massive-train-10739",
+   "text": "i want to know could an extra item be added to my grocery list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-9055"
+  },
+  {
+   "id": "massive-train-10882",
+   "text": "delete my list of appointments for tomorrow",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-8519"
+  },
+  {
+   "id": "massive-train-11206",
+   "text": "delete the list brads appointments",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-4717"
+  },
+  {
+   "id": "massive-dev-7780",
+   "text": "please remind me about swatishs birthday",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-4783"
+  },
+  {
+   "id": "massive-dev-4694",
+   "text": "please set an alarm for ten p. m.",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-8917"
+  },
+  {
+   "id": "massive-train-9056",
+   "text": "alexa make an event reminder for a meeting with mona on tuesday",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "massive-train-8995"
+  },
+  {
+   "id": "massive-train-3933",
+   "text": "show me all of my active alarms",
+   "source": "alarm_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-8090"
+  },
+  {
+   "id": "massive-train-6810",
+   "text": "can you remind me about the gym class in two hours",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-2602"
+  },
+  {
+   "id": "massive-train-8236",
+   "text": "i need a reminder for tomorrow for joe's party after work",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-11223"
+  },
+  {
+   "id": "massive-train-4095",
+   "text": "please set my alarm clock for eight am",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-11010"
+  },
+  {
+   "id": "massive-train-11060",
+   "text": "add paper towels to the grocery list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-8301"
+  },
+  {
+   "id": "massive-train-1267",
+   "text": "tell me the current time in central time",
+   "source": "datetime_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-9093"
+  },
+  {
+   "id": "clinc-train-4926",
+   "text": "please include laundry on my to do list",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "clinc-train-10186"
+  },
+  {
+   "id": "massive-train-8239",
+   "text": "set reminder to go workout at the gym every friday at eight hundred am",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-8421"
+  },
+  {
+   "id": "massive-train-7791",
+   "text": "i've got an important meeting this sunday noon two hundred p. m. don't forget to remind me",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-917"
+  },
+  {
+   "id": "massive-train-8185",
+   "text": "remind me about the march sixteen meeting",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-dev-10883"
+  },
+  {
+   "id": "massive-train-5507",
+   "text": "please arrange to wake me up at three am alarm",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-6832"
+  },
+  {
+   "id": "massive-dev-9049",
+   "text": "set an alarm for four p. m. tuesday",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-7210"
+  },
+  {
+   "id": "massive-dev-6990",
+   "text": "upcoming events",
+   "source": "calendar_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-dev-975"
+  },
+  {
+   "id": "massive-dev-8549",
+   "text": "please cancel the next event on the calendar",
+   "source": "calendar_remove",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-7154"
+  },
+  {
+   "id": "clinc-val-1675",
+   "text": "is it possible for you to schedule a meeting for 3:00 on wednesday",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "clinc-train-5000"
+  },
+  {
+   "id": "massive-train-11008",
+   "text": "what are the jobs to be done today",
+   "source": "lists_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-3885"
+  },
+  {
+   "id": "massive-train-1983",
+   "text": "set alarm half an hour from my meal time",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-6995"
+  },
+  {
+   "id": "massive-train-10535",
+   "text": "create a new list for my birthday plans",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-3985"
+  },
+  {
+   "id": "massive-train-10871",
+   "text": "add pick up kids from school to my to do list for today",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-7610"
+  },
+  {
+   "id": "massive-train-7218",
+   "text": "how many reminders are there for tomorrow",
+   "source": "calendar_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-1854"
+  },
+  {
+   "id": "massive-train-2",
+   "text": "set an alarm for two hours from now",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-10748"
+  },
+  {
+   "id": "massive-train-6846",
+   "text": "remind me an email to my sister",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-537"
+  },
+  {
+   "id": "massive-train-3475",
+   "text": "wake me at daybreak",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-dev-7260"
+  },
+  {
+   "id": "massive-train-3157",
+   "text": "if my package shows that it is for delivery tomorrow can you set up an alarm one hour after thank you",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-9158"
+  },
+  {
+   "id": "massive-train-8016",
+   "text": "do i have a party tomorrow save on my calendar",
+   "source": "calendar_query",
+   "bucket": "near",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-7091"
+  },
+  {
+   "id": "massive-train-8445",
+   "text": "remind me i need to be at the library a week from today at five",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-4849"
+  },
+  {
+   "id": "massive-train-7886",
+   "text": "remind me i have a meeting at seven p. m.",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-10611"
+  },
+  {
+   "id": "massive-train-6922",
+   "text": "remind me about my meeting with joe at ten on monday",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-8386"
+  },
+  {
+   "id": "massive-train-7094",
+   "text": "remind me of my appointment on the fifteenth",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-7736"
+  },
+  {
+   "id": "massive-train-11033",
+   "text": "make a things to do list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "massive-train-602"
+  },
+  {
+   "id": "massive-train-10733",
+   "text": "remove chores from my to do list",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-8427"
+  },
+  {
+   "id": "massive-train-10704",
+   "text": "create new list for brilliant ideas",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-10807"
+  },
+  {
+   "id": "massive-train-7593",
+   "text": "remind me to turn off the lights in ten minutes",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-3461"
+  },
+  {
+   "id": "massive-train-4655",
+   "text": "set alarm for one hour from now",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-11039"
+  },
+  {
+   "id": "massive-dev-1914",
+   "text": "alert me at five hours",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-8533"
+  },
+  {
+   "id": "massive-train-8641",
+   "text": "remind me about my business meeting at three and forty five p. m.",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-6743"
+  },
+  {
+   "id": "massive-train-10939",
+   "text": "i need to add water to my kroger list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-dev-232"
+  },
+  {
+   "id": "massive-train-4148",
+   "text": "show me what time it is",
+   "source": "datetime_query",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-8433"
+  },
+  {
+   "id": "clinc-train-13223",
+   "text": "please schedule an event called 'nadine's baby shower' on my calendar",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "clinc-train-5048"
+  },
+  {
+   "id": "massive-train-7594",
+   "text": "set a reminder for fifteen minutes to change laundry loads",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-8775"
+  },
+  {
+   "id": "massive-train-8885",
+   "text": "remind me about tuesday meeting with client at ten am",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-11025"
+  },
+  {
+   "id": "massive-train-10593",
+   "text": "i need a list of my clients today make one",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-10670"
+  },
+  {
+   "id": "massive-train-535",
+   "text": "i need a reminder alarm at one",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-10744"
+  },
+  {
+   "id": "massive-train-5934",
+   "text": "what is paris time",
+   "source": "datetime_query",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-1951"
+  },
+  {
+   "id": "massive-train-6975",
+   "text": "please remind me for the function at miami tomorrow",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-10491"
+  },
+  {
+   "id": "massive-dev-7279",
+   "text": "remind me to pick up the laundry next monday",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-7448"
+  },
+  {
+   "id": "massive-train-10953",
+   "text": "eliminate the list kickball but make sure the contacts remain",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-dev-8329"
+  },
+  {
+   "id": "massive-train-10997",
+   "text": "can you add gloria to my list of clients",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-7482"
+  },
+  {
+   "id": "massive-train-8597",
+   "text": "please tell me when's my financial meeting",
+   "source": "calendar_query",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-7722"
+  },
+  {
+   "id": "clinc-train-5631",
+   "text": "what's in the books for april 30th",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "clinc-train-264"
+  },
+  {
+   "id": "massive-train-7083",
+   "text": "set a reminder alarm for my five p. m. meeting please",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-7037"
+  },
+  {
+   "id": "massive-train-10654",
+   "text": "get rid of the wednesday list",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-dev-10486"
+  },
+  {
+   "id": "massive-train-8851",
+   "text": "cancel next event",
+   "source": "calendar_remove",
+   "bucket": "near",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "massive-train-6733"
+  },
+  {
+   "id": "massive-train-6838",
+   "text": "remind me about mike's birthdays",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-7685"
+  },
+  {
+   "id": "massive-dev-3599",
+   "text": "set up an alarm clock at one p. m.",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-8038"
+  },
+  {
+   "id": "massive-train-10971",
+   "text": "add pencil to school supplies list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-7208"
+  },
+  {
+   "id": "massive-train-3760",
+   "text": "i need a six am wake up call",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-3948"
+  },
+  {
+   "id": "massive-train-1720",
+   "text": "set alarm of every tuesday of march month morning eight am",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-8454"
+  },
+  {
+   "id": "massive-train-8071",
+   "text": "is the twenty second a tuesday",
+   "source": "datetime_query",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-8611"
+  },
+  {
+   "id": "massive-train-7785",
+   "text": "remind me of sarah's birthday three days ahead of time",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-9085"
+  },
+  {
+   "id": "massive-dev-7223",
+   "text": "tell me the date of inauguration of my friend sams business",
+   "source": "calendar_query",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-dev-3148"
+  },
+  {
+   "id": "massive-train-10524",
+   "text": "delete the song what if in my music",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-941"
+  },
+  {
+   "id": "massive-train-8397",
+   "text": "i have to go to a meting on friday at noon can you remind me",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-3949"
+  },
+  {
+   "id": "massive-train-1657",
+   "text": "how many alarms are currently set",
+   "source": "alarm_query",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-880"
+  },
+  {
+   "id": "massive-train-4698",
+   "text": "remind me at five p. m.",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-7494"
+  },
+  {
+   "id": "massive-train-8827",
+   "text": "next thursday i need to be reminded to call the bank",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-8955"
+  },
+  {
+   "id": "massive-train-10978",
+   "text": "i want you to delete my shopping list from last month",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-6961"
+  },
+  {
+   "id": "massive-train-11224",
+   "text": "i don't need the shopping list delete it",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-3662"
+  },
+  {
+   "id": "massive-train-9000",
+   "text": "remind me after an hour to go for shopping",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-9096"
+  },
+  {
+   "id": "massive-train-9160",
+   "text": "open calendar and make an event reminder",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-dev-4094"
+  },
+  {
+   "id": "massive-train-3977",
+   "text": "alarm me at eight am",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-10734"
+  },
+  {
+   "id": "massive-train-7865",
+   "text": "set an alarm for this eight hundred p. m. this evening",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-2504"
+  },
+  {
+   "id": "massive-train-6756",
+   "text": "remind me to read book next week",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-11209"
+  },
+  {
+   "id": "massive-train-7082",
+   "text": "i need a reminder for my five p. m. meeting",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-dev-7703"
+  },
+  {
+   "id": "massive-train-10641",
+   "text": "add these documents to the things i need to travel with",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-7639"
+  },
+  {
+   "id": "massive-train-8806",
+   "text": "remind me about my monday meeting with peter francis fifteen minutes before the meeting",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-3218"
+  },
+  {
+   "id": "massive-train-11194",
+   "text": "delete all read s. m. s. from s. m. s. list",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-8412"
+  },
+  {
+   "id": "massive-train-7618",
+   "text": "remind me about my next meeting with joe one hour before",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-10793"
+  },
+  {
+   "id": "massive-train-7574",
+   "text": "remind me when a contact calls",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-918"
+  },
+  {
+   "id": "massive-train-11073",
+   "text": "remove deposit check from to do list",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-10428"
+  },
+  {
+   "id": "massive-train-8346",
+   "text": "remind yourself to remind me about needed to be reminded about that meeting",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-11150"
+  },
+  {
+   "id": "massive-train-11195",
+   "text": "add coffee to the grocery list",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-10564"
+  },
+  {
+   "id": "massive-dev-7312",
+   "text": "remind me to meet joe for lunch tomorrow",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-3062"
+  },
+  {
+   "id": "massive-dev-8808",
+   "text": "do i need to be reminded of any meetings on monday",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-11040"
+  },
+  {
+   "id": "massive-dev-3463",
+   "text": "i would like a wake up alarm at seven am tomorrow",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-11240"
+  },
+  {
+   "id": "massive-train-8746",
+   "text": "remind me to pick up john from the airport tonight at eight",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-dev-562"
+  },
+  {
+   "id": "massive-dev-7830",
+   "text": "clear my schedule",
+   "source": "calendar_remove",
+   "bucket": "near",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-3703"
+  },
+  {
+   "id": "massive-train-723",
+   "text": "schedule an alarm to wake me up after three hours",
+   "source": "alarm_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-4468"
+  },
+  {
+   "id": "clinc-train-5651",
+   "text": "let me know my march 2 calendar",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "clinc-train-7319"
+  },
+  {
+   "id": "massive-train-10646",
+   "text": "add car service to my list of things to do today",
+   "source": "lists_createoradd",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-8758"
+  },
+  {
+   "id": "clinc-train-5647",
+   "text": "what do i have planned on 3/15",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "clinc-train-7369"
+  },
+  {
+   "id": "massive-train-10771",
+   "text": "remove ashley from the wedding invite list",
+   "source": "lists_remove",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-10766"
+  },
+  {
+   "id": "massive-train-8804",
+   "text": "set reminder on calendar for",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-7532"
+  },
+  {
+   "id": "massive-train-7228",
+   "text": "can you remind me to go to the corner store on tuesday",
+   "source": "calendar_set",
+   "bucket": "act",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "massive-train-6773"
+  },
+  {
+   "id": "clinc-train-12691",
+   "text": "does my shopping list consist of chips",
+   "source": "clinc_domain",
+   "bucket": "clinc_domain",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "clinc-train-7338"
+  },
+  {
+   "id": "edit-hwu-2626",
+   "text": null,
+   "source": "edit of hwu-2626",
+   "bucket": "n3_edit",
+   "edit_kind": "question_about_state",
+   "seed_text": "Start cleaner",
+   "partition": "selection",
+   "app": "home",
+   "replaces": "edit-hwu-5321"
+  },
+  {
+   "id": "join2-home-001",
+   "text": null,
+   "source": "join of massive-train-1660 + massive-train-3510",
+   "bucket": "a3_join",
+   "seed_text": [
+    "take it in hand",
+    "turn off lights in all bathrooms"
+   ],
+   "partition": "selection",
+   "app": "home",
+   "replaces": "join-home-014"
+  },
+  {
+   "id": "join2-home-002",
+   "text": null,
+   "source": "join of massive-train-3697 + massive-train-2714",
+   "bucket": "a3_join",
+   "seed_text": [
+    "turn on this socket",
+    "want to have vibrant colors"
+   ],
+   "partition": "selection",
+   "app": "home",
+   "replaces": "join-home-034"
+  },
+  {
+   "id": "join2-home-003",
+   "text": null,
+   "source": "join of massive-train-5795 + massive-train-1612",
+   "bucket": "a3_join",
+   "seed_text": [
+    "switch off",
+    "time constrain"
+   ],
+   "partition": "selection",
+   "app": "home",
+   "replaces": "join-home-039"
+  },
+  {
+   "id": "join2-desk-004",
+   "text": null,
+   "source": "join of massive-train-7476 + massive-train-7127",
+   "bucket": "a3_join",
+   "seed_text": [
+    "could you please check if i am free on thursday afternoon if so add a reminder to go to the food festival",
+    "set a reminder today at one p. m. to send the presentation"
+   ],
+   "partition": "dev",
+   "app": "desk",
+   "replaces": "join-desk-023"
+  },
+  {
+   "id": "edit-hwu-8920",
+   "text": null,
+   "source": "edit of hwu-8920",
+   "bucket": "n3_edit",
+   "edit_kind": "reported_speech",
+   "seed_text": "Make a note to pay the electricity bill and remind me on Saturday at 9:00 a.m.",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "edit-hwu-4238"
+  },
+  {
+   "id": "edit-hwu-7915",
+   "text": null,
+   "source": "edit of hwu-7915",
+   "bucket": "n3_edit",
+   "edit_kind": "negation",
+   "seed_text": "Add to my reminders to watch new movie today at 9pm",
+   "partition": "selection",
+   "app": "desk",
+   "replaces": "edit-hwu-8496"
+  },
+  {
+   "id": "edit-hwu-10657",
+   "text": null,
+   "source": "edit of hwu-10657",
+   "bucket": "n3_edit",
+   "edit_kind": "question_about_state",
+   "seed_text": "remind me about shopping 30 minutes later.",
+   "partition": "calibration",
+   "app": "desk",
+   "replaces": "edit-hwu-8493"
+  },
+  {
+   "id": "edit-hwu-9880",
+   "text": null,
+   "source": "edit of hwu-9880",
+   "bucket": "n3_edit",
+   "edit_kind": "negation",
+   "seed_text": "Olly, please set dinner plans at 7pm for every Friday in April.",
+   "partition": "lexical",
+   "app": "desk",
+   "replaces": "edit-hwu-568"
+  }
+ ]
+}

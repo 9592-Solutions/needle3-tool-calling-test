@@ -1,0 +1,474 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_power",
+     "description": "Turn a room's lights on or off (switch on, switch off, turn out).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "power": {
+        "type": "string",
+        "enum": [
+         "on",
+         "off"
+        ],
+        "description": "on or off"
+       }
+      },
+      "required": [
+       "power"
+      ]
+     },
+     "triggers": [
+      "\\blights?\\b.*\\b(on|off)\\b"
+     ]
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_brightness",
+     "description": "Set a room's lights to a brightness percentage from 1 to 100 (full or max is 100, half is 50).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "brightness": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100,
+        "description": "brightness in percent, a whole number from 1 to 100"
+       }
+      },
+      "required": [
+       "brightness"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_color",
+     "description": "Change the colour of a room's lights.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "color": {
+        "type": "string",
+        "enum": [
+         "red",
+         "orange",
+         "yellow",
+         "green",
+         "blue",
+         "purple",
+         "pink",
+         "white",
+         "warm white",
+         "cool white"
+        ],
+        "description": "the colour: red, orange, yellow, green, blue, purple (violet), pink, white, warm white (warm, soft white), cool white (cool, daylight)"
+       }
+      },
+      "required": [
+       "color"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "control_vacuum",
+     "description": "Start the robot vacuum (roomba, hoover) cleaning, stop it, or send it back to its dock.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "action": {
+        "type": "string",
+        "enum": [
+         "start",
+         "stop",
+         "dock"
+        ],
+        "description": "start cleaning, stop, or dock (go back to its base)"
+       },
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "the room to clean when starting: living room, kitchen, bedroom, bathroom, hallway, study, whole house, or this room",
+        "default": "whole house"
+       }
+      },
+      "required": [
+       "action"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_plug_power",
+     "description": "Switch the smart plug (socket, outlet, wemo) on or off.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "power": {
+        "type": "string",
+        "enum": [
+         "on",
+         "off"
+        ],
+        "description": "on or off"
+       }
+      },
+      "required": [
+       "power"
+      ]
+     }
+    }
+   }
+  ],
+  "system": null,
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpoca6q6vp/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmppcdm3u1d/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp5jt07vfn/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp0vwvpc6_/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "tr1",
+   "prompt": "turn the lights on",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"power\":\"on\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn the lights on' -> set_lights_power with power 'on'.\",\"confidence\":0.9022,\"prefill_tps\":99.1,\"decode_tps\":107.5,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.123082993000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "power": "on"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn the lights on' -> set_lights_power with power 'on'.",
+    "confidence": 0.9022,
+    "prefill_tps": 99.1,
+    "decode_tps": 107.5,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "tr2",
+   "prompt": "don't turn the lights on",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"power\":\"on\"}}],\"reasoning\":\"'don't turn the lights on' -> set_lights_power with power 'off'.\",\"confidence\":0.8677,\"prefill_tps\":117.1,\"decode_tps\":120.1,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.461309614,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "power": "on"
+      }
+     }
+    ],
+    "reasoning": "'don't turn the lights on' -> set_lights_power with power 'off'.",
+    "confidence": 0.8677,
+    "prefill_tps": 117.1,
+    "decode_tps": 120.1,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "tr3",
+   "prompt": "are the lights on or off?",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"room\":\"living room\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lights on or off' -> set_lights_power with room 'living room' and power 'off'.\",\"confidence\":0.9954,\"prefill_tps\":104.0,\"decode_tps\":105.7,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.165832668999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "room": "living room",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lights on or off' -> set_lights_power with room 'living room' and power 'off'.",
+    "confidence": 0.9954,
+    "prefill_tps": 104.0,
+    "decode_tps": 105.7,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "tr4",
+   "prompt": "my friend said turn the lights off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"room\":\"living room\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn the lights off' -> set_lights_power with room 'living room' (default), power 'off'\",\"confidence\":0.9949,\"prefill_tps\":113.7,\"decode_tps\":125.3,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.745050093000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "room": "living room",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn the lights off' -> set_lights_power with room 'living room' (default), power 'off'",
+    "confidence": 0.9949,
+    "prefill_tps": 113.7,
+    "decode_tps": 125.3,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "tr5",
+   "prompt": "lights on and make coffee",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"power\":\"on\"}},{\"name\":\"set_lights_power\",\"arguments\":{\"power\":\"on\",\"room\":\"living room\"}},{\"name\":\"set_lights_power\",\"arguments\":{\"power\":\"on\",\"room\":\"bedroom\"}},{\"name\":\"set_lights_power\",\"arguments\":{\"power\":\"on\",\"room\":\"kitchen\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lights on' -> set_lights_power with power 'on'; 'make coffee' -> control_vacuum with action 'start' (no room specified)\",\"confidence\":0.2193,\"prefill_tps\":100.2,\"decode_tps\":108.2,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.980476651999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "power": "on"
+      }
+     },
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "power": "on",
+       "room": "living room"
+      }
+     },
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "power": "on",
+       "room": "bedroom"
+      }
+     },
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "power": "on",
+       "room": "kitchen"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lights on' -> set_lights_power with power 'on'; 'make coffee' -> control_vacuum with action 'start' (no room specified)",
+    "confidence": 0.2193,
+    "prefill_tps": 100.2,
+    "decode_tps": 108.2,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "tr6",
+   "prompt": "the lights off in the kitchen was a good idea",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"room\":\"kitchen\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"'kitchen' -> room 'kitchen'; 'off' -> power 'off'\",\"confidence\":0.9507,\"prefill_tps\":116.7,\"decode_tps\":111.8,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.4801923519999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "room": "kitchen",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'kitchen' -> room 'kitchen'; 'off' -> power 'off'",
+    "confidence": 0.9507,
+    "prefill_tps": 116.7,
+    "decode_tps": 111.8,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

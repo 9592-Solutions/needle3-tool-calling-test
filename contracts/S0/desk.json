@@ -1,0 +1,119 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "set_alarm",
+      "description": "Set an alarm at a clock time. If no date is given, the alarm goes off the next time that clock time comes round.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+            "description": "Clock time in 24-hour HH:MM format, e.g. '07:30'."
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "Optional calendar date in YYYY-MM-DD format."
+          }
+        },
+        "required": ["time"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "remove_alarm",
+      "description": "Remove an alarm set at a clock time, optionally on a specific date.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+            "description": "Clock time of the alarm in 24-hour HH:MM format."
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "Optional calendar date of the alarm in YYYY-MM-DD format."
+          }
+        },
+        "required": ["time"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "add_list_item",
+      "description": "Add one item to one of the user's lists (shopping, to-do, or packing).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "string",
+            "enum": ["shopping", "todo", "packing"],
+            "description": "Which list to add the item to."
+          },
+          "item": {
+            "type": "string",
+            "description": "The item to add, e.g. 'milk'."
+          }
+        },
+        "required": ["list", "item"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "remove_list_item",
+      "description": "Remove one item from one of the user's lists (shopping, to-do, or packing).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "string",
+            "enum": ["shopping", "todo", "packing"],
+            "description": "Which list to remove the item from."
+          },
+          "item": {
+            "type": "string",
+            "description": "The item to remove."
+          }
+        },
+        "required": ["list", "item"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "create_reminder",
+      "description": "Create a reminder. Time defaults to 09:00; date defaults to the next time that clock time comes round.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "What the user wants to be reminded about."
+          },
+          "time": {
+            "type": "string",
+            "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+            "description": "Optional clock time in 24-hour HH:MM format. Defaults to '09:00'."
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "Optional calendar date in YYYY-MM-DD format."
+          }
+        },
+        "required": ["text"]
+      }
+    }
+  }
+]

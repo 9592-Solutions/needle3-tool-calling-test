@@ -1,0 +1,1225 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "name": "play_music",
+    "description": "Play music by song name, artist, album, or genre. Copy the request word for word. Use the playback tools for pausing, resuming, or skipping.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "query": {
+       "type": "string",
+       "description": "The song, artist, album, or genre, copied word for word.",
+       "minLength": 1,
+       "maxLength": 80
+      }
+     },
+     "required": [
+      "query"
+     ]
+    }
+   },
+   {
+    "name": "pause_media",
+    "description": "Pause the currently playing media. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   },
+   {
+    "name": "resume_media",
+    "description": "Resume the paused media playback. Starting something new is play_music. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   },
+   {
+    "name": "skip_track",
+    "description": "Skip to the next track. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   },
+   {
+    "name": "set_volume",
+    "description": "Set the speaker volume. This never pauses or skips anything.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "level": {
+       "type": "integer",
+       "description": "Volume level from 0 to 100.",
+       "minimum": 0,
+       "maximum": 100
+      }
+     },
+     "required": [
+      "level"
+     ]
+    }
+   }
+  ],
+  "system": "date: 2026-09-22 Tue 10:15; Map each explicit supported media action to exactly one declared call; never duplicate an action. Do not guess missing values. Unsupported, invalid, ambiguous, and negated requests return no call.",
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true,
+  "require_cpu": "GenuineIntel fam 6 model 85"
+ },
+ "chunk_attempts": 4,
+ "containers": [
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpfbq6xla_/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpfbq6xla_/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpr4n676iq/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpr4n676iq/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "media_player-00",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "play Purple Rain by Prince",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Purple Rain by Prince\"}}],\"suppressed_calls\":[],\"reasoning\":\"query 'Purple Rain by Prince' -> query 'Purple Rain by Prince' for play_music\",\"confidence\":1.0000,\"prefill_tps\":107.7,\"decode_tps\":110.0,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1612883830000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Purple Rain by Prince"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "query 'Purple Rain by Prince' -> query 'Purple Rain by Prince' for play_music",
+    "confidence": 1.0,
+    "prefill_tps": 107.7,
+    "decode_tps": 110.0,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-01",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "put on some smooth jazz",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"smooth jazz\"}}],\"suppressed_calls\":[],\"reasoning\":\"'smooth jazz' is a genre query -> play_music with query 'smooth jazz'\",\"confidence\":1.0000,\"prefill_tps\":103.7,\"decode_tps\":107.2,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.293699197,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "smooth jazz"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'smooth jazz' is a genre query -> play_music with query 'smooth jazz'",
+    "confidence": 1.0,
+    "prefill_tps": 103.7,
+    "decode_tps": 107.2,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-02",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "queue up Blinding Lights by The Weeknd",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Blinding Lights by The Weeknd\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Blinding Lights by The Weeknd' is a song title. play_music with query 'Blinding Lights by The Weeknd'.\",\"confidence\":1.0000,\"prefill_tps\":109.7,\"decode_tps\":110.0,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.219269614,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Blinding Lights by The Weeknd"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Blinding Lights by The Weeknd' is a song title. play_music with query 'Blinding Lights by The Weeknd'.",
+    "confidence": 1.0,
+    "prefill_tps": 109.7,
+    "decode_tps": 110.0,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-03",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "play some lofi beats",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"lofi beats\"}}],\"suppressed_calls\":[],\"reasoning\":\"query 'lofi beats' -> query 'lofi beats' for play_music\",\"confidence\":1.0000,\"prefill_tps\":103.6,\"decode_tps\":106.2,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.068975255,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "lofi beats"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "query 'lofi beats' -> query 'lofi beats' for play_music",
+    "confidence": 1.0,
+    "prefill_tps": 103.6,
+    "decode_tps": 106.2,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-04",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "put on Hotel California by the Eagles",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Hotel California by the Eagles\"}}],\"suppressed_calls\":[],\"reasoning\":\"'put on' -> play_music; 'Hotel California by the Eagles' -> query 'Hotel California by the Eagles'\",\"confidence\":1.0000,\"prefill_tps\":106.6,\"decode_tps\":106.2,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.233679596,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Hotel California by the Eagles"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'put on' -> play_music; 'Hotel California by the Eagles' -> query 'Hotel California by the Eagles'",
+    "confidence": 1.0,
+    "prefill_tps": 106.6,
+    "decode_tps": 106.2,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-05",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "play Bohemian Rhapsody by Queen",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Bohemian Rhapsody by Queen\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Bohemian Rhapsody by Queen' -> query 'Bohemian Rhapsody by Queen' for play_music.\",\"confidence\":1.0000,\"prefill_tps\":107.6,\"decode_tps\":106.9,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.311607715,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Bohemian Rhapsody by Queen"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Bohemian Rhapsody by Queen' -> query 'Bohemian Rhapsody by Queen' for play_music.",
+    "confidence": 1.0,
+    "prefill_tps": 107.6,
+    "decode_tps": 106.9,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-06",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "set the volume to 40",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":40}}],\"suppressed_calls\":[],\"reasoning\":\"'40' -> level 40; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":104.7,\"decode_tps\":107.3,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.914654777000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 40
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'40' -> level 40; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 104.7,
+    "decode_tps": 107.3,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-07",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "turn the volume up to 85",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":85}}],\"suppressed_calls\":[],\"reasoning\":\"'volume up to 85' -> level 85; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":103.3,\"decode_tps\":106.4,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9963682669999994,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 85
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume up to 85' -> level 85; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 103.3,
+    "decode_tps": 106.4,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-08",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "lower the volume to 15",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":15}}],\"suppressed_calls\":[],\"reasoning\":\"'lower the volume to 15' -> level 15. set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":111.8,\"decode_tps\":110.4,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.8979903999999994,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 15
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lower the volume to 15' -> level 15. set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 111.8,
+    "decode_tps": 110.4,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-09",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "set the speaker volume to 60",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":60}}],\"suppressed_calls\":[],\"reasoning\":\"'60' -> level 60; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":104.7,\"decode_tps\":108.4,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.937502648999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 60
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'60' -> level 60; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 104.7,
+    "decode_tps": 108.4,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-10",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "crank the volume up to 95",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":95}}],\"suppressed_calls\":[],\"reasoning\":\"'volume up to 95' -> level 95; set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":107.6,\"decode_tps\":106.4,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0143589330000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 95
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume up to 95' -> level 95; set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 107.6,
+    "decode_tps": 106.4,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-11",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "pause the music",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'pause the music' -> pause_media. No arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":101.4,\"decode_tps\":102.1,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9358839339999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pause the music' -> pause_media. No arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 101.4,
+    "decode_tps": 102.1,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-12",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "hit pause on the song",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"resume_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'hit pause on the song' means resume playback -> resume_media with empty arguments.\",\"confidence\":0.9898,\"prefill_tps\":105.0,\"decode_tps\":108.0,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.951268828,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "resume_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'hit pause on the song' means resume playback -> resume_media with empty arguments.",
+    "confidence": 0.9898,
+    "prefill_tps": 105.0,
+    "decode_tps": 108.0,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-13",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "pause playback while I take this call",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'pause playback' -> pause_media; no arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":103.7,\"decode_tps\":103.1,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9614969610000017,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pause playback' -> pause_media; no arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 103.7,
+    "decode_tps": 103.1,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-14",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "resume the music",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"resume_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'resume the music' -> resume_media. No arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":105.2,\"decode_tps\":108.5,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.8554493700000023,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "resume_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'resume the music' -> resume_media. No arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 105.2,
+    "decode_tps": 108.5,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-15",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "resume playback where it left off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"resume_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'resume playback' -> resume_media; no arguments needed\",\"confidence\":1.0000,\"prefill_tps\":105.0,\"decode_tps\":107.0,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.931581859999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "resume_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'resume playback' -> resume_media; no arguments needed",
+    "confidence": 1.0,
+    "prefill_tps": 105.0,
+    "decode_tps": 107.0,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-16",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "skip this song",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"skip_track\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'skip this song' -> skip_track with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":104.7,\"decode_tps\":108.8,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.8839658999999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "skip_track",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'skip this song' -> skip_track with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 104.7,
+    "decode_tps": 108.8,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-17",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "skip to the next track",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"skip_track\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'skip to the next track' -> skip_track with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":105.0,\"decode_tps\":107.7,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9549402580000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "skip_track",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'skip to the next track' -> skip_track with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 105.0,
+    "decode_tps": 107.7,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-18",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "turn up the volume a little",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":100}}],\"reasoning\":\"'turn up the volume' -> set_volume; 'a little' -> level 100.\",\"confidence\":1.0000,\"prefill_tps\":104.0,\"decode_tps\":103.6,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.994610428999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 100
+      }
+     }
+    ],
+    "reasoning": "'turn up the volume' -> set_volume; 'a little' -> level 100.",
+    "confidence": 1.0,
+    "prefill_tps": 104.0,
+    "decode_tps": 103.6,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-19",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "play something for me",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"something\"}}],\"suppressed_calls\":[],\"reasoning\":\"'play something' -> play_music; query 'something' from user's words.\",\"confidence\":0.9866,\"prefill_tps\":102.7,\"decode_tps\":106.6,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0176325649999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "something"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'play something' -> play_music; query 'something' from user's words.",
+    "confidence": 0.9866,
+    "prefill_tps": 102.7,
+    "decode_tps": 106.6,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-20",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "turn the music down a bit",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":50}}],\"reasoning\":\"'down a bit' means lower volume -> set_volume level lower.\",\"confidence\":0.1561,\"prefill_tps\":104.4,\"decode_tps\":88.5,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.026626746999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 50
+      }
+     }
+    ],
+    "reasoning": "'down a bit' means lower volume -> set_volume level lower.",
+    "confidence": 0.1561,
+    "prefill_tps": 104.4,
+    "decode_tps": 88.5,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-21",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "play whatever you think I'd like",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"skip_track\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'play whatever you think I'd like' means skip to next track -> skip_track with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":100.6,\"decode_tps\":102.0,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0892929519999974,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "skip_track",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'play whatever you think I'd like' means skip to next track -> skip_track with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 100.6,
+    "decode_tps": 102.0,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-22",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "put on the podcast Hard Fork",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Hard Fork\"}}],\"suppressed_calls\":[],\"reasoning\":\"'put on the podcast' -> play_music with query 'Hard Fork'\",\"confidence\":1.0000,\"prefill_tps\":107.7,\"decode_tps\":108.8,\"peak_ram_mb\":81.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.999964124999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Hard Fork"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'put on the podcast' -> play_music with query 'Hard Fork'",
+    "confidence": 1.0,
+    "prefill_tps": 107.7,
+    "decode_tps": 108.8,
+    "peak_ram_mb": 81.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-23",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "tune into the radio station Jazz FM",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"Jazz FM\"}}],\"suppressed_calls\":[],\"reasoning\":\"'radio station Jazz FM' -> play_music query 'Jazz FM'.\",\"confidence\":1.0000,\"prefill_tps\":105.6,\"decode_tps\":105.8,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.124609427000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Jazz FM"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'radio station Jazz FM' -> play_music query 'Jazz FM'.",
+    "confidence": 1.0,
+    "prefill_tps": 105.6,
+    "decode_tps": 105.8,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-24",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "add this song to my favorites playlist",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"play_music\",\"arguments\":{\"query\":\"favorites playlist\"}}],\"suppressed_calls\":[],\"reasoning\":\"'add this song to my favorites playlist' -> play_music with query 'favorites playlist'\",\"confidence\":1.0000,\"prefill_tps\":105.8,\"decode_tps\":108.0,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0437815720000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "favorites playlist"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'add this song to my favorites playlist' -> play_music with query 'favorites playlist'",
+    "confidence": 1.0,
+    "prefill_tps": 105.8,
+    "decode_tps": 108.0,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-25",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "don't pause the song, I love this part",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"reasoning\":\"'don't pause the song' -> pause_media.\",\"confidence\":1.0000,\"prefill_tps\":106.5,\"decode_tps\":103.2,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 2.9962782350000055,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "reasoning": "'don't pause the song' -> pause_media.",
+    "confidence": 1.0,
+    "prefill_tps": 106.5,
+    "decode_tps": 103.2,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "media_player-26",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "do not turn the volume up to 90",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":90}}],\"reasoning\":\"'do not turn the volume up to 90' -> set_volume level 90.\",\"confidence\":1.0000,\"prefill_tps\":106.5,\"decode_tps\":112.4,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 2.977946749999994,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 90
+      }
+     }
+    ],
+    "reasoning": "'do not turn the volume up to 90' -> set_volume level 90.",
+    "confidence": 1.0,
+    "prefill_tps": 106.5,
+    "decode_tps": 112.4,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "media_player-27",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "never play Baby Shark on this speaker again",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"Prohibited action: play_music with query 'Baby Shark'. Alternative request: pause_media.\",\"confidence\":1.0000,\"prefill_tps\":106.6,\"decode_tps\":106.4,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 3.089064147000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Prohibited action: play_music with query 'Baby Shark'. Alternative request: pause_media.",
+    "confidence": 1.0,
+    "prefill_tps": 106.6,
+    "decode_tps": 106.4,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "media_player-28",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "set the volume to 140",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":14}}],\"suppressed_calls\":[],\"reasoning\":\"'140' -> level 140. set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":104.4,\"decode_tps\":104.6,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9444329349999947,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 14
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'140' -> level 140. set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 104.4,
+    "decode_tps": 104.6,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-29",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "turn the volume up to 500",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":5}}],\"suppressed_calls\":[],\"reasoning\":\"'volume up to 500' -> level 500. set_volume tool.\",\"confidence\":1.0000,\"prefill_tps\":104.4,\"decode_tps\":103.8,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[\"set_volume.level\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9763127300000036,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 5
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume up to 500' -> level 500. set_volume tool.",
+    "confidence": 1.0,
+    "prefill_tps": 104.4,
+    "decode_tps": 103.8,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [
+      "set_volume.level"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-30",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A4QJRF8WK6EMB77HRXBDR",
+   "prompt": "set the volume to 55 and play Clair de Lune by Debussy",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_volume\",\"arguments\":{\"level\":55}},{\"name\":\"play_music\",\"arguments\":{\"query\":\"Clair de Lune by Debussy\"}}],\"suppressed_calls\":[],\"reasoning\":\"'volume to 55' -> level 55; 'play Clair de Lune by Debussy' -> query 'Clair de Lune by Debussy'\",\"confidence\":1.0000,\"prefill_tps\":108.9,\"decode_tps\":106.0,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.507392475000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 55
+      }
+     },
+     {
+      "name": "play_music",
+      "arguments": {
+       "query": "Clair de Lune by Debussy"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'volume to 55' -> level 55; 'play Clair de Lune by Debussy' -> query 'Clair de Lune by Debussy'",
+    "confidence": 1.0,
+    "prefill_tps": 108.9,
+    "decode_tps": 106.0,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "media_player-31",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A2ZJ00SVG3TFF8SM1DA4R",
+   "prompt": "pause the music and turn the volume down to 20",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"pause_media\",\"arguments\":{}},{\"name\":\"set_volume\",\"arguments\":{\"level\":20}}],\"suppressed_calls\":[],\"reasoning\":\"'pause the music' -> pause_media; 'volume down to 20' -> level 20\",\"confidence\":1.0000,\"prefill_tps\":106.2,\"decode_tps\":107.2,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1237998189999985,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "pause_media",
+      "arguments": {}
+     },
+     {
+      "name": "set_volume",
+      "arguments": {
+       "level": 20
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pause the music' -> pause_media; 'volume down to 20' -> level 20",
+    "confidence": 1.0,
+    "prefill_tps": 106.2,
+    "decode_tps": 107.2,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

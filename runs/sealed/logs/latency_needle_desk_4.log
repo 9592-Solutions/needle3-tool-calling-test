@@ -1,0 +1,70 @@
+<repo>/modal/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+<repo>/modal/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+<repo>/runs/sealed/latency_modal.py:136: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=7200, max_inputs=1)
+<repo>/runs/sealed/latency_modal.py:141: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(4, 4), memory=2048, timeout=7200, max_inputs=1)
+<repo>/runs/sealed/latency_modal.py:146: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=600, max_inputs=1)
+<repo>/runs/sealed/latency_modal.py:203: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=7200, region=REGION, max_inputs=1,
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/<app-run>
+✓ Created objects.
+├── 🔨 Created mount 
+│   <repo>/runs/sealed/latency_modal.py
+├── 🔨 Created mount 
+│   <repo>/partitions/gold.jsonl
+├── 🔨 Created mount PythonPackage:needle_modal
+├── 🔨 Created mount <repo>/harness
+├── 🔨 Created mount <repo>/contracts
+├── 🔨 Created mount <repo>/baselines
+├── 🔨 Created function _download_pinned.
+├── 🔨 Created function latency_1.
+├── 🔨 Created function latency_4.
+├── 🔨 Created function cold.
+└── 🔨 Created function llm_latency.
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 1: landed on unknown | AuthenticAMD fam 175 model 1 step unkn, re-landing
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/latency_modal.py:136: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=7200, max_inputs=1)
+/root/latency_modal.py:141: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(4, 4), memory=2048, timeout=7200, max_inputs=1)
+/root/latency_modal.py:146: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=600, max_inputs=1)
+/root/latency_modal.py:203: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=7200, region=REGION, max_inputs=1,
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 2: landed on unknown | AuthenticAMD fam 175 model 17 step unk, re-landing
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/latency_modal.py:136: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=7200, max_inputs=1)
+/root/latency_modal.py:141: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(4, 4), memory=2048, timeout=7200, max_inputs=1)
+/root/latency_modal.py:146: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=600, max_inputs=1)
+/root/latency_modal.py:203: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=7200, region=REGION, max_inputs=1,
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/latency_modal.py:136: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=7200, max_inputs=1)
+/root/latency_modal.py:141: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(4, 4), memory=2048, timeout=7200, max_inputs=1)
+/root/latency_modal.py:146: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=(1, 1), memory=1024, timeout=600, max_inputs=1)
+/root/latency_modal.py:203: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=7200, region=REGION, max_inputs=1,
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/<app-run>
+wrote runs/sealed/out/latency/needle_desk_4.json

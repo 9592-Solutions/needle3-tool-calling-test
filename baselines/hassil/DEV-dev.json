@@ -1,0 +1,908 @@
+{
+ "partition": "dev",
+ "n": 158,
+ "macro_home": 0.5639,
+ "per_stratum": {
+  "N2": [
+   11,
+   11
+  ],
+  "N1": [
+   61,
+   61
+  ],
+  "N3": [
+   29,
+   29
+  ],
+  "A1": [
+   8,
+   27
+  ],
+  "A3": [
+   0,
+   7
+  ],
+  "A2": [
+   2,
+   23
+  ]
+ },
+ "outcomes": {
+  "correct_nonaction": 101,
+  "needless_refusal": 47,
+  "correct_action": 10
+ },
+ "rows": [
+  {
+   "id": "join-home-036",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1613",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-3934",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-3359",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-4301",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-dev-12550",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-3714",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1822",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-314",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "edit-hwu-70",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-4880",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-643",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-3881",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-5356",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1029",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-13794",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "join-home-015",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-5539",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-3145",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1213",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-287",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "join-home-016",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10566",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-402",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-403",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-4211",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10500",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-1316",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-3658",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3751",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-907",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "join-home-021",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-2474",
+   "pred": [
+    {
+     "action": "set_light_color",
+     "args": {
+      "room": "here",
+      "color": "white"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-3084",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-4650",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-1804",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-2262",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-6130",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-2130",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10559",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-2045",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-8403",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-1114",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5927",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-6001",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-3349",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-2188",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-7551",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-5790",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10520",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-dev-1545",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-2577",
+   "pred": [
+    {
+     "action": "light_power",
+     "args": {
+      "room": "kitchen",
+      "state": "off"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-3446",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-3807",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-11573",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3388",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-4075",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "join-home-017",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3816",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10560",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3381",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "edit-hwu-3874",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1501",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-4954",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-14813",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-val-2111",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1500",
+   "pred": [
+    {
+     "action": "light_power",
+     "args": {
+      "room": "hallway",
+      "state": "on"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "join-home-000",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-dev-2318",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-1536",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-val-2103",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5442",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-3518",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "join-home-004",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-1961",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "clinc-oos_train-85",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1068",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5586",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-2074",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5630",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-700",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-2815",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-1033",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-4230",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-dev-17",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-6808",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1927",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10563",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "clinc-train-10599",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5364",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "edit-hwu-4197",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-6030",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-11731",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10598",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-2761",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1562",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1709",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "join-home-026",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "clinc-train-10533",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-2526",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-404",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-dev-1216",
+   "pred": [
+    {
+     "action": "set_light_color",
+     "args": {
+      "room": "living room",
+      "color": "blue"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-471",
+   "pred": [
+    {
+     "action": "light_power",
+     "args": {
+      "room": "here",
+      "state": "off"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-3786",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "edit-hwu-5335",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-2905",
+   "pred": [
+    {
+     "action": "light_power",
+     "args": {
+      "room": "here",
+      "state": "on"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "edit-hwu-5853",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-758",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-dev-30",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-6042",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-2691",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-5470",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-1298",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-6063",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-1315",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-2976",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-455",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-2185",
+   "pred": [
+    {
+     "action": "light_power",
+     "args": {
+      "room": "bedroom",
+      "state": "off"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-1032",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "clinc-train-10597",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1724",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5857",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-1926",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-dev-5154",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1973",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-2002",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-958",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5560",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3597",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-679",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3501",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-497",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-5527",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-9",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-dev-4497",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3594",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3896",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-dev-5025",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-2019",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-265",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-25",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-dev-2187",
+   "pred": [
+    {
+     "action": "light_power",
+     "args": {
+      "room": "bedroom",
+      "state": "off"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-873",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-414",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-3991",
+   "pred": [
+    {
+     "action": "light_power",
+     "args": {
+      "room": "here",
+      "state": "off"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-264",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-191",
+   "pred": [
+    {
+     "action": "smart_plug",
+     "args": {
+      "state": "on"
+     }
+    }
+   ],
+   "outcome": "correct_action"
+  },
+  {
+   "id": "massive-train-3093",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1648",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-13246",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-train-1905",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-2541",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-3085",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-1214",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-4633",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-dev-5202",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  },
+  {
+   "id": "massive-dev-2282",
+   "pred": [],
+   "outcome": "needless_refusal"
+  },
+  {
+   "id": "massive-train-5046",
+   "pred": [],
+   "outcome": "correct_nonaction"
+  }
+ ],
+ "macro_home_D6": 0.5877
+}

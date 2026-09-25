@@ -1,0 +1,140 @@
+{"id": "massive-train-8777", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability the app lacks (\u00a73 reminders)"}
+{"id": "massive-train-8599", "gold": [[]], "stratum": "N1", "rule": "time-of-day word without clock time on a reminder: vague time (\u00a73 Times, R1)"}
+{"id": "massive-train-7672", "gold": [[]], "stratum": "N1", "rule": "querying calendar events, out of scope"}
+{"id": "massive-train-7324", "gold": [[]], "stratum": "N2", "rule": "reminder time given only as the unknown event time; unresolvable qualifier (R1)"}
+{"id": "join-desk-031", "gold": [[]], "stratum": "N2", "rule": "'need more milk' names no list (\u00a73 LISTS, R4) so request is partial (R1)"}
+{"id": "edit-hwu-3015", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "clinc-train-7369", "gold": [[{"action": "set_alarm", "args": {"time": "05:00", "date": "2026-06-11"}}]], "stratum": "A1", "rule": "set_alarm, date next occurrence"}
+{"id": "massive-train-7625", "gold": [[{"action": "create_reminder", "args": {"text": "payment of electricity bill", "time": "09:00", "date": "2026-06-13"}}]], "stratum": "A3", "rule": "reminder, weekday + clock time"}
+{"id": "clinc-train-8303", "gold": [[]], "stratum": "N1", "rule": "meeting room query, out of scope"}
+{"id": "massive-dev-601", "gold": [[]], "stratum": "N2", "rule": "alarm with no time (R4)"}
+{"id": "massive-train-10794", "gold": [[]], "stratum": "N3", "rule": "question about lists, out of scope"}
+{"id": "massive-train-9158", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-7728", "gold": [[{"action": "create_reminder", "args": {"text": "go to store", "time": "09:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "reminder, tomorrow, default time"}
+{"id": "massive-train-8976", "gold": [[]], "stratum": "N2", "rule": "plural reminders for unspecified meetings; no single reminder determined"}
+{"id": "massive-train-1676", "gold": [[]], "stratum": "N1", "rule": "recurrence (R1)"}
+{"id": "massive-train-8952", "gold": [[{"action": "create_reminder", "args": {"text": "meeting", "time": "09:00", "date": "2026-06-16"}}]], "stratum": "A2", "rule": "'notify me' reminder, weekday date, default time"}
+{"id": "massive-dev-3956", "gold": [[]], "stratum": "N2", "rule": "reminder text missing (required)"}
+{"id": "massive-train-7685", "gold": [[]], "stratum": "N1", "rule": "calendar, capability lacking"}
+{"id": "massive-train-10620", "gold": [[]], "stratum": "N1", "rule": "creating a list (\u00a73 LISTS)"}
+{"id": "join-desk-035", "gold": [[]], "stratum": "N2", "rule": "remove_alarm with no time -> partial (R1, \u00a73 Alarms)"}
+{"id": "massive-train-8406", "gold": [[]], "stratum": "N1", "rule": "calendar events, capability lacking"}
+{"id": "edit-hwu-4556", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-dev-4094", "gold": [[{"action": "set_alarm", "args": {"time": "08:00", "date": "2026-06-11"}}]], "stratum": "A1", "rule": "set_alarm, date next occurrence"}
+{"id": "edit-hwu-8849", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-train-8538", "gold": [[]], "stratum": "N1", "rule": "recurrence (R1)"}
+{"id": "massive-train-7714", "gold": [[]], "stratum": "N1", "rule": "calendar events, capability lacking"}
+{"id": "join-desk-005", "gold": [[]], "stratum": "N1", "rule": "creating a list unsupported; alarm has no time (R1)"}
+{"id": "massive-train-6886", "gold": [[]], "stratum": "N1", "rule": "greeting, no supported action"}
+{"id": "massive-train-838", "gold": [[]], "stratum": "N2", "rule": "alarms with no time, vague date (\u00a73 Alarms)"}
+{"id": "massive-train-4529", "gold": [[]], "stratum": "N3", "rule": "question about alarms (R3)"}
+{"id": "join-desk-003", "gold": [[{"action": "set_alarm", "args": {"time": "09:00", "date": "2026-06-11"}}, {"action": "create_reminder", "args": {"text": "meeting with client", "time": "10:00", "date": "2026-06-16"}}]], "stratum": "A3", "rule": "two actions (R2): alarm + reminder"}
+{"id": "join-desk-036", "gold": [[]], "stratum": "N1", "rule": "deleting a whole list unsupported -> partial (R1)"}
+{"id": "massive-train-3948", "gold": [[]], "stratum": "N2", "rule": "alarm with no time (R4)"}
+{"id": "massive-train-11150", "gold": [[]], "stratum": "N1", "rule": "removing a whole list (\u00a73 LISTS)"}
+{"id": "massive-train-3703", "gold": [[]], "stratum": "N3", "rule": "question about alarms (R3)"}
+{"id": "join-desk-024", "gold": [[]], "stratum": "N1", "rule": "scheduling a calendar meeting unsupported -> partial (R1)"}
+{"id": "massive-train-7652", "gold": [[]], "stratum": "N2", "rule": "no text or time; unresolved 'this event'"}
+{"id": "join-desk-006", "gold": [[]], "stratum": "N1", "rule": "calendar event unsupported -> partial (R1)"}
+{"id": "massive-dev-7930", "gold": [[{"action": "create_reminder", "args": {"text": "biology test at fsu", "time": "09:00", "date": "2026-06-12"}}]], "stratum": "A3", "rule": "reminder about named event, weekday, default time"}
+{"id": "edit-hwu-6301", "gold": [[]], "stratum": "N2", "rule": "garbled, no determinable request"}
+{"id": "massive-train-8981", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-8167", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-9025", "gold": [[]], "stratum": "N1", "rule": "no supported action"}
+{"id": "massive-train-8427", "gold": [[]], "stratum": "N1", "rule": "calendar appointment, capability lacking"}
+{"id": "massive-train-5483", "gold": [[]], "stratum": "N1", "rule": "date query, out of scope"}
+{"id": "massive-train-880", "gold": [[]], "stratum": "N1", "rule": "time zone query, out of scope"}
+{"id": "massive-dev-10854", "gold": [[]], "stratum": "N2", "rule": "no item or list named"}
+{"id": "massive-train-8656", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-7957", "gold": [[]], "stratum": "N1", "rule": "calendar event + recurrence"}
+{"id": "join-desk-009", "gold": [[]], "stratum": "N1", "rule": "alarm removal by label/no time and calendar appointment unsupported (R1)"}
+{"id": "massive-train-1626", "gold": [[]], "stratum": "N1", "rule": "alarm sound unsupported (\u00a73 Alarms)"}
+{"id": "massive-train-6915", "gold": [[]], "stratum": "N1", "rule": "calendar event + recurrence"}
+{"id": "edit-hwu-9174", "gold": [[]], "stratum": "N3", "rule": "reported speech/quotation (R3)"}
+{"id": "massive-train-8886", "gold": [[{"action": "create_reminder", "args": {"text": "meeting with client", "time": "10:00", "date": "2026-06-16"}}]], "stratum": "A3", "rule": "reminder, weekday + clock time"}
+{"id": "join-desk-023", "gold": [[]], "stratum": "N2", "rule": "'set the time' names no servable action -> partial (R1)"}
+{"id": "massive-train-6913", "gold": [[]], "stratum": "N1", "rule": "calendar event + recurrence"}
+{"id": "massive-train-3062", "gold": [[]], "stratum": "N2", "rule": "remove alarm with no time (\u00a73 Alarms)"}
+{"id": "massive-train-7318", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-722", "gold": [[{"action": "set_alarm", "args": {"time": "19:30", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "relative time 14:30 + 5 h"}
+{"id": "massive-train-4180", "gold": [[]], "stratum": "N1", "rule": "time zone query, out of scope"}
+{"id": "massive-train-9161", "gold": [[]], "stratum": "N3", "rule": "question about calendar state (R3)"}
+{"id": "massive-train-7986", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "edit-hwu-4428", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "massive-train-11223", "gold": [[]], "stratum": "N1", "rule": "deleting a whole list (\u00a73 LISTS)"}
+{"id": "massive-train-7195", "gold": [[{"action": "create_reminder", "args": {"text": "meeting with allen", "time": "09:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "reminder, tomorrow, default time"}
+{"id": "edit-hwu-8505", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "clinc-train-5005", "gold": [[]], "stratum": "N3", "rule": "reading reminders, question about state"}
+{"id": "massive-train-602", "gold": [[]], "stratum": "N2", "rule": "alarm with no time (R4)"}
+{"id": "massive-train-7005", "gold": [[]], "stratum": "N1", "rule": "scheduling calendar meeting, capability lacking"}
+{"id": "massive-train-11136", "gold": [[]], "stratum": "N1", "rule": "creating a list"}
+{"id": "join-desk-021", "gold": [[]], "stratum": "N1", "rule": "creating a list; no item"}
+{"id": "massive-train-10708", "gold": [[]], "stratum": "N1", "rule": "deleting a whole list"}
+{"id": "massive-train-6770", "gold": [[]], "stratum": "N1", "rule": "scheduling calendar meeting, capability lacking"}
+{"id": "massive-dev-10457", "gold": [[]], "stratum": "N1", "rule": "'party shopping list' is a named list the app lacks (R4)"}
+{"id": "massive-train-1453", "gold": [[]], "stratum": "N1", "rule": "alarm recurrence settings unsupported"}
+{"id": "massive-train-11087", "gold": [[]], "stratum": "N2", "rule": "no list named (\u00a73 LISTS)"}
+{"id": "massive-dev-15545", "gold": [[{"action": "create_reminder", "args": {"text": "tweet at this company", "time": "09:00", "date": "2026-06-11"}}]], "stratum": "A1", "rule": "reminder, default time/date"}
+{"id": "massive-train-9006", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-dev-7595", "gold": [[]], "stratum": "N1", "rule": "timer out of scope"}
+{"id": "edit-hwu-10473", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "clinc-train-6908", "gold": [[{"action": "create_reminder", "args": {"text": "booking it", "time": "09:00", "date": "2026-06-11"}}]], "stratum": "A2", "rule": "reminder, default time/date"}
+{"id": "edit-hwu-8067", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-train-11035", "gold": [[]], "stratum": "N2", "rule": "no item or list named"}
+{"id": "edit-hwu-13027", "gold": [[]], "stratum": "N3", "rule": "quotation / translation question (R3)"}
+{"id": "edit-hwu-8496", "gold": [[]], "stratum": "N3", "rule": "negation (R3)"}
+{"id": "edit-hwu-13408", "gold": [[]], "stratum": "N3", "rule": "question about state (R3)"}
+{"id": "clinc-train-7338", "gold": [[{"action": "set_alarm", "args": {"time": "06:00", "date": "2026-06-11"}}]], "stratum": "A1", "rule": "set_alarm, tomorrow"}
+{"id": "massive-dev-562", "gold": [[{"action": "remove_alarm", "args": {"time": "08:00", "date": "2026-06-11"}}]], "stratum": "A2", "rule": "remove_alarm, date next occurrence"}
+{"id": "massive-train-3885", "gold": [[]], "stratum": "N3", "rule": "question about alarms (R3)"}
+{"id": "massive-train-10530", "gold": [[]], "stratum": "N2", "rule": "no item, no list named"}
+{"id": "massive-train-7288", "gold": [[]], "stratum": "N2", "rule": "no date/time, vague 'in advance' (R1)"}
+{"id": "edit-hwu-10634", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "clinc-train-13215", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-1854", "gold": [[]], "stratum": "N1", "rule": "time query, out of scope"}
+{"id": "massive-train-2301", "gold": [[]], "stratum": "N1", "rule": "out of scope question"}
+{"id": "massive-train-7810", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-8557", "gold": [[]], "stratum": "N1", "rule": "recurrence (R1)"}
+{"id": "massive-train-6889", "gold": [[]], "stratum": "N1", "rule": "no supported action"}
+{"id": "massive-train-8266", "gold": [[]], "stratum": "N2", "rule": "time-of-day word without clock time on a reminder (\u00a73 Times)"}
+{"id": "massive-dev-2879", "gold": [[]], "stratum": "N2", "rule": "remove all alarms, no time (\u00a73 Alarms)"}
+{"id": "join-desk-001", "gold": [[]], "stratum": "N1", "rule": "calendar events, capability lacking"}
+{"id": "massive-dev-7458", "gold": [[]], "stratum": "N2", "rule": "addressed to another person, not a reminder request"}
+{"id": "massive-dev-8606", "gold": [[]], "stratum": "N1", "rule": "statement about the user / calendar meeting (R6)"}
+{"id": "join-desk-008", "gold": [[]], "stratum": "N2", "rule": "alarms with no time; location reminder unsupported"}
+{"id": "massive-train-11179", "gold": [[]], "stratum": "N1", "rule": "creating a list"}
+{"id": "edit-hwu-4152", "gold": [[]], "stratum": "N3", "rule": "reported speech (R3)"}
+{"id": "massive-train-8352", "gold": [[]], "stratum": "N1", "rule": "calendar + recurrence"}
+{"id": "join-desk-027", "gold": [[]], "stratum": "N1", "rule": "timer out of scope; alarm no time"}
+{"id": "massive-train-11240", "gold": [[]], "stratum": "N1", "rule": "creating a list"}
+{"id": "massive-train-8279", "gold": [[{"action": "create_reminder", "args": {"text": "meeting", "time": "09:00", "date": "2027-03-15"}}]], "stratum": "A3", "rule": "reminder, month-day date next occurrence, default time"}
+{"id": "massive-train-8986", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "edit-hwu-13227", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-train-8843", "gold": [[]], "stratum": "N1", "rule": "scheduling calendar meeting, capability lacking"}
+{"id": "massive-train-7705", "gold": [[{"action": "create_reminder", "args": {"text": "meeting", "time": "10:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "reminder, 'ten in the morning' = 10:00, tomorrow"}
+{"id": "join-desk-014", "gold": [[]], "stratum": "N1", "rule": "recurrence + creating a list"}
+{"id": "massive-train-6773", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "edit-hwu-568", "gold": [[]], "stratum": "N3", "rule": "negation (R3)"}
+{"id": "massive-train-11042", "gold": [[]], "stratum": "N2", "rule": "no list named (\u00a73 LISTS)"}
+{"id": "massive-train-7984", "gold": [[]], "stratum": "N1", "rule": "calendar, capability lacking"}
+{"id": "massive-train-2602", "gold": [[{"action": "set_alarm", "args": {"time": "05:00", "date": "2026-06-11"}}]], "stratum": "A1", "rule": "set_alarm, tomorrow"}
+{"id": "edit-hwu-4159", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "massive-train-10930", "gold": [[]], "stratum": "N3", "rule": "question about a list the app lacks"}
+{"id": "massive-train-10922", "gold": [[]], "stratum": "N1", "rule": "creating a list"}
+{"id": "massive-train-7234", "gold": [[]], "stratum": "N1", "rule": "calendar query, out of scope"}
+{"id": "massive-train-11176", "gold": [[]], "stratum": "N1", "rule": "wish list not in LISTS (R4)"}
+{"id": "clinc-train-10186", "gold": [[]], "stratum": "N3", "rule": "question about calendar state"}
+{"id": "edit-hwu-9556", "gold": [[]], "stratum": "N3", "rule": "reported question (R3)"}
+{"id": "massive-train-7482", "gold": [[]], "stratum": "N1", "rule": "recurrence (R1)"}
+{"id": "massive-train-7163", "gold": [[]], "stratum": "N2", "rule": "no action named"}
+{"id": "massive-train-5132", "gold": [[]], "stratum": "N1", "rule": "time zone query, out of scope"}
+{"id": "massive-train-9085", "gold": [[{"action": "create_reminder", "args": {"text": "editor's meeting", "time": "14:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "reminder, weekday + clock time"}
+{"id": "edit-hwu-5477", "gold": [[]], "stratum": "N3", "rule": "conditional (R3)"}
+{"id": "massive-train-7874", "gold": [[]], "stratum": "N1", "rule": "calendar event, capability lacking"}
+{"id": "massive-train-4783", "gold": [[]], "stratum": "N2", "rule": "alarm with no time (R4)"}
+{"id": "massive-train-6037", "gold": [[]], "stratum": "N2", "rule": "bare hour without am/pm is ambiguous (\u00a73 Times)"}
+{"id": "clinc-train-7428", "gold": [[]], "stratum": "N3", "rule": "query of a list, out of scope"}
+{"id": "massive-train-5073", "gold": [[{"action": "set_alarm", "args": {"time": "06:00", "date": "2026-06-11"}}]], "stratum": "A1", "rule": "set_alarm, date next occurrence"}
+{"id": "massive-train-5859", "gold": [[]], "stratum": "N1", "rule": "date query, out of scope"}
+{"id": "edit-hwu-13032", "gold": [[]], "stratum": "N3", "rule": "quotation (R3)"}
+{"id": "massive-train-4711", "gold": [[]], "stratum": "N2", "rule": "time-of-day word without clock time, alarm time required (\u00a73 Times)"}

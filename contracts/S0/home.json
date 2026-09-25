@@ -1,0 +1,113 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "set_lights_power",
+      "description": "Turn the lights in a room on or off. If no room is given, the room the user is currently in is used.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "enum": ["living_room", "kitchen", "bedroom", "bathroom", "hallway", "study", "whole_house", "current_room"],
+            "description": "The room to act on. 'whole_house' means every room; 'current_room' means the room the user is in right now. Defaults to 'current_room'."
+          },
+          "power": {
+            "type": "string",
+            "enum": ["on", "off"],
+            "description": "Whether to turn the lights on or off."
+          }
+        },
+        "required": ["power"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_lights_brightness",
+      "description": "Set the brightness of the lights in a room as a percentage. If no room is given, the room the user is currently in is used.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "enum": ["living_room", "kitchen", "bedroom", "bathroom", "hallway", "study", "whole_house", "current_room"],
+            "description": "The room to act on. 'whole_house' means every room; 'current_room' means the room the user is in right now. Defaults to 'current_room'."
+          },
+          "brightness": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "Brightness percentage from 1 to 100."
+          }
+        },
+        "required": ["brightness"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_lights_color",
+      "description": "Set the colour of the lights in a room. If no room is given, the room the user is currently in is used.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "enum": ["living_room", "kitchen", "bedroom", "bathroom", "hallway", "study", "whole_house", "current_room"],
+            "description": "The room to act on. 'whole_house' means every room; 'current_room' means the room the user is in right now. Defaults to 'current_room'."
+          },
+          "color": {
+            "type": "string",
+            "enum": ["red", "orange", "yellow", "green", "blue", "purple", "pink", "white", "warm_white", "cool_white"],
+            "description": "The light colour."
+          }
+        },
+        "required": ["color"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "control_vacuum",
+      "description": "Control the robot vacuum: start cleaning, stop, or send it back to its dock. When starting, a room can optionally be given; if none is given the whole house is cleaned.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": ["start", "stop", "dock"],
+            "description": "'start' begins cleaning, 'stop' stops it, 'dock' sends it back to its dock."
+          },
+          "room": {
+            "type": "string",
+            "enum": ["living_room", "kitchen", "bedroom", "bathroom", "hallway", "study", "current_room"],
+            "description": "Only used with action 'start'. The room to clean; 'current_room' means the room the user is in right now. Omit to clean the whole house."
+          }
+        },
+        "required": ["action"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "set_plug_power",
+      "description": "Switch the smart plug on or off.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "power": {
+            "type": "string",
+            "enum": ["on", "off"],
+            "description": "Whether to switch the plug on or off."
+          }
+        },
+        "required": ["power"]
+      }
+    }
+  }
+]

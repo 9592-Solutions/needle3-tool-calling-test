@@ -1,0 +1,279 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_power",
+     "description": "Turn a room's lights on or off (switch on, switch off, turn out).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "power": {
+        "type": "string",
+        "enum": [
+         "on",
+         "off"
+        ],
+        "description": "on or off"
+       }
+      },
+      "required": [
+       "power"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_brightness",
+     "description": "Set a room's lights to a brightness percentage from 1 to 100 (full or max is 100, half is 50).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "brightness": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100,
+        "description": "brightness in percent, a whole number from 1 to 100"
+       }
+      },
+      "required": [
+       "brightness"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_lights_color",
+     "description": "Change the colour of a room's lights.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "The room whose lights change: living room (lounge), kitchen, bedroom, bathroom, hallway (hall), study, whole house (every room, all the lights), or this room (the room the user is in).",
+        "default": "this room"
+       },
+       "color": {
+        "type": "string",
+        "enum": [
+         "red",
+         "orange",
+         "yellow",
+         "green",
+         "blue",
+         "purple",
+         "pink",
+         "white",
+         "warm white",
+         "cool white"
+        ],
+        "description": "the colour: red, orange, yellow, green, blue, purple (violet), pink, white, warm white (warm, soft white), cool white (cool, daylight)"
+       }
+      },
+      "required": [
+       "color"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "control_vacuum",
+     "description": "Start the robot vacuum (roomba, hoover) cleaning, stop it, or send it back to its dock.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "action": {
+        "type": "string",
+        "enum": [
+         "start",
+         "stop",
+         "dock"
+        ],
+        "description": "start cleaning, stop, or dock (go back to its base)"
+       },
+       "room": {
+        "type": "string",
+        "enum": [
+         "living room",
+         "kitchen",
+         "bedroom",
+         "bathroom",
+         "hallway",
+         "study",
+         "whole house",
+         "this room"
+        ],
+        "description": "the room to clean when starting: living room, kitchen, bedroom, bathroom, hallway, study, whole house, or this room",
+        "default": "whole house"
+       }
+      },
+      "required": [
+       "action"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "set_plug_power",
+     "description": "Switch the smart plug (socket, outlet, wemo) on or off.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "power": {
+        "type": "string",
+        "enum": [
+         "on",
+         "off"
+        ],
+        "description": "on or off"
+       }
+      },
+      "required": [
+       "power"
+      ]
+     }
+    }
+   }
+  ],
+  "system": null,
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp4zkwkfhv/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpfo5a63gf/tools.json",
+    "--threads",
+    "1",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "ov1",
+   "prompt": "please I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and I would really like it if you could possibly help me with something that has been on my mind for a while now and turn off the kitchen lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_lights_power\",\"arguments\":{\"room\":\"kitchen\",\"power\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"reaches back to turn 2 (kitchen lights off) and turn 5 (spoiled 'spoiled'); follow-up changes lights to 'off' for the kitchen\",\"confidence\":0.8167,\"prefill_tps\":137.1,\"decode_tps\":143.3,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 27.456710145,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_lights_power",
+      "arguments": {
+       "room": "kitchen",
+       "power": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "reaches back to turn 2 (kitchen lights off) and turn 5 (spoiled 'spoiled'); follow-up changes lights to 'off' for the kitchen",
+    "confidence": 0.8167,
+    "prefill_tps": 137.1,
+    "decode_tps": 143.3,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "ov2",
+   "prompt": "turn off the kitchen lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'turn off' -> brightness 0; 'kitchen' -> room 'kitchen'; 'lights' -> set_lights_brightness\",\"confidence\":0.9344,\"prefill_tps\":76.0,\"decode_tps\":92.6,\"peak_ram_mb\":81.8}\n",
+   "stderr": "",
+   "wall_s": 23.453862835,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'turn off' -> brightness 0; 'kitchen' -> room 'kitchen'; 'lights' -> set_lights_brightness",
+    "confidence": 0.9344,
+    "prefill_tps": 76.0,
+    "decode_tps": 92.6,
+    "peak_ram_mb": 81.8
+   }
+  }
+ ]
+}

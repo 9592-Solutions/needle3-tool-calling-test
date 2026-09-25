@@ -1,0 +1,1253 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "name": "reply_to_notification",
+    "description": "Reply to a message notification from a known sender. Copy the reply text word for word, preserving capitalization. Use dismiss_notification to clear one without replying.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "notification_match": {
+       "type": "string",
+       "enum": [
+        "Maya",
+        "Leo",
+        "Dr. Patel",
+        "Cactus Team"
+       ],
+       "description": "Who the notification is from."
+      },
+      "text": {
+       "type": "string",
+       "description": "The reply message copied word for word.",
+       "minLength": 1,
+       "maxLength": 240
+      }
+     },
+     "required": [
+      "notification_match",
+      "text"
+     ]
+    }
+   },
+   {
+    "name": "dismiss_notification",
+    "description": "Dismiss a sender's notification without replying.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "notification_match": {
+       "type": "string",
+       "enum": [
+        "Maya",
+        "Leo",
+        "Dr. Patel",
+        "Cactus Team"
+       ],
+       "description": "Whose notification to dismiss."
+      }
+     },
+     "required": [
+      "notification_match"
+     ]
+    }
+   },
+   {
+    "name": "start_workout",
+    "description": "Start tracking a workout of an explicitly named type: running, walking, cycling, swimming, strength, or yoga. Use end_workout to finish one already running.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "workout_type": {
+       "type": "string",
+       "enum": [
+        "running",
+        "walking",
+        "cycling",
+        "swimming",
+        "strength",
+        "yoga"
+       ],
+       "description": "The type of workout the user named."
+      }
+     },
+     "required": [
+      "workout_type"
+     ]
+    }
+   },
+   {
+    "name": "end_workout",
+    "description": "End the current workout session. Starting a new one is start_workout. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   },
+   {
+    "name": "find_my_phone",
+    "description": "Trigger the phone to ring so you can find it. Takes no arguments.",
+    "parameters": {
+     "type": "object",
+     "properties": {}
+    }
+   }
+  ],
+  "system": "date: 2026-09-22 Tue 10:18; Copy reply text verbatim, preserving capitalization. Map each explicit supported watch action to exactly one declared call. Do not guess missing values. Unsupported, invalid, ambiguous, and negated requests return no call.",
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true,
+  "require_cpu": "GenuineIntel fam 6 model 85"
+ },
+ "chunk_attempts": 16,
+ "containers": [
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpy2avg_yd/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpy2avg_yd/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp1115vvpl/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmp1115vvpl/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "wearable-00",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "reply to Maya saying be there in 10 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Maya\",\"text\":\"be there in 10 minutes\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reply to Maya' -> notification_match 'Maya'; 'be there in 10 minutes' -> text 'be there in 10 minutes'.\",\"confidence\":1.0000,\"prefill_tps\":80.6,\"decode_tps\":79.3,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.385776078,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Maya",
+       "text": "be there in 10 minutes"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reply to Maya' -> notification_match 'Maya'; 'be there in 10 minutes' -> text 'be there in 10 minutes'.",
+    "confidence": 1.0,
+    "prefill_tps": 80.6,
+    "decode_tps": 79.3,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-01",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "reply to Dr. Patel with See you Thursday",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Dr. Patel\",\"text\":\"See you Thursday\"}}],\"suppressed_calls\":[],\"reasoning\":\"notification_match 'Dr. Patel' from query; text 'See you Thursday' from query.\",\"confidence\":1.0000,\"prefill_tps\":84.0,\"decode_tps\":83.4,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.208608700999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Dr. Patel",
+       "text": "See you Thursday"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "notification_match 'Dr. Patel' from query; text 'See you Thursday' from query.",
+    "confidence": 1.0,
+    "prefill_tps": 84.0,
+    "decode_tps": 83.4,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-02",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "answer the Cactus Team message saying the build is green",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Cactus Team\",\"text\":\"the build is green\"}}],\"suppressed_calls\":[],\"reasoning\":\"'answer the Cactus Team message' -> reply_to_notification notification_match 'Cactus Team', text 'the build is green'.\",\"confidence\":1.0000,\"prefill_tps\":82.9,\"decode_tps\":75.9,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.525638692,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Cactus Team",
+       "text": "the build is green"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'answer the Cactus Team message' -> reply_to_notification notification_match 'Cactus Team', text 'the build is green'.",
+    "confidence": 1.0,
+    "prefill_tps": 82.9,
+    "decode_tps": 75.9,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-03",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "send Leo a reply that says lunch works for me",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Leo\",\"text\":\"lunch works for me\"}}],\"suppressed_calls\":[],\"reasoning\":\"'send Leo a reply' -> reply_to_notification notification_match 'Leo', text 'lunch works for me'.\",\"confidence\":0.9821,\"prefill_tps\":82.9,\"decode_tps\":77.7,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.106897626,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Leo",
+       "text": "lunch works for me"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'send Leo a reply' -> reply_to_notification notification_match 'Leo', text 'lunch works for me'.",
+    "confidence": 0.9821,
+    "prefill_tps": 82.9,
+    "decode_tps": 77.7,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-04",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "dismiss the notification from Leo",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"dismiss_notification\",\"arguments\":{\"notification_match\":\"Leo\"}}],\"suppressed_calls\":[],\"reasoning\":\"notification_match 'Leo' from query; dismiss_notification tool.\",\"confidence\":0.9741,\"prefill_tps\":78.3,\"decode_tps\":80.7,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.014396603000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "dismiss_notification",
+      "arguments": {
+       "notification_match": "Leo"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "notification_match 'Leo' from query; dismiss_notification tool.",
+    "confidence": 0.9741,
+    "prefill_tps": 78.3,
+    "decode_tps": 80.7,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-05",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "swipe away the alert from Maya",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"dismiss_notification\",\"arguments\":{\"notification_match\":\"Maya\"}}],\"suppressed_calls\":[],\"reasoning\":\"'swipe away the alert from Maya' -> dismiss_notification with notification_match 'Maya'.\",\"confidence\":0.9808,\"prefill_tps\":77.0,\"decode_tps\":75.5,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.367722960000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "dismiss_notification",
+      "arguments": {
+       "notification_match": "Maya"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'swipe away the alert from Maya' -> dismiss_notification with notification_match 'Maya'.",
+    "confidence": 0.9808,
+    "prefill_tps": 77.0,
+    "decode_tps": 75.5,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-06",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "clear the Dr. Patel notification",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"dismiss_notification\",\"arguments\":{\"notification_match\":\"Dr. Patel\"}}],\"suppressed_calls\":[],\"reasoning\":\"notification_match 'Dr. Patel' from query; dismiss_notification removes it\",\"confidence\":0.9918,\"prefill_tps\":80.2,\"decode_tps\":68.6,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.157079505999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "dismiss_notification",
+      "arguments": {
+       "notification_match": "Dr. Patel"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "notification_match 'Dr. Patel' from query; dismiss_notification removes it",
+    "confidence": 0.9918,
+    "prefill_tps": 80.2,
+    "decode_tps": 68.6,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-07",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "get rid of the Cactus Team notification",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"dismiss_notification\",\"arguments\":{\"notification_match\":\"Cactus Team\"}}],\"suppressed_calls\":[],\"reasoning\":\"'get rid of the Cactus Team notification' -> dismiss_notification with notification_match 'Cactus Team'.\",\"confidence\":0.9957,\"prefill_tps\":83.0,\"decode_tps\":82.8,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.1796473469999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "dismiss_notification",
+      "arguments": {
+       "notification_match": "Cactus Team"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'get rid of the Cactus Team notification' -> dismiss_notification with notification_match 'Cactus Team'.",
+    "confidence": 0.9957,
+    "prefill_tps": 83.0,
+    "decode_tps": 82.8,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-08",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "start a running workout",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"running\"}}],\"suppressed_calls\":[],\"reasoning\":\"'running' -> workout_type 'running'. start_workout tool.\",\"confidence\":1.0000,\"prefill_tps\":80.2,\"decode_tps\":81.8,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.931932324000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "running"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'running' -> workout_type 'running'. start_workout tool.",
+    "confidence": 1.0,
+    "prefill_tps": 80.2,
+    "decode_tps": 81.8,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-09",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "begin a swimming session on my watch",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"swimming\"}}],\"suppressed_calls\":[],\"reasoning\":\"'swimming session' -> workout_type 'swimming'. start_workout is the only workout tool.\",\"confidence\":0.9965,\"prefill_tps\":82.7,\"decode_tps\":83.4,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.055827895,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "swimming"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'swimming session' -> workout_type 'swimming'. start_workout is the only workout tool.",
+    "confidence": 0.9965,
+    "prefill_tps": 82.7,
+    "decode_tps": 83.4,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-10",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "kick off some strength training",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"strength\"}}],\"suppressed_calls\":[],\"reasoning\":\"'strength training' -> workout_type 'strength'. start_workout is the only workout tool.\",\"confidence\":0.9982,\"prefill_tps\":81.2,\"decode_tps\":81.3,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.025888040999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "strength"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'strength training' -> workout_type 'strength'. start_workout is the only workout tool.",
+    "confidence": 0.9982,
+    "prefill_tps": 81.2,
+    "decode_tps": 81.3,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-11",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "track a cycling workout",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"cycling\"}}],\"suppressed_calls\":[],\"reasoning\":\"'cycling workout' -> workout_type 'cycling'. start_workout is the only workout tool.\",\"confidence\":0.9942,\"prefill_tps\":82.5,\"decode_tps\":90.3,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.796028034999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "cycling"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'cycling workout' -> workout_type 'cycling'. start_workout is the only workout tool.",
+    "confidence": 0.9942,
+    "prefill_tps": 82.5,
+    "decode_tps": 90.3,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-12",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "go ahead and start a walking workout",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"walking\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start a walking workout' -> start_workout with workout_type 'walking'.\",\"confidence\":0.9936,\"prefill_tps\":80.4,\"decode_tps\":81.5,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.025645386999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "walking"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start a walking workout' -> start_workout with workout_type 'walking'.",
+    "confidence": 0.9936,
+    "prefill_tps": 80.4,
+    "decode_tps": 81.5,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-13",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "end my workout",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"end_workout\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"Query asks to end workout without specifying type. end_workout tool with empty arguments.\",\"confidence\":1.0000,\"prefill_tps\":79.8,\"decode_tps\":93.3,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.618726142999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "end_workout",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Query asks to end workout without specifying type. end_workout tool with empty arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 79.8,
+    "decode_tps": 93.3,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-14",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "finish the current workout session",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"end_workout\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'finish the current workout session' -> end_workout with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":80.1,\"decode_tps\":86.0,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.882504101999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "end_workout",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'finish the current workout session' -> end_workout with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 80.1,
+    "decode_tps": 86.0,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-15",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "wrap up my workout now",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"end_workout\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'wrap up my workout' -> end_workout with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":88.2,\"decode_tps\":102.3,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.5581889480000015,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "end_workout",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'wrap up my workout' -> end_workout with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 88.2,
+    "decode_tps": 102.3,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-16",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "find my phone",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"find_my_phone\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"find_my_phone tool chosen because query asks to locate phone. No arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":78.8,\"decode_tps\":87.4,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.852573307,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "find_my_phone",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "find_my_phone tool chosen because query asks to locate phone. No arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 78.8,
+    "decode_tps": 87.4,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-17",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "make my phone ring so I can locate it",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"find_my_phone\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"'make my phone ring' -> find_my_phone tool. No arguments needed.\",\"confidence\":1.0000,\"prefill_tps\":79.7,\"decode_tps\":88.7,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.735061117999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "find_my_phone",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'make my phone ring' -> find_my_phone tool. No arguments needed.",
+    "confidence": 1.0,
+    "prefill_tps": 79.7,
+    "decode_tps": 88.7,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-18",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "send a reply to Maya",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Maya\",\"text\":\"reply\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reply to Maya' -> notification_match 'Maya'; text 'reply' from query.\",\"confidence\":0.8680,\"prefill_tps\":79.8,\"decode_tps\":77.3,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.168955555000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Maya",
+       "text": "reply"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reply to Maya' -> notification_match 'Maya'; text 'reply' from query.",
+    "confidence": 0.868,
+    "prefill_tps": 79.8,
+    "decode_tps": 77.3,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-19",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "dismiss the latest notification",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"dismiss_notification\",\"arguments\":{\"notification_match\":\"Maya\"}}],\"reasoning\":\"'dismiss the latest notification' -> dismiss_notification with notification_match 'Maya' from context of recent notification.\",\"confidence\":1.0000,\"prefill_tps\":82.0,\"decode_tps\":93.5,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.822505495999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "dismiss_notification",
+      "arguments": {
+       "notification_match": "Maya"
+      }
+     }
+    ],
+    "reasoning": "'dismiss the latest notification' -> dismiss_notification with notification_match 'Maya' from context of recent notification.",
+    "confidence": 1.0,
+    "prefill_tps": 82.0,
+    "decode_tps": 93.5,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-20",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "start a workout",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"running\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start a workout' -> start_workout with workout_type 'running' from 'workout'.\",\"confidence\":1.0000,\"prefill_tps\":76.3,\"decode_tps\":85.7,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.922536330999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "running"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start a workout' -> start_workout with workout_type 'running' from 'workout'.",
+    "confidence": 1.0,
+    "prefill_tps": 76.3,
+    "decode_tps": 85.7,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-21",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "reply saying I am stuck in a meeting",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Maya\",\"text\":\"I am stuck in a meeting\"}}],\"reasoning\":\"'reply saying I am stuck in a meeting' -> reply_to_notification with notification_match 'Maya' and text 'I am stuck in a meeting'.\",\"confidence\":1.0000,\"prefill_tps\":82.7,\"decode_tps\":103.1,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.960976340000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Maya",
+       "text": "I am stuck in a meeting"
+      }
+     }
+    ],
+    "reasoning": "'reply saying I am stuck in a meeting' -> reply_to_notification with notification_match 'Maya' and text 'I am stuck in a meeting'.",
+    "confidence": 1.0,
+    "prefill_tps": 82.7,
+    "decode_tps": 103.1,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-22",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "check my heart rate on the watch",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"find_my_phone\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"No health sensor tool available. 'heart rate' -> find_my_phone.\",\"confidence\":1.0000,\"prefill_tps\":80.6,\"decode_tps\":86.3,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.858512308000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "find_my_phone",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "No health sensor tool available. 'heart rate' -> find_my_phone.",
+    "confidence": 1.0,
+    "prefill_tps": 80.6,
+    "decode_tps": 86.3,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-23",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "call Maya from my watch",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Maya\",\"text\":\"call Maya from my watch\"}}],\"suppressed_calls\":[],\"reasoning\":\"'call Maya from my watch' -> reply_to_notification with notification_match 'Maya' and text 'call Maya from my watch'.\",\"confidence\":0.9661,\"prefill_tps\":83.8,\"decode_tps\":84.0,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.9585119459999945,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Maya",
+       "text": "call Maya from my watch"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'call Maya from my watch' -> reply_to_notification with notification_match 'Maya' and text 'call Maya from my watch'.",
+    "confidence": 0.9661,
+    "prefill_tps": 83.8,
+    "decode_tps": 84.0,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-24",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "show my step count for today",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No fitness tracking or health data tool is available.\",\"confidence\":1.0000,\"prefill_tps\":78.5,\"decode_tps\":85.6,\"peak_ram_mb\":80.9}\n",
+   "stderr": "",
+   "wall_s": 4.722290213000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No fitness tracking or health data tool is available.",
+    "confidence": 1.0,
+    "prefill_tps": 78.5,
+    "decode_tps": 85.6,
+    "peak_ram_mb": 80.9
+   }
+  },
+  {
+   "id": "wearable-25",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "don't reply to the message from Leo",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Leo\",\"text\":\"don't reply\"}}],\"reasoning\":\"'don't reply' -> reply_to_notification; 'Leo' -> notification_match 'Leo'; text 'don't reply' from query.\",\"confidence\":0.9512,\"prefill_tps\":87.1,\"decode_tps\":93.2,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.105968151000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Leo",
+       "text": "don't reply"
+      }
+     }
+    ],
+    "reasoning": "'don't reply' -> reply_to_notification; 'Leo' -> notification_match 'Leo'; text 'don't reply' from query.",
+    "confidence": 0.9512,
+    "prefill_tps": 87.1,
+    "decode_tps": 93.2,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "wearable-26",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "do not start a running workout yet",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"end_workout\",\"arguments\":{}}],\"suppressed_calls\":[],\"reasoning\":\"User forbids start_workout with workout_type 'running'. Alternative request is end_workout with no arguments.\",\"confidence\":1.0000,\"prefill_tps\":79.8,\"decode_tps\":86.3,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 4.975358835000009,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "end_workout",
+      "arguments": {}
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "User forbids start_workout with workout_type 'running'. Alternative request is end_workout with no arguments.",
+    "confidence": 1.0,
+    "prefill_tps": 79.8,
+    "decode_tps": 86.3,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "wearable-27",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "never dismiss notifications from Dr. Patel",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"dismiss_notification\",\"arguments\":{\"notification_match\":\"Dr. Patel\"}}],\"suppressed_calls\":[],\"reasoning\":\"Prohibited action: dismiss_notification. Alternative: dismiss_notification with notification_match 'Dr. Patel' from query.\",\"confidence\":0.9934,\"prefill_tps\":80.4,\"decode_tps\":84.8,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.052326696999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "dismiss_notification",
+      "arguments": {
+       "notification_match": "Dr. Patel"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Prohibited action: dismiss_notification. Alternative: dismiss_notification with notification_match 'Dr. Patel' from query.",
+    "confidence": 0.9934,
+    "prefill_tps": 80.4,
+    "decode_tps": 84.8,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "wearable-28",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "reply to Priya saying happy birthday",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Maya\",\"text\":\"happy birthday\"}}],\"reasoning\":\"notification_match 'Priya' from query; text 'happy birthday' from query.\",\"confidence\":0.9898,\"prefill_tps\":78.0,\"decode_tps\":86.9,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.143889404999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Maya",
+       "text": "happy birthday"
+      }
+     }
+    ],
+    "reasoning": "notification_match 'Priya' from query; text 'happy birthday' from query.",
+    "confidence": 0.9898,
+    "prefill_tps": 78.0,
+    "decode_tps": 86.9,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-29",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "start a pilates workout",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"walking\"}}],\"suppressed_calls\":[],\"reasoning\":\"'pilates workout' -> workout_type 'pilates'. start_workout tool.\",\"confidence\":1.0000,\"prefill_tps\":82.7,\"decode_tps\":92.4,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.768505951999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "walking"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pilates workout' -> workout_type 'pilates'. start_workout tool.",
+    "confidence": 1.0,
+    "prefill_tps": 82.7,
+    "decode_tps": 92.4,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-30",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A78K1N76JR7271W2Y258R",
+   "prompt": "dismiss the notification from Leo and start a strength workout",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"dismiss_notification\",\"arguments\":{\"notification_match\":\"Leo\"}},{\"name\":\"start_workout\",\"arguments\":{\"workout_type\":\"strength\"}}],\"suppressed_calls\":[],\"reasoning\":\"dismiss_notification notification_match 'Leo' from query; start_workout workout_type 'strength' from query\",\"confidence\":0.9961,\"prefill_tps\":81.3,\"decode_tps\":81.4,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.399403067000009,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "dismiss_notification",
+      "arguments": {
+       "notification_match": "Leo"
+      }
+     },
+     {
+      "name": "start_workout",
+      "arguments": {
+       "workout_type": "strength"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "dismiss_notification notification_match 'Leo' from query; start_workout workout_type 'strength' from query",
+    "confidence": 0.9961,
+    "prefill_tps": 81.3,
+    "decode_tps": 81.4,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "wearable-31",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M34A3JK4Y2THWDZTHHMT09PR",
+   "prompt": "find my phone and reply to Maya saying almost home",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"find_my_phone\",\"arguments\":{}},{\"name\":\"reply_to_notification\",\"arguments\":{\"notification_match\":\"Maya\",\"text\":\"almost home\"}}],\"suppressed_calls\":[],\"reasoning\":\"find_my_phone no arguments; reply_to_notification notification_match 'Maya' text 'almost home' from query.\",\"confidence\":0.9631,\"prefill_tps\":82.8,\"decode_tps\":88.6,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.194417178999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "find_my_phone",
+      "arguments": {}
+     },
+     {
+      "name": "reply_to_notification",
+      "arguments": {
+       "notification_match": "Maya",
+       "text": "almost home"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "find_my_phone no arguments; reply_to_notification notification_match 'Maya' text 'almost home' from query.",
+    "confidence": 0.9631,
+    "prefill_tps": 82.8,
+    "decode_tps": 88.6,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

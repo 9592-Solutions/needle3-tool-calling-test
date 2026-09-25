@@ -1,0 +1,55 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "desk_action",
+      "description": "Manage alarms, the shopping, to-do and packing lists, and reminders.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "set alarm",
+              "remove alarm",
+              "add to list",
+              "remove from list",
+              "create reminder"
+            ],
+            "description": "what to do"
+          },
+          "time": {
+            "type": "string",
+            "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+            "description": "clock time in 24-hour HH:MM, e.g. 07:30 for 7:30 am or 19:30 for 7:30 pm"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "ISO date YYYY-MM-DD, e.g. 2026-06-12"
+          },
+          "list": {
+            "type": "string",
+            "enum": [
+              "shopping",
+              "to-do",
+              "packing"
+            ],
+            "description": "for list actions"
+          },
+          "item": {
+            "type": "string",
+            "description": "one list item, in the user's words"
+          },
+          "text": {
+            "type": "string",
+            "description": "what to be reminded about, in the user's words"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    }
+  }
+]

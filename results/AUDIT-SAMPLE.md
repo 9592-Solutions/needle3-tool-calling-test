@@ -1,0 +1,3473 @@
+# Needle 3 step 10: raw-output reading sample (no aggregates)
+
+Written by results/audit_dump.py before results/score_test.py is run. Three items per (arm x schema x outcome) cell in FREEZE §11 display order, every technical failure, every band F item.
+
+## needle / S1 (test)
+
+### needle / S1 / correct_action
+
+- **needle S1** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}], "suppressed_calls": [], "confidence": 0.9925, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'put chips on my shopping list' -> add_list_item with list 'shopping' and item 'chips'."}`
+- **needle S1** `n3-677ca19725` (home/A2) outcome **correct_action**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"room": "whole house", "color": "red"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_color", "arguments": {"room": "whole house", "color": "red"}}], "suppressed_calls": [], "confidence": 0.5895, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'red' -> color 'red'; 'whole home' -> room 'whole house'; set_lights_color with color 'red'."}`
+- **needle S1** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}], "suppressed_calls": [], "confidence": 0.9894, "validation": {"ungrounded": [], "negation": false}, "reasoning": "list 'shopping' from query; item 'red wine' from query"}`
+
+### needle / S1 / correct_nonaction
+
+- **needle S1** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "batteries AAA"}}], "confidence": 0.9954, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'buy batteries AAA' -> add_list_item list 'shopping' item 'batteries AAA'."}`
+- **needle S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_color", "arguments": {"color": "blue"}}], "confidence": 0.7605, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'give me something else' means change color -> set_lights_color with color 'blue' from 'colour' and defaults to blue."}`
+- **needle S1** `n3-5914808891` (desk/N3) outcome **correct_nonaction**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_alarm", "arguments": {"time": "14:00", "date": "2026-06-11"}}], "suppressed_calls": [], "confidence": 1.0, "validation": {"ungrounded": ["set_alarm.time", "set_alarm.date"], "negation": false}, "reasoning": "'two o'clock tomorrow afternoon' -> time '14:00'; date '2026-06-11' from system date 2026-06-10; set_alarm chosen for alarm."}`
+
+### needle / S1 / needless_refusal
+
+- **needle S1** `n3-f9486acbd6` (desk/A1) outcome **needless_refusal**
+  - text: 'please set my alarm for five p. m.'
+  - gold: `[[{"action": "set_alarm", "args": {"time": "17:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_alarm", "arguments": {"time": "05:00"}}], "suppressed_calls": [], "confidence": 0.9066, "validation": {"ungrounded": ["set_alarm.time"], "negation": false}, "reasoning": "'five p. m.' -> time '05:00'; no date given so omitted; set_alarm chosen."}`
+- **needle S1** `n3-64a073f01e` (desk/A2) outcome **needless_refusal**
+  - text: 'make sure to put eggs on the grocery list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "eggs", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "eggs"}}], "confidence": 1.0, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'make sure to put eggs on the grocery list' -> add_list_item with list 'shopping' and item 'eggs'."}`
+- **needle S1** `n3-e7cb30b7e6` (desk/A2) outcome **needless_refusal**
+  - text: "don't let me forget to buy a gift for my sister"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "buy a gift for my sister", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "create_reminder", "arguments": {"text": "buy a gift for my sister", "time": "09:00"}}], "suppressed_calls": [], "confidence": 0.6926, "validation": {"ungrounded": ["create_reminder.time"], "negation": true}, "reasoning": "'don't let me forget' -> create_reminder; text 'buy a gift for my sister'; date '2026-06-10' from system date"}`
+
+### needle / S1 / technical_failure
+
+- **needle S1** `n3-59348ddbd7` (home/A1) outcome **technical_failure**
+  - text: 'disable smart socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1634, "validation": null, "reasoning": "'disable smart socket' means turn off lights in 'socket' room. set_lights_power with room 'socket' and power 'off'."}`
+- **needle S1** `n3-9cc5764e08` (desk/N3) outcome **technical_failure**
+  - text: 'is alarm set at 5:30 am'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1858, "validation": null, "reasoning": "'is alarm set' -> set_alarm; '5:30 am' -> time '5:30 am'; date omitted."}`
+- **needle S1** `n3-62a873306c` (desk/A1) outcome **technical_failure**
+  - text: 'Send me a reminder to pick up my dog from the groomer at 1pm.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "pick up my dog from the groomer", "time": "13:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1499, "validation": null, "reasoning": "'reminder to pick up my dog' -> create_reminder with text 'pick up my dog', time '1pm' -> '1:00 PM'."}`
+- **needle S1** `n3-f92bd8664c` (desk/A2) outcome **technical_failure**
+  - text: "Ugh, I'm terrible at waking up, can you set an alarm for 5:30 in the morning?"
+  - gold: `[[{"action": "set_alarm", "args": {"time": "05:30", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1037, "validation": null, "reasoning": "'set an alarm' -> set_alarm; '5:30 in the morning' -> time '5:30 AM'; date omitted as not specified."}`
+- **needle S1** `n3-1086efbecd` (home/A1) outcome **technical_failure**
+  - text: 'Hey, could you switch the light in the study off?'
+  - gold: `[[{"action": "light_power", "args": {"room": "study", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9548, "validation": null, "reasoning": "'study' -> room 'study'; 'off' -> brightness 0; set_lights_brightness chosen."}`
+- **needle S1** `n3-8df0a0c001` (desk/N1) outcome **technical_failure**
+  - text: 'can you set the timer to 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1101, "validation": null, "reasoning": "'set the timer to 20 minutes' -> set_alarm with time '20 minutes' from query."}`
+- **needle S1** `n3-05607cc4e0` (home/A1) outcome **technical_failure**
+  - text: 'Smart socket off'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1473, "validation": null, "reasoning": "'Smart socket off' means turn off lights in 'Smart socket' room. set_lights_brightness with room 'Smart socket' and brightness 0 to turn off."}`
+- **needle S1** `n3-e470a2901a` (desk/A3) outcome **technical_failure**
+  - text: 'set a reminder in one hour for my bread to bake'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "bread to bake", "time": "15:30", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0867, "validation": null, "reasoning": "'reminder in one hour' -> create_reminder with text 'bake bread' and time 'in 1 hour' (relative, no conversion needed)."}`
+- **needle S1** `n3-a0e4cb8678` (home/A2) outcome **technical_failure**
+  - text: 'Kitchen lights, off.'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9028, "validation": null, "reasoning": "'kitchen' -> room 'kitchen'; 'off' -> brightness 0; set_lights_brightness."}`
+- **needle S1** `n3-b7b5510719` (home/A3) outcome **technical_failure**
+  - text: 'turn off the lamps'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7508, "validation": null, "reasoning": "'turn off the lamps' means turn off lights -> set_lights_brightness with brightness 0"}`
+- **needle S1** `n3-9e047ea707` (desk/N2) outcome **technical_failure**
+  - text: 'Delete my alarm for tomorrow.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1644, "validation": null, "reasoning": "'delete my alarm' -> remove_alarm; time 'tomorrow' -> 2026-06-11T00:00:00; date '2026-06-11' from system date."}`
+- **needle S1** `n3-8100a8f0df` (desk/N1) outcome **technical_failure**
+  - text: 'Set a timer for ten minutes.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0885, "validation": null, "reasoning": "'timer for ten minutes' -> set_alarm with time '10 minutes' from query."}`
+- **needle S1** `n3-c31c85a429` (home/N3) outcome **technical_failure**
+  - text: 'Are the bathroom lights off?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9519, "validation": null, "reasoning": "'bathroom' -> room 'bathroom'; 'off' -> brightness 0; set_lights_brightness."}`
+- **needle S1** `n3-a6f2eeff73` (desk/N2) outcome **technical_failure**
+  - text: 'Get me up at ten tomorrow.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.115, "validation": null, "reasoning": "'get me up at ten tomorrow' -> create_reminder with text 'get me up' and time '10:00 tomorrow' from system date 2026-06-10 Wed -> 2026-06-11 Sun."}`
+- **needle S1** `n3-14c9460069` (desk/A2) outcome **technical_failure**
+  - text: 'PDA can you remind me to meet with Jesse next Saturday.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meet with jesse", "time": "09:00", "date": "2026-06-13"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1144, "validation": null, "reasoning": "'remind me to meet with Jesse next Saturday' -> create_reminder with text 'meet with Jesse', time 'next Saturday' (2026-06-17)."}`
+- **needle S1** `n3-798cd087ac` (home/A2) outcome **technical_failure**
+  - text: 'Would you switch the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'off' -> brightness 0; 'lights' -> room 'living room' (default); 'off' -> brightness 0"}`
+- **needle S1** `n3-e8fc81d381` (home/A2) outcome **technical_failure**
+  - text: 'PDA, I want the lights turned off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turned off' -> brightness 0; 'lights turned off' -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle S1** `n3-4bc6b348d2` (home/N1) outcome **technical_failure**
+  - text: 'turn off overhead light'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9955, "validation": null, "reasoning": "'turn off overhead light' -> set_lights_brightness with room 'overhead light' and brightness 0 (off)."}`
+- **needle S1** `n3-faf5a5fe1e` (home/A2) outcome **technical_failure**
+  - text: 'hey olly turn off the light please'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9853, "validation": null, "reasoning": "'off' -> brightness 0; 'off' -> brightness 0; 'light' -> room 'living room'"}`
+- **needle S1** `n3-6538087ae8` (home/N1) outcome **technical_failure**
+  - text: 'turn office lights off'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9883, "validation": null, "reasoning": "'off' -> brightness 0; 'off' -> brightness 0; 'off' -> brightness 0; 'off' -> brightness 0"}`
+- **needle S1** `n3-ba849a1df4` (desk/N2) outcome **technical_failure**
+  - text: 'Could you remind me later tonight to get the plants inside?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0965, "validation": null, "reasoning": "'remind me later tonight' -> create_reminder with text 'get the plants inside' and time 'tonight' (2026-06-10)"}`
+- **needle S1** `n3-9c2496cd7d` (home/N2) outcome **technical_failure**
+  - text: 'These lights are too bright please fix them'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7314, "validation": null, "reasoning": "'fix them' means turn off lights -> set_lights_brightness with brightness 0"}`
+- **needle S1** `n3-b2b663714b` (home/A2) outcome **technical_failure**
+  - text: 'Make the wemo go on'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1715, "validation": null, "reasoning": "'wemo go on' -> action 'start', room 'wemo'."}`
+- **needle S1** `n3-f75bbbc1dc` (desk/A1) outcome **technical_failure**
+  - text: 'Set a reminder for Friday at five p.m. for dinner with Dave.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "dinner with dave", "time": "17:00", "date": "2026-06-12"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0754, "validation": null, "reasoning": "create_reminder with text 'dinner with Dave' from query, time 'friday at 5 p.m.' from query."}`
+- **needle S1** `n3-d57d8717e3` (desk/N3) outcome **technical_failure**
+  - text: 'Hypothetically, the alarm set for noon.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1286, "validation": null, "reasoning": "'alarm set for noon' -> set_alarm with time 'noon'. No date given, so date omitted."}`
+- **needle S1** `n3-9ac73c1208` (home/A1) outcome **technical_failure**
+  - text: 'Could you switch the light in the kitchen off?'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9715, "validation": null, "reasoning": "'switch the light in the kitchen off' -> set_lights_brightness with room 'kitchen' and brightness 0 (off)."}`
+- **needle S1** `n3-22f432eb48` (home/N3) outcome **technical_failure**
+  - text: 'PDA, shut of the lights when i fall asleep'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9887, "validation": null, "reasoning": "'shut of the lights when i fall asleep' -> set_lights_brightness with brightness 0 (implied low). No room specified, so use 'living room' as default."}`
+- **needle S1** `n3-4306904c29` (home/A2) outcome **technical_failure**
+  - text: 'Siri, would you kindly turn off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7095, "validation": null, "reasoning": "'turn off the light' -> set_lights_brightness with brightness 0; 'Siri' is context, not a parameter."}`
+- **needle S1** `n3-dea41fa5f7` (desk/N2) outcome **technical_failure**
+  - text: 'Give me a reminder in 10 minutes, please.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1465, "validation": null, "reasoning": "'reminder in 10 minutes' -> create_reminder with text 'remind me' and time 'in 10 minutes' (relative, no conversion needed)."}`
+- **needle S1** `n3-b9b2aeae2b` (home/N1) outcome **technical_failure**
+  - text: 'Can you kill the office lights?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9566, "validation": null, "reasoning": "'kill the office lights' -> room 'office', brightness 0 (implied off)."}`
+- **needle S1** `n3-e7f24536d7` (home/A2) outcome **technical_failure**
+  - text: 'Execute command: turn off lights.'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7546, "validation": null, "reasoning": "'turn off lights' -> set_lights_brightness with brightness 0; 'execute command' is a command, not a tool call."}`
+- **needle S1** `n3-447d713d8f` (desk/N3) outcome **technical_failure**
+  - text: 'The memo says "Schedule a reminder for 1pm for a board meeting"'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1603, "validation": null, "reasoning": "Quote is reported speech, ignored. User's own request: create reminder. 'schedule a reminder for 1pm' -> text 'schedule a reminder', time '1pm'."}`
+- **needle S1** `n3-aea13dc67b` (desk/A3) outcome **technical_failure**
+  - text: 'I need a reminder about the meeting with my colleague on the 23rd of October.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meeting with my colleague", "time": "09:00", "date": "2026-10-23"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1158, "validation": null, "reasoning": "create_reminder with text 'meeting with my colleague' from query, time '23rd of October' -> '2026-10-23'."}`
+- **needle S1** `n3-badab84608` (home/N1) outcome **technical_failure**
+  - text: 'Put the porch light out'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9954, "validation": null, "reasoning": "'Put the porch light out' means turn off lights -> set_lights_brightness with room 'porch' and brightness 0"}`
+- **needle S1** `n3-d59019e535` (home/A3) outcome **technical_failure**
+  - text: 'Can you shut off the lamps?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7295, "validation": null, "reasoning": "'shut off the lamps' means turn off lights -> set_lights_brightness with brightness 0 (off)."}`
+- **needle S1** `n3-5e5793ed48` (home/A3) outcome **technical_failure**
+  - text: 'Put the living room light out and power down the socket'
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}, {"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9182, "validation": null, "reasoning": "'living room' -> room 'living room'; 'out' -> brightness 0; 'power down' -> power 'off'; 'socket' -> power 'off'"}`
+- **needle S1** `n3-e49d74d540` (home/A2) outcome **technical_failure**
+  - text: 'can you make the lights go out'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7003, "validation": null, "reasoning": "'make the lights go out' means turn off lights -> set_lights_brightness with brightness 0"}`
+- **needle S1** `n3-6ca79e10d1` (home/A3) outcome **technical_failure**
+  - text: 'turn off the lights in the kitchen and turn on the vacuum cleaner'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}, {"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9341, "validation": null, "reasoning": "'turn off the lights in the kitchen' -> room 'kitchen', brightness 0; 'turn on the vacuum cleaner' -> action 'start'"}`
+- **needle S1** `n3-8f2f7791a8` (home/A3) outcome **technical_failure**
+  - text: 'turn off all lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7899, "validation": null, "reasoning": "'turn off all lights' -> set_lights_brightness with brightness 0 (off). No room specified, so just room."}`
+- **needle S1** `n3-d96a1b73e1` (desk/N3) outcome **technical_failure**
+  - text: "Don't remind me to go to the library on Friday."
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.121, "validation": null, "reasoning": "'Don't remind me to go to the library on Friday' -> create_reminder with text 'go to the library', time 'Friday' relative to 2026-06-10 Wed -> '2026-06-12'"}`
+- **needle S1** `n3-7501929364` (desk/N3) outcome **technical_failure**
+  - text: 'A friend of mine said I should have you remind me about the chickens in an hour.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1092, "validation": null, "reasoning": "'remind me' maps to create_reminder; text 'chickens' from query; time 'in an hour' -> time 'in 1 hour'"}`
+
+### needle / S1 / wrong_call
+
+- **needle S1** `n3-6d35fdda9c` (home/N3) outcome **wrong_call**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "off"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "off"}}], "suppressed_calls": [], "confidence": 0.9558, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'turn off the lights' -> set_lights_power with room 'kitchen', power 'off'."}`
+- **needle S1** `n3-6ff8e556c9` (home/N1) outcome **wrong_call**
+  - text: 'turn off bedroom light at nine thirty p. m.'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "bedroom", "power": "off"}}, {"name": "set_lights_brightness", "arguments": {"room": "bedroom", "brightness": 9}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_power", "arguments": {"room": "bedroom", "power": "off"}}, {"name": "set_lights_brightness", "arguments": {"room": "bedroom", "brightness": 9}}], "suppressed_calls": [], "confidence": 0.5268, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'bedroom' -> room 'bedroom'; 'turn off' -> power 'off'; 'nine thirty p. m.' -> brightness 9."}`
+- **needle S1** `n3-8123d15074` (home/A3) outcome **wrong_call**
+  - text: 'change my light color to blue and please turn off the kitchen light'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}, {"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_color", "arguments": {"color": "blue"}}], "suppressed_calls": [], "confidence": 0.626, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'blue' -> color 'blue'; 'kitchen' -> room 'kitchen'; 'turn off' -> brightness 0; 'kitchen' -> room 'kitchen'"}`
+
+## llm-a / S1 (test)
+
+### llm-a / S1 / correct_action
+
+- **llm-a S1** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"item": "chips", "list": "shopping"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"item\": \"chips\", \"list\": \"shopping\"}, \"name\": \"add_list_item\"}]}", "tool_calls": null}`
+- **llm-a S1** `n3-677ca19725` (home/A2) outcome **correct_action**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red", "room": "whole house"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"color\": \"red\", \"room\": \"whole house\"}, \"name\": \"set_lights_color\"}]}", "tool_calls": null}`
+- **llm-a S1** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"item": "red wine", "list": "shopping"}}]`
+  - raw: `{"content": "{\"calls\":[{\"arguments\":{\"item\":\"red wine\",\"list\":\"shopping\"},\"name\":\"add_list_item\"}]}", "tool_calls": null}`
+
+### llm-a / S1 / correct_nonaction
+
+- **llm-a S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S1** `n3-5914808891` (desk/N3) outcome **correct_nonaction**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S1** `n3-5c0d853baf` (desk/N2) outcome **correct_nonaction**
+  - text: 'Put something on my grocery list.'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+
+### llm-a / S1 / needless_refusal
+
+- **llm-a S1** `n3-6464e8cc20` (desk/A2) outcome **needless_refusal**
+  - text: "Oh, I've got dinner in the oven, can you remind me to take it out?"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "take it out", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S1** `n3-29d3ac1024` (desk/A2) outcome **needless_refusal**
+  - text: "Set an alarm for 5 o'clock o'clock this evening labelled taxi"
+  - gold: `[[{"action": "set_alarm", "args": {"time": "17:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S1** `n3-cf3e7055d0` (desk/A3) outcome **needless_refusal**
+  - text: 'please set a reminder in my calendar for my meeting on march twenty five'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meeting", "time": "09:00", "date": "2027-03-25"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+
+### llm-a / S1 / wrong_call
+
+- **llm-a S1** `n3-ad4fe902ac` (desk/N2) outcome **wrong_call**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"item": "batteries AAA", "list": "shopping"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"item\": \"batteries AAA\", \"list\": \"shopping\"}, \"name\": \"add_list_item\"}]}", "tool_calls": null}`
+- **llm-a S1** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"date": null, "text": "call my mom", "time": "15:00"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"date\": null, \"text\": \"call my mom\", \"time\": \"15:00\"}, \"name\": \"create_reminder\"}]}", "tool_calls": null}`
+- **llm-a S1** `n3-6d35fdda9c` (home/N3) outcome **wrong_call**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off", "room": "kitchen"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"power\": \"off\", \"room\": \"kitchen\"}, \"name\": \"set_lights_power\"}]}", "tool_calls": null}`
+
+## llm-named / S1 (test)
+
+### llm-named / S1 / correct_action
+
+- **llm-named S1** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `{"content": "I'll add chips to your shopping list.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-b4a295dd2e315866", "function": {"name": "add_list_item", "arguments": "{\"list\": \"shopping\", \"item\": \"chips\"}"}}]}`
+- **llm-named S1** `n3-677ca19725` (home/A2) outcome **correct_action**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"room": "whole house", "color": "red"}}]`
+  - raw: `{"content": "I'll turn all the lights in the house red for you.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-a444e945f12ba69f", "function": {"name": "set_lights_color", "arguments": "{\"room\": \"whole house\", \"color\": \"red\"}"}}]}`
+- **llm-named S1** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `{"content": "I'll add red wine to your shopping list.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-9e99f3e59ec38e3b", "function": {"name": "add_list_item", "arguments": "{\"list\": \"shopping\", \"item\": \"red wine\"}"}}]}`
+
+### llm-named / S1 / correct_nonaction
+
+- **llm-named S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'd be happy to help change the light color! But I need to know which room you'd like to change. Could you let me know which room's lights you'd like to update?", "tool_calls": null}`
+- **llm-named S1** `n3-5c0d853baf` (desk/N2) outcome **correct_nonaction**
+  - text: 'Put something on my grocery list.'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'd be happy to help! What would you like me to add to your grocery list?", "tool_calls": null}`
+- **llm-named S1** `n3-41baa5d642` (home/N2) outcome **correct_nonaction**
+  - text: 'i want dimmer lights'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to help you dim the lights! However, I need a bit more information to assist you properly. Could you let me know:\n\n1. **Which room** would you like to dim the lights in? (e.g., living room, kitchen, bedroom, etc.)\n2. **How dim** would you like them? (e.g., 50%, 30%, etc.)\n\nOnce I have those details, I can adjust the brightness for you!", "tool_calls": null}`
+
+### llm-named / S1 / needless_refusal
+
+- **llm-named S1** `n3-accb9af07e` (home/A3) outcome **needless_refusal**
+  - text: 'Can you turn my light down to 25%?'
+  - gold: `[[{"action": "set_light_level", "args": {"room": "here", "level": 25}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to help you turn your light down to 25%. However, I need to know which room you'd like me to adjust. Could you let me know which room's lights you'd like me to set to 25% brightness?", "tool_calls": null}`
+- **llm-named S1** `n3-6464e8cc20` (desk/A2) outcome **needless_refusal**
+  - text: "Oh, I've got dinner in the oven, can you remind me to take it out?"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "take it out", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to remind you about your dinner! What time should I remind you to take it out of the oven?", "tool_calls": null}`
+- **llm-named S1** `n3-798cd087ac` (home/A2) outcome **needless_refusal**
+  - text: 'Would you switch the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to help with that. However, I need to know which room you'd like the lights turned off in. Could you specify the room?\n\nIn the meantime, if you meant the room you're currently in, just let me know and I'll turn those off right away.", "tool_calls": null}`
+
+### llm-named / S1 / wrong_call
+
+- **llm-named S1** `n3-ad4fe902ac` (desk/N2) outcome **wrong_call**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "batteries AAA"}}]`
+  - raw: `{"content": "I'll add batteries AAA to your shopping list.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-8f45270bc1b4d538", "function": {"name": "add_list_item", "arguments": "{\"list\": \"shopping\", \"item\": \"batteries AAA\"}"}}]}`
+- **llm-named S1** `n3-5914808891` (desk/N3) outcome **wrong_call**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "14:00", "date": "2026-06-11"}}]`
+  - raw: `{"content": "I'll check the weather for tomorrow to see if there's rain in the forecast before setting the alarm.\n\nLet me check the weather forecast for tomorrow (2026-06-11).\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-999cd5b0835a6ccf", "function": {"name": "set_alarm", "arguments": "{\"time\": \"14:00\", \"date\": \"2026-06-11\"}"}}]}`
+- **llm-named S1** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"text": "call my mom", "time": "15:00", "date": "2026-06-10"}}]`
+  - raw: `{"content": " I'll set up a reminder for you to call your mom at 3pm today.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-bb756847adbbeda8", "function": {"name": "create_reminder", "arguments": "{\"text\": \"call my mom\", \"time\": \"15:00\", \"date\": \"2026-06-10\"}"}}]}`
+
+## K0 / S1 (test)
+
+### K0 / S1 / correct_action
+
+- **K0 S1** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "chips"}, "top": 2.667832612991333, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K0 S1** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "red wine"}, "top": 2.5107908248901367, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K0 S1** `n3-0e6e5f1631` (home/A2) outcome **correct_action**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 2.201324701309204, "votes": {"set_lights_color": 1}, "margin": 1}]`
+
+### K0 / S1 / correct_nonaction
+
+- **K0 S1** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": "add_list_item", "args": null, "top": 3.559694766998291, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K0 S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": "set_lights_color", "args": null, "top": 1.8302582502365112, "votes": {"set_lights_color": 1}, "margin": 1}]`
+- **K0 S1** `n3-815f5d0667` (desk/N3) outcome **correct_nonaction**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I wrote \"I need a reminder to call my mom at 3pm.\" in my diary", "tool": "add_list_item", "args": null, "top": 2.210350513458252, "votes": {"add_list_item": 1}, "margin": 1}]`
+
+### K0 / S1 / needless_refusal
+
+- **K0 S1** `n3-920e72fa8f` (home/A3) outcome **needless_refusal**
+  - text: 'Can you get the entire place cleaned?'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you get the entire place cleaned?", "tool": "control_vacuum", "args": null, "top": 1.7226736545562744, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **K0 S1** `n3-f6d57880a1` (home/A2) outcome **needless_refusal**
+  - text: 'Got to have the bathroom lights on in there'
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Got to have the bathroom lights on in there", "tool": "set_lights_brightness", "args": null, "top": 1.6919045448303223, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **K0 S1** `n3-51925e927d` (home/A2) outcome **needless_refusal**
+  - text: 'no lights in the kitchen'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "no lights in the kitchen", "tool": null, "args": null, "top": 0.8224201798439026}]`
+
+### K0 / S1 / wrong_call
+
+- **K0 S1** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 4.208156585693359, "votes": {"set_lights_color": 1}, "margin": 1}]`
+- **K0 S1** `n3-5914808891` (desk/N3) outcome **wrong_call**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "02:00", "date": "2026-06-11"}}]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": "set_alarm", "args": {"time": "02:00", "date": "2026-06-11"}, "top": 2.5794100761413574, "votes": {"set_alarm": 1}, "margin": 1}]`
+- **K0 S1** `n3-6d35fdda9c` (home/N3) outcome **wrong_call**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off"}}]`
+  - raw: `[{"clause": "what if you turn off the lights in the kitchenn", "tool": "set_lights_power", "args": {"power": "off"}, "top": 2.1594161987304688, "votes": {"set_lights_power": 1}, "margin": 1}]`
+
+## K1 / S1 (test)
+
+### K1 / S1 / correct_action
+
+- **K1 S1** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "chips"}, "top": 3.2802932262420654, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K1 S1** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "red wine"}, "top": 4.2305707931518555, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K1 S1** `n3-0e6e5f1631` (home/A2) outcome **correct_action**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 2.984006881713867, "votes": {"set_lights_color": 1}, "margin": 1}]`
+
+### K1 / S1 / correct_nonaction
+
+- **K1 S1** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": null, "args": null, "top": 2.2974514961242676}]`
+- **K1 S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": "set_lights_brightness", "args": null, "top": 3.4874563217163086, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **K1 S1** `n3-41baa5d642` (home/N2) outcome **correct_nonaction**
+  - text: 'i want dimmer lights'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "i want dimmer lights", "tool": null, "args": null, "top": 1.4882497787475586}]`
+
+### K1 / S1 / needless_refusal
+
+- **K1 S1** `n3-a7fd20e693` (home/A1) outcome **needless_refusal**
+  - text: 'Can you switch socket number one on?'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you switch socket number one on?", "tool": "control_vacuum", "args": null, "top": 2.9482266902923584, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **K1 S1** `n3-920e72fa8f` (home/A3) outcome **needless_refusal**
+  - text: 'Can you get the entire place cleaned?'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you get the entire place cleaned?", "tool": "control_vacuum", "args": null, "top": 2.6602001190185547, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **K1 S1** `n3-f6d57880a1` (home/A2) outcome **needless_refusal**
+  - text: 'Got to have the bathroom lights on in there'
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Got to have the bathroom lights on in there", "tool": "set_lights_brightness", "args": null, "top": 3.0096824169158936, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+
+### K1 / S1 / wrong_call
+
+- **K1 S1** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 4.127065181732178, "votes": {"set_lights_color": 1}, "margin": 1}]`
+- **K1 S1** `n3-5914808891` (desk/N3) outcome **wrong_call**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}}]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": "create_reminder", "args": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}, "top": 5.033880233764648, "votes": {"create_reminder": 1}, "margin": 1}]`
+- **K1 S1** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "15:00", "text": "I wrote \"I need a"}}]`
+  - raw: `[{"clause": "I wrote \"I need a reminder to call my mom at 3pm.\" in my diary", "tool": "create_reminder", "args": {"time": "15:00", "text": "I wrote \"I need a"}, "top": 3.539919853210449, "votes": {"create_reminder": 1}, "margin": 1}]`
+
+## K1-firstbank / S1 (test)
+
+### K1-firstbank / S1 / correct_action
+
+- **K1-firstbank S1** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "chips"}, "top": 2.5878493785858154, "votes": {"add_list_item": 2, "remove_list_item": 2, "create_reminder": 1}, "margin": 0}]`
+- **K1-firstbank S1** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "red wine"}, "top": 4.022557258605957, "votes": {"add_list_item": 3, "remove_list_item": 2}, "margin": 1}]`
+- **K1-firstbank S1** `n3-0e6e5f1631` (home/A2) outcome **correct_action**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 2.4425134658813477, "votes": {"set_lights_color": 4, "set_plug_power": 1}, "margin": 3}]`
+
+### K1-firstbank / S1 / correct_nonaction
+
+- **K1-firstbank S1** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": null, "args": null, "top": 1.0496876239776611}]`
+- **K1-firstbank S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": null, "args": null, "top": 1.4388470649719238}]`
+- **K1-firstbank S1** `n3-41baa5d642` (home/N2) outcome **correct_nonaction**
+  - text: 'i want dimmer lights'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "i want dimmer lights", "tool": null, "args": null, "top": 1.3950046300888062}]`
+
+### K1-firstbank / S1 / needless_refusal
+
+- **K1-firstbank S1** `n3-920e72fa8f` (home/A3) outcome **needless_refusal**
+  - text: 'Can you get the entire place cleaned?'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you get the entire place cleaned?", "tool": "control_vacuum", "args": null, "top": 1.9180641174316406, "votes": {"control_vacuum": 3, "set_lights_power": 1, "set_lights_color": 1}, "margin": 2}]`
+- **K1-firstbank S1** `n3-753700e65b` (home/A3) outcome **needless_refusal**
+  - text: 'alexa turn the lights down to seven'
+  - gold: `[[{"action": "set_light_level", "args": {"room": "here", "level": 7}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "alexa turn the lights down to seven", "tool": null, "args": null, "top": 1.3590623140335083}]`
+- **K1-firstbank S1** `n3-e7cb30b7e6` (desk/A2) outcome **needless_refusal**
+  - text: "don't let me forget to buy a gift for my sister"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "buy a gift for my sister", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "don't let me forget to buy a gift for my sister", "tool": null, "args": null, "top": 1.4144856929779053}]`
+
+### K1-firstbank / S1 / wrong_call
+
+- **K1-firstbank S1** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 2.988710880279541, "votes": {"set_lights_color": 2, "set_lights_power": 1, "set_plug_power": 2}, "margin": 0}]`
+- **K1-firstbank S1** `n3-5914808891` (desk/N3) outcome **wrong_call**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}}]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": "create_reminder", "args": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}, "top": 3.013200283050537, "votes": {"set_alarm": 2, "create_reminder": 3}, "margin": 1}]`
+- **K1-firstbank S1** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "15:00", "text": "I wrote \"I need a"}}]`
+  - raw: `[{"clause": "I wrote \"I need a reminder to call my mom at 3pm.\" in my diary", "tool": "create_reminder", "args": {"time": "15:00", "text": "I wrote \"I need a"}, "top": 2.652913808822632, "votes": {"create_reminder": 3, "set_alarm": 2}, "margin": 1}]`
+
+## K1-firstbank-none / S1 (test)
+
+### K1-firstbank-none / S1 / correct_action
+
+- **K1-firstbank-none S1** `n3-f92bd8664c` (desk/A2) outcome **correct_action**
+  - text: "Ugh, I'm terrible at waking up, can you set an alarm for 5:30 in the morning?"
+  - gold: `[[{"action": "set_alarm", "args": {"time": "05:30", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "05:30"}}]`
+  - raw: `[{"clause": "Ugh, I'm terrible at waking up, can you set an alarm for 5:30 in the morning?", "tool": "set_alarm", "args": {"time": "05:30"}, "top": 4.694480895996094, "votes": {"__none__": 1, "set_alarm": 2}, "margin": 1}]`
+- **K1-firstbank-none S1** `n3-4d379bb7b1` (home/A3) outcome **correct_action**
+  - text: 'Make the lights blue, and switch the kitchen light off.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}, {"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}, {"name": "set_lights_power", "arguments": {"power": "off", "room": "kitchen"}}]`
+  - raw: `[{"clause": "Make the lights blue", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 3.5248055458068848, "votes": {"set_lights_color": 2, "__none__": 1}, "margin": 1}, {"clause": "switch the kitchen light off.", "tool": "set_lights_power", "args": {"power": "off", "room": "kitchen"}, "top": 2.857975959777832, "votes": {"set_lights_power": 3}, "margin": 3}]`
+- **K1-firstbank-none S1** `n3-890bf5be5c` (home/A3) outcome **correct_action**
+  - text: 'clean the floor'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "start"}}]`
+  - raw: `[{"clause": "clean the floor", "tool": "control_vacuum", "args": {"action": "start"}, "top": 2.0276081562042236, "votes": {"control_vacuum": 3}, "margin": 3}]`
+
+### K1-firstbank-none / S1 / correct_nonaction
+
+- **K1-firstbank-none S1** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": null, "args": null, "top": 1.5626976490020752}]`
+- **K1-firstbank-none S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": null, "args": null, "top": 4.2577128410339355, "votes": {"__none__": 3}, "margin": 3}]`
+- **K1-firstbank-none S1** `n3-5914808891` (desk/N3) outcome **correct_nonaction**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": null, "args": null, "top": 3.775336742401123, "votes": {"set_alarm": 1, "__none__": 2}, "margin": 1}]`
+
+### K1-firstbank-none / S1 / needless_refusal
+
+- **K1-firstbank-none S1** `n3-310393f6bc` (desk/A1) outcome **needless_refusal**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": null, "args": null, "top": 4.608104228973389, "votes": {"__none__": 2, "add_list_item": 1}, "margin": 1}]`
+- **K1-firstbank-none S1** `n3-4cc02c82ee` (desk/A1) outcome **needless_refusal**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": null, "args": null, "top": 4.264840126037598, "votes": {"add_list_item": 1, "__none__": 2}, "margin": 1}]`
+- **K1-firstbank-none S1** `n3-0e6e5f1631` (home/A2) outcome **needless_refusal**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": null, "args": null, "top": 3.5248055458068848, "votes": {"set_lights_color": 1, "__none__": 2}, "margin": 1}]`
+
+### K1-firstbank-none / S1 / wrong_call
+
+- **K1-firstbank-none S1** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 4.128812789916992, "votes": {"set_lights_color": 2, "__none__": 1}, "margin": 1}]`
+- **K1-firstbank-none S1** `n3-7fc71e8b78` (desk/N3) outcome **wrong_call**
+  - text: 'My notes say "I need to set a reminder to go to a work meeting on friday at 2:00PM."'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "14:00", "date": "2026-06-12", "text": "My notes say \"I need"}}]`
+  - raw: `[{"clause": "My notes say \"I need to set a reminder to go to a work meeting on friday at 2:00PM.\"", "tool": "create_reminder", "args": {"time": "14:00", "date": "2026-06-12", "text": "My notes say \"I need"}, "top": 5.210358619689941, "votes": {"create_reminder": 2, "__none__": 1}, "margin": 1}]`
+- **K1-firstbank-none S1** `n3-45d242e420` (desk/N3) outcome **wrong_call**
+  - text: "Can you remind me of the Friday meeting at three o'clock, provided it's confirmed?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "03:00", "date": "2026-06-12", "text": "meeting"}}]`
+  - raw: `[{"clause": "Can you remind me of the Friday meeting at three o'clock, provided it's confirmed?", "tool": "create_reminder", "args": {"time": "03:00", "date": "2026-06-12", "text": "meeting"}, "top": 4.578436851501465, "votes": {"create_reminder": 2, "__none__": 1}, "margin": 1}]`
+
+## needle / S0 (test)
+
+### needle / S0 / correct_action
+
+- **needle S0** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}], "suppressed_calls": [], "confidence": 0.9704, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'put chips on my shopping list' -> list 'shopping', item 'chips'."}`
+- **needle S0** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}], "suppressed_calls": [], "confidence": 0.9806, "validation": {"ungrounded": [], "negation": false}, "reasoning": "list 'shopping' from query; item 'red wine' from query"}`
+- **needle S0** `n3-0e6e5f1631` (home/A2) outcome **correct_action**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_color", "arguments": {"color": "blue"}}], "suppressed_calls": [], "confidence": 0.997, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'blue' -> color 'blue'. 'make the lights blue' -> set_lights_color color 'blue'."}`
+
+### needle / S0 / correct_nonaction
+
+- **needle S0** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "batteries AAA"}}], "confidence": 0.9958, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'buy batteries AAA' -> add_list_item with list 'shopping' and item 'batteries AAA'."}`
+- **needle S0** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_color", "arguments": {"color": "blue"}}], "confidence": 1.0, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'give me something else' means set color to 'blue' -> color 'blue'."}`
+- **needle S0** `n3-5914808891` (desk/N3) outcome **correct_nonaction**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_alarm", "arguments": {"time": "14:00"}}], "suppressed_calls": [], "confidence": 0.803, "validation": {"ungrounded": ["set_alarm.time"], "negation": false}, "reasoning": "'two o'clock tomorrow afternoon' -> time '14:00'; date omitted as relative; set_alarm chosen."}`
+
+### needle / S0 / needless_refusal
+
+- **needle S0** `n3-f9486acbd6` (desk/A1) outcome **needless_refusal**
+  - text: 'please set my alarm for five p. m.'
+  - gold: `[[{"action": "set_alarm", "args": {"time": "17:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_alarm", "arguments": {"time": "05:00"}}], "suppressed_calls": [], "confidence": 0.9626, "validation": {"ungrounded": ["set_alarm.time"], "negation": false}, "reasoning": "'five p. m.' -> time '05:00'; no date given so omit date param."}`
+- **needle S0** `n3-64a073f01e` (desk/A2) outcome **needless_refusal**
+  - text: 'make sure to put eggs on the grocery list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "eggs", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "add_list_item", "arguments": {"list": "shopping", "item": "eggs"}}], "confidence": 1.0, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'make sure to put eggs on the grocery list' -> add_list_item with list 'grocery' and item 'eggs'."}`
+- **needle S0** `n3-e7cb30b7e6` (desk/A2) outcome **needless_refusal**
+  - text: "don't let me forget to buy a gift for my sister"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "buy a gift for my sister", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "remove_list_item", "arguments": {"list": "shopping", "item": "gift for my sister"}}], "confidence": 0.4844, "validation": {"ungrounded": [], "negation": true}, "reasoning": "'don't let me forget' means remove a list item. 'buy a gift for my sister' is the item. list 'shopping' from context."}`
+
+### needle / S0 / technical_failure
+
+- **needle S0** `n3-815f5d0667` (desk/N3) outcome **technical_failure**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1384, "validation": null, "reasoning": "'remind me' maps to create_reminder. Text 'call my mom' from query. Time '3pm' from query."}`
+- **needle S0** `n3-6d35fdda9c` (home/N3) outcome **technical_failure**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.885, "validation": null, "reasoning": "'turn off the lights in the kitchenn' -> room 'kitchen', brightness 0 (off)."}`
+- **needle S0** `n3-59348ddbd7` (home/A1) outcome **technical_failure**
+  - text: 'disable smart socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1679, "validation": null, "reasoning": "'disable smart socket' means turn off lights in 'socket' room. set_lights_brightness with room 'socket' and brightness 0 to turn off."}`
+- **needle S0** `n3-9cc5764e08` (desk/N3) outcome **technical_failure**
+  - text: 'is alarm set at 5:30 am'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0961, "validation": null, "reasoning": "'is alarm set' -> set_alarm; '5:30 am' -> time '5:30 AM'; no date given so omit date param."}`
+- **needle S0** `n3-62a873306c` (desk/A1) outcome **technical_failure**
+  - text: 'Send me a reminder to pick up my dog from the groomer at 1pm.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "pick up my dog from the groomer", "time": "13:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1029, "validation": null, "reasoning": "create_reminder with text 'pick up my dog from the groomer' from query; time '1pm' -> '1:00 PM'"}`
+- **needle S0** `n3-f92bd8664c` (desk/A2) outcome **technical_failure**
+  - text: "Ugh, I'm terrible at waking up, can you set an alarm for 5:30 in the morning?"
+  - gold: `[[{"action": "set_alarm", "args": {"time": "05:30", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0934, "validation": null, "reasoning": "time '5:30 in the morning' -> time '5:30 AM'; no date given so omitted; set_alarm chosen for alarm."}`
+- **needle S0** `n3-a269fbe902` (desk/A3) outcome **technical_failure**
+  - text: 'turn on an alarm for three thirty p. m. today'
+  - gold: `[[{"action": "set_alarm", "args": {"time": "15:30", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0852, "validation": null, "reasoning": "'three thirty p. m. today' -> time '3:30 PM'; date '2026-06-10' from system date; set_alarm chosen for alarm."}`
+- **needle S0** `n3-8df0a0c001` (desk/N1) outcome **technical_failure**
+  - text: 'can you set the timer to 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1025, "validation": null, "reasoning": "'set the timer to 20 minutes' -> set_alarm with time '20 minutes' from query."}`
+- **needle S0** `n3-05607cc4e0` (home/A1) outcome **technical_failure**
+  - text: 'Smart socket off'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9881, "validation": null, "reasoning": "'Smart socket off' means turn off lights in living room. set_lights_brightness with room 'living_room' and brightness 0 to turn off."}`
+- **needle S0** `n3-e470a2901a` (desk/A3) outcome **technical_failure**
+  - text: 'set a reminder in one hour for my bread to bake'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "bread to bake", "time": "15:30", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0827, "validation": null, "reasoning": "'reminder in one hour' -> create_reminder with text 'my bread to bake' and time 'in one hour'"}`
+- **needle S0** `n3-9e047ea707` (desk/N2) outcome **technical_failure**
+  - text: 'Delete my alarm for tomorrow.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1349, "validation": null, "reasoning": "'delete my alarm' -> remove_alarm. 'tomorrow' -> date '2026-06-11'. No time given, so omit optional param."}`
+- **needle S0** `n3-6113a8223b` (desk/A2) outcome **technical_failure**
+  - text: 'I need to set an alarm tomorrow at 12:00PM to remind me to take my medication.'
+  - gold: `[[{"action": "set_alarm", "args": {"time": "12:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0789, "validation": null, "reasoning": "'tomorrow at 12:00PM' -> time '12:00PM'; 'remind me to take my medication' -> set_alarm with time '12:00PM' and date '2026-06-11' (tomorrow from system date 2026-06-10)."}`
+- **needle S0** `n3-6dfef8cf74` (desk/N1) outcome **technical_failure**
+  - text: 'Start a new to-do list from scratch.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.2024, "validation": null, "reasoning": "'new to-do list from scratch' -> list 'to-do', item 'new'."}`
+- **needle S0** `n3-8100a8f0df` (desk/N1) outcome **technical_failure**
+  - text: 'Set a timer for ten minutes.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1016, "validation": null, "reasoning": "'timer for ten minutes' -> set_alarm with time '10 minutes' from query."}`
+- **needle S0** `n3-b9fc80d49c` (home/A3) outcome **technical_failure**
+  - text: "turn the living room's light off and please turn socket off"
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}, {"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.8274, "validation": null, "reasoning": "'turn the living room's light off' -> room 'living_room', brightness 0; 'turn socket off' -> power 'off'"}`
+- **needle S0** `n3-a16a55eccb` (home/N1) outcome **technical_failure**
+  - text: 'Siri, can you mute my speakers please?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9941, "validation": null, "reasoning": "'mute my speakers' means turn off lights -> set_lights_brightness with room 'living_room' and brightness 0"}`
+- **needle S0** `n3-c31c85a429` (home/N3) outcome **technical_failure**
+  - text: 'Are the bathroom lights off?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9422, "validation": null, "reasoning": "'bathroom' -> room 'bathroom'; 'off' -> brightness 0; set_lights_brightness."}`
+- **needle S0** `n3-1b4697ec21` (home/A2) outcome **technical_failure**
+  - text: 'Would you mind switching off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9, "validation": null, "reasoning": "'switching off the light' -> set_lights_brightness with brightness 0; no room specified so current_room default."}`
+- **needle S0** `n3-b4f910be49` (desk/A2) outcome **technical_failure**
+  - text: 'Oh, laundry can come off the to-do list now.'
+  - gold: `[[{"action": "remove_from_list", "args": {"item": "laundry", "list": "to-do"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1635, "validation": null, "reasoning": "'laundry can come off the to-do list' -> remove_list_item list 'to-do' item 'laundry can come off'."}`
+- **needle S0** `n3-658095b40a` (desk/A1) outcome **technical_failure**
+  - text: 'Could you get babysitting added to the to-do list.'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "babysitting", "list": "to-do"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1603, "validation": null, "reasoning": "'babysitting' -> item 'babysitting'; 'to-do list' -> list 'to-do'."}`
+- **needle S0** `n3-4bc6b348d2` (home/N1) outcome **technical_failure**
+  - text: 'turn off overhead light'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn off overhead light' -> set_lights_brightness with room 'overhead' and brightness 0 (off)."}`
+- **needle S0** `n3-faf5a5fe1e` (home/A2) outcome **technical_failure**
+  - text: 'hey olly turn off the light please'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9508, "validation": null, "reasoning": "'off' -> brightness 0; 'turn off' -> brightness 0; room 'living_room' from context"}`
+- **needle S0** `n3-6538087ae8` (home/N1) outcome **technical_failure**
+  - text: 'turn office lights off'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.8962, "validation": null, "reasoning": "'off' -> brightness 0; 'off' -> brightness 0; 'off' -> power off"}`
+- **needle S0** `n3-29d3ac1024` (desk/A2) outcome **technical_failure**
+  - text: "Set an alarm for 5 o'clock o'clock this evening labelled taxi"
+  - gold: `[[{"action": "set_alarm", "args": {"time": "17:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1098, "validation": null, "reasoning": "time '5 o'clock o'clock' -> '5:00 PM'; date omitted as optional; 'labelled taxi' -> date '2026-06-10'"}`
+- **needle S0** `n3-ba849a1df4` (desk/N2) outcome **technical_failure**
+  - text: 'Could you remind me later tonight to get the plants inside?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1258, "validation": null, "reasoning": "'remind me later tonight' -> create_reminder with text 'get the plants inside' and time 'tonight' (2026-06-10)"}`
+- **needle S0** `n3-1aa0e04d45` (desk/A3) outcome **technical_failure**
+  - text: "I need two alarms: Thursday at seven p.m., and one o'clock in the afternoon."
+  - gold: `[[{"action": "set_alarm", "args": {"time": "19:00", "date": "2026-06-11"}}, {"action": "set_alarm", "args": {"time": "13:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0841, "validation": null, "reasoning": "Two alarms: Thursday at 7 p.m., o'clock in the afternoon. Two set_alarm calls."}`
+- **needle S0** `n3-3bdb1985c8` (desk/N3) outcome **technical_failure**
+  - text: 'Set a reminder for the meeting Friday at 3 p.m. if it is confirmed'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1225, "validation": null, "reasoning": "create_reminder with text 'meeting' from query; time '3 p.m.' from query; date omitted as Friday is relative"}`
+- **needle S0** `n3-9973e4d2c7` (home/N3) outcome **technical_failure**
+  - text: 'My mother wants the kitchen light switched off.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9639, "validation": null, "reasoning": "'kitchen light switched off' -> set_lights_brightness with room 'kitchen' and brightness 0 (off)."}`
+- **needle S0** `n3-cf3e7055d0` (desk/A3) outcome **technical_failure**
+  - text: 'please set a reminder in my calendar for my meeting on march twenty five'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meeting", "time": "09:00", "date": "2027-03-25"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1084, "validation": null, "reasoning": "'meeting' -> text 'meeting'; 'march twenty five' -> time '25:25'; date resolved to 2026-03-25 from system date"}`
+- **needle S0** `n3-50ae57e999` (home/A1) outcome **technical_failure**
+  - text: 'PDA, put the light out at once'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7334, "validation": null, "reasoning": "'put the light out' means turn off lights -> set_lights_brightness with brightness 0"}`
+- **needle S0** `n3-6445dd35b9` (home/A1) outcome **technical_failure**
+  - text: 'Light off living room.'
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9498, "validation": null, "reasoning": "'Light off' -> set_lights_brightness with brightness 0; 'living room' -> room 'living_room'."}`
+- **needle S0** `n3-f75bbbc1dc` (desk/A1) outcome **technical_failure**
+  - text: 'Set a reminder for Friday at five p.m. for dinner with Dave.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "dinner with dave", "time": "17:00", "date": "2026-06-12"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.164, "validation": null, "reasoning": "create_reminder with text 'dinner with Dave' from query; time 'Friday at 5 p.m.' from query; date omitted."}`
+- **needle S0** `n3-c3180f707c` (desk/A1) outcome **technical_failure**
+  - text: 'The science fair can come off my to-do list.'
+  - gold: `[[{"action": "remove_from_list", "args": {"item": "science fair", "list": "to-do"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1922, "validation": null, "reasoning": "'science fair' -> list 'to-do'; 'can come off' -> remove_list_item."}`
+- **needle S0** `n3-e9874ca84d` (desk/N2) outcome **technical_failure**
+  - text: 'remove the alarm for tomorrow'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1106, "validation": null, "reasoning": "'remove the alarm' -> remove_alarm; 'tomorrow' -> date '2026-06-11' (tomorrow relative to system date 2026-06-10); time omitted."}`
+- **needle S0** `n3-4306904c29` (home/A2) outcome **technical_failure**
+  - text: 'Siri, would you kindly turn off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9156, "validation": null, "reasoning": "'turn off the light' -> set_lights_brightness with brightness 0; no room specified so current_room default."}`
+- **needle S0** `n3-dea41fa5f7` (desk/N2) outcome **technical_failure**
+  - text: 'Give me a reminder in 10 minutes, please.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1085, "validation": null, "reasoning": "'reminder in 10 minutes' -> create_reminder with text 'Give me a reminder' and time '10 minutes' from query."}`
+- **needle S0** `n3-156c0cc47b` (desk/N2) outcome **technical_failure**
+  - text: 'i need to get up at ten tomorrow'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1179, "validation": null, "reasoning": "'get up at ten tomorrow' -> create_reminder with text 'get up' and time '10:00 tomorrow'"}`
+- **needle S0** `n3-3a3e191663` (desk/N3) outcome **technical_failure**
+  - text: 'If the water boils remind me to look at the pasta in 30 mins'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0927, "validation": null, "reasoning": "'remind me to look at the pasta in 30 mins' -> create_reminder with text 'look at the pasta' and time '30 minutes' from query."}`
+- **needle S0** `n3-e7f24536d7` (home/A2) outcome **technical_failure**
+  - text: 'Execute command: turn off lights.'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.895, "validation": null, "reasoning": "'turn off lights' -> set_lights_brightness with brightness 0; no room specified so current_room."}`
+- **needle S0** `n3-747d6d443c` (desk/A3) outcome **technical_failure**
+  - text: 'please remind me to call mom in half an hour'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "call mom", "time": "15:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0942, "validation": null, "reasoning": "'remind me in half an hour' -> create_reminder with text 'call mom' and time 'in half an hour'"}`
+- **needle S0** `n3-fc9a1315ab` (home/A3) outcome **technical_failure**
+  - text: 'Switch the bathroom light off and put the wemo plug on'
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "off"}}, {"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.52, "validation": null, "reasoning": "'bathroom' -> room 'bathroom'; 'off' -> power 'off'; 'wemo' -> power 'on'"}`
+- **needle S0** `n3-f2c86154bf` (desk/A3) outcome **technical_failure**
+  - text: 'Put mopping on my to-do list and remove the dishes.'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "mopping", "list": "to-do"}}, {"action": "remove_from_list", "args": {"item": "dishes", "list": "to-do"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1947, "validation": null, "reasoning": "'mopping on my to-do list' -> list 'to-do', item 'mopping'; 'remove the dishes' -> list 'to-do', item 'dishes'."}`
+- **needle S0** `n3-d59019e535` (home/A3) outcome **technical_failure**
+  - text: 'Can you shut off the lamps?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7384, "validation": null, "reasoning": "'shut off the lamps' means turn off lights -> set_lights_brightness with brightness 0 (off)."}`
+- **needle S0** `n3-7110c4589b` (home/A2) outcome **technical_failure**
+  - text: 'discontinue use of lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.402, "validation": null, "reasoning": "'discontinue use of lights' means turn off lights. No room specified, so current_room defaults to current_room."}`
+- **needle S0** `n3-9b9ef6b54c` (home/A2) outcome **technical_failure**
+  - text: 'olly turn the light off in the living room'
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9497, "validation": null, "reasoning": "'off' -> brightness 0; 'living room' -> room 'living_room'; set_lights_brightness called"}`
+- **needle S0** `n3-ad6821f526` (desk/N3) outcome **technical_failure**
+  - text: '"Schedule reminder, 1 p.m., board meeting."'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1151, "validation": null, "reasoning": "create_reminder with text 'board meeting' from query; time '1 p.m.' from '1 p.m.'"}`
+- **needle S0** `n3-6ca79e10d1` (home/A3) outcome **technical_failure**
+  - text: 'turn off the lights in the kitchen and turn on the vacuum cleaner'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}, {"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.8591, "validation": null, "reasoning": "'turn off the lights in the kitchen' -> room 'kitchen', brightness 0; 'turn on the vacuum cleaner' -> action 'start'"}`
+- **needle S0** `n3-1d15ea2410` (home/N1) outcome **technical_failure**
+  - text: 'The left one off, keep the others as they are'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7392, "validation": null, "reasoning": "'keep the others as they are' means turn off lights -> set_lights_brightness with brightness 0"}`
+- **needle S0** `n3-8f2f7791a8` (home/A3) outcome **technical_failure**
+  - text: 'turn off all lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9706, "validation": null, "reasoning": "'turn off all lights' -> set_lights_brightness with no room specified, brightness 0"}`
+
+### needle / S0 / wrong_call
+
+- **needle S0** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_color", "arguments": {"color": "red"}}], "suppressed_calls": [], "confidence": 0.7756, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'red' -> color 'red'. 'whole home' -> room 'whole_house'."}`
+- **needle S0** `n3-8123d15074` (home/A3) outcome **wrong_call**
+  - text: 'change my light color to blue and please turn off the kitchen light'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}, {"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_color", "arguments": {"color": "blue"}}], "suppressed_calls": [], "confidence": 0.9704, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'blue' -> color 'blue'; 'turn off the kitchen light' -> room 'kitchen', brightness 0"}`
+- **needle S0** `n3-bdea1bb477` (home/N1) outcome **wrong_call**
+  - text: 'turn on the tv on channel 6'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "start", "room": "living_room"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "start", "room": "living_room"}}], "suppressed_calls": [], "confidence": 0.993, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'turn on the tv' -> control_vacuum action 'start'; 'on channel 6' -> room 'living_room' (default channel 6)"}`
+
+## llm-a / S0 (test)
+
+### llm-a / S0 / correct_action
+
+- **llm-a S0** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"item": "chips", "list": "shopping"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"item\": \"chips\", \"list\": \"shopping\"}, \"name\": \"add_list_item\"}]}", "tool_calls": null}`
+- **llm-a S0** `n3-677ca19725` (home/A2) outcome **correct_action**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red", "room": "whole_house"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"color\": \"red\", \"room\": \"whole_house\"}, \"name\": \"set_lights_color\"}]}", "tool_calls": null}`
+- **llm-a S0** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"item": "red wine", "list": "shopping"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"item\": \"red wine\", \"list\": \"shopping\"}, \"name\": \"add_list_item\"}]}", "tool_calls": null}`
+
+### llm-a / S0 / correct_nonaction
+
+- **llm-a S0** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S0** `n3-5914808891` (desk/N3) outcome **correct_nonaction**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S0** `n3-5c0d853baf` (desk/N2) outcome **correct_nonaction**
+  - text: 'Put something on my grocery list.'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+
+### llm-a / S0 / needless_refusal
+
+- **llm-a S0** `n3-d69b23b84d` (desk/A2) outcome **needless_refusal**
+  - text: "There's no need for grocery shopping to be on the to-do list now."
+  - gold: `[[{"action": "remove_from_list", "args": {"item": "grocery shopping", "list": "to-do"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S0** `n3-51925e927d` (home/A2) outcome **needless_refusal**
+  - text: 'no lights in the kitchen'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-a S0** `n3-6464e8cc20` (desk/A2) outcome **needless_refusal**
+  - text: "Oh, I've got dinner in the oven, can you remind me to take it out?"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "take it out", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+
+### llm-a / S0 / wrong_call
+
+- **llm-a S0** `n3-ad4fe902ac` (desk/N2) outcome **wrong_call**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"item": "batteries AAA", "list": "shopping"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"item\": \"batteries AAA\", \"list\": \"shopping\"}, \"name\": \"add_list_item\"}]}", "tool_calls": null}`
+- **llm-a S0** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"date": null, "text": "call my mom", "time": "15:00"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"date\": null, \"text\": \"call my mom\", \"time\": \"15:00\"}, \"name\": \"create_reminder\"}]}", "tool_calls": null}`
+- **llm-a S0** `n3-6d35fdda9c` (home/N3) outcome **wrong_call**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off", "room": "kitchen"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"power\": \"off\", \"room\": \"kitchen\"}, \"name\": \"set_lights_power\"}]}", "tool_calls": null}`
+
+## llm-named / S0 (test)
+
+### llm-named / S0 / correct_action
+
+- **llm-named S0** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `{"content": "I'll add chips to your shopping list.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-bd2ef4e0e003819c", "function": {"name": "add_list_item", "arguments": "{\"list\": \"shopping\", \"item\": \"chips\"}"}}]}`
+- **llm-named S0** `n3-677ca19725` (home/A2) outcome **correct_action**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"room": "whole_house", "color": "red"}}]`
+  - raw: `{"content": "I'll turn all the lights in the house red for you.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-aa91e84f7a0c5e12", "function": {"name": "set_lights_color", "arguments": "{\"room\": \"whole_house\", \"color\": \"red\"}"}}]}`
+- **llm-named S0** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `{"content": "I'll add red wine to your shopping list.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-b683b8c43c4ff2a5", "function": {"name": "add_list_item", "arguments": "{\"list\": \"shopping\", \"item\": \"red wine\"}"}}]}`
+
+### llm-named / S0 / correct_nonaction
+
+- **llm-named S0** `n3-5914808891` (desk/N3) outcome **correct_nonaction**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "\n\nLet me check if there's rain expected tomorrow. However, I don't have access to weather information or a weather tool to check the forecast. I can only set alarms, manage lists, and create reminders.\n\nSince I can't verify the weather forecast for tomorrow, I'm unable to determine whether it will rain. I'd need access to weather data to make that determination.\n\nIs there anything else I can help you with? For example, I could still set the alarm if you'd like, or help with something else.", "tool_calls": null}`
+- **llm-named S0** `n3-5c0d853baf` (desk/N2) outcome **correct_nonaction**
+  - text: 'Put something on my grocery list.'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to help! What would you like me to add to your grocery list?", "tool_calls": null}`
+- **llm-named S0** `n3-41baa5d642` (home/N2) outcome **correct_nonaction**
+  - text: 'i want dimmer lights'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'd be happy to help you dim the lights! However, I need a bit more information. Could you let me know:\n\n1. **Which room** would you like the lights dimmed in? (e.g., living room, kitchen, bedroom, etc.)\n2. **How dim** would you like them (a specific brightness percentage)?\n\nOnce I know these details, I can adjust the lights for you.", "tool_calls": null}`
+
+### llm-named / S0 / needless_refusal
+
+- **llm-named S0** `n3-6464e8cc20` (desk/A2) outcome **needless_refusal**
+  - text: "Oh, I've got dinner in the oven, can you remind me to take it out?"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "take it out", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'd be happy to help you remember your dinner! What time should I remind you to take it out of the oven?", "tool_calls": null}`
+- **llm-named S0** `n3-faf5a5fe1e` (home/A2) outcome **needless_refusal**
+  - text: 'hey olly turn off the light please'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to help you turn off the light! However, I need to know which room you're in or which room's lights you'd like me to turn off. \n\nCould you let me know the room? For example, is it the living room, kitchen, bedroom, or another room?", "tool_calls": null}`
+- **llm-named S0** `n3-d59019e535` (home/A3) outcome **needless_refusal**
+  - text: 'Can you shut off the lamps?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to help you turn off the lamps. However, I need to know which room's lamps you'd like me to turn off. Could you let me know which room you're in or which room's lights you'd like to shut off?", "tool_calls": null}`
+
+### llm-named / S0 / wrong_call
+
+- **llm-named S0** `n3-ad4fe902ac` (desk/N2) outcome **wrong_call**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "batteries AAA"}}]`
+  - raw: `{"content": "I'll add batteries AAA to your shopping list.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-a3de4fa3fef4f357", "function": {"name": "add_list_item", "arguments": "{\"list\": \"shopping\", \"item\": \"batteries AAA\"}"}}]}`
+- **llm-named S0** `n3-0e4522be09` (home/N2) outcome **wrong_call**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "purple", "room": "current_room"}}]`
+  - raw: `{"content": " I'd be happy to change up the light color for you! Since you didn't specify a room, I'll assume you're in the current room. What color would you like to try? Let me know and I'll make the change!\n\nActually, let me just pick a nice alternative for you. Let me switch things up:\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-890801cb8786d32b", "function": {"name": "set_lights_color", "arguments": "{\"color\": \"purple\", \"room\": \"current_room\"}"}}]}`
+- **llm-named S0** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"text": "Call my mom", "time": "15:00"}}]`
+  - raw: `{"content": " I'll set a reminder for you to call your mom at 3pm.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-a023ec86cf4c9c0e", "function": {"name": "create_reminder", "arguments": "{\"text\": \"Call my mom\", \"time\": \"15:00\"}"}}]}`
+
+## K0 / S0 (test)
+
+### K0 / S0 / correct_action
+
+- **K0 S0** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "chips"}, "top": 2.667832612991333, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K0 S0** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "red wine"}, "top": 2.5107908248901367, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K0 S0** `n3-0e6e5f1631` (home/A2) outcome **correct_action**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 2.110456943511963, "votes": {"set_lights_color": 1}, "margin": 1}]`
+
+### K0 / S0 / correct_nonaction
+
+- **K0 S0** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": "add_list_item", "args": null, "top": 3.559694766998291, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K0 S0** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": null, "args": null, "top": 1.6548994779586792}]`
+- **K0 S0** `n3-815f5d0667` (desk/N3) outcome **correct_nonaction**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I wrote \"I need a reminder to call my mom at 3pm.\" in my diary", "tool": "add_list_item", "args": null, "top": 2.210350513458252, "votes": {"add_list_item": 1}, "margin": 1}]`
+
+### K0 / S0 / needless_refusal
+
+- **K0 S0** `n3-920e72fa8f` (home/A3) outcome **needless_refusal**
+  - text: 'Can you get the entire place cleaned?'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you get the entire place cleaned?", "tool": null, "args": null, "top": 1.6620233058929443}]`
+- **K0 S0** `n3-64a073f01e` (desk/A2) outcome **needless_refusal**
+  - text: 'make sure to put eggs on the grocery list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "eggs", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "make sure to put eggs on the grocery list", "tool": "add_list_item", "args": null, "top": 2.5393924713134766, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K0 S0** `n3-f6d57880a1` (home/A2) outcome **needless_refusal**
+  - text: 'Got to have the bathroom lights on in there'
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Got to have the bathroom lights on in there", "tool": null, "args": null, "top": 1.7060481309890747}]`
+
+### K0 / S0 / wrong_call
+
+- **K0 S0** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 4.220913887023926, "votes": {"set_lights_color": 1}, "margin": 1}]`
+- **K0 S0** `n3-5914808891` (desk/N3) outcome **wrong_call**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "02:00", "date": "2026-06-11"}}]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": "set_alarm", "args": {"time": "02:00", "date": "2026-06-11"}, "top": 2.5794100761413574, "votes": {"set_alarm": 1}, "margin": 1}]`
+- **K0 S0** `n3-6d35fdda9c` (home/N3) outcome **wrong_call**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off"}}]`
+  - raw: `[{"clause": "what if you turn off the lights in the kitchenn", "tool": "set_lights_power", "args": {"power": "off"}, "top": 2.1366376876831055, "votes": {"set_lights_power": 1}, "margin": 1}]`
+
+## K1 / S0 (test)
+
+### K1 / S0 / correct_action
+
+- **K1 S0** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "red wine"}, "top": 4.2305707931518555, "votes": {"add_list_item": 3}, "margin": 3}]`
+- **K1 S0** `n3-0e6e5f1631` (home/A2) outcome **correct_action**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 2.984006881713867, "votes": {"set_lights_color": 2, "set_lights_brightness": 1}, "margin": 1}]`
+- **K1 S0** `n3-2d752cae3c` (home/A1) outcome **correct_action**
+  - text: 'Set the robot vacuum in motion'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "start"}}]`
+  - raw: `[{"clause": "Set the robot vacuum in motion", "tool": "control_vacuum", "args": {"action": "start"}, "top": 2.5843138694763184, "votes": {"control_vacuum": 3}, "margin": 3}]`
+
+### K1 / S0 / correct_nonaction
+
+- **K1 S0** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": null, "args": null, "top": 2.2974514961242676}]`
+- **K1 S0** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": "set_lights_brightness", "args": null, "top": 3.4874563217163086, "votes": {"set_lights_brightness": 2, "set_lights_color": 1}, "margin": 1}]`
+- **K1 S0** `n3-5c0d853baf` (desk/N2) outcome **correct_nonaction**
+  - text: 'Put something on my grocery list.'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Put something on my grocery list.", "tool": null, "args": null, "top": 3.2802932262420654}]`
+
+### K1 / S0 / needless_refusal
+
+- **K1 S0** `n3-310393f6bc` (desk/A1) outcome **needless_refusal**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": null, "args": null, "top": 3.2802932262420654}]`
+- **K1 S0** `n3-a7fd20e693` (home/A1) outcome **needless_refusal**
+  - text: 'Can you switch socket number one on?'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you switch socket number one on?", "tool": "control_vacuum", "args": null, "top": 2.9482266902923584, "votes": {"control_vacuum": 2, "set_plug_power": 1}, "margin": 1}]`
+- **K1 S0** `n3-920e72fa8f` (home/A3) outcome **needless_refusal**
+  - text: 'Can you get the entire place cleaned?'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you get the entire place cleaned?", "tool": "control_vacuum", "args": null, "top": 2.6602001190185547, "votes": {"control_vacuum": 3}, "margin": 3}]`
+
+### K1 / S0 / wrong_call
+
+- **K1 S0** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 4.127065181732178, "votes": {"set_lights_color": 2, "set_lights_power": 1}, "margin": 1}]`
+- **K1 S0** `n3-5914808891` (desk/N3) outcome **wrong_call**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}}]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": "create_reminder", "args": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}, "top": 5.033880233764648, "votes": {"create_reminder": 2, "set_alarm": 1}, "margin": 1}]`
+- **K1 S0** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "15:00", "text": "I wrote \"I need a"}}]`
+  - raw: `[{"clause": "I wrote \"I need a reminder to call my mom at 3pm.\" in my diary", "tool": "create_reminder", "args": {"time": "15:00", "text": "I wrote \"I need a"}, "top": 3.539919853210449, "votes": {"create_reminder": 2, "set_alarm": 1}, "margin": 1}]`
+
+## K1-firstbank / S0 (test)
+
+### K1-firstbank / S0 / correct_action
+
+- **K1-firstbank S0** `n3-310393f6bc` (desk/A1) outcome **correct_action**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "chips"}}]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "chips"}, "top": 2.5878493785858154, "votes": {"add_list_item": 2, "remove_list_item": 2, "create_reminder": 1}, "margin": 0}]`
+- **K1-firstbank S0** `n3-4cc02c82ee` (desk/A1) outcome **correct_action**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[{"name": "add_list_item", "arguments": {"list": "shopping", "item": "red wine"}}]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": "add_list_item", "args": {"list": "shopping", "item": "red wine"}, "top": 4.022557258605957, "votes": {"add_list_item": 3, "remove_list_item": 2}, "margin": 1}]`
+- **K1-firstbank S0** `n3-0e6e5f1631` (home/A2) outcome **correct_action**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 2.4425134658813477, "votes": {"set_lights_color": 4, "set_plug_power": 1}, "margin": 3}]`
+
+### K1-firstbank / S0 / correct_nonaction
+
+- **K1-firstbank S0** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": null, "args": null, "top": 1.0496876239776611}]`
+- **K1-firstbank S0** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": null, "args": null, "top": 1.4388470649719238}]`
+- **K1-firstbank S0** `n3-5c0d853baf` (desk/N2) outcome **correct_nonaction**
+  - text: 'Put something on my grocery list.'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Put something on my grocery list.", "tool": "add_list_item", "args": null, "top": 3.353644371032715, "votes": {"add_list_item": 3, "remove_list_item": 1, "create_reminder": 1}, "margin": 2}]`
+
+### K1-firstbank / S0 / needless_refusal
+
+- **K1-firstbank S0** `n3-920e72fa8f` (home/A3) outcome **needless_refusal**
+  - text: 'Can you get the entire place cleaned?'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Can you get the entire place cleaned?", "tool": "control_vacuum", "args": null, "top": 1.9180641174316406, "votes": {"control_vacuum": 3, "set_lights_power": 1, "set_lights_color": 1}, "margin": 2}]`
+- **K1-firstbank S0** `n3-753700e65b` (home/A3) outcome **needless_refusal**
+  - text: 'alexa turn the lights down to seven'
+  - gold: `[[{"action": "set_light_level", "args": {"room": "here", "level": 7}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "alexa turn the lights down to seven", "tool": null, "args": null, "top": 1.3590623140335083}]`
+- **K1-firstbank S0** `n3-64a073f01e` (desk/A2) outcome **needless_refusal**
+  - text: 'make sure to put eggs on the grocery list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "eggs", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "make sure to put eggs on the grocery list", "tool": "add_list_item", "args": null, "top": 5.033308029174805, "votes": {"add_list_item": 2, "create_reminder": 1, "set_alarm": 1, "remove_list_item": 1}, "margin": 1}]`
+
+### K1-firstbank / S0 / wrong_call
+
+- **K1-firstbank S0** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 2.988710880279541, "votes": {"set_lights_color": 2, "set_lights_power": 1, "set_plug_power": 2}, "margin": 0}]`
+- **K1-firstbank S0** `n3-5914808891` (desk/N3) outcome **wrong_call**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}}]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": "create_reminder", "args": {"time": "02:00", "date": "2026-06-11", "text": "Could you put an alarm"}, "top": 3.013200283050537, "votes": {"set_alarm": 2, "create_reminder": 3}, "margin": 1}]`
+- **K1-firstbank S0** `n3-815f5d0667` (desk/N3) outcome **wrong_call**
+  - text: 'I wrote "I need a reminder to call my mom at 3pm." in my diary'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "15:00", "text": "I wrote \"I need a"}}]`
+  - raw: `[{"clause": "I wrote \"I need a reminder to call my mom at 3pm.\" in my diary", "tool": "create_reminder", "args": {"time": "15:00", "text": "I wrote \"I need a"}, "top": 2.652913808822632, "votes": {"create_reminder": 3, "set_alarm": 2}, "margin": 1}]`
+
+## K1-firstbank-none / S0 (test)
+
+### K1-firstbank-none / S0 / correct_action
+
+- **K1-firstbank-none S0** `n3-f92bd8664c` (desk/A2) outcome **correct_action**
+  - text: "Ugh, I'm terrible at waking up, can you set an alarm for 5:30 in the morning?"
+  - gold: `[[{"action": "set_alarm", "args": {"time": "05:30", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "05:30"}}]`
+  - raw: `[{"clause": "Ugh, I'm terrible at waking up, can you set an alarm for 5:30 in the morning?", "tool": "set_alarm", "args": {"time": "05:30"}, "top": 4.694480895996094, "votes": {"__none__": 1, "set_alarm": 2}, "margin": 1}]`
+- **K1-firstbank-none S0** `n3-4d379bb7b1` (home/A3) outcome **correct_action**
+  - text: 'Make the lights blue, and switch the kitchen light off.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}, {"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "blue"}}, {"name": "set_lights_power", "arguments": {"power": "off", "room": "kitchen"}}]`
+  - raw: `[{"clause": "Make the lights blue", "tool": "set_lights_color", "args": {"color": "blue"}, "top": 3.5248055458068848, "votes": {"set_lights_color": 2, "__none__": 1}, "margin": 1}, {"clause": "switch the kitchen light off.", "tool": "set_lights_power", "args": {"power": "off", "room": "kitchen"}, "top": 2.857975959777832, "votes": {"set_lights_power": 3}, "margin": 3}]`
+- **K1-firstbank-none S0** `n3-890bf5be5c` (home/A3) outcome **correct_action**
+  - text: 'clean the floor'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "start"}}]`
+  - raw: `[{"clause": "clean the floor", "tool": "control_vacuum", "args": {"action": "start"}, "top": 2.0276081562042236, "votes": {"control_vacuum": 3}, "margin": 3}]`
+
+### K1-firstbank-none / S0 / correct_nonaction
+
+- **K1-firstbank-none S0** `n3-ad4fe902ac` (desk/N2) outcome **correct_nonaction**
+  - text: 'I also need to buy batteries AAA'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I also need to buy batteries AAA", "tool": null, "args": null, "top": 1.5626976490020752}]`
+- **K1-firstbank-none S0** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm kind of bored of this colour on the lights, give me something else.", "tool": null, "args": null, "top": 4.2577128410339355, "votes": {"__none__": 3}, "margin": 3}]`
+- **K1-firstbank-none S0** `n3-5914808891` (desk/N3) outcome **correct_nonaction**
+  - text: "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Could you put an alarm on for two o'clock tomorrow afternoon only if there's rain?", "tool": null, "args": null, "top": 3.775336742401123, "votes": {"set_alarm": 1, "__none__": 2}, "margin": 1}]`
+
+### K1-firstbank-none / S0 / needless_refusal
+
+- **K1-firstbank-none S0** `n3-310393f6bc` (desk/A1) outcome **needless_refusal**
+  - text: 'please put chips on my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "chips", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "please put chips on my shopping list", "tool": null, "args": null, "top": 4.608104228973389, "votes": {"__none__": 2, "add_list_item": 1}, "margin": 1}]`
+- **K1-firstbank-none S0** `n3-4cc02c82ee` (desk/A1) outcome **needless_refusal**
+  - text: 'add red wine to my shopping list'
+  - gold: `[[{"action": "add_to_list", "args": {"item": "red wine", "list": "shopping"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "add red wine to my shopping list", "tool": null, "args": null, "top": 4.264840126037598, "votes": {"add_list_item": 1, "__none__": 2}, "margin": 1}]`
+- **K1-firstbank-none S0** `n3-0e6e5f1631` (home/A2) outcome **needless_refusal**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Alexa, make the lights blue.", "tool": null, "args": null, "top": 3.5248055458068848, "votes": {"set_lights_color": 1, "__none__": 2}, "margin": 1}]`
+
+### K1-firstbank-none / S0 / wrong_call
+
+- **K1-firstbank-none S0** `n3-677ca19725` (home/A2) outcome **wrong_call**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "red"}}]`
+  - raw: `[{"clause": "Red's my favourite colour, so turn the whole home's lights red please.", "tool": "set_lights_color", "args": {"color": "red"}, "top": 4.128812789916992, "votes": {"set_lights_color": 2, "__none__": 1}, "margin": 1}]`
+- **K1-firstbank-none S0** `n3-7fc71e8b78` (desk/N3) outcome **wrong_call**
+  - text: 'My notes say "I need to set a reminder to go to a work meeting on friday at 2:00PM."'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "14:00", "date": "2026-06-12", "text": "My notes say \"I need"}}]`
+  - raw: `[{"clause": "My notes say \"I need to set a reminder to go to a work meeting on friday at 2:00PM.\"", "tool": "create_reminder", "args": {"time": "14:00", "date": "2026-06-12", "text": "My notes say \"I need"}, "top": 5.210358619689941, "votes": {"create_reminder": 2, "__none__": 1}, "margin": 1}]`
+- **K1-firstbank-none S0** `n3-45d242e420` (desk/N3) outcome **wrong_call**
+  - text: "Can you remind me of the Friday meeting at three o'clock, provided it's confirmed?"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"time": "03:00", "date": "2026-06-12", "text": "meeting"}}]`
+  - raw: `[{"clause": "Can you remind me of the Friday meeting at three o'clock, provided it's confirmed?", "tool": "create_reminder", "args": {"time": "03:00", "date": "2026-06-12", "text": "meeting"}, "top": 4.578436851501465, "votes": {"create_reminder": 2, "__none__": 1}, "margin": 1}]`
+
+## hassil / S1 (test)
+
+### hassil / S1 / correct_action
+
+- **hassil S1** `n3-d04563d41a` (home/A1) outcome **correct_action**
+  - text: 'switch off the lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "here", "power": "off"}}]`
+  - raw: `null`
+- **hassil S1** `n3-05607cc4e0` (home/A1) outcome **correct_action**
+  - text: 'Smart socket off'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_plug_power", "arguments": {"power": "off"}}]`
+  - raw: `null`
+- **hassil S1** `n3-a0e4cb8678` (home/A2) outcome **correct_action**
+  - text: 'Kitchen lights, off.'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "off"}}]`
+  - raw: `null`
+
+### hassil / S1 / correct_nonaction
+
+- **hassil S1** `n3-0e4522be09` (home/N2) outcome **correct_nonaction**
+  - text: "I'm kind of bored of this colour on the lights, give me something else."
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+- **hassil S1** `n3-6d35fdda9c` (home/N3) outcome **correct_nonaction**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+- **hassil S1** `n3-41baa5d642` (home/N2) outcome **correct_nonaction**
+  - text: 'i want dimmer lights'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+### hassil / S1 / needless_refusal
+
+- **hassil S1** `n3-677ca19725` (home/A2) outcome **needless_refusal**
+  - text: "Red's my favourite colour, so turn the whole home's lights red please."
+  - gold: `[[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+- **hassil S1** `n3-0e6e5f1631` (home/A2) outcome **needless_refusal**
+  - text: 'Alexa, make the lights blue.'
+  - gold: `[[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+- **hassil S1** `n3-2d752cae3c` (home/A1) outcome **needless_refusal**
+  - text: 'Set the robot vacuum in motion'
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+## Technical failures outside test (band F, anchors, variants)
+
+- **needle_S1_desk_bandF** `n3-c7e934f36d` (desk/None) outcome **technical_failure**
+  - text: 'remind me in 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.115, "validation": null, "reasoning": "'remind me in 20 minutes' -> create_reminder with text 'remind me in 20 minutes' and time 'in 20 minutes'"}`
+- **needle_S1_desk_bandF** `n3-1af6aade53` (desk/None) outcome **technical_failure**
+  - text: '25 minute timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0951, "validation": null, "reasoning": "'25 minute timer' -> set_alarm with time '25 minutes' from query. No date given, so omit date param."}`
+- **needle_S1_desk_diag** `n3-cece5a3703` (desk/N1) outcome **technical_failure**
+  - text: 'in 15 minutes the timer should go off'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0845, "validation": null, "reasoning": "'in 15 minutes' -> time '15 minutes'; 'timer should go off' -> set_alarm with time 15 minutes from now; no label given so use default 'Timer'"}`
+- **needle_S1_desk_diag** `n3-470b72a78c` (desk/A1) outcome **technical_failure**
+  - text: 'disable alarm for three p. m.'
+  - gold: `[[{"action": "remove_alarm", "args": {"time": "15:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0831, "validation": null, "reasoning": "'disable alarm' -> set_alarm; 'three p. m.' -> time '3:00 PM'; date omitted."}`
+- **needle_S1_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1124, "validation": null, "reasoning": "'postpone' -> set_alarm; '15 mins' -> time '15 minutes' (15*60=300); no date given so omitted."}`
+- **needle_S1_desk_diag** `n3-57021b8e76` (desk/N1) outcome **technical_failure**
+  - text: 'set a timer to go off in 1 hour'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1085, "validation": null, "reasoning": "'timer to go off in 1 hour' -> set_alarm with time '1 hour' from query."}`
+- **needle_S1_desk_diag** `n3-aaaf4b3310` (desk/N2) outcome **technical_failure**
+  - text: 'make an alarm for the meeting with bob at seven today'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1002, "validation": null, "reasoning": "'alarm' -> set_alarm; 'seven today' -> date '2026-06-10'; time '7' from 'seven'; date '2026-06-10' from system date"}`
+- **needle_S1_desk_repeat_r1** `n3-14c9460069` (desk/A2) outcome **technical_failure**
+  - text: 'PDA can you remind me to meet with Jesse next Saturday.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meet with jesse", "time": "09:00", "date": "2026-06-13"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1144, "validation": null, "reasoning": "'remind me to meet with Jesse next Saturday' -> create_reminder with text 'meet with Jesse', time 'next Saturday' (2026-06-17)."}`
+- **needle_S1_desk_repeat_r2** `n3-14c9460069` (desk/A2) outcome **technical_failure**
+  - text: 'PDA can you remind me to meet with Jesse next Saturday.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meet with jesse", "time": "09:00", "date": "2026-06-13"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1144, "validation": null, "reasoning": "'remind me to meet with Jesse next Saturday' -> create_reminder with text 'meet with Jesse', time 'next Saturday' (2026-06-17)."}`
+- **needle_S1_home_bandF** `n3-3fa15dc4e5` (home/None) outcome **technical_failure**
+  - text: 'burn us all alive'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'burn us all alive' means turn lights off. set_lights_brightness with room 'living room' and brightness 0 to turn off."}`
+- **needle_S1_home_diag** `n3-a4808f1d4e` (home/A2) outcome **technical_failure**
+  - text: 'make the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9912, "validation": null, "reasoning": "'off' -> brightness 0; 'lights' -> room 'living room'; 'off' -> brightness 0"}`
+- **needle_S1_home_diag** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7573, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_S1_home_repeat_r1** `n3-59348ddbd7` (home/A1) outcome **technical_failure**
+  - text: 'disable smart socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1634, "validation": null, "reasoning": "'disable smart socket' means turn off lights in 'socket' room. set_lights_power with room 'socket' and power 'off'."}`
+- **needle_S1_home_repeat_r1** `n3-b9b2aeae2b` (home/N1) outcome **technical_failure**
+  - text: 'Can you kill the office lights?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9566, "validation": null, "reasoning": "'kill the office lights' -> room 'office', brightness 0 (implied off)."}`
+- **needle_S1_home_repeat_r1** `n3-5e5793ed48` (home/A3) outcome **technical_failure**
+  - text: 'Put the living room light out and power down the socket'
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}, {"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9182, "validation": null, "reasoning": "'living room' -> room 'living room'; 'out' -> brightness 0; 'power down' -> power 'off'; 'socket' -> power 'off'"}`
+- **needle_S1_home_repeat_r2** `n3-59348ddbd7` (home/A1) outcome **technical_failure**
+  - text: 'disable smart socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1634, "validation": null, "reasoning": "'disable smart socket' means turn off lights in 'socket' room. set_lights_power with room 'socket' and power 'off'."}`
+- **needle_S1_home_repeat_r2** `n3-b9b2aeae2b` (home/N1) outcome **technical_failure**
+  - text: 'Can you kill the office lights?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9566, "validation": null, "reasoning": "'kill the office lights' -> room 'office', brightness 0 (implied off)."}`
+- **needle_S1_home_repeat_r2** `n3-5e5793ed48` (home/A3) outcome **technical_failure**
+  - text: 'Put the living room light out and power down the socket'
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}, {"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9182, "validation": null, "reasoning": "'living room' -> room 'living room'; 'out' -> brightness 0; 'power down' -> power 'off'; 'socket' -> power 'off'"}`
+- **needle_count10_desk_diag** `n3-2b67855f71` (desk/N3) outcome **technical_failure**
+  - text: 'If the shop is open set a reminder for my shopping trip tomorrow at 5:00PM'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1148, "validation": null, "reasoning": "'shopping trip' -> create_reminder text 'shopping trip'; 'tomorrow at 5:00PM' -> time '5:00PM'"}`
+- **needle_count10_desk_diag** `n3-28a3e06b47` (desk/N3) outcome **technical_failure**
+  - text: 'Did you remind me about my meeting at 2pm'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0927, "validation": null, "reasoning": "'remind me' maps to create_reminder; 'meeting' is the text; '2pm' is time."}`
+- **needle_count10_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0962, "validation": null, "reasoning": "'postpone' -> repeat action; '15 mins' -> time 15."}`
+- **needle_count10_desk_diag** `n3-b90f5824af` (desk/N3) outcome **technical_failure**
+  - text: 'Is reminder set for meeting at 3pm tomorrow'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1279, "validation": null, "reasoning": "create_reminder with text 'meeting' from query, time '3pm tomorrow' from query."}`
+- **needle_count10_desk_diag** `n3-9093d5b2a6` (desk/A1) outcome **technical_failure**
+  - text: 'Remove the alarm set for 10pm'
+  - gold: `[[{"action": "remove_alarm", "args": {"time": "22:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0889, "validation": null, "reasoning": "time '10pm' from query; date '2026-06-10' from system date; delete_alarm tool."}`
+- **needle_count10_desk_diag** `n3-305486d321` (desk/N3) outcome **technical_failure**
+  - text: 'The calendar note says "Remind me of meeting time at 7pm next Monday"'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0996, "validation": null, "reasoning": "Quote is reported content, ignored. User's own request: create_reminder with text 'Remind me of meeting time' and time '7pm next Monday' from query."}`
+- **needle_count10_home_diag** `n3-2028a91587` (home/N1) outcome **technical_failure**
+  - text: 'Turn off the upstairs lights.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9127, "validation": null, "reasoning": "'turn off' -> brightness 0; 'upstairs' -> room 'upstairs'; 'off' -> brightness 0"}`
+- **needle_count10_home_diag** `n3-7010c1e7ec` (home/N1) outcome **technical_failure**
+  - text: 'switch over to whisper mode'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1891, "validation": null, "reasoning": "'switch over to whisper mode' means set lights to 'whisper' color -> set_lights_color with color 'whisper'."}`
+- **needle_count10_home_diag** `n3-95543b2342` (home/N1) outcome **technical_failure**
+  - text: 'Could you please turn off the overhead light in the kitchen'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9594, "validation": null, "reasoning": "'turn off the overhead light' -> set_lights_brightness with room 'kitchen' and brightness 0 (off)."}`
+- **needle_count10_home_diag** `n3-a4808f1d4e` (home/A2) outcome **technical_failure**
+  - text: 'make the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.5902, "validation": null, "reasoning": "'lights off' -> set_lights_brightness with brightness 0; 'off' -> brightness 0"}`
+- **needle_count10_home_diag** `n3-9785b5a0b0` (home/N1) outcome **technical_failure**
+  - text: 'Turn the security light off.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9845, "validation": null, "reasoning": "'security light off' -> set_lights_brightness with room 'security light' and brightness 0 (off)."}`
+- **needle_count10_home_diag** `n3-67a8c59c9a` (home/N1) outcome **technical_failure**
+  - text: 'please turn off the lights in patio'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9825, "validation": null, "reasoning": "'turn off' -> brightness 0; 'patio' -> room 'patio'; 'lights' -> set_lights_brightness"}`
+- **needle_count10_home_diag** `n3-df5252b27d` (home/A1) outcome **technical_failure**
+  - text: 'shut off lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.585, "validation": null, "reasoning": "'shut off lights' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_count10_home_diag** `n3-d1e9946bfc` (home/A3) outcome **technical_failure**
+  - text: 'please turn lights off and turn on new smart socket'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}, {"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7619, "validation": null, "reasoning": "'turn lights off' -> set_lights_brightness brightness 0; 'turn on new smart socket' -> set_blinds position 'closed'"}`
+- **needle_count10_home_diag** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7141, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_count10_home_diag** `n3-95b8c1e344` (home/A1) outcome **technical_failure**
+  - text: 'turn off hallway light'
+  - gold: `[[{"action": "light_power", "args": {"room": "hallway", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.8945, "validation": null, "reasoning": "'turn off hallway light' -> room 'hallway', brightness 0 (off)."}`
+- **needle_count10_home_diag** `n3-b38d68b06f` (home/A2) outcome **technical_failure**
+  - text: 'put the lights off now'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6755, "validation": null, "reasoning": "'lights off' -> set_lights_brightness with brightness 0; 'now' implies current room."}`
+- **needle_count20_desk_diag** `n3-2b67855f71` (desk/N3) outcome **technical_failure**
+  - text: 'If the shop is open set a reminder for my shopping trip tomorrow at 5:00PM'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1011, "validation": null, "reasoning": "'shop is open' -> create_reminder; 'shopping trip' -> text; 'tomorrow at 5:00PM' -> time '5:00PM'"}`
+- **needle_count20_desk_diag** `n3-470b72a78c` (desk/A1) outcome **technical_failure**
+  - text: 'disable alarm for three p. m.'
+  - gold: `[[{"action": "remove_alarm", "args": {"time": "15:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1312, "validation": null, "reasoning": "'disable alarm' -> set_alarm; 'three p. m.' -> time '3:00 PM'; no date given so omit date param."}`
+- **needle_count20_desk_diag** `n3-28a3e06b47` (desk/N3) outcome **technical_failure**
+  - text: 'Did you remind me about my meeting at 2pm'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1719, "validation": null, "reasoning": "'remind me' maps to create_reminder; 'meeting' is the text; '2pm' is time."}`
+- **needle_count20_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.106, "validation": null, "reasoning": "'Postpone my alarm by 15 mins' -> remove_alarm with time '15 minutes' and date '2026-06-10' (today)."}`
+- **needle_count20_desk_diag** `n3-6836b7631c` (desk/A3) outcome **technical_failure**
+  - text: 'Remember me to meet Reveca today at 6:00pm'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meet reveca", "time": "18:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1085, "validation": null, "reasoning": "'meet Reveca' -> create_reminder with text 'meet Reveca' and time '6:00pm' from query."}`
+- **needle_count20_desk_diag** `n3-dfa474b7ea` (desk/A2) outcome **technical_failure**
+  - text: 'send me a reminder of my meeting with tom next friday'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meeting with tom", "time": "09:00", "date": "2026-06-12"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0998, "validation": null, "reasoning": "create_reminder with text 'my meeting with tom' from query, time 'next friday' relative to system date 2026-06-10 Wed -> 2026-06-14"}`
+- **needle_count20_desk_diag** `n3-a8a45a9611` (desk/N3) outcome **technical_failure**
+  - text: 'imagine you remind me tommorrow at 10 AM to wish my friend'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1172, "validation": null, "reasoning": "'remind me tommorrow at 10 AM' -> create_reminder with text 'wish my friend' and time '10 AM'."}`
+- **needle_count20_desk_diag** `n3-599e5e3c30` (desk/A1) outcome **technical_failure**
+  - text: "set a reminder about tomorrow's meeting at nine am"
+  - gold: `[[{"action": "create_reminder", "args": {"text": "meeting", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1519, "validation": null, "reasoning": "create_reminder with text 'tomorrow's meeting' from query, time '9:00' from 'nine am' converted to 24-hour format."}`
+- **needle_count20_home_diag** `n3-9829bf5847` (home/A1) outcome **technical_failure**
+  - text: 'turn off the socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6704, "validation": null, "reasoning": "'turn off the socket' -> set_lights_brightness with brightness 0 (off)"}`
+- **needle_count20_home_diag** `n3-247c8569e3` (home/A3) outcome **technical_failure**
+  - text: 'brighten the light of hall to seventy percent'
+  - gold: `[[{"action": "set_light_level", "args": {"room": "hallway", "level": 70}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.11, "validation": null, "reasoning": "'brighten the light' -> set_lights_brightness; 'hall' -> room 'hall'; 'seventy percent' -> brightness 70"}`
+- **needle_count20_home_diag** `n3-2028a91587` (home/N1) outcome **technical_failure**
+  - text: 'Turn off the upstairs lights.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9377, "validation": null, "reasoning": "'turn off' -> brightness 0; 'upstairs lights' -> room 'upstairs'."}`
+- **needle_count20_home_diag** `n3-95543b2342` (home/N1) outcome **technical_failure**
+  - text: 'Could you please turn off the overhead light in the kitchen'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9505, "validation": null, "reasoning": "'turn off the overhead light' -> set_lights_brightness with room 'kitchen' and brightness 0 (off)."}`
+- **needle_count20_home_diag** `n3-a4808f1d4e` (home/A2) outcome **technical_failure**
+  - text: 'make the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.5213, "validation": null, "reasoning": "'lights off' -> set_lights_brightness with brightness 0"}`
+- **needle_count20_home_diag** `n3-9785b5a0b0` (home/N1) outcome **technical_failure**
+  - text: 'Turn the security light off.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.5608, "validation": null, "reasoning": "'Turn the security light off' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_count20_home_diag** `n3-67a8c59c9a` (home/N1) outcome **technical_failure**
+  - text: 'please turn off the lights in patio'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn off the lights' -> set_lights_brightness with room 'patio' and brightness 0"}`
+- **needle_count20_home_diag** `n3-df5252b27d` (home/A1) outcome **technical_failure**
+  - text: 'shut off lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.4433, "validation": null, "reasoning": "'shut off lights' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_count20_home_diag** `n3-d1e9946bfc` (home/A3) outcome **technical_failure**
+  - text: 'please turn lights off and turn on new smart socket'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}, {"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.509, "validation": null, "reasoning": "'turn lights off' -> set_lights_brightness brightness 0; 'turn on new smart socket' -> set_lights_color color 'new'"}`
+- **needle_count20_home_diag** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.5554, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_count20_home_diag** `n3-95b8c1e344` (home/A1) outcome **technical_failure**
+  - text: 'turn off hallway light'
+  - gold: `[[{"action": "light_power", "args": {"room": "hallway", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.8254, "validation": null, "reasoning": "'turn off hallway light' -> set_lights_brightness with room 'hallway', brightness 0 (off)."}`
+- **needle_count20_home_diag** `n3-b38d68b06f` (home/A2) outcome **technical_failure**
+  - text: 'put the lights off now'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.5729, "validation": null, "reasoning": "'lights off' -> set_lights_brightness brightness 0; 'now' implies current state."}`
+- **needle_count6_desk_diag** `n3-2b67855f71` (desk/N3) outcome **technical_failure**
+  - text: 'If the shop is open set a reminder for my shopping trip tomorrow at 5:00PM'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0741, "validation": null, "reasoning": "'shop is open' -> create_reminder; 'shopping trip' -> text; 'tomorrow at 5:00PM' -> time '5:00PM'"}`
+- **needle_count6_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1201, "validation": null, "reasoning": "'postpone' -> set_alarm; '15 mins' -> time '15 minutes' (15*60=300); no date given so omitted."}`
+- **needle_count6_desk_diag** `n3-9093d5b2a6` (desk/A1) outcome **technical_failure**
+  - text: 'Remove the alarm set for 10pm'
+  - gold: `[[{"action": "remove_alarm", "args": {"time": "22:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0723, "validation": null, "reasoning": "time '10pm' from query; date '2026-06-10' from system date; remove_alarm tool"}`
+- **needle_count6_home_diag** `n3-2028a91587` (home/N1) outcome **technical_failure**
+  - text: 'Turn off the upstairs lights.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9785, "validation": null, "reasoning": "'turn off the upstairs lights' -> room 'upstairs', brightness 0 (off)."}`
+- **needle_count6_home_diag** `n3-95543b2342` (home/N1) outcome **technical_failure**
+  - text: 'Could you please turn off the overhead light in the kitchen'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9697, "validation": null, "reasoning": "'turn off the overhead light' -> set_lights_brightness with room 'kitchen' and brightness 0 (off)."}`
+- **needle_count6_home_diag** `n3-a4808f1d4e` (home/A2) outcome **technical_failure**
+  - text: 'make the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9887, "validation": null, "reasoning": "'off' -> brightness 0; 'lights' -> room 'living room'; 'off' -> brightness 0"}`
+- **needle_count6_home_diag** `n3-df5252b27d` (home/A1) outcome **technical_failure**
+  - text: 'shut off lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9758, "validation": null, "reasoning": "'shut off lights' -> set_lights_brightness with brightness 0; 'shut off' -> brightness 0; room 'living room' from context."}`
+- **needle_count6_home_diag** `n3-d1e9946bfc` (home/A3) outcome **technical_failure**
+  - text: 'please turn lights off and turn on new smart socket'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}, {"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6887, "validation": null, "reasoning": "'turn lights off' -> set_lights_brightness brightness 0; 'turn on new smart socket' -> set_lights_power power 'on'"}`
+- **needle_count6_home_diag** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.757, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_count6_home_diag** `n3-b38d68b06f` (home/A2) outcome **technical_failure**
+  - text: 'put the lights off now'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6485, "validation": null, "reasoning": "'lights off' -> set_lights_brightness with brightness 0; 'now' implies current room."}`
+- **needle_dispatch_desk_diag** `n3-470b72a78c` (desk/A1) outcome **technical_failure**
+  - text: 'disable alarm for three p. m.'
+  - gold: `[[{"action": "remove_alarm", "args": {"time": "15:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0894, "validation": null, "reasoning": "'disable alarm' -> action 'remove'; 'three p. m.' -> time '3:00 PM'"}`
+- **needle_dispatch_desk_diag** `n3-aa08cb58c8` (desk/A1) outcome **technical_failure**
+  - text: 'remind me to pick up mark at the airport at six p. m.'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "pick up mark at the airport", "time": "18:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0974, "validation": null, "reasoning": "'remind me' maps to action 'create reminder'; 'pick up mark at the airport' is the note text; 'six p. m.' is the time."}`
+- **needle_dispatch_desk_diag** `n3-e63d28622b` (desk/A2) outcome **technical_failure**
+  - text: 'can you remind me to finish a task'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "finish a task", "time": "09:00", "date": "2026-06-11"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1172, "validation": null, "reasoning": "'remind me' maps to action 'create reminder' with time 'now' from context of finishing task."}`
+- **needle_dispatch_home_diag** `n3-247c8569e3` (home/A3) outcome **technical_failure**
+  - text: 'brighten the light of hall to seventy percent'
+  - gold: `[[{"action": "set_light_level", "args": {"room": "hallway", "level": 70}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.21, "validation": null, "reasoning": "'brighten' -> action 'lights'; 'hall' -> room 'hall'; 'seventy percent' -> brightness 70"}`
+- **needle_dispatch_home_diag** `n3-a001814cab` (home/A1) outcome **technical_failure**
+  - text: 'power off the wemo plug'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.3296, "validation": null, "reasoning": "action 'lights' from 'power off'; room 'wemo' from 'wemo plug'; power 'off' from 'off'."}`
+- **needle_dispatch_home_diag** `n3-997990df43` (home/A1) outcome **technical_failure**
+  - text: 'turn off smart plug socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.2232, "validation": null, "reasoning": "action 'lights' from 'turn off'; room 'socket' from 'socket'; power 'off' from 'off'."}`
+- **needle_forced_desk_diag** `n3-cece5a3703` (desk/N1) outcome **technical_failure**
+  - text: 'in 15 minutes the timer should go off'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0845, "validation": null, "reasoning": "'in 15 minutes' -> time '15 minutes'; 'timer should go off' -> set_alarm with time 15 minutes from now; no label given so use default 'Timer'"}`
+- **needle_forced_desk_diag** `n3-470b72a78c` (desk/A1) outcome **technical_failure**
+  - text: 'disable alarm for three p. m.'
+  - gold: `[[{"action": "remove_alarm", "args": {"time": "15:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0831, "validation": null, "reasoning": "'disable alarm' -> set_alarm; 'three p. m.' -> time '3:00 PM'; date omitted."}`
+- **needle_forced_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1124, "validation": null, "reasoning": "'postpone' -> set_alarm; '15 mins' -> time '15 minutes' (15*60=300); no date given so omitted."}`
+- **needle_forced_desk_diag** `n3-57021b8e76` (desk/N1) outcome **technical_failure**
+  - text: 'set a timer to go off in 1 hour'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1085, "validation": null, "reasoning": "'timer to go off in 1 hour' -> set_alarm with time '1 hour' from query."}`
+- **needle_forced_desk_diag** `n3-aaaf4b3310` (desk/N2) outcome **technical_failure**
+  - text: 'make an alarm for the meeting with bob at seven today'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1002, "validation": null, "reasoning": "'alarm' -> set_alarm; 'seven today' -> date '2026-06-10'; time '7' from 'seven'; date '2026-06-10' from system date"}`
+- **needle_forced_home_diag** `n3-a4808f1d4e` (home/A2) outcome **technical_failure**
+  - text: 'make the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9912, "validation": null, "reasoning": "'off' -> brightness 0; 'lights' -> room 'living room'; 'off' -> brightness 0"}`
+- **needle_forced_home_diag** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7573, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-fc9a1315ab` (home/A3) outcome **technical_failure**
+  - text: 'Switch the bathroom light off and put the wemo plug on'
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "off"}}, {"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9633, "validation": null, "reasoning": "'bathroom' -> room 'bathroom'; 'off' -> brightness 0; 'wemo plug' -> room 'wemo plug'; 'on' -> power 'on'"}`
+- **needle_rel_home_relroom** `n3-3da0987832` (home/N1) outcome **technical_failure**
+  - text: 'hey siri mute the speakers'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9959, "validation": null, "reasoning": "'mute the speakers' means turn off all rooms -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_rel_home_relroom** `n3-51925e927d` (home/A2) outcome **technical_failure**
+  - text: 'no lights in the kitchen'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9491, "validation": null, "reasoning": "'no lights' -> brightness 0; 'kitchen' -> room 'kitchen'; brightness is 0"}`
+- **needle_rel_home_relroom** `n3-691a8dd462` (home/A3) outcome **technical_failure**
+  - text: 'Power up the wemo plug socket and set the vacuum cleaner running'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "on"}}, {"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.158, "validation": null, "reasoning": "'power up the wemo plug socket' -> set_lights_power with room 'wemo plug socket', power 'on'. 'vacuum cleaner running' -> control_vacuum with action 'start'."}`
+- **needle_rel_home_relroom** `n3-6d35fdda9c` (home/N3) outcome **technical_failure**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9388, "validation": null, "reasoning": "'turn off the lights' -> set_lights_brightness with room 'kitchen', brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-a0e4cb8678` (home/A2) outcome **technical_failure**
+  - text: 'Kitchen lights, off.'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9314, "validation": null, "reasoning": "'Kitchen lights' -> room 'kitchen', 'off' -> brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-bd6152cb48` (home/N3) outcome **technical_failure**
+  - text: 'my mom says please turn off kitchen light'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9343, "validation": null, "reasoning": "'turn off kitchen light' -> room 'kitchen', brightness 0; 'off' -> brightness 0; set_lights_brightness chosen"}`
+- **needle_rel_home_relroom** `n3-d228b24b92` (home/A3) outcome **technical_failure**
+  - text: 'Hey, can you switch the lights off, and the plug socket too?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}, {"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9936, "validation": null, "reasoning": "'switch the lights off' -> set_lights_brightness with room 'living room' (default), brightness 0; 'plug socket too' -> control_vacuum with action 'start' (dock)"}`
+- **needle_rel_home_relroom** `n3-3bc957c7b4` (home/A2) outcome **technical_failure**
+  - text: 'could you turn the light off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn the light off' -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_rel_home_relroom** `n3-3fcbb6b554` (home/A1) outcome **technical_failure**
+  - text: 'turn the plug off'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn the plug off' means turn off lights -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_rel_home_relroom** `n3-f27e6b61b3` (home/A1) outcome **technical_failure**
+  - text: 'Could you shut the lights off?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7548, "validation": null, "reasoning": "'shut the lights off' -> set_lights_brightness with brightness 0; 'off' -> brightness 0"}`
+- **needle_rel_home_relroom** `n3-d59019e535` (home/A3) outcome **technical_failure**
+  - text: 'Can you shut off the lamps?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7426, "validation": null, "reasoning": "'shut off the lamps' means turn off lights -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-1b4697ec21` (home/A2) outcome **technical_failure**
+  - text: 'Would you mind switching off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7964, "validation": null, "reasoning": "'switching off the light' -> set_lights_brightness with brightness 0; 'off' -> brightness 0"}`
+- **needle_rel_home_relroom** `n3-7dc1986d1f` (home/A2) outcome **technical_failure**
+  - text: 'i want the smart socket off now'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.164, "validation": null, "reasoning": "'smart socket off' -> set_lights_power with room 'socket' and power 'off'."}`
+- **needle_rel_home_relroom** `n3-7110c4589b` (home/A2) outcome **technical_failure**
+  - text: 'discontinue use of lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7806, "validation": null, "reasoning": "'discontinue use of lights' means turn off lights -> set_lights_brightness with brightness 0"}`
+- **needle_rel_home_relroom** `n3-61ad69de38` (home/A2) outcome **technical_failure**
+  - text: 'Hey Google, living room light off'
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9391, "validation": null, "reasoning": "'living room' -> room 'living room'; 'off' -> brightness 0; 'living room' -> room 'living room'; 'off' -> brightness 0"}`
+- **needle_rel_home_relroom** `n3-9b9ef6b54c` (home/A2) outcome **technical_failure**
+  - text: 'olly turn the light off in the living room'
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9539, "validation": null, "reasoning": "'off' -> brightness 0; 'living room' -> room 'living room'; 'turn the light off' -> brightness 0"}`
+- **needle_rel_home_relroom** `n3-4bc6b348d2` (home/N1) outcome **technical_failure**
+  - text: 'turn off overhead light'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.3372, "validation": null, "reasoning": "'turn off overhead light' -> set_lights_brightness with room 'overhead light' and brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-bf56e4e098` (home/A2) outcome **technical_failure**
+  - text: 'Hey, how about getting the wemo on.'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.3772, "validation": null, "reasoning": "'wemo' -> room 'wemo'; 'on' -> action 'start'."}`
+- **needle_rel_home_relroom** `n3-55974e7f46` (home/A1) outcome **technical_failure**
+  - text: 'turn off my wemo socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.277, "validation": null, "reasoning": "'turn off' -> power 'off'; 'wemo socket' -> room 'wemo socket'"}`
+- **needle_rel_home_relroom** `n3-3c33a3e45a` (home/A1) outcome **technical_failure**
+  - text: 'turn on wemo'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.3438, "validation": null, "reasoning": "'turn on' -> action 'start'; 'wemo' -> room 'wemo'"}`
+- **needle_rel_home_relroom** `n3-8f2f7791a8` (home/A3) outcome **technical_failure**
+  - text: 'turn off all lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn off all lights' -> set_lights_brightness with room 'living room' and brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-daa4b53bff` (home/A2) outcome **technical_failure**
+  - text: "let's suck out the dust"
+  - gold: `[[{"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6188, "validation": null, "reasoning": "'suck out the dust' means turn off lights -> set_lights_brightness with brightness 0 to turn off."}`
+- **needle_rel_home_relroom** `n3-b7b5510719` (home/A3) outcome **technical_failure**
+  - text: 'turn off the lamps'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7747, "validation": null, "reasoning": "'turn off the lamps' means turn off lights -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-b9b2aeae2b` (home/N1) outcome **technical_failure**
+  - text: 'Can you kill the office lights?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9568, "validation": null, "reasoning": "'kill the office lights' -> room 'office', brightness 0 (implied off)."}`
+- **needle_rel_home_relroom** `n3-4306904c29` (home/A2) outcome **technical_failure**
+  - text: 'Siri, would you kindly turn off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.736, "validation": null, "reasoning": "'turn off the light' -> set_lights_brightness with brightness 0; 'Siri' is context, not a parameter."}`
+- **needle_rel_home_relroom** `n3-499e33a5e4` (home/A2) outcome **technical_failure**
+  - text: 'Kindly note the wemo socket as off'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1892, "validation": null, "reasoning": "'note the wemo socket as off' -> set_lights_brightness with room 'wemo' and direction 'off'."}`
+- **needle_rel_home_relroom** `n3-9973e4d2c7` (home/N3) outcome **technical_failure**
+  - text: 'My mother wants the kitchen light switched off.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.961, "validation": null, "reasoning": "'kitchen light switched off' -> room 'kitchen', brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-a16a55eccb` (home/N1) outcome **technical_failure**
+  - text: 'Siri, can you mute my speakers please?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6184, "validation": null, "reasoning": "'mute my speakers' means turn off all speakers -> set_lights_brightness with brightness 0 to mute all."}`
+- **needle_rel_home_relroom** `n3-fe60cadfc5` (home/A2) outcome **technical_failure**
+  - text: "I'd like the lights off"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7641, "validation": null, "reasoning": "'lights off' -> set_lights_brightness with brightness 0; 'off' -> brightness 0"}`
+- **needle_rel_home_relroom** `n3-f3e9fb68ff` (home/A1) outcome **technical_failure**
+  - text: 'turn off kitchen light'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9352, "validation": null, "reasoning": "'turn off kitchen light' -> room 'kitchen', brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-e145fdbfad` (home/N3) outcome **technical_failure**
+  - text: 'What happens when you cut the wemo plug socket?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9896, "validation": null, "reasoning": "'cut the wemo plug socket' means turn off lights -> set_lights_brightness with room 'bedroom' (wemo plug socket) and brightness 0 to turn off."}`
+- **needle_rel_home_relroom** `n3-6ca79e10d1` (home/A3) outcome **technical_failure**
+  - text: 'turn off the lights in the kitchen and turn on the vacuum cleaner'
+  - gold: `[[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}, {"action": "vacuum", "args": {"command": "start", "room": "whole house"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9646, "validation": null, "reasoning": "'turn off the lights in the kitchen' -> room 'kitchen', brightness 0 (off); 'turn on the vacuum cleaner' -> action 'start'"}`
+- **needle_rel_home_relroom** `n3-e8fc81d381` (home/A2) outcome **technical_failure**
+  - text: 'PDA, I want the lights turned off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9902, "validation": null, "reasoning": "'turned off' -> brightness 0; 'lights turned off' -> room 'living room' (default); brightness 0"}`
+- **needle_rel_home_relroom** `n3-a7fd20e693` (home/A1) outcome **technical_failure**
+  - text: 'Can you switch socket number one on?'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1691, "validation": null, "reasoning": "'switch socket number one on' -> set_lights_power with room 'socket number one' and power 'on'."}`
+- **needle_rel_home_relroom** `n3-c31c85a429` (home/N3) outcome **technical_failure**
+  - text: 'Are the bathroom lights off?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9661, "validation": null, "reasoning": "'bathroom' -> room 'bathroom'; 'off' -> brightness 0; set_lights_brightness chosen."}`
+- **needle_rel_home_relroom** `n3-b9fc80d49c` (home/A3) outcome **technical_failure**
+  - text: "turn the living room's light off and please turn socket off"
+  - gold: `[[{"action": "light_power", "args": {"room": "living room", "state": "off"}}, {"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'living room' -> room 'living room'; 'off' -> brightness 0; 'socket off' -> power 'off'"}`
+- **needle_rel_home_relroom** `n3-05607cc4e0` (home/A1) outcome **technical_failure**
+  - text: 'Smart socket off'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'Smart socket off' means turn off lights in living room -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_rel_home_relroom** `n3-48b4bc64d7` (home/N3) outcome **technical_failure**
+  - text: 'What if u turn off wemo plug socket'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.363, "validation": null, "reasoning": "'turn off wemo plug socket' -> set_lights_power with room 'wemo' and power 'off'."}`
+- **needle_rel_home_relroom** `n3-5e61321ac6` (home/N3) outcome **technical_failure**
+  - text: "Alexa don't turn off the livingroom lights."
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.96, "validation": null, "reasoning": "'don't turn off the livingroom lights' -> set_lights_brightness with room 'living room' and brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-59348ddbd7` (home/A1) outcome **technical_failure**
+  - text: 'disable smart socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'disable smart socket' means turn off lights in living room -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_rel_home_relroom** `n3-e7f24536d7` (home/A2) outcome **technical_failure**
+  - text: 'Execute command: turn off lights.'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7766, "validation": null, "reasoning": "'turn off lights' -> set_lights_brightness with brightness 0; 'execute command' is a command not a tool call."}`
+- **needle_rel_home_relroom** `n3-1d15ea2410` (home/N1) outcome **technical_failure**
+  - text: 'The left one off, keep the others as they are'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6728, "validation": null, "reasoning": "'keep the others as they are' means turn off lights -> set_lights_brightness with brightness 0 (off)"}`
+- **needle_rel_home_relroom** `n3-91d0879ff6` (home/A3) outcome **technical_failure**
+  - text: 'Turn of the lamp socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.996, "validation": null, "reasoning": "'turn of the lamp socket' means turn off lights -> set_lights_brightness with room 'living room' (lamp is living room) and brightness 0"}`
+- **needle_rel_home_relroom** `n3-45a4878dcb` (home/A1) outcome **technical_failure**
+  - text: 'Power down the wemo smart socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1847, "validation": null, "reasoning": "'power down' -> power 'down'; 'wemo smart socket' -> room 'wemo smart socket'"}`
+- **needle_rel_home_relroom** `n3-c89386d3c4` (home/A2) outcome **technical_failure**
+  - text: 'Please mark  the wemo socket to off'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.2665, "validation": null, "reasoning": "'mark ' -> set_lights_brightness; 'wemo socket' -> room 'wemo socket'; 'off' -> brightness 0"}`
+- **needle_rel_home_relroom** `n3-6538087ae8` (home/N1) outcome **technical_failure**
+  - text: 'turn office lights off'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.6026, "validation": null, "reasoning": "'office' -> room 'office'; 'lights off' -> brightness 0; 'off' -> direction 'off'"}`
+- **needle_rel_home_relroom** `n3-9829bf5847` (home/A1) outcome **technical_failure**
+  - text: 'turn off the socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1463, "validation": null, "reasoning": "'turn off the socket' means turn off lights -> set_lights_brightness with room 'socket' and brightness 0"}`
+- **needle_rel_home_relroom** `n3-2028a91587` (home/N1) outcome **technical_failure**
+  - text: 'Turn off the upstairs lights.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.8705, "validation": null, "reasoning": "'turn off the upstairs lights' -> room 'upstairs', brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-95543b2342` (home/N1) outcome **technical_failure**
+  - text: 'Could you please turn off the overhead light in the kitchen'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9665, "validation": null, "reasoning": "'turn off the overhead light' -> set_lights_brightness; 'kitchen' -> room 'kitchen'; 'off' -> brightness 0"}`
+- **needle_rel_home_relroom** `n3-a001814cab` (home/A1) outcome **technical_failure**
+  - text: 'power off the wemo plug'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1553, "validation": null, "reasoning": "'power off' -> power 'off'; 'wemo plug' -> room 'wemo plug'"}`
+- **needle_rel_home_relroom** `n3-a4808f1d4e` (home/A2) outcome **technical_failure**
+  - text: 'make the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'off' -> brightness 0; 'lights' -> room 'living room'; 'off' -> brightness 0; set_lights_brightness"}`
+- **needle_rel_home_relroom** `n3-df5252b27d` (home/A1) outcome **technical_failure**
+  - text: 'shut off lights'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7177, "validation": null, "reasoning": "'shut off lights' -> set_lights_brightness with brightness 0; 'shut off' -> direction 'down'."}`
+- **needle_rel_home_relroom** `n3-d1e9946bfc` (home/A3) outcome **technical_failure**
+  - text: 'please turn lights off and turn on new smart socket'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}, {"action": "smart_plug", "args": {"state": "on"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9744, "validation": null, "reasoning": "'turn lights off' -> room 'living room', brightness 0; 'turn on new smart socket' -> room 'study', action 'start'"}`
+- **needle_rel_home_relroom** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7946, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with brightness 0 (off)."}`
+- **needle_rel_home_relroom** `n3-95b8c1e344` (home/A1) outcome **technical_failure**
+  - text: 'turn off hallway light'
+  - gold: `[[{"action": "light_power", "args": {"room": "hallway", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9107, "validation": null, "reasoning": "'turn off hallway light' -> room 'hallway', brightness 0 (off)."}`
+- **needle_renamed_desk_diag** `n3-cece5a3703` (desk/N1) outcome **technical_failure**
+  - text: 'in 15 minutes the timer should go off'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.108, "validation": null, "reasoning": "'in 15 minutes' -> time '15 minutes'; 'timer should go off' -> wake_bell_add with time 15 minutes"}`
+- **needle_renamed_desk_diag** `n3-2b67855f71` (desk/N3) outcome **technical_failure**
+  - text: 'If the shop is open set a reminder for my shopping trip tomorrow at 5:00PM'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1496, "validation": null, "reasoning": "'shopping trip' -> text 'shopping trip'; 'tomorrow' relative to 2026-06-10 -> 2026-06-12; '5:00PM' -> time '5:00PM'; date '2026-06-12'"}`
+- **needle_renamed_desk_diag** `n3-43b84fe275` (desk/N1) outcome **technical_failure**
+  - text: 'i need a timer for 45 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1095, "validation": null, "reasoning": "'timer for 45 minutes' -> set_timer with duration '45 minutes'"}`
+- **needle_renamed_desk_diag** `n3-aaaf4b3310` (desk/N2) outcome **technical_failure**
+  - text: 'make an alarm for the meeting with bob at seven today'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1337, "validation": null, "reasoning": "'alarm' -> wake_bell_add; 'seven today' -> date '2026-06-10'; time '7' from 'seven'"}`
+- **needle_roomreq_home_relroom** `n3-9b6c643276` (home/A3) outcome **technical_failure**
+  - text: 'Put out all lights in the whole place'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9924, "validation": null, "reasoning": "'Put out all lights' means turn off all lights -> set_lights_brightness with room 'whole house' and brightness 0"}`
+- **needle_roomreq_home_relroom** `n3-6d35fdda9c` (home/N3) outcome **technical_failure**
+  - text: 'what if you turn off the lights in the kitchenn'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9465, "validation": null, "reasoning": "'turn off the lights' -> set_lights_brightness; 'kitchenn' -> room 'kitchen'; 'off' -> brightness 0"}`
+- **needle_roomreq_home_relroom** `n3-d59019e535` (home/A3) outcome **technical_failure**
+  - text: 'Can you shut off the lamps?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'shut off the lamps' means turn off lights -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_roomreq_home_relroom** `n3-4bc6b348d2` (home/N1) outcome **technical_failure**
+  - text: 'turn off overhead light'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn off overhead light' -> set_lights_brightness with room 'overhead light' and brightness 0 (off)."}`
+- **needle_roomreq_home_relroom** `n3-b7b5510719` (home/A3) outcome **technical_failure**
+  - text: 'turn off the lamps'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn off the lamps' means turn off lights -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_roomreq_home_relroom** `n3-4306904c29` (home/A2) outcome **technical_failure**
+  - text: 'Siri, would you kindly turn off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn off the light' -> set_lights_brightness with room 'living room' (default), brightness 0 (off)."}`
+- **needle_roomreq_home_relroom** `n3-e5d52f7fcc` (home/N1) outcome **technical_failure**
+  - text: 'turn off the porch light'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9865, "validation": null, "reasoning": "'turn off' -> brightness 0; 'porch light' -> room 'porch'"}`
+- **needle_roomreq_home_relroom** `n3-faf5a5fe1e` (home/A2) outcome **technical_failure**
+  - text: 'hey olly turn off the light please'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9826, "validation": null, "reasoning": "'off' -> brightness 0; 'off' -> brightness 0; 'light' -> room 'living room'"}`
+- **needle_roomreq_home_relroom** `n3-c31c85a429` (home/N3) outcome **technical_failure**
+  - text: 'Are the bathroom lights off?'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9272, "validation": null, "reasoning": "'bathroom' -> room 'bathroom'; 'off' -> brightness 0; set_lights_brightness."}`
+- **needle_roomreq_home_relroom** `n3-9c2496cd7d` (home/N2) outcome **technical_failure**
+  - text: 'These lights are too bright please fix them'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'fix them' means turn off lights -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_roomreq_home_relroom** `n3-59348ddbd7` (home/A1) outcome **technical_failure**
+  - text: 'disable smart socket'
+  - gold: `[[{"action": "smart_plug", "args": {"state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9928, "validation": null, "reasoning": "'disable smart socket' means turn off lights in living room -> set_lights_brightness with room 'living room' and brightness 0"}`
+- **needle_roomreq_home_relroom** `n3-e7f24536d7` (home/A2) outcome **technical_failure**
+  - text: 'Execute command: turn off lights.'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'turn off lights' -> set_lights_brightness with room 'living room' (default), brightness 0 (off)."}`
+- **needle_roomreq_home_relroom** `n3-798cd087ac` (home/A2) outcome **technical_failure**
+  - text: 'Would you switch the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'off' -> brightness 0; 'lights off' -> room 'living room' (default)."}`
+- **needle_roomreq_home_relroom** `n3-1d15ea2410` (home/N1) outcome **technical_failure**
+  - text: 'The left one off, keep the others as they are'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9936, "validation": null, "reasoning": "'keep the others as they are' means turn off lights -> set_lights_brightness with room 'living room' (left one is living room) and brightness 0"}`
+- **needle_roomreq_home_relroom** `n3-c2de900e45` (home/N3) outcome **technical_failure**
+  - text: 'Enable wemo when I get home'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.2935, "validation": null, "reasoning": "'Enable wemo' -> action 'start', room 'wemo'."}`
+- **needle_roomreq_home_relroom** `n3-95543b2342` (home/N1) outcome **technical_failure**
+  - text: 'Could you please turn off the overhead light in the kitchen'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.9633, "validation": null, "reasoning": "'turn off the overhead light' -> set_lights_brightness with room 'kitchen' and brightness 0 (off)."}`
+- **needle_roomreq_home_relroom** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with room 'living room' (default), brightness 0 (off)."}`
+- **needle_timerS_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1057, "validation": null, "reasoning": "'postpone' -> set_alarm; '15 mins' -> time '15 minutes' (15*60=300); no date given so omitted."}`
+- **needle_timerU_desk_diag** `n3-2b67855f71` (desk/N3) outcome **technical_failure**
+  - text: 'If the shop is open set a reminder for my shopping trip tomorrow at 5:00PM'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1143, "validation": null, "reasoning": "'shop is open' -> create_reminder; 'shopping trip' -> text; 'tomorrow' relative to 2026-06-10 -> 2026-06-11; '5:00PM' -> time '5:00PM'."}`
+- **needle_timerU_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0732, "validation": null, "reasoning": "'postpone' -> set_alarm; '15 mins' -> time '15 minutes'; no date given so omitted."}`
+- **needle_timerU_desk_diag** `n3-dc831d779f` (desk/A3) outcome **technical_failure**
+  - text: 'i need a reminder to give the dog his medicine at ten tonight'
+  - gold: `[[{"action": "create_reminder", "args": {"text": "give the dog his medicine", "time": "22:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0977, "validation": null, "reasoning": "'reminder to give the dog his medicine' -> create_reminder with text 'give the dog his medicine', time '10:00 tonight' -> time '10:00 tonight'"}`
+- **needle_triggers_desk_diag** `n3-cece5a3703` (desk/N1) outcome **technical_failure**
+  - text: 'in 15 minutes the timer should go off'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0845, "validation": null, "reasoning": "'in 15 minutes' -> time '15 minutes'; 'timer should go off' -> set_alarm with time 15 minutes from now; no label given so use default 'Timer'"}`
+- **needle_triggers_desk_diag** `n3-470b72a78c` (desk/A1) outcome **technical_failure**
+  - text: 'disable alarm for three p. m.'
+  - gold: `[[{"action": "remove_alarm", "args": {"time": "15:00", "date": "2026-06-10"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0831, "validation": null, "reasoning": "'disable alarm' -> set_alarm; 'three p. m.' -> time '3:00 PM'; date omitted."}`
+- **needle_triggers_desk_diag** `n3-76ef047ebf` (desk/N1) outcome **technical_failure**
+  - text: 'Postpone my alarm by 15 mins.'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1124, "validation": null, "reasoning": "'postpone' -> set_alarm; '15 mins' -> time '15 minutes' (15*60=300); no date given so omitted."}`
+- **needle_triggers_desk_diag** `n3-57021b8e76` (desk/N1) outcome **technical_failure**
+  - text: 'set a timer to go off in 1 hour'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1085, "validation": null, "reasoning": "'timer to go off in 1 hour' -> set_alarm with time '1 hour' from query."}`
+- **needle_triggers_desk_diag** `n3-aaaf4b3310` (desk/N2) outcome **technical_failure**
+  - text: 'make an alarm for the meeting with bob at seven today'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.1002, "validation": null, "reasoning": "'alarm' -> set_alarm; 'seven today' -> date '2026-06-10'; time '7' from 'seven'; date '2026-06-10' from system date"}`
+- **needle_triggers_home_diag** `n3-86d69d358c` (home/A2) outcome **technical_failure**
+  - text: 'Can you please off the light?'
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "off"}}]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.7573, "validation": null, "reasoning": "'off the light' -> set_lights_brightness with brightness 0 (off)."}`
+- **llm-a renamed_desk** `n3-40476d5eeb` (desk/N3) outcome **technical_failure**
+  - text: 'Sam texted me "Olly set a reminder for dinner at 6PM on wednesday at Bonefish Grill."'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=parse invalid_json:JSONDecodeError
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_add\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_drop\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_add\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_drop\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_add\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_drop\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_add\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_drop\"}, {\"arguments\": {\"date\": \"2026-06-10\", \"time\": \"18:00\"}, \"name\": \"wake_bell_add\"}, {\"arguments\":`
+
+## Band F, every request, every arm (S1)
+
+- **needle bandF** `n3-829f327edd` (home/None) outcome **wrong_call**
+  - text: 'both doors should be locked'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "dock"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "dock"}}], "suppressed_calls": [], "confidence": 0.9868, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'locked' means lock/dock -> action 'dock'"}`
+- **llm-a bandF** `n3-829f327edd` (home/None) outcome **correct_nonaction**
+  - text: 'both doors should be locked'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-829f327edd` (home/None) outcome **correct_nonaction**
+  - text: 'both doors should be locked'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I don't have a tool available to lock or unlock doors. The tools I have access to are for controlling lights, the vacuum, and a smart plug.\n\nIs there anything else I can help you with, such as adjusting the lights, running the vacuum, or controlling a smart plug?", "tool_calls": null}`
+- **K0 bandF** `n3-829f327edd` (home/None) outcome **correct_nonaction**
+  - text: 'both doors should be locked'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "both doors should be locked", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-829f327edd` (home/None) outcome **correct_nonaction**
+  - text: 'both doors should be locked'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "both doors should be locked", "tool": null, "args": null, "top": 1.3845924139022827}]`
+- **hassil bandF** `n3-829f327edd` (home/None) outcome **correct_nonaction**
+  - text: 'both doors should be locked'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-a2a17023ee` (home/None) outcome **needless_refusal**
+  - text: "it's too dark in the bathroom"
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "bathroom", "brightness": 100}}], "confidence": 0.9534, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'too dark' implies dimming lights. 'bathroom' -> room 'bathroom'. 'too dark' -> brightness 100."}`
+- **llm-a bandF** `n3-a2a17023ee` (home/None) outcome **correct_action**
+  - text: "it's too dark in the bathroom"
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "bathroom"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"power\": \"on\", \"room\": \"bathroom\"}, \"name\": \"set_lights_power\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-a2a17023ee` (home/None) outcome **correct_action**
+  - text: "it's too dark in the bathroom"
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "bathroom", "power": "on"}}]`
+  - raw: `{"content": " I'll turn on the lights in the bathroom for you.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-af7505ddf5f00943", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"bathroom\", \"power\": \"on\"}"}}]}`
+- **K0 bandF** `n3-a2a17023ee` (home/None) outcome **needless_refusal**
+  - text: "it's too dark in the bathroom"
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "it's too dark in the bathroom", "tool": null, "args": null, "top": 1.0231430530548096}]`
+- **K1 bandF** `n3-a2a17023ee` (home/None) outcome **needless_refusal**
+  - text: "it's too dark in the bathroom"
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "it's too dark in the bathroom", "tool": "set_lights_brightness", "args": null, "top": 3.649209976196289, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **hassil bandF** `n3-a2a17023ee` (home/None) outcome **needless_refusal**
+  - text: "it's too dark in the bathroom"
+  - gold: `[[{"action": "light_power", "args": {"room": "bathroom", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-ea5a0e3d75` (desk/None) outcome **correct_nonaction**
+  - text: 'open mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "No email or file opening tool exists in the available tools."}`
+- **llm-a bandF** `n3-ea5a0e3d75` (desk/None) outcome **correct_nonaction**
+  - text: 'open mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-ea5a0e3d75` (desk/None) outcome **correct_nonaction**
+  - text: 'open mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I don't have a tool available to open or access email. The tools I have access to are:\n\n- **Alarms** - set or remove alarms\n- **Lists** - add or remove items from shopping, to-do, or packing lists\n- **Reminders** - create reminders\n\nI'm not able to open, read, or manage email. Is there something else I can help you with, such as setting a reminder, creating a to-do item, or setting an alarm?", "tool_calls": null}`
+- **K0 bandF** `n3-ea5a0e3d75` (desk/None) outcome **correct_nonaction**
+  - text: 'open mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "open mail", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-ea5a0e3d75` (desk/None) outcome **correct_nonaction**
+  - text: 'open mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "open mail", "tool": null, "args": null, "top": 2.5383377075195312}]`
+
+- **needle bandF** `n3-ec32c4592e` (desk/None) outcome **correct_nonaction**
+  - text: 'take the paper towels off the list'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "remove_list_item", "arguments": {"list": "shopping", "item": "paper towels"}}], "confidence": 1.0, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'take the paper towels off the list' -> remove_list_item with list 'shopping' and item 'paper towels'."}`
+- **llm-a bandF** `n3-ec32c4592e` (desk/None) outcome **wrong_call**
+  - text: 'take the paper towels off the list'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "remove_list_item", "arguments": {"item": "paper towels", "list": "shopping"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"item\": \"paper towels\", \"list\": \"shopping\"}, \"name\": \"remove_list_item\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-ec32c4592e` (desk/None) outcome **wrong_call**
+  - text: 'take the paper towels off the list'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "remove_list_item", "arguments": {"list": "shopping", "item": "paper towels"}}]`
+  - raw: `{"content": "I'll remove the paper towels from the shopping list.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-9123a8af285d67eb", "function": {"name": "remove_list_item", "arguments": "{\"list\": \"shopping\", \"item\": \"paper towels\"}"}}]}`
+- **K0 bandF** `n3-ec32c4592e` (desk/None) outcome **correct_nonaction**
+  - text: 'take the paper towels off the list'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "take the paper towels off the list", "tool": "remove_list_item", "args": null, "top": 2.7694571018218994, "votes": {"remove_list_item": 1}, "margin": 1}]`
+- **K1 bandF** `n3-ec32c4592e` (desk/None) outcome **correct_nonaction**
+  - text: 'take the paper towels off the list'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "take the paper towels off the list", "tool": "remove_list_item", "args": null, "top": 5.280345916748047, "votes": {"remove_list_item": 1}, "margin": 1}]`
+
+- **needle bandF** `n3-3fa15dc4e5` (home/None) outcome **technical_failure**
+  - text: 'burn us all alive'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "'burn us all alive' means turn lights off. set_lights_brightness with room 'living room' and brightness 0 to turn off."}`
+- **llm-a bandF** `n3-3fa15dc4e5` (home/None) outcome **correct_nonaction**
+  - text: 'burn us all alive'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-3fa15dc4e5` (home/None) outcome **correct_nonaction**
+  - text: 'burn us all alive'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I can't help with that request. It sounds like you're asking me to cause harm, which I won't do. If you're having thoughts of harming yourself or others, please reach out to a mental health professional or emergency services for support. Is there something else I can help you with, like adjusting the lights or using a smart home device?", "tool_calls": null}`
+- **K0 bandF** `n3-3fa15dc4e5` (home/None) outcome **correct_nonaction**
+  - text: 'burn us all alive'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "burn us all alive", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-3fa15dc4e5` (home/None) outcome **correct_nonaction**
+  - text: 'burn us all alive'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "burn us all alive", "tool": null, "args": null, "top": 1.4282296895980835}]`
+- **hassil bandF** `n3-3fa15dc4e5` (home/None) outcome **correct_nonaction**
+  - text: 'burn us all alive'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-614dc22c19` (desk/None) outcome **correct_nonaction**
+  - text: 'wake me up at 6 30'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_alarm", "arguments": {"time": "06:30"}}], "suppressed_calls": [], "confidence": 0.699, "validation": {"ungrounded": ["set_alarm.time"], "negation": false}, "reasoning": "'wake me up at 6 30' -> set_alarm with time '06:30' from '6 30' in 24-hour format."}`
+- **llm-a bandF** `n3-614dc22c19` (desk/None) outcome **wrong_call**
+  - text: 'wake me up at 6 30'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"date": null, "time": "06:30"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"date\": null, \"time\": \"06:30\"}, \"name\": \"set_alarm\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-614dc22c19` (desk/None) outcome **wrong_call**
+  - text: 'wake me up at 6 30'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "06:30"}}]`
+  - raw: `{"content": "I'll set an alarm for 6:30 AM.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-959a879e2a544b69", "function": {"name": "set_alarm", "arguments": "{\"time\": \"06:30\"}"}}]}`
+- **K0 bandF** `n3-614dc22c19` (desk/None) outcome **wrong_call**
+  - text: 'wake me up at 6 30'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "06:30"}}]`
+  - raw: `[{"clause": "wake me up at 6 30", "tool": "set_alarm", "args": {"time": "06:30"}, "top": 3.219520092010498, "votes": {"set_alarm": 1}, "margin": 1}]`
+- **K1 bandF** `n3-614dc22c19` (desk/None) outcome **wrong_call**
+  - text: 'wake me up at 6 30'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "06:30"}}]`
+  - raw: `[{"clause": "wake me up at 6 30", "tool": "set_alarm", "args": {"time": "06:30"}, "top": 4.05040168762207, "votes": {"set_alarm": 1}, "margin": 1}]`
+
+- **needle bandF** `n3-d7131cc7a3` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "this room", "power": "on"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_power", "arguments": {"room": "this room", "power": "on"}}], "suppressed_calls": [], "confidence": 0.9908, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'toilet' is a room name -> room 'toilet'; 'on' -> power 'on'"}`
+- **llm-a bandF** `n3-d7131cc7a3` (home/None) outcome **correct_nonaction**
+  - text: "I'm going to the toilet"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-d7131cc7a3` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet"
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "bathroom", "power": "on"}}]`
+  - raw: `{"content": " I'll turn on the lights in the bathroom for you.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-b851c50d1d61a471", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"bathroom\", \"power\": \"on\"}"}}]}`
+- **K0 bandF** `n3-d7131cc7a3` (home/None) outcome **correct_nonaction**
+  - text: "I'm going to the toilet"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 1.6659990549087524, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **K1 bandF** `n3-d7131cc7a3` (home/None) outcome **correct_nonaction**
+  - text: "I'm going to the toilet"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 2.0675156116485596, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **hassil bandF** `n3-d7131cc7a3` (home/None) outcome **correct_nonaction**
+  - text: "I'm going to the toilet"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-d4a4f84176` (desk/None) outcome **correct_nonaction**
+  - text: 'play some jazz'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [], "confidence": 0.9785, "validation": null, "reasoning": "No media playback tool available."}`
+- **llm-a bandF** `n3-d4a4f84176` (desk/None) outcome **correct_nonaction**
+  - text: 'play some jazz'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-d4a4f84176` (desk/None) outcome **correct_nonaction**
+  - text: 'play some jazz'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd love to help you play some jazz, but I don't have the ability to play music or control audio playback. I can only help with:\n\n- Setting alarms and reminders\n- Managing shopping, to-do, and packing lists\n\nIs there something else I can help you with, like setting a reminder or adding something to a list?", "tool_calls": null}`
+- **K0 bandF** `n3-d4a4f84176` (desk/None) outcome **correct_nonaction**
+  - text: 'play some jazz'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "play some jazz", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-d4a4f84176` (desk/None) outcome **correct_nonaction**
+  - text: 'play some jazz'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "play some jazz", "tool": null, "args": null, "top": 2.164268732070923}]`
+
+- **needle bandF** `n3-bcf6bf795b` (home/None) outcome **wrong_call**
+  - text: 'close the garage door and turn the car on'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "start", "room": "living room"}}, {"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "on"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "start", "room": "living room"}}, {"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "on"}}], "suppressed_calls": [], "confidence": 0.5136, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'close the garage door' -> control_vacuum action 'close'; 'turn the car on' -> set_lights_power power 'on'"}`
+- **llm-a bandF** `n3-bcf6bf795b` (home/None) outcome **correct_nonaction**
+  - text: 'close the garage door and turn the car on'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-bcf6bf795b` (home/None) outcome **correct_nonaction**
+  - text: 'close the garage door and turn the car on'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I can't help with that request. I don't have any tools available to control a garage door or start a car. My available tools are limited to:\n\n- **Lights** (power, brightness, color)\n- **Vacuum** (start, stop, dock)\n- **Smart plug** (on/off)\n\nIf you'd like help with any of those, let me know! For example, I could turn on the lights in a room or start the vacuum.", "tool_calls": null}`
+- **K0 bandF** `n3-bcf6bf795b` (home/None) outcome **correct_nonaction**
+  - text: 'close the garage door and turn the car on'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "close the garage door", "tool": null, "args": null, "top": 0.4162927269935608}, {"clause": "turn the car on", "tool": null, "args": null, "top": 1.4578874111175537}]`
+- **K1 bandF** `n3-bcf6bf795b` (home/None) outcome **correct_nonaction**
+  - text: 'close the garage door and turn the car on'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "close the garage door", "tool": null, "args": null, "top": 0.3319547772407532}, {"clause": "turn the car on", "tool": null, "args": null, "top": 1.924100399017334}]`
+- **hassil bandF** `n3-bcf6bf795b` (home/None) outcome **correct_nonaction**
+  - text: 'close the garage door and turn the car on'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-b4311aec4a` (home/None) outcome **wrong_call**
+  - text: 'I need a wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "start"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "start"}}], "suppressed_calls": [], "confidence": 0.9714, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'wee' means vacuum. 'wee' means start. action 'start'. room omitted."}`
+- **llm-a bandF** `n3-b4311aec4a` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-b4311aec4a` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'd be happy to help, but it looks like your message got cut off. What would you like me to do? For example, would you like me to:\n\n- Turn on/off lights in a room?\n- Adjust the brightness or color of lights?\n- Start the vacuum?\n- Switch a plug on or off?\n\nLet me know what you need!", "tool_calls": null}`
+- **K0 bandF** `n3-b4311aec4a` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I need a wee", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-b4311aec4a` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I need a wee", "tool": null, "args": null, "top": 1.647890567779541}]`
+- **hassil bandF** `n3-b4311aec4a` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-a8631b78d7` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see where I'm going because it is too dark"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "kitchen", "brightness": 100}}], "confidence": 0.449, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'toilet' -> room 'toilet'; 'can't see where I'm going' -> set_lights_brightness with brightness 100 to reduce brightness"}`
+- **llm-a bandF** `n3-a8631b78d7` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see where I'm going because it is too dark"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "bathroom"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"power\": \"on\", \"room\": \"bathroom\"}, \"name\": \"set_lights_power\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-a8631b78d7` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see where I'm going because it is too dark"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "bathroom", "power": "on"}}]`
+  - raw: `{"content": "I'll help you with that. Since you're heading to the toilet and it's too dark, let me turn on the lights for you. Let me turn on the bathroom lights so you can see where you're going.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-8832fd9067fcd24b", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"bathroom\", \"power\": \"on\"}"}}]}`
+- **K0 bandF** `n3-a8631b78d7` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see where I'm going because it is too dark"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 1.6659990549087524, "votes": {"control_vacuum": 1}, "margin": 1}, {"clause": "can't see where I'm going because it is too dark", "tool": "control_vacuum", "args": null, "top": 1.6659990549087524, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **K1 bandF** `n3-a8631b78d7` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see where I'm going because it is too dark"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 2.0675156116485596, "votes": {"control_vacuum": 1}, "margin": 1}, {"clause": "can't see where I'm going because it is too dark", "tool": "set_lights_brightness", "args": null, "top": 3.695611000061035, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **hassil bandF** `n3-a8631b78d7` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see where I'm going because it is too dark"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-44447edfdf` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see where I'm going"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "dock"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "dock"}}], "suppressed_calls": [], "confidence": 0.941, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'going to the toilet' -> start vacuum to dock. action 'dock'."}`
+- **llm-a bandF** `n3-44447edfdf` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see where I'm going"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "bathroom"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"power\": \"on\", \"room\": \"bathroom\"}, \"name\": \"set_lights_power\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-44447edfdf` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see where I'm going"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "bathroom", "power": "on"}}]`
+  - raw: `{"content": "I'll help you see where you're going. Let me turn on the lights for you.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-b0025b7c633d3d8e", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"bathroom\", \"power\": \"on\"}"}}]}`
+- **K0 bandF** `n3-44447edfdf` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see where I'm going"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 1.6659990549087524, "votes": {"control_vacuum": 1}, "margin": 1}, {"clause": "can't see where I'm going", "tool": "control_vacuum", "args": null, "top": 1.6659990549087524, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **K1 bandF** `n3-44447edfdf` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see where I'm going"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 2.0675156116485596, "votes": {"control_vacuum": 1}, "margin": 1}, {"clause": "can't see where I'm going", "tool": "set_lights_power", "args": null, "top": 3.4716238975524902, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **hassil bandF** `n3-44447edfdf` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see where I'm going"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-bb29d43ca3` (home/None) outcome **wrong_call**
+  - text: 'Turn the kitchen to 230°C'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "on"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "on"}}], "suppressed_calls": [], "confidence": 0.9447, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'kitchen' -> room 'kitchen'; '230°C' -> temperature 230; set_lights_power with room 'kitchen', power 'on'"}`
+- **llm-a bandF** `n3-bb29d43ca3` (home/None) outcome **correct_nonaction**
+  - text: 'Turn the kitchen to 230°C'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\":[]}", "tool_calls": null}`
+- **llm-named bandF** `n3-bb29d43ca3` (home/None) outcome **correct_nonaction**
+  - text: 'Turn the kitchen to 230°C'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I can't help with that request. The tools available to me control lights, the vacuum, and a smart plug — none of them can set an oven or any appliance to a specific temperature like 230°C.\n\nIs there something else I can help you with, like adjusting the lights or starting the vacuum?", "tool_calls": null}`
+- **K0 bandF** `n3-bb29d43ca3` (home/None) outcome **correct_nonaction**
+  - text: 'Turn the kitchen to 230°C'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Turn the kitchen to 230°C", "tool": null, "args": null, "top": 1.114545226097107}]`
+- **K1 bandF** `n3-bb29d43ca3` (home/None) outcome **correct_nonaction**
+  - text: 'Turn the kitchen to 230°C'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Turn the kitchen to 230°C", "tool": "set_lights_power", "args": null, "top": 2.185025215148926, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **hassil bandF** `n3-bb29d43ca3` (home/None) outcome **correct_nonaction**
+  - text: 'Turn the kitchen to 230°C'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-09411648f4` (desk/None) outcome **correct_nonaction**
+  - text: 'open email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [], "confidence": 1.0, "validation": null, "reasoning": "No email or messaging tool available."}`
+- **llm-a bandF** `n3-09411648f4` (desk/None) outcome **correct_nonaction**
+  - text: 'open email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-09411648f4` (desk/None) outcome **correct_nonaction**
+  - text: 'open email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I don't have an email tool available. I can help with the following:\n\n- **Alarms** - set or remove alarms\n- **Lists** - add/remove items from shopping, to-do, or packing lists\n- **Reminders** - create reminders\n\nIf you'd like help with any of these, just let me know! For example, I could add something to your to-do list or set a reminder for you.", "tool_calls": null}`
+- **K0 bandF** `n3-09411648f4` (desk/None) outcome **correct_nonaction**
+  - text: 'open email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "open email", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-09411648f4` (desk/None) outcome **correct_nonaction**
+  - text: 'open email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "open email", "tool": null, "args": null, "top": 2.5383377075195312}]`
+
+- **needle bandF** `n3-0322c1a57b` (home/None) outcome **correct_nonaction**
+  - text: "it's cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_color", "arguments": {"color": "cool white"}}], "confidence": 0.7118, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'it's cold' implies need to turn on lights to cool white. set_lights_color with color 'cool white' from query."}`
+- **llm-a bandF** `n3-0322c1a57b` (home/None) outcome **correct_nonaction**
+  - text: "it's cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-0322c1a57b` (home/None) outcome **correct_nonaction**
+  - text: "it's cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd love to help with the cold, but I don't have a tool to control the thermostat or heating. The available tools only control lights, the vacuum, and a smart plug.\n\nIs there anything else I can help you with, like turning on some lights to make things cozier?", "tool_calls": null}`
+- **K0 bandF** `n3-0322c1a57b` (home/None) outcome **correct_nonaction**
+  - text: "it's cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "it's cold", "tool": null, "args": null, "top": 1.0231430530548096}]`
+- **K1 bandF** `n3-0322c1a57b` (home/None) outcome **correct_nonaction**
+  - text: "it's cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "it's cold", "tool": null, "args": null, "top": 1.4282296895980835}]`
+- **hassil bandF** `n3-0322c1a57b` (home/None) outcome **correct_nonaction**
+  - text: "it's cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-d3c0a30757` (home/None) outcome **correct_nonaction**
+  - text: 'less light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "living room", "brightness": 50}}], "confidence": 0.7409, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'less light' means lower brightness -> set_lights_brightness with brightness=50 (implied low)."}`
+- **llm-a bandF** `n3-d3c0a30757` (home/None) outcome **correct_nonaction**
+  - text: 'less light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-d3c0a30757` (home/None) outcome **correct_nonaction**
+  - text: 'less light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'll help you with that. Could you tell me which room you'd like to dim the lights in, or would you like me to adjust the whole house?", "tool_calls": null}`
+- **K0 bandF** `n3-d3c0a30757` (home/None) outcome **correct_nonaction**
+  - text: 'less light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "less light", "tool": null, "args": null, "top": 0.5773592591285706}]`
+- **K1 bandF** `n3-d3c0a30757` (home/None) outcome **correct_nonaction**
+  - text: 'less light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "less light", "tool": "set_lights_brightness", "args": null, "top": 2.0110507011413574, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **hassil bandF** `n3-d3c0a30757` (home/None) outcome **correct_nonaction**
+  - text: 'less light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-b8353afad0` (home/None) outcome **correct_nonaction**
+  - text: 'The cat puked near the refrigerator'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "living room", "brightness": 100}}], "confidence": 0.9901, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'cat puked' implies need for light -> set_lights_brightness. 'near the refrigerator' implies living room. No specific brightness given, default to 100."}`
+- **llm-a bandF** `n3-b8353afad0` (home/None) outcome **correct_nonaction**
+  - text: 'The cat puked near the refrigerator'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-b8353afad0` (home/None) outcome **wrong_call**
+  - text: 'The cat puked near the refrigerator'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "on"}}]`
+  - raw: `{"content": " I'll help you clean that up. Let me turn on the kitchen lights so you can see the mess clearly.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-90ff4ebf6e2b2cc6", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"kitchen\", \"power\": \"on\"}"}}]}`
+- **K0 bandF** `n3-b8353afad0` (home/None) outcome **correct_nonaction**
+  - text: 'The cat puked near the refrigerator'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "The cat puked near the refrigerator", "tool": null, "args": null, "top": 0.8325854539871216}]`
+- **K1 bandF** `n3-b8353afad0` (home/None) outcome **correct_nonaction**
+  - text: 'The cat puked near the refrigerator'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "The cat puked near the refrigerator", "tool": "control_vacuum", "args": null, "top": 2.159316062927246, "votes": {"control_vacuum": 1}, "margin": 1}]`
+- **hassil bandF** `n3-b8353afad0` (home/None) outcome **correct_nonaction**
+  - text: 'The cat puked near the refrigerator'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-b968d302ee` (home/None) outcome **correct_nonaction**
+  - text: 'more light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "living room", "brightness": 50}}], "confidence": 0.6929, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'more light' means lower brightness -> set_lights_brightness with brightness=50 (more than 50)."}`
+- **llm-a bandF** `n3-b968d302ee` (home/None) outcome **correct_nonaction**
+  - text: 'more light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-b968d302ee` (home/None) outcome **correct_nonaction**
+  - text: 'more light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'll help you with more light. Could you let me know which room you'd like me to adjust the lights in?", "tool_calls": null}`
+- **K0 bandF** `n3-b968d302ee` (home/None) outcome **correct_nonaction**
+  - text: 'more light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "more light", "tool": null, "args": null, "top": 0.5773592591285706}]`
+- **K1 bandF** `n3-b968d302ee` (home/None) outcome **correct_nonaction**
+  - text: 'more light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "more light", "tool": "set_lights_brightness", "args": null, "top": 2.379413604736328, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **hassil bandF** `n3-b968d302ee` (home/None) outcome **correct_nonaction**
+  - text: 'more light'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-5c44b2a544` (desk/None) outcome **correct_nonaction**
+  - text: 'check email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "create_reminder", "arguments": {"text": "check email", "time": "09:00"}}], "suppressed_calls": [], "confidence": 0.9897, "validation": {"ungrounded": ["create_reminder.time"], "negation": false}, "reasoning": "No email tool available. create_reminder with text 'check email' and time '09:00' from query."}`
+- **llm-a bandF** `n3-5c44b2a544` (desk/None) outcome **correct_nonaction**
+  - text: 'check email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\":[]}", "tool_calls": null}`
+- **llm-named bandF** `n3-5c44b2a544` (desk/None) outcome **correct_nonaction**
+  - text: 'check email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I don't have access to an email tool or your email account, so I'm unable to check your email for you. \n\nIs there something else I can help you with? For example, I can:\n- Set an alarm or reminder\n- Add items to your shopping, to-do, or packing lists\n\nLet me know how I can assist!", "tool_calls": null}`
+- **K0 bandF** `n3-5c44b2a544` (desk/None) outcome **correct_nonaction**
+  - text: 'check email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "check email", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-5c44b2a544` (desk/None) outcome **correct_nonaction**
+  - text: 'check email'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "check email", "tool": null, "args": null, "top": 1.9138027429580688}]`
+
+- **needle bandF** `n3-6fac117b49` (desk/None) outcome **correct_nonaction**
+  - text: 'add five minutes to the pasta timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "add_list_item", "arguments": {"list": "packing", "item": "five minutes"}}], "confidence": 0.9882, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'pasta timer' -> list 'pasta timer'; 'five minutes' -> item 'five minutes'"}`
+- **llm-a bandF** `n3-6fac117b49` (desk/None) outcome **correct_nonaction**
+  - text: 'add five minutes to the pasta timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-6fac117b49` (desk/None) outcome **correct_nonaction**
+  - text: 'add five minutes to the pasta timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'd be happy to help, but I don't have a pasta timer currently set. I can only set or remove alarms at specific clock times, and I don't see any existing timer or alarm that I could add five minutes to.\n\nCould you clarify:\n- Is there a specific time you'd like me to set an alarm for?\n- Or would you like me to set a new alarm for a particular time?\n\nLet me know how I can help!", "tool_calls": null}`
+- **K0 bandF** `n3-6fac117b49` (desk/None) outcome **correct_nonaction**
+  - text: 'add five minutes to the pasta timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "add five minutes to the pasta timer", "tool": "add_list_item", "args": null, "top": 2.0659546852111816, "votes": {"add_list_item": 1}, "margin": 1}]`
+- **K1 bandF** `n3-6fac117b49` (desk/None) outcome **correct_nonaction**
+  - text: 'add five minutes to the pasta timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "add five minutes to the pasta timer", "tool": "set_alarm", "args": null, "top": 3.2436227798461914, "votes": {"set_alarm": 1}, "margin": 1}]`
+
+- **needle bandF** `n3-667864d577` (home/None) outcome **wrong_call**
+  - text: 'I need a wee wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "start", "room": "living room"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "start", "room": "living room"}}], "suppressed_calls": [], "confidence": 0.9768, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'wee wee' means weekend -> start vacuum in living room to clean the whole house"}`
+- **llm-a bandF** `n3-667864d577` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-667864d577` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'm sorry, but I don't understand what you mean by \"I need a wee wee.\" Could you clarify what you'd like help with? \n\nIf you're referring to something related to your smart home (like lights, vacuum, or plugs), I'd be happy to help with that. Let me know what you need!", "tool_calls": null}`
+- **K0 bandF** `n3-667864d577` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I need a wee wee", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-667864d577` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I need a wee wee", "tool": null, "args": null, "top": 1.647890567779541}]`
+- **hassil bandF** `n3-667864d577` (home/None) outcome **correct_nonaction**
+  - text: 'I need a wee wee'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-2d00bd79bc` (desk/None) outcome **correct_nonaction**
+  - text: 'twelve minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_alarm", "arguments": {"time": "12:00"}}], "suppressed_calls": [], "confidence": 0.674, "validation": {"ungrounded": ["set_alarm.time"], "negation": false}, "reasoning": "'twelve minutes' -> time '12:00'. set_alarm with time '12:00'."}`
+- **llm-a bandF** `n3-2d00bd79bc` (desk/None) outcome **correct_nonaction**
+  - text: 'twelve minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-2d00bd79bc` (desk/None) outcome **wrong_call**
+  - text: 'twelve minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "14:42"}}]`
+  - raw: `{"content": "I need to set an alarm for twelve minutes from now. The current time is 14:30, so twelve minutes from now would be 14:42.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-b9a10e3ccae268a9", "function": {"name": "set_alarm", "arguments": "{\"time\": \"14:42\"}"}}]}`
+- **K0 bandF** `n3-2d00bd79bc` (desk/None) outcome **correct_nonaction**
+  - text: 'twelve minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "twelve minutes", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-2d00bd79bc` (desk/None) outcome **correct_nonaction**
+  - text: 'twelve minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "twelve minutes", "tool": null, "args": null, "top": 1.8021349906921387}]`
+
+- **needle bandF** `n3-c7e934f36d` (desk/None) outcome **technical_failure**
+  - text: 'remind me in 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.115, "validation": null, "reasoning": "'remind me in 20 minutes' -> create_reminder with text 'remind me in 20 minutes' and time 'in 20 minutes'"}`
+- **llm-a bandF** `n3-c7e934f36d` (desk/None) outcome **wrong_call**
+  - text: 'remind me in 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"date": null, "text": "remind me in 20 minutes", "time": "14:50"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"date\": null, \"text\": \"remind me in 20 minutes\", \"time\": \"14:50\"}, \"name\": \"create_reminder\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-c7e934f36d` (desk/None) outcome **wrong_call**
+  - text: 'remind me in 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "create_reminder", "arguments": {"text": "Reminder", "time": "14:50", "date": "2026-06-10"}}]`
+  - raw: `{"content": "I'll set a reminder for 20 minutes from now, which would be 2:50 PM.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-bccd35057b363ac5", "function": {"name": "create_reminder", "arguments": "{\"text\": \"Reminder\", \"time\": \"14:50\", \"date\": \"2026-06-10\"}"}}]}`
+- **K0 bandF** `n3-c7e934f36d` (desk/None) outcome **correct_nonaction**
+  - text: 'remind me in 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "remind me in 20 minutes", "tool": null, "args": null, "top": 1.6947007179260254}]`
+- **K1 bandF** `n3-c7e934f36d` (desk/None) outcome **correct_nonaction**
+  - text: 'remind me in 20 minutes'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "remind me in 20 minutes", "tool": null, "args": null, "top": 2.8154585361480713}]`
+
+- **needle bandF** `n3-36651e0dbc` (home/None) outcome **wrong_call**
+  - text: 'sleepy time'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "dock"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "dock"}}], "suppressed_calls": [], "confidence": 0.9693, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'sleepy time' means sleeping → close vacuum to dock. action 'dock'."}`
+- **llm-a bandF** `n3-36651e0dbc` (home/None) outcome **correct_nonaction**
+  - text: 'sleepy time'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-36651e0dbc` (home/None) outcome **wrong_call**
+  - text: 'sleepy time'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off"}}]`
+  - raw: `{"content": "I'll help you wind down for sleep. Let me turn off the lights for you.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-ab0ff2a0f40fdf86", "function": {"name": "set_lights_power", "arguments": "{\"power\": \"off\"}"}}]}`
+- **K0 bandF** `n3-36651e0dbc` (home/None) outcome **correct_nonaction**
+  - text: 'sleepy time'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "sleepy time", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-36651e0dbc` (home/None) outcome **correct_nonaction**
+  - text: 'sleepy time'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "sleepy time", "tool": "set_lights_power", "args": null, "top": 2.0439233779907227, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **hassil bandF** `n3-36651e0dbc` (home/None) outcome **correct_nonaction**
+  - text: 'sleepy time'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-794737cb00` (home/None) outcome **wrong_call**
+  - text: 'turn all the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "living room", "power": "off"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_power", "arguments": {"room": "living room", "power": "off"}}], "suppressed_calls": [], "confidence": 0.9924, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'turn all the lights off' -> set_lights_power with room 'living room' (default), power 'off'."}`
+- **llm-a bandF** `n3-794737cb00` (home/None) outcome **correct_action**
+  - text: 'turn all the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off", "room": "whole house"}}]`
+  - raw: `{"content": "{\"calls\":[{\"arguments\":{\"power\":\"off\",\"room\":\"whole house\"},\"name\":\"set_lights_power\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-794737cb00` (home/None) outcome **correct_action**
+  - text: 'turn all the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off", "room": "whole house"}}]`
+  - raw: `{"content": " I'll turn off all the lights in the house.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-94a8d5dd2aa4f465", "function": {"name": "set_lights_power", "arguments": "{\"power\": \"off\", \"room\": \"whole house\"}"}}]}`
+- **K0 bandF** `n3-794737cb00` (home/None) outcome **correct_action**
+  - text: 'turn all the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off", "room": "whole house"}}]`
+  - raw: `[{"clause": "turn all the lights off", "tool": "set_lights_power", "args": {"power": "off", "room": "whole house"}, "top": 1.865509033203125, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **K1 bandF** `n3-794737cb00` (home/None) outcome **correct_action**
+  - text: 'turn all the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "off", "room": "whole house"}}]`
+  - raw: `[{"clause": "turn all the lights off", "tool": "set_lights_power", "args": {"power": "off", "room": "whole house"}, "top": 2.1614291667938232, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **hassil bandF** `n3-794737cb00` (home/None) outcome **correct_action**
+  - text: 'turn all the lights off'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "whole house", "power": "off"}}]`
+  - raw: `null`
+
+- **needle bandF** `n3-396ad3ca0a` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "stop"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "stop"}}], "suppressed_calls": [], "confidence": 0.8437, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'going to the toilet' implies cleaning the robot vacuum. 'can't see' implies stopping it. action 'stop'."}`
+- **llm-a bandF** `n3-396ad3ca0a` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "bathroom"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"power\": \"on\", \"room\": \"bathroom\"}, \"name\": \"set_lights_power\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-396ad3ca0a` (home/None) outcome **wrong_call**
+  - text: "I'm going to the toilet and can't see"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "bathroom", "power": "on"}}]`
+  - raw: `{"content": " I'll turn on the lights for you. Since you're going to the toilet, let me turn on the bathroom lights.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-b88d38ce9b6673e8", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"bathroom\", \"power\": \"on\"}"}}]}`
+- **K0 bandF** `n3-396ad3ca0a` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 1.6659990549087524, "votes": {"control_vacuum": 1}, "margin": 1}, {"clause": "can't see", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-396ad3ca0a` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "I'm going to the toilet", "tool": "control_vacuum", "args": null, "top": 2.0675156116485596, "votes": {"control_vacuum": 1}, "margin": 1}, {"clause": "can't see", "tool": "set_lights_power", "args": null, "top": 3.4716238975524902, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **hassil bandF** `n3-396ad3ca0a` (home/None) outcome **needless_refusal**
+  - text: "I'm going to the toilet and can't see"
+  - gold: `[[{"action": "light_power", "args": {"room": "here", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-705663fe0f` (home/None) outcome **wrong_call**
+  - text: 'warm the house'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"room": "living room", "color": "warm white"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_color", "arguments": {"room": "living room", "color": "warm white"}}], "suppressed_calls": [], "confidence": 0.9107, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'warm the house' -> set_lights_color color 'warm white' (warm white). 'warm the house' -> room 'living room' (living room)."}`
+- **llm-a bandF** `n3-705663fe0f` (home/None) outcome **correct_nonaction**
+  - text: 'warm the house'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\":[]}", "tool_calls": null}`
+- **llm-named bandF** `n3-705663fe0f` (home/None) outcome **correct_nonaction**
+  - text: 'warm the house'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'll help you warm the house. However, I don't have a tool available to control the thermostat or heating system. The tools I have access to are for:\n\n- Controlling lights (power, brightness, color)\n- Controlling the robot vacuum\n- Controlling a smart plug\n\nNone of these can adjust the temperature or heating. I'm unable to warm the house with the available tools. Is there anything else I can help you with, such as adjusting the lights or running the vacuum?", "tool_calls": null}`
+- **K0 bandF** `n3-705663fe0f` (home/None) outcome **wrong_call**
+  - text: 'warm the house'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_color", "arguments": {"color": "warm white"}}]`
+  - raw: `[{"clause": "warm the house", "tool": "set_lights_color", "args": {"color": "warm white"}, "top": 1.6659990549087524, "votes": {"set_lights_color": 1}, "margin": 1}]`
+- **K1 bandF** `n3-705663fe0f` (home/None) outcome **correct_nonaction**
+  - text: 'warm the house'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "warm the house", "tool": null, "args": null, "top": 1.8037633895874023}]`
+- **hassil bandF** `n3-705663fe0f` (home/None) outcome **correct_nonaction**
+  - text: 'warm the house'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-1af6aade53` (desk/None) outcome **technical_failure**
+  - text: '25 minute timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `null` tf=truncated
+  - raw: `{"success": false, "error": "tool call truncated: token budget exhausted", "error_code": "truncated", "reason": "runtime_failure", "function_calls": [], "suppressed_calls": [], "confidence": 0.0951, "validation": null, "reasoning": "'25 minute timer' -> set_alarm with time '25 minutes' from query. No date given, so omit date param."}`
+- **llm-a bandF** `n3-1af6aade53` (desk/None) outcome **wrong_call**
+  - text: '25 minute timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"date": null, "time": "14:55"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"date\": null, \"time\": \"14:55\"}, \"name\": \"set_alarm\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-1af6aade53` (desk/None) outcome **wrong_call**
+  - text: '25 minute timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_alarm", "arguments": {"time": "14:55"}}]`
+  - raw: `{"content": " I'll set a 25-minute timer for you.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-ab85375500c5b0bb", "function": {"name": "set_alarm", "arguments": "{\"time\": \"14:55\"}"}}]}`
+- **K0 bandF** `n3-1af6aade53` (desk/None) outcome **correct_nonaction**
+  - text: '25 minute timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "25 minute timer", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-1af6aade53` (desk/None) outcome **correct_nonaction**
+  - text: '25 minute timer'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "25 minute timer", "tool": null, "args": null, "top": 2.0072553157806396}]`
+
+- **needle bandF** `n3-1a55c6a523` (home/None) outcome **correct_nonaction**
+  - text: "it's too cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "living room", "brightness": 100}}], "confidence": 0.995, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'too cold' implies need to turn on lights. set_lights_brightness with room 'living room' and brightness 100 for warm light."}`
+- **llm-a bandF** `n3-1a55c6a523` (home/None) outcome **correct_nonaction**
+  - text: "it's too cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-1a55c6a523` (home/None) outcome **correct_nonaction**
+  - text: "it's too cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'd be happy to help, but I don't have a tool to control the temperature or thermostat. The tools I have access to are for controlling lights, the vacuum, and a smart plug.\n\nIs there something else I can help you with, like adjusting the lights or starting the vacuum?", "tool_calls": null}`
+- **K0 bandF** `n3-1a55c6a523` (home/None) outcome **correct_nonaction**
+  - text: "it's too cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "it's too cold", "tool": null, "args": null, "top": 1.0231430530548096}]`
+- **K1 bandF** `n3-1a55c6a523` (home/None) outcome **correct_nonaction**
+  - text: "it's too cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "it's too cold", "tool": null, "args": null, "top": 1.8292415142059326}]`
+- **hassil bandF** `n3-1a55c6a523` (home/None) outcome **correct_nonaction**
+  - text: "it's too cold"
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-867fb797ba` (home/None) outcome **correct_nonaction**
+  - text: 'make it hot'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "living room", "brightness": 100}}], "confidence": 0.6299, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'hot' means lower brightness -> set_lights_brightness with brightness 100 (max)."}`
+- **llm-a bandF** `n3-867fb797ba` (home/None) outcome **correct_nonaction**
+  - text: 'make it hot'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-867fb797ba` (home/None) outcome **correct_nonaction**
+  - text: 'make it hot'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I'd be happy to help, but I need a bit more context. \"Make it hot\" could mean a few different things, and I want to make sure I get it right. Could you clarify what you'd like me to do?\n\nFor example, are you looking to:\n- Change the **color** of the lights to something warm (like red, orange, or warm white)?\n- Adjust the **brightness** of the lights?\n- Something else entirely?\n\nLet me know and I'll take care of it for you!", "tool_calls": null}`
+- **K0 bandF** `n3-867fb797ba` (home/None) outcome **correct_nonaction**
+  - text: 'make it hot'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "make it hot", "tool": null, "args": null, "top": 1.3789044618606567}]`
+- **K1 bandF** `n3-867fb797ba` (home/None) outcome **correct_nonaction**
+  - text: 'make it hot'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "make it hot", "tool": null, "args": null, "top": 1.4282296895980835}]`
+- **hassil bandF** `n3-867fb797ba` (home/None) outcome **correct_nonaction**
+  - text: 'make it hot'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-1910385144` (desk/None) outcome **correct_nonaction**
+  - text: 'Check mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "create_reminder", "arguments": {"text": "Check mail", "time": "09:00"}}], "suppressed_calls": [], "confidence": 0.985, "validation": {"ungrounded": ["create_reminder.time"], "negation": false}, "reasoning": "No email tool available. The closest is create_reminder with text 'check mail' and time '09:00' as a reasonable time."}`
+- **llm-a bandF** `n3-1910385144` (desk/None) outcome **correct_nonaction**
+  - text: 'Check mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-1910385144` (desk/None) outcome **correct_nonaction**
+  - text: 'Check mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I don't have access to an email tool or email service in my available functions. I can help with:\n\n- **Setting alarms** (wake me up at a specific time)\n- **Managing lists** (shopping, to-do, packing)\n- **Creating reminders** (remind me to do something)\n\nI don't have the ability to check or manage email. Is there something else I can help you with, such as setting a reminder to check your email, or adding a task to your to-do list?", "tool_calls": null}`
+- **K0 bandF** `n3-1910385144` (desk/None) outcome **correct_nonaction**
+  - text: 'Check mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Check mail", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-1910385144` (desk/None) outcome **correct_nonaction**
+  - text: 'Check mail'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Check mail", "tool": null, "args": null, "top": 1.9138027429580688}]`
+
+- **needle bandF** `n3-040bbb5403` (home/None) outcome **wrong_call**
+  - text: 'turn all the lights on'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "living room", "power": "on"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "set_lights_power", "arguments": {"room": "living room", "power": "on"}}], "suppressed_calls": [], "confidence": 0.9396, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'turn all the lights on' -> set_lights_power with room 'living room' and power 'on'."}`
+- **llm-a bandF** `n3-040bbb5403` (home/None) outcome **correct_action**
+  - text: 'turn all the lights on'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "whole house"}}]`
+  - raw: `{"content": "{\"calls\": [{\"arguments\": {\"power\": \"on\", \"room\": \"whole house\"}, \"name\": \"set_lights_power\"}]}", "tool_calls": null}`
+- **llm-named bandF** `n3-040bbb5403` (home/None) outcome **correct_action**
+  - text: 'turn all the lights on'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "whole house"}}]`
+  - raw: `{"content": "I'll turn on all the lights in the house.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-aa818c509b5799c4", "function": {"name": "set_lights_power", "arguments": "{\"power\": \"on\", \"room\": \"whole house\"}"}}]}`
+- **K0 bandF** `n3-040bbb5403` (home/None) outcome **correct_action**
+  - text: 'turn all the lights on'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "whole house"}}]`
+  - raw: `[{"clause": "turn all the lights on", "tool": "set_lights_power", "args": {"power": "on", "room": "whole house"}, "top": 1.865509033203125, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **K1 bandF** `n3-040bbb5403` (home/None) outcome **correct_action**
+  - text: 'turn all the lights on'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "on"}}]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"power": "on", "room": "whole house"}}]`
+  - raw: `[{"clause": "turn all the lights on", "tool": "set_lights_power", "args": {"power": "on", "room": "whole house"}, "top": 2.8284757137298584, "votes": {"set_lights_power": 1}, "margin": 1}]`
+- **hassil bandF** `n3-040bbb5403` (home/None) outcome **needless_refusal**
+  - text: 'turn all the lights on'
+  - gold: `[[{"action": "light_power", "args": {"room": "whole house", "state": "on"}}]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-d869f681b8` (home/None) outcome **wrong_call**
+  - text: 'My car crashed I need help'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "stop"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "stop"}}], "suppressed_calls": [], "confidence": 0.9033, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'car crashed' implies need to stop vacuum. 'stop' action."}`
+- **llm-a bandF** `n3-d869f681b8` (home/None) outcome **correct_nonaction**
+  - text: 'My car crashed I need help'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-d869f681b8` (home/None) outcome **correct_nonaction**
+  - text: 'My car crashed I need help'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I'm really sorry to hear that you were in a car crash. That sounds incredibly frightening and stressful. \n\nSince I'm just a smart home assistant, I don't have the ability to call for emergency services or contact anyone on your behalf. However, here's what you should do right now:\n\n1. **Check for injuries** - If you or anyone else is hurt, call **911** (or your local emergency number) immediately.\n2. **Move to safety** - If it's safe, move your vehicle out of traffic and turn on your hazard lights.\n3. **Call the police** - Even for minor accidents, it's important to have a police report for insurance purposes.\n4. **Exchange information** - Get the other driver's name, contact info, and insurance details.\n5. **Take photos** - Document the damage and the scene if you can.\n\nIs there anything else I can help you with regarding your home while you deal with this? For e`
+- **K0 bandF** `n3-d869f681b8` (home/None) outcome **correct_nonaction**
+  - text: 'My car crashed I need help'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "My car crashed I need help", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-d869f681b8` (home/None) outcome **correct_nonaction**
+  - text: 'My car crashed I need help'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "My car crashed I need help", "tool": null, "args": null, "top": 1.647890567779541}]`
+- **hassil bandF** `n3-d869f681b8` (home/None) outcome **correct_nonaction**
+  - text: 'My car crashed I need help'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-c72732acc2` (desk/None) outcome **correct_nonaction**
+  - text: 'take off the last one'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "remove_list_item", "arguments": {"list": "shopping", "item": "last item"}}], "confidence": 1.0, "validation": {"ungrounded": ["remove_list_item.item"], "negation": false}, "reasoning": "'take off the last one' means remove the last item -> remove_list_item with list 'shopping' and item 'last item'."}`
+- **llm-a bandF** `n3-c72732acc2` (desk/None) outcome **correct_nonaction**
+  - text: 'take off the last one'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-c72732acc2` (desk/None) outcome **correct_nonaction**
+  - text: 'take off the last one'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I need to understand which list you're referring to. Could you clarify which list you'd like me to remove the last item from — the shopping list, to-do list, or packing list?", "tool_calls": null}`
+- **K0 bandF** `n3-c72732acc2` (desk/None) outcome **correct_nonaction**
+  - text: 'take off the last one'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "take off the last one", "tool": "remove_list_item", "args": null, "top": 2.5107908248901367, "votes": {"remove_list_item": 1}, "margin": 1}]`
+- **K1 bandF** `n3-c72732acc2` (desk/None) outcome **correct_nonaction**
+  - text: 'take off the last one'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "take off the last one", "tool": "remove_list_item", "args": null, "top": 3.926445484161377, "votes": {"remove_list_item": 1}, "margin": 1}]`
+
+- **needle bandF** `n3-bab4a8336c` (home/None) outcome **correct_nonaction**
+  - text: 'Harden perimeter'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [], "confidence": 0.7795, "validation": null, "reasoning": "'Harden perimeter' is a location/context. No tool for location or map."}`
+- **llm-a bandF** `n3-bab4a8336c` (home/None) outcome **correct_nonaction**
+  - text: 'Harden perimeter'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-bab4a8336c` (home/None) outcome **wrong_call**
+  - text: 'Harden perimeter'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "set_lights_power", "arguments": {"room": "living room", "power": "on"}}, {"name": "set_lights_power", "arguments": {"room": "kitchen", "power": "on"}}, {"name": "set_lights_power", "arguments": {"room": "hallway", "power": "on"}}, {"name": "set_lights_power", "arguments": {"room": "bathroom", "power": "on"}}, {"name": "set_lights_power", "arguments": {"room": "bedroom", "power": "on"}},`
+  - raw: `{"content": " I'll help you secure the perimeter. Let me turn on the lights in the key entry points around the house to deter any potential intruders.\n\n", "tool_calls": [{"type": "function", "index": 0, "id": "chatcmpl-tool-ac521041c6db40fe", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"living room\", \"power\": \"on\"}"}}, {"type": "function", "index": 1, "id": "chatcmpl-tool-b0ac4678c2272a00", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"kitchen\", \"power\": \"on\"}"}}, {"type": "function", "index": 2, "id": "chatcmpl-tool-8372d8c29a763872", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"hallway\", \"power\": \"on\"}"}}, {"type": "function", "index": 3, "id": "chatcmpl-tool-bcc9f25e87dc452b", "function": {"name": "set_lights_power", "arguments": "{\"room\": \"bathroom\", \"power\": \"on\"}"}}, {"type": "function", "i`
+- **K0 bandF** `n3-bab4a8336c` (home/None) outcome **correct_nonaction**
+  - text: 'Harden perimeter'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Harden perimeter", "tool": null, "args": null, "top": 0.0}]`
+- **K1 bandF** `n3-bab4a8336c` (home/None) outcome **correct_nonaction**
+  - text: 'Harden perimeter'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "Harden perimeter", "tool": null, "args": null, "top": 0.0}]`
+- **hassil bandF** `n3-bab4a8336c` (home/None) outcome **correct_nonaction**
+  - text: 'Harden perimeter'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-ba9b1b709b` (home/None) outcome **wrong_call**
+  - text: 'if blinds are open, open back door'
+  - gold: `[[]]`
+  - returned (what the app receives): `[{"name": "control_vacuum", "arguments": {"action": "dock"}}]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [{"name": "control_vacuum", "arguments": {"action": "dock"}}], "suppressed_calls": [], "confidence": 0.9612, "validation": {"ungrounded": [], "negation": false}, "reasoning": "'open back door' means close the robot vacuum. action 'dock' from 'open back door'."}`
+- **llm-a bandF** `n3-ba9b1b709b` (home/None) outcome **correct_nonaction**
+  - text: 'if blinds are open, open back door'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-ba9b1b709b` (home/None) outcome **correct_nonaction**
+  - text: 'if blinds are open, open back door'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": " I don't have the ability to check if the blinds are open or control the back door. The tools available to me are for controlling lights, the vacuum, and the smart plug. I can't check the state of blinds or operate a back door.\n\nIs there something else I can help you with, like adjusting lights, running the vacuum, or controlling the smart plug?", "tool_calls": null}`
+- **K0 bandF** `n3-ba9b1b709b` (home/None) outcome **correct_nonaction**
+  - text: 'if blinds are open, open back door'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "if blinds are open, open back door", "tool": null, "args": null, "top": 1.0812578201293945}]`
+- **K1 bandF** `n3-ba9b1b709b` (home/None) outcome **correct_nonaction**
+  - text: 'if blinds are open, open back door'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "if blinds are open, open back door", "tool": "set_lights_brightness", "args": null, "top": 1.974048376083374, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **hassil bandF** `n3-ba9b1b709b` (home/None) outcome **correct_nonaction**
+  - text: 'if blinds are open, open back door'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`
+
+- **needle bandF** `n3-9e8085d62c` (home/None) outcome **correct_nonaction**
+  - text: 'turn it up'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"success": true, "error": null, "error_code": null, "reason": null, "function_calls": [], "suppressed_calls": [{"name": "set_lights_brightness", "arguments": {"room": "living room", "brightness": 100}}], "confidence": 0.7456, "validation": {"ungrounded": ["set_lights_brightness.brightness"], "negation": false}, "reasoning": "'turn it up' means turn on lights -> set_lights_brightness with brightness 100 (default)."}`
+- **llm-a bandF** `n3-9e8085d62c` (home/None) outcome **correct_nonaction**
+  - text: 'turn it up'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "{\"calls\": []}", "tool_calls": null}`
+- **llm-named bandF** `n3-9e8085d62c` (home/None) outcome **correct_nonaction**
+  - text: 'turn it up'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `{"content": "I need a bit more context to help you. What would you like me to turn up? For example:\n- The **lights** (brightness) in a room\n- The **vacuum** (start cleaning)\n- A **plug** (turn on)\n\nCould you clarify what \"it\" refers to and which room, if applicable?", "tool_calls": null}`
+- **K0 bandF** `n3-9e8085d62c` (home/None) outcome **correct_nonaction**
+  - text: 'turn it up'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "turn it up", "tool": "set_lights_brightness", "args": null, "top": 1.717085361480713, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **K1 bandF** `n3-9e8085d62c` (home/None) outcome **correct_nonaction**
+  - text: 'turn it up'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `[{"clause": "turn it up", "tool": "set_lights_brightness", "args": null, "top": 1.9906859397888184, "votes": {"set_lights_brightness": 1}, "margin": 1}]`
+- **hassil bandF** `n3-9e8085d62c` (home/None) outcome **correct_nonaction**
+  - text: 'turn it up'
+  - gold: `[[]]`
+  - returned (what the app receives): `[]`
+  - raw: `null`

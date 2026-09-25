@@ -1,0 +1,16 @@
+{
+ "counts": {
+  "test-home": 300,
+  "test-desk": 300,
+  "diag-home": 59,
+  "diag-desk": 69,
+  "bandF-home": 25,
+  "bandF-desk": 12,
+  "repeat-home": 30,
+  "latency-home": 100,
+  "repeat-desk": 30,
+  "latency-desk": 100,
+  "relroom-home": 359
+ },
+ "n_specs": 33
+}

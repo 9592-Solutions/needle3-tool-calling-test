@@ -1,0 +1,1255 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "name": "set_timer",
+    "description": "Set a timer for the specified duration or end time.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "time_human": {
+       "type": "string",
+       "description": "The duration or target end time in human readable format e.g. '45 minutes', 'at 13:30'.",
+       "minLength": 1,
+       "maxLength": 60
+      }
+     },
+     "required": [
+      "time_human"
+     ]
+    }
+   },
+   {
+    "name": "create_reminder",
+    "description": "Create a reminder that fires at a stated time. A reminder needs both a message and a time phrase; use add_task for undated to-dos.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "message": {
+       "type": "string",
+       "description": "What to be reminded about, copied word for word.",
+       "minLength": 1,
+       "maxLength": 120
+      },
+      "date_time_human": {
+       "type": "string",
+       "description": "The user's date or time phrase copied word for word.",
+       "minLength": 1,
+       "maxLength": 60
+      }
+     },
+     "required": [
+      "message",
+      "date_time_human"
+     ]
+    }
+   },
+   {
+    "name": "create_calendar_event",
+    "description": "Create a calendar event with a title and start time. Copy both word for word; never rephrase or resolve them.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "title": {
+       "type": "string",
+       "description": "The event title copied word for word.",
+       "minLength": 1,
+       "maxLength": 120
+      },
+      "start_time_human": {
+       "type": "string",
+       "description": "The start date or time phrase copied word for word.",
+       "minLength": 1,
+       "maxLength": 60
+      },
+      "location": {
+       "type": "string",
+       "description": "The event location; include only when stated.",
+       "minLength": 1,
+       "maxLength": 80
+      }
+     },
+     "required": [
+      "title",
+      "start_time_human"
+     ]
+    }
+   },
+   {
+    "name": "add_task",
+    "description": "Add a task to the task manager. Tasks are undated; dated or timed requests belong to create_reminder or create_calendar_event.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "title": {
+       "type": "string",
+       "description": "The task copied word for word.",
+       "minLength": 1,
+       "maxLength": 120
+      },
+      "priority": {
+       "type": "string",
+       "enum": [
+        "low",
+        "medium",
+        "high"
+       ],
+       "description": "low, medium, or high; include only when the user says a priority word."
+      }
+     },
+     "required": [
+      "title"
+     ]
+    }
+   },
+   {
+    "name": "create_note",
+    "description": "Save a free-form note. Notes store information; they never fire alerts.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "text": {
+       "type": "string",
+       "description": "The note content copied word for word.",
+       "minLength": 1,
+       "maxLength": 200
+      },
+      "title": {
+       "type": "string",
+       "description": "A short note title; include only when the user names one.",
+       "minLength": 1,
+       "maxLength": 60
+      }
+     },
+     "required": [
+      "text"
+     ]
+    }
+   }
+  ],
+  "system": "date: 2026-09-22 Tue 09:58; Copy titles, messages, and date or time phrases verbatim from the user; never rephrase or resolve them. Map each explicit supported request to exactly one declared call. Do not guess missing values. Unsupported, invalid, ambiguous, and negated requests return no call.",
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp1lj6le2h/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmp1lj6le2h/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmp9uc0l1fs/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmp9uc0l1fs/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "productivity-00",
+   "prompt": "start a timer for 25 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_timer\",\"arguments\":{\"time_human\":\"25 minutes\"}}],\"suppressed_calls\":[],\"reasoning\":\"'25 minutes' -> time_human '25 minutes'. set_timer chosen.\",\"confidence\":1.0000,\"prefill_tps\":110.2,\"decode_tps\":120.0,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 4.945855712999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_timer",
+      "arguments": {
+       "time_human": "25 minutes"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'25 minutes' -> time_human '25 minutes'. set_timer chosen.",
+    "confidence": 1.0,
+    "prefill_tps": 110.2,
+    "decode_tps": 120.0,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-01",
+   "prompt": "run a timer for 90 seconds",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_timer\",\"arguments\":{\"time_human\":\"90 seconds\"}}],\"suppressed_calls\":[],\"reasoning\":\"'90 seconds' -> time_human '90 seconds'. set_timer chosen for duration.\",\"confidence\":1.0000,\"prefill_tps\":109.2,\"decode_tps\":116.7,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.050352126,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_timer",
+      "arguments": {
+       "time_human": "90 seconds"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'90 seconds' -> time_human '90 seconds'. set_timer chosen for duration.",
+    "confidence": 1.0,
+    "prefill_tps": 109.2,
+    "decode_tps": 116.7,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-02",
+   "prompt": "set a timer that goes off at 9:15pm",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_timer\",\"arguments\":{\"time_human\":\"9:15pm\"}}],\"suppressed_calls\":[],\"reasoning\":\"'9:15pm' -> time_human '9:15pm'. set_timer chosen because user wants a timer.\",\"confidence\":1.0000,\"prefill_tps\":110.9,\"decode_tps\":120.8,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.0005053660000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_timer",
+      "arguments": {
+       "time_human": "9:15pm"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'9:15pm' -> time_human '9:15pm'. set_timer chosen because user wants a timer.",
+    "confidence": 1.0,
+    "prefill_tps": 110.9,
+    "decode_tps": 120.8,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-03",
+   "prompt": "remind me at 6pm to water the plants",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Water the plants\",\"date_time_human\":\"6pm\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me at 6pm' -> create_reminder with message 'water the plants' and date_time_human '6pm'.\",\"confidence\":1.0000,\"prefill_tps\":109.7,\"decode_tps\":117.5,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.152253599,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Water the plants",
+       "date_time_human": "6pm"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me at 6pm' -> create_reminder with message 'water the plants' and date_time_human '6pm'.",
+    "confidence": 1.0,
+    "prefill_tps": 109.7,
+    "decode_tps": 117.5,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-04",
+   "prompt": "set a reminder for Sunday morning to call Grandma",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Call Grandma\",\"date_time_human\":\"Sunday morning\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Sunday morning' -> date_time_human 'Sunday morning'; message 'call Grandma' from query; create_reminder chosen because user wants a reminder.\",\"confidence\":1.0000,\"prefill_tps\":110.1,\"decode_tps\":120.6,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.290524043000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Call Grandma",
+       "date_time_human": "Sunday morning"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Sunday morning' -> date_time_human 'Sunday morning'; message 'call Grandma' from query; create_reminder chosen because user wants a reminder.",
+    "confidence": 1.0,
+    "prefill_tps": 110.1,
+    "decode_tps": 120.6,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-05",
+   "prompt": "remind me tomorrow at noon to renew the car insurance",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Renew the car insurance\",\"date_time_human\":\"tomorrow at noon\"}}],\"suppressed_calls\":[],\"reasoning\":\"'tomorrow at noon' -> date_time_human 'tomorrow at noon'; message 'renew the car insurance' from query.\",\"confidence\":0.9928,\"prefill_tps\":109.5,\"decode_tps\":117.3,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.212852123000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Renew the car insurance",
+       "date_time_human": "tomorrow at noon"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'tomorrow at noon' -> date_time_human 'tomorrow at noon'; message 'renew the car insurance' from query.",
+    "confidence": 0.9928,
+    "prefill_tps": 109.5,
+    "decode_tps": 117.3,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-06",
+   "prompt": "could you remind me at 8:15am to take my vitamins",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Take my vitamins\",\"date_time_human\":\"8:15am\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me at 8:15am' -> create_reminder with message 'take my vitamins', date_time_human '8:15am'.\",\"confidence\":1.0000,\"prefill_tps\":109.5,\"decode_tps\":118.3,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.172002838000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Take my vitamins",
+       "date_time_human": "8:15am"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me at 8:15am' -> create_reminder with message 'take my vitamins', date_time_human '8:15am'.",
+    "confidence": 1.0,
+    "prefill_tps": 109.5,
+    "decode_tps": 118.3,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-07",
+   "prompt": "add dentist appointment to my calendar tomorrow at 3pm",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_calendar_event\",\"arguments\":{\"title\":\"Dentist appointment\",\"start_time_human\":\"tomorrow at 3pm\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'dentist appointment' from query; start_time_human 'tomorrow at 3pm' from query; location omitted.\",\"confidence\":1.0000,\"prefill_tps\":104.0,\"decode_tps\":107.4,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.333683780000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_calendar_event",
+      "arguments": {
+       "title": "Dentist appointment",
+       "start_time_human": "tomorrow at 3pm"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'dentist appointment' from query; start_time_human 'tomorrow at 3pm' from query; location omitted.",
+    "confidence": 1.0,
+    "prefill_tps": 104.0,
+    "decode_tps": 107.4,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-08",
+   "prompt": "schedule team standup for Monday at 9am",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_calendar_event\",\"arguments\":{\"title\":\"Team standup\",\"start_time_human\":\"Monday at 9am\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'team standup' from query; start_time_human 'Monday at 9am' from query; location omitted.\",\"confidence\":1.0000,\"prefill_tps\":110.0,\"decode_tps\":120.3,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.169411137000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_calendar_event",
+      "arguments": {
+       "title": "Team standup",
+       "start_time_human": "Monday at 9am"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'team standup' from query; start_time_human 'Monday at 9am' from query; location omitted.",
+    "confidence": 1.0,
+    "prefill_tps": 110.0,
+    "decode_tps": 120.3,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-09",
+   "prompt": "put book club on my calendar Wednesday at 7pm at Riverside Library",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_calendar_event\",\"arguments\":{\"title\":\"Book club\",\"start_time_human\":\"Wednesday at 7pm\",\"location\":\"Riverside Library\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'book club' from query; start_time_human 'Wednesday at 7pm' from query; location 'Riverside Library' from query; create_calendar_event chosen for calendar event creation.\",\"confidence\":1.0000,\"prefill_tps\":97.0,\"decode_tps\":109.5,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.763213829999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_calendar_event",
+      "arguments": {
+       "title": "Book club",
+       "start_time_human": "Wednesday at 7pm",
+       "location": "Riverside Library"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'book club' from query; start_time_human 'Wednesday at 7pm' from query; location 'Riverside Library' from query; create_calendar_event chosen for calendar event creation.",
+    "confidence": 1.0,
+    "prefill_tps": 97.0,
+    "decode_tps": 109.5,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-10",
+   "prompt": "schedule lunch with Sam for Friday at 1pm at Cafe Roma",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_calendar_event\",\"arguments\":{\"title\":\"Lunch with Sam\",\"start_time_human\":\"Friday at 1pm\",\"location\":\"Cafe Roma\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'lunch with Sam' from query; start_time_human 'Friday at 1pm' from query; location 'Cafe Roma' from query; create_calendar_event chosen for calendar event.\",\"confidence\":1.0000,\"prefill_tps\":108.5,\"decode_tps\":114.4,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.535452294999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_calendar_event",
+      "arguments": {
+       "title": "Lunch with Sam",
+       "start_time_human": "Friday at 1pm",
+       "location": "Cafe Roma"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'lunch with Sam' from query; start_time_human 'Friday at 1pm' from query; location 'Cafe Roma' from query; create_calendar_event chosen for calendar event.",
+    "confidence": 1.0,
+    "prefill_tps": 108.5,
+    "decode_tps": 114.4,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-11",
+   "prompt": "add renew my passport to my to-do list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_task\",\"arguments\":{\"title\":\"Renew my passport\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'renew my passport' from query; priority omitted as not specified\",\"confidence\":0.9894,\"prefill_tps\":109.1,\"decode_tps\":105.7,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.558397025000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_task",
+      "arguments": {
+       "title": "Renew my passport"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'renew my passport' from query; priority omitted as not specified",
+    "confidence": 0.9894,
+    "prefill_tps": 109.1,
+    "decode_tps": 105.7,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-12",
+   "prompt": "add descale the kettle to my tasks",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_task\",\"arguments\":{\"title\":\"Descale the kettle\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'descale the kettle' from query; priority omitted as not specified; add_task tool\",\"confidence\":1.0000,\"prefill_tps\":100.2,\"decode_tps\":114.2,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.213526801,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_task",
+      "arguments": {
+       "title": "Descale the kettle"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'descale the kettle' from query; priority omitted as not specified; add_task tool",
+    "confidence": 1.0,
+    "prefill_tps": 100.2,
+    "decode_tps": 114.2,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-13",
+   "prompt": "add file the insurance claim as a high priority task",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_task\",\"arguments\":{\"title\":\"File the insurance claim\",\"priority\":\"high\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'file the insurance claim' from query; priority 'high' from query; add_task tool\",\"confidence\":0.9974,\"prefill_tps\":107.8,\"decode_tps\":104.0,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.287131858000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_task",
+      "arguments": {
+       "title": "File the insurance claim",
+       "priority": "high"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'file the insurance claim' from query; priority 'high' from query; add_task tool",
+    "confidence": 0.9974,
+    "prefill_tps": 107.8,
+    "decode_tps": 104.0,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-14",
+   "prompt": "add a low priority task to organize the garage",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_task\",\"arguments\":{\"title\":\"Organize the garage\",\"priority\":\"low\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'organize the garage' from query; priority 'low' from query; add_task tool\",\"confidence\":0.9984,\"prefill_tps\":109.4,\"decode_tps\":113.3,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.238927902999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_task",
+      "arguments": {
+       "title": "Organize the garage",
+       "priority": "low"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'organize the garage' from query; priority 'low' from query; add_task tool",
+    "confidence": 0.9984,
+    "prefill_tps": 109.4,
+    "decode_tps": 113.3,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-15",
+   "prompt": "make a note that sunflower42 is the wifi password",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_note\",\"arguments\":{\"text\":\"sunflower42 is the wifi password\"}}],\"suppressed_calls\":[],\"reasoning\":\"'make a note' maps to create_note; text 'sunflower42 is the wifi password' from query; title omitted.\",\"confidence\":0.9907,\"prefill_tps\":107.7,\"decode_tps\":113.1,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.240426593999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_note",
+      "arguments": {
+       "text": "sunflower42 is the wifi password"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'make a note' maps to create_note; text 'sunflower42 is the wifi password' from query; title omitted.",
+    "confidence": 0.9907,
+    "prefill_tps": 107.7,
+    "decode_tps": 113.1,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-16",
+   "prompt": "save a note titled Packing List saying bring the hiking boots",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_note\",\"arguments\":{\"text\":\"bring the hiking boots\",\"title\":\"Packing List\"}}],\"suppressed_calls\":[],\"reasoning\":\"'save a note' -> create_note; 'Packing List' -> title; 'bring the hiking boots' -> text\",\"confidence\":0.7376,\"prefill_tps\":108.8,\"decode_tps\":114.3,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.366041662999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_note",
+      "arguments": {
+       "text": "bring the hiking boots",
+       "title": "Packing List"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'save a note' -> create_note; 'Packing List' -> title; 'bring the hiking boots' -> text",
+    "confidence": 0.7376,
+    "prefill_tps": 108.8,
+    "decode_tps": 114.3,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-17",
+   "prompt": "write a note titled Garden that says plant the tulip bulbs in October",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_note\",\"arguments\":{\"text\":\"plant the tulip bulbs in October\",\"title\":\"Garden\"}}],\"suppressed_calls\":[],\"reasoning\":\"'write a note' -> create_note; 'Garden' -> title; 'plant the tulip bulbs in October' -> text\",\"confidence\":0.7237,\"prefill_tps\":77.5,\"decode_tps\":96.0,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.707523974000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_note",
+      "arguments": {
+       "text": "plant the tulip bulbs in October",
+       "title": "Garden"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'write a note' -> create_note; 'Garden' -> title; 'plant the tulip bulbs in October' -> text",
+    "confidence": 0.7237,
+    "prefill_tps": 77.5,
+    "decode_tps": 96.0,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-18",
+   "prompt": "remind me to take out the recycling",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Take out the recycling\",\"date_time_human\":\"today 09:58\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me' maps to create_reminder; message 'take out the recycling' from query; date_time_human 'today 09:58' from system date 2026-09-22 09:58\",\"confidence\":0.8321,\"prefill_tps\":108.9,\"decode_tps\":117.2,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[\"create_reminder.date_time_human\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.371830049000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Take out the recycling",
+       "date_time_human": "today 09:58"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me' maps to create_reminder; message 'take out the recycling' from query; date_time_human 'today 09:58' from system date 2026-09-22 09:58",
+    "confidence": 0.8321,
+    "prefill_tps": 108.9,
+    "decode_tps": 117.2,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.date_time_human"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-19",
+   "prompt": "set a timer for the pasta",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_timer\",\"arguments\":{\"time_human\":\"45 minutes\"}}],\"suppressed_calls\":[],\"reasoning\":\"'pasta' is the label; set_timer with time_human '45 minutes' derived from 'pasta'\",\"confidence\":1.0000,\"prefill_tps\":108.7,\"decode_tps\":116.1,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[\"set_timer.time_human\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.108908544000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_timer",
+      "arguments": {
+       "time_human": "45 minutes"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'pasta' is the label; set_timer with time_human '45 minutes' derived from 'pasta'",
+    "confidence": 1.0,
+    "prefill_tps": 108.7,
+    "decode_tps": 116.1,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [
+      "set_timer.time_human"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-20",
+   "prompt": "put dinner with Alex on my calendar",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_calendar_event\",\"arguments\":{\"title\":\"Dinner with Alex\",\"start_time_human\":\"today at 9\"}}],\"suppressed_calls\":[],\"reasoning\":\"title 'dinner with Alex' from query; start_time_human 'today at 9' from system date 2026-09-22 09:58; location omitted.\",\"confidence\":0.7790,\"prefill_tps\":107.9,\"decode_tps\":105.4,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[\"create_calendar_event.start_time_human\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.643624043000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_calendar_event",
+      "arguments": {
+       "title": "Dinner with Alex",
+       "start_time_human": "today at 9"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "title 'dinner with Alex' from query; start_time_human 'today at 9' from system date 2026-09-22 09:58; location omitted.",
+    "confidence": 0.779,
+    "prefill_tps": 107.9,
+    "decode_tps": 105.4,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [
+      "create_calendar_event.start_time_human"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-21",
+   "prompt": "set a reminder about picking up the dry cleaning",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Picking up the dry cleaning\",\"date_time_human\":\"tomorrow at 9\"}}],\"suppressed_calls\":[],\"reasoning\":\"message 'picking up the dry cleaning' from query; date_time_human 'tomorrow at 9' from system date 2026-09-22 Tue; create_reminder chosen for timed reminder\",\"confidence\":0.9158,\"prefill_tps\":107.1,\"decode_tps\":118.2,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[\"create_reminder.date_time_human\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.378565842,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Picking up the dry cleaning",
+       "date_time_human": "tomorrow at 9"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "message 'picking up the dry cleaning' from query; date_time_human 'tomorrow at 9' from system date 2026-09-22 Tue; create_reminder chosen for timed reminder",
+    "confidence": 0.9158,
+    "prefill_tps": 107.1,
+    "decode_tps": 118.2,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.date_time_human"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-22",
+   "prompt": "email the shopping list to my roommate",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No email or messaging tool is available. The tools only handle calendar events, reminders, and notes.\",\"confidence\":1.0000,\"prefill_tps\":109.2,\"decode_tps\":115.5,\"peak_ram_mb\":80.4}\n",
+   "stderr": "",
+   "wall_s": 5.019673320999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No email or messaging tool is available. The tools only handle calendar events, reminders, and notes.",
+    "confidence": 1.0,
+    "prefill_tps": 109.2,
+    "decode_tps": 115.5,
+    "peak_ram_mb": 80.4
+   }
+  },
+  {
+   "id": "productivity-23",
+   "prompt": "check my calendar for this weekend",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_calendar_event\",\"arguments\":{\"title\":\"Check calendar\",\"start_time_human\":\"2026-09-25\"}}],\"suppressed_calls\":[],\"reasoning\":\"'this weekend' relative to 2026-09-22 Tue -> 2026-09-24 Sat; 'this weekend' -> 2026-09-25 Sun; create_calendar_event with title 'check calendar'\",\"confidence\":0.3977,\"prefill_tps\":109.0,\"decode_tps\":114.1,\"peak_ram_mb\":82.0,\"validation\":{\"ungrounded\":[\"create_calendar_event.title\",\"create_calendar_event.start_time_human\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.6226242160000055,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_calendar_event",
+      "arguments": {
+       "title": "Check calendar",
+       "start_time_human": "2026-09-25"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'this weekend' relative to 2026-09-22 Tue -> 2026-09-24 Sat; 'this weekend' -> 2026-09-25 Sun; create_calendar_event with title 'check calendar'",
+    "confidence": 0.3977,
+    "prefill_tps": 109.0,
+    "decode_tps": 114.1,
+    "peak_ram_mb": 82.0,
+    "validation": {
+     "ungrounded": [
+      "create_calendar_event.title",
+      "create_calendar_event.start_time_human"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-24",
+   "prompt": "delete the reminder about the oil change",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No delete or remove tool exists; create_reminder only creates, not deletes.\",\"confidence\":0.9890,\"prefill_tps\":108.1,\"decode_tps\":115.4,\"peak_ram_mb\":81.9}\n",
+   "stderr": "",
+   "wall_s": 4.999014783000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No delete or remove tool exists; create_reminder only creates, not deletes.",
+    "confidence": 0.989,
+    "prefill_tps": 108.1,
+    "decode_tps": 115.4,
+    "peak_ram_mb": 81.9
+   }
+  },
+  {
+   "id": "productivity-25",
+   "prompt": "don't set a timer for 20 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_timer\",\"arguments\":{\"time_human\":\"20 minutes\"}}],\"reasoning\":\"'don't set a timer' -> set_timer; '20 minutes' -> time_human '20 minutes'.\",\"confidence\":1.0000,\"prefill_tps\":108.4,\"decode_tps\":105.8,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.124173897000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_timer",
+      "arguments": {
+       "time_human": "20 minutes"
+      }
+     }
+    ],
+    "reasoning": "'don't set a timer' -> set_timer; '20 minutes' -> time_human '20 minutes'.",
+    "confidence": 1.0,
+    "prefill_tps": 108.4,
+    "decode_tps": 105.8,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "productivity-26",
+   "prompt": "do not put yoga class on my calendar for Saturday at 8am",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_calendar_event\",\"arguments\":{\"title\":\"Yoga class\",\"start_time_human\":\"Saturday at 8am\"}}],\"suppressed_calls\":[],\"reasoning\":\"'do not put yoga class on my calendar' -> create_calendar_event title 'yoga class', start_time_human 'Saturday at 8am'.\",\"confidence\":0.9904,\"prefill_tps\":109.2,\"decode_tps\":118.3,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.319264360999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_calendar_event",
+      "arguments": {
+       "title": "Yoga class",
+       "start_time_human": "Saturday at 8am"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'do not put yoga class on my calendar' -> create_calendar_event title 'yoga class', start_time_human 'Saturday at 8am'.",
+    "confidence": 0.9904,
+    "prefill_tps": 109.2,
+    "decode_tps": 118.3,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "productivity-27",
+   "prompt": "never remind me about the water bill again",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Water bill\",\"date_time_human\":\"next day\"}}],\"suppressed_calls\":[],\"reasoning\":\"'never remind me' -> create_reminder; message 'water bill'; date_time_human 'next day' from context.\",\"confidence\":0.9805,\"prefill_tps\":108.2,\"decode_tps\":110.0,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[\"create_reminder.date_time_human\"],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.609656963999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Water bill",
+       "date_time_human": "next day"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'never remind me' -> create_reminder; message 'water bill'; date_time_human 'next day' from context.",
+    "confidence": 0.9805,
+    "prefill_tps": 108.2,
+    "decode_tps": 110.0,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.date_time_human"
+     ],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "productivity-28",
+   "prompt": "set a timer for negative 5 minutes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_timer\",\"arguments\":{\"time_human\":\"05 minutes\"}}],\"suppressed_calls\":[],\"reasoning\":\"'negative 5 minutes' -> time_human '05 minutes'. set_timer chosen.\",\"confidence\":1.0000,\"prefill_tps\":109.1,\"decode_tps\":110.1,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[\"set_timer.time_human\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.0740677430000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_timer",
+      "arguments": {
+       "time_human": "05 minutes"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'negative 5 minutes' -> time_human '05 minutes'. set_timer chosen.",
+    "confidence": 1.0,
+    "prefill_tps": 109.1,
+    "decode_tps": 110.1,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [
+      "set_timer.time_human"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-29",
+   "prompt": "remind me yesterday at 4pm to submit the timesheet",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Submit the timesheet\",\"date_time_human\":\"2026-09-23 16:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'yesterday' relative to 2026-09-22 Tue -> 2026-09-23; '4pm' -> 16:00; message 'submit the timesheet' from query.\",\"confidence\":0.8144,\"prefill_tps\":81.2,\"decode_tps\":104.5,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[\"create_reminder.date_time_human\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.764565853999997,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Submit the timesheet",
+       "date_time_human": "2026-09-23 16:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'yesterday' relative to 2026-09-22 Tue -> 2026-09-23; '4pm' -> 16:00; message 'submit the timesheet' from query.",
+    "confidence": 0.8144,
+    "prefill_tps": 81.2,
+    "decode_tps": 104.5,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.date_time_human"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-30",
+   "prompt": "set a timer for 10 minutes and remind me at 5pm to hydrate",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_timer\",\"arguments\":{\"time_human\":\"10 minutes\"}},{\"name\":\"create_reminder\",\"arguments\":{\"message\":\"Hydrate\",\"date_time_human\":\"5pm\"}}],\"suppressed_calls\":[],\"reasoning\":\"'10 minutes' -> time_human '10 minutes'; '5pm' -> date_time_human '5pm'; message 'hydrate' from query\",\"confidence\":1.0000,\"prefill_tps\":109.2,\"decode_tps\":119.6,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.378740339000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_timer",
+      "arguments": {
+       "time_human": "10 minutes"
+      }
+     },
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "message": "Hydrate",
+       "date_time_human": "5pm"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'10 minutes' -> time_human '10 minutes'; '5pm' -> date_time_human '5pm'; message 'hydrate' from query",
+    "confidence": 1.0,
+    "prefill_tps": 109.2,
+    "decode_tps": 119.6,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "productivity-31",
+   "prompt": "add buy candles to my task list and note that rent is due Friday",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_task\",\"arguments\":{\"title\":\"Buy candles\"}},{\"name\":\"create_note\",\"arguments\":{\"text\":\"rent is due Friday\"}}],\"suppressed_calls\":[],\"reasoning\":\"add_task title 'buy candles' from query; priority omitted; create_note text 'rent is due Friday' from query; title omitted\",\"confidence\":0.9904,\"prefill_tps\":109.2,\"decode_tps\":113.7,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.417691404999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_task",
+      "arguments": {
+       "title": "Buy candles"
+      }
+     },
+     {
+      "name": "create_note",
+      "arguments": {
+       "text": "rent is due Friday"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "add_task title 'buy candles' from query; priority omitted; create_note text 'rent is due Friday' from query; title omitted",
+    "confidence": 0.9904,
+    "prefill_tps": 109.2,
+    "decode_tps": 113.7,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

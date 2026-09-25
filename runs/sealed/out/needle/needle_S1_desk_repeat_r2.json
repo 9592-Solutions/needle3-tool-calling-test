@@ -1,0 +1,1324 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "set_alarm",
+     "description": "Set an alarm (wake me up) at a clock time, on a date if one is given.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "time": {
+        "type": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "clock time in 24-hour HH:MM, e.g. 07:30 for 7:30 am or 19:30 for 7:30 pm"
+       },
+       "date": {
+        "type": "string",
+        "format": "date",
+        "description": "ISO date YYYY-MM-DD, e.g. 2026-06-12"
+       }
+      },
+      "required": [
+       "time"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "remove_alarm",
+     "description": "Remove (cancel, delete, turn off) the alarm set at a clock time, on a date if one is given.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "time": {
+        "type": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "clock time in 24-hour HH:MM, e.g. 07:30 for 7:30 am or 19:30 for 7:30 pm"
+       },
+       "date": {
+        "type": "string",
+        "format": "date",
+        "description": "ISO date YYYY-MM-DD, e.g. 2026-06-12"
+       }
+      },
+      "required": [
+       "time"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_list_item",
+     "description": "Add one item to the shopping list, the to-do list or the packing list.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "list": {
+        "type": "string",
+        "enum": [
+         "shopping",
+         "to-do",
+         "packing"
+        ],
+        "description": "shopping (grocery, groceries), to-do (to do, tasks) or packing (trip, travel)"
+       },
+       "item": {
+        "type": "string",
+        "description": "the one item, in the user's words, e.g. two bottles of milk"
+       }
+      },
+      "required": [
+       "list",
+       "item"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "remove_list_item",
+     "description": "Remove (take off, delete) one item from the shopping list, the to-do list or the packing list.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "list": {
+        "type": "string",
+        "enum": [
+         "shopping",
+         "to-do",
+         "packing"
+        ],
+        "description": "shopping (grocery, groceries), to-do (to do, tasks) or packing (trip, travel)"
+       },
+       "item": {
+        "type": "string",
+        "description": "the one item, in the user's words, e.g. two bottles of milk"
+       }
+      },
+      "required": [
+       "list",
+       "item"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "create_reminder",
+     "description": "Create a reminder (remind me, don't let me forget) at a clock time on a date.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "text": {
+        "type": "string",
+        "description": "what to be reminded about, in the user's words, e.g. take the bins out"
+       },
+       "time": {
+        "type": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "clock time in 24-hour HH:MM, e.g. 07:30 for 7:30 am or 19:30 for 7:30 pm",
+        "default": "09:00"
+       },
+       "date": {
+        "type": "string",
+        "format": "date",
+        "description": "ISO date YYYY-MM-DD, e.g. 2026-06-12"
+       }
+      },
+      "required": [
+       "text"
+      ]
+     }
+    }
+   }
+  ],
+  "system": "date: 2026-06-10 Wed 14:30; locale: en-US",
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true,
+  "require_cpu": "GenuineIntel fam 6 model 85"
+ },
+ "chunk_attempts": 3,
+ "containers": [
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpr1vq1wm4/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpr1vq1wm4/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpty4bs9bz/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpty4bs9bz/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpisvf9afo/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpisvf9afo/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "n3-4a53e2a7a9",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "What alarms do I have?",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_alarm\",\"arguments\":{\"time\":\"07:30\",\"date\":\"2026-06-10\"}}],\"suppressed_calls\":[],\"reasoning\":\"User asks for alarms. No date given, so use default date 2026-06-10.\",\"confidence\":0.5258,\"prefill_tps\":74.2,\"decode_tps\":99.6,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[\"remove_alarm.time\",\"remove_alarm.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.893196112999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_alarm",
+      "arguments": {
+       "time": "07:30",
+       "date": "2026-06-10"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "User asks for alarms. No date given, so use default date 2026-06-10.",
+    "confidence": 0.5258,
+    "prefill_tps": 74.2,
+    "decode_tps": 99.6,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [
+      "remove_alarm.time",
+      "remove_alarm.date"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-f0264bdd81",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "set up a reminder so i don't forget the baby shower this weekend",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"baby shower\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'set up a reminder' -> create_reminder; 'baby shower' -> text; 'this weekend' relative to 2026-06-10 Wed -> 2026-06-12 Sat; time default 09:00\",\"confidence\":0.9022,\"prefill_tps\":73.8,\"decode_tps\":86.0,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.228941847,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "baby shower",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'set up a reminder' -> create_reminder; 'baby shower' -> text; 'this weekend' relative to 2026-06-10 Wed -> 2026-06-12 Sat; time default 09:00",
+    "confidence": 0.9022,
+    "prefill_tps": 73.8,
+    "decode_tps": 86.0,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-3bdb1985c8",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "Set a reminder for the meeting Friday at 3 p.m. if it is confirmed",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"meeting\",\"time\":\"15:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"create_reminder with text 'meeting' from query, time '15:00' from '3 p.m.'\",\"confidence\":0.9862,\"prefill_tps\":74.6,\"decode_tps\":88.0,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.869654982,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "meeting",
+       "time": "15:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "create_reminder with text 'meeting' from query, time '15:00' from '3 p.m.'",
+    "confidence": 0.9862,
+    "prefill_tps": 74.6,
+    "decode_tps": 88.0,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-57c7819a3c",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "Do I have a reminder set to pick up food this Friday.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"pick up food\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reminder set to pick up food' -> create_reminder with text 'pick up food' and date '2026-06-14' (Friday from Wed 2026-06-10).\",\"confidence\":0.5652,\"prefill_tps\":75.6,\"decode_tps\":99.6,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.992986740000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "pick up food",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reminder set to pick up food' -> create_reminder with text 'pick up food' and date '2026-06-14' (Friday from Wed 2026-06-10).",
+    "confidence": 0.5652,
+    "prefill_tps": 75.6,
+    "decode_tps": 99.6,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-7c15be46e2",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "remind me to exercise and remind me to put gas in my car",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"exercise\",\"time\":\"09:00\"}},{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"put gas in my car\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me to exercise' -> create_reminder with text 'exercise'; 'remind me to put gas in my car' -> create_reminder with text 'put gas in my car'; no date given so defaults to today 2026-06-10\",\"confidence\":0.7931,\"prefill_tps\":73.2,\"decode_tps\":91.2,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[\"create_reminder.time\",\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.437175275000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "exercise",
+       "time": "09:00"
+      }
+     },
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "put gas in my car",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me to exercise' -> create_reminder with text 'exercise'; 'remind me to put gas in my car' -> create_reminder with text 'put gas in my car'; no date given so defaults to today 2026-06-10",
+    "confidence": 0.7931,
+    "prefill_tps": 73.2,
+    "decode_tps": 91.2,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time",
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-e9874ca84d",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "remove the alarm for tomorrow",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_alarm\",\"arguments\":{\"time\":\"07:30\",\"date\":\"2026-06-11\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remove the alarm' -> remove_alarm; 'tomorrow' relative to 2026-06-10 -> 2026-06-11; time '07:30' from 'tomorrow'\",\"confidence\":0.8194,\"prefill_tps\":72.1,\"decode_tps\":91.3,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[\"remove_alarm.time\",\"remove_alarm.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.97298226,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_alarm",
+      "arguments": {
+       "time": "07:30",
+       "date": "2026-06-11"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remove the alarm' -> remove_alarm; 'tomorrow' relative to 2026-06-10 -> 2026-06-11; time '07:30' from 'tomorrow'",
+    "confidence": 0.8194,
+    "prefill_tps": 72.1,
+    "decode_tps": 91.3,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [
+      "remove_alarm.time",
+      "remove_alarm.date"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-62bc96cccb",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "wake me up at five am",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_alarm\",\"arguments\":{\"time\":\"05:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'five am' -> time '05:00'. No date given, so omit date param. set_alarm chosen.\",\"confidence\":0.9609,\"prefill_tps\":70.2,\"decode_tps\":90.8,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[\"set_alarm.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.466145814,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_alarm",
+      "arguments": {
+       "time": "05:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'five am' -> time '05:00'. No date given, so omit date param. set_alarm chosen.",
+    "confidence": 0.9609,
+    "prefill_tps": 70.2,
+    "decode_tps": 90.8,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [
+      "set_alarm.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-f45cffde68",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "Oh, and triple A batteries, I need to pick some up too.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"to-do\",\"item\":\"triple A batteries\"}}],\"reasoning\":\"'triple A batteries' -> list 'to-do', item 'triple A batteries'. add_list_item adds to-do item.\",\"confidence\":1.0000,\"prefill_tps\":74.5,\"decode_tps\":91.5,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.106136518000003,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "to-do",
+       "item": "triple A batteries"
+      }
+     }
+    ],
+    "reasoning": "'triple A batteries' -> list 'to-do', item 'triple A batteries'. add_list_item adds to-do item.",
+    "confidence": 1.0,
+    "prefill_tps": 74.5,
+    "decode_tps": 91.5,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-f0e4f58055",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "set a reminder to buy bread",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"buy bread\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reminder to buy bread' -> create_reminder with text 'buy bread' from query. No time given, default 09:00.\",\"confidence\":0.9156,\"prefill_tps\":72.1,\"decode_tps\":89.5,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.742131917999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "buy bread",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reminder to buy bread' -> create_reminder with text 'buy bread' from query. No time given, default 09:00.",
+    "confidence": 0.9156,
+    "prefill_tps": 72.1,
+    "decode_tps": 89.5,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-ed9d9a858a",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "tell me about my alarms",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_alarm\",\"arguments\":{\"time\":\"07:30\"}}],\"suppressed_calls\":[],\"reasoning\":\"'alarms' -> get_alarms tool. No time specified, so omit optional param.\",\"confidence\":0.4558,\"prefill_tps\":67.1,\"decode_tps\":85.0,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[\"remove_alarm.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.062354731,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_alarm",
+      "arguments": {
+       "time": "07:30"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'alarms' -> get_alarms tool. No time specified, so omit optional param.",
+    "confidence": 0.4558,
+    "prefill_tps": 67.1,
+    "decode_tps": 85.0,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [
+      "remove_alarm.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-979875364c",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "Next Tuesday, six p.m., alarm please.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_alarm\",\"arguments\":{\"time\":\"06:00\",\"date\":\"2026-06-17\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Next Tuesday' relative to 2026-06-10 Wed -> 2026-06-17; 'six p.m.' -> time '06:00'; date '2026-06-17' from system date.\",\"confidence\":0.9905,\"prefill_tps\":69.7,\"decode_tps\":93.1,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[\"set_alarm.time\",\"set_alarm.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.205412245999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_alarm",
+      "arguments": {
+       "time": "06:00",
+       "date": "2026-06-17"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Next Tuesday' relative to 2026-06-10 Wed -> 2026-06-17; 'six p.m.' -> time '06:00'; date '2026-06-17' from system date.",
+    "confidence": 0.9905,
+    "prefill_tps": 69.7,
+    "decode_tps": 93.1,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [
+      "set_alarm.time",
+      "set_alarm.date"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-0ed6c3a8d3",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "please add oranges to my grocery list and Add bread to my grocery list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"oranges\"}},{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"bread\"}}],\"reasoning\":\"'add oranges to my grocery list' -> add_list_item list 'grocery' item 'oranges'; 'add bread to my grocery list' -> add_list_item list 'grocery' item 'bread'\",\"confidence\":0.9288,\"prefill_tps\":78.4,\"decode_tps\":96.8,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.279848596,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "oranges"
+      }
+     },
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "bread"
+      }
+     }
+    ],
+    "reasoning": "'add oranges to my grocery list' -> add_list_item list 'grocery' item 'oranges'; 'add bread to my grocery list' -> add_list_item list 'grocery' item 'bread'",
+    "confidence": 0.9288,
+    "prefill_tps": 78.4,
+    "decode_tps": 96.8,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-14c9460069",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "PDA can you remind me to meet with Jesse next Saturday.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":false,\"error\":\"tool call truncated: token budget exhausted\",\"error_code\":\"truncated\",\"reason\":\"runtime_failure\",\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"'remind me to meet with Jesse next Saturday' -> create_reminder with text 'meet with Jesse', time 'next Saturday' (2026-06-17).\",\"confidence\":0.1144,\"prefill_tps\":71.0,\"decode_tps\":85.8,\"peak_ram_mb\":81.5}\n",
+   "stderr": "",
+   "wall_s": 13.834819468,
+   "parsed": {
+    "type": "call",
+    "success": false,
+    "error": "tool call truncated: token budget exhausted",
+    "error_code": "truncated",
+    "reason": "runtime_failure",
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "'remind me to meet with Jesse next Saturday' -> create_reminder with text 'meet with Jesse', time 'next Saturday' (2026-06-17).",
+    "confidence": 0.1144,
+    "prefill_tps": 71.0,
+    "decode_tps": 85.8,
+    "peak_ram_mb": 81.5
+   }
+  },
+  {
+   "id": "n3-b825602754",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "Oh hey, remind me to pay the electric bill, will you.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"pay the electric bill\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me to pay the electric bill' -> create_reminder with text 'pay the electric bill'. No time given, default 09:00.\",\"confidence\":0.8871,\"prefill_tps\":73.5,\"decode_tps\":87.0,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.082227783,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "pay the electric bill",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me to pay the electric bill' -> create_reminder with text 'pay the electric bill'. No time given, default 09:00.",
+    "confidence": 0.8871,
+    "prefill_tps": 73.5,
+    "decode_tps": 87.0,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-7ee31728cf",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "Add chips to the shopping list.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"chips\"}}],\"suppressed_calls\":[],\"reasoning\":\"list 'shopping' from query; item 'chips' from query.\",\"confidence\":0.9918,\"prefill_tps\":74.9,\"decode_tps\":96.7,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.507635409000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "chips"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "list 'shopping' from query; item 'chips' from query.",
+    "confidence": 0.9918,
+    "prefill_tps": 74.9,
+    "decode_tps": 96.7,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-131b0a7ac5",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "No reminder to ask my boss an important question.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"ask my boss\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reminder to ask my boss' -> create_reminder with text 'ask my boss' and time '09:00'.\",\"confidence\":1.0000,\"prefill_tps\":70.0,\"decode_tps\":94.3,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.323837348000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "ask my boss",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reminder to ask my boss' -> create_reminder with text 'ask my boss' and time '09:00'.",
+    "confidence": 1.0,
+    "prefill_tps": 70.0,
+    "decode_tps": 94.3,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-dc46e27bd5",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "Set a reminder for the 7th at five in the evening to go get Linda.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"go get Linda\",\"time\":\"17:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'set a reminder' -> create_reminder; 'five in the evening' -> time 17:00; 'go get Linda' -> text.\",\"confidence\":0.9314,\"prefill_tps\":74.6,\"decode_tps\":88.0,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.165102815000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "go get Linda",
+       "time": "17:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'set a reminder' -> create_reminder; 'five in the evening' -> time 17:00; 'go get Linda' -> text.",
+    "confidence": 0.9314,
+    "prefill_tps": 74.6,
+    "decode_tps": 88.0,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-80e972ea38",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "Do not remind me to ask an important question to my boss",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"ask an important question\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'Do not remind me' -> create_reminder. 'ask an important question' -> text. No time given, default 09:00.\",\"confidence\":0.8694,\"prefill_tps\":77.5,\"decode_tps\":101.5,\"peak_ram_mb\":80.6,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 7.576323543000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "ask an important question",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'Do not remind me' -> create_reminder. 'ask an important question' -> text. No time given, default 09:00.",
+    "confidence": 0.8694,
+    "prefill_tps": 77.5,
+    "decode_tps": 101.5,
+    "peak_ram_mb": 80.6,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "n3-68e9850322",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "please remove science fair from my to do list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_list_item\",\"arguments\":{\"list\":\"to-do\",\"item\":\"science fair\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remove science fair' -> remove_list_item; list 'to-do' from query; item 'science fair' from query\",\"confidence\":1.0000,\"prefill_tps\":69.8,\"decode_tps\":96.2,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.353430981999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_list_item",
+      "arguments": {
+       "list": "to-do",
+       "item": "science fair"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remove science fair' -> remove_list_item; list 'to-do' from query; item 'science fair' from query",
+    "confidence": 1.0,
+    "prefill_tps": 69.8,
+    "decode_tps": 96.2,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-3ee17658ac",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "remind me every monday to take out the trash",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"take out the trash\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me' maps to create_reminder; 'every monday' -> date 2026-06-17; 'take out the trash' -> text 'take out the trash'; time default 09:00\",\"confidence\":0.9287,\"prefill_tps\":72.4,\"decode_tps\":88.7,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.193161883000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "take out the trash",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me' maps to create_reminder; 'every monday' -> date 2026-06-17; 'take out the trash' -> text 'take out the trash'; time default 09:00",
+    "confidence": 0.9287,
+    "prefill_tps": 72.4,
+    "decode_tps": 88.7,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-d80daeb146",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "i need to create a new to do list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"to-do\",\"item\":\"two bottles of milk\"}}],\"suppressed_calls\":[],\"reasoning\":\"'create a new to do list' -> add_list_item; list 'to-do' from query; item 'two bottles of milk' from query.\",\"confidence\":1.0000,\"prefill_tps\":74.9,\"decode_tps\":95.2,\"peak_ram_mb\":81.7,\"validation\":{\"ungrounded\":[\"add_list_item.item\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.853079059000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "to-do",
+       "item": "two bottles of milk"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'create a new to do list' -> add_list_item; list 'to-do' from query; item 'two bottles of milk' from query.",
+    "confidence": 1.0,
+    "prefill_tps": 74.9,
+    "decode_tps": 95.2,
+    "peak_ram_mb": 81.7,
+    "validation": {
+     "ungrounded": [
+      "add_list_item.item"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-84de5210c2",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "Set a recurring reminder on Tuesdays, Thursdays and Saturdays to water the plants.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"water the plants\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"create_reminder with text 'water the plants', time '09:00' from 'Tuesdays, Thursdays and Saturdays'.\",\"confidence\":0.9850,\"prefill_tps\":71.2,\"decode_tps\":91.3,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.389069830000011,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "water the plants",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "create_reminder with text 'water the plants', time '09:00' from 'Tuesdays, Thursdays and Saturdays'.",
+    "confidence": 0.985,
+    "prefill_tps": 71.2,
+    "decode_tps": 91.3,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-41cecb9f89",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "Is there a reminder to pick up food this Friday.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"pick up food\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reminder to pick up food' -> create_reminder with text 'pick up food' and date '2026-06-14' (Friday from Wed 2026-06-10).\",\"confidence\":0.5581,\"prefill_tps\":71.3,\"decode_tps\":86.3,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.254621938999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "pick up food",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reminder to pick up food' -> create_reminder with text 'pick up food' and date '2026-06-14' (Friday from Wed 2026-06-10).",
+    "confidence": 0.5581,
+    "prefill_tps": 71.3,
+    "decode_tps": 86.3,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-1e5099078d",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "Take apples off, please.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"remove_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"apples\"}}],\"reasoning\":\"'Take apples off' -> remove_list_item with list 'shopping' and item 'apples'.\",\"confidence\":1.0000,\"prefill_tps\":73.4,\"decode_tps\":90.9,\"peak_ram_mb\":80.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.713238699999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "remove_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "apples"
+      }
+     }
+    ],
+    "reasoning": "'Take apples off' -> remove_list_item with list 'shopping' and item 'apples'.",
+    "confidence": 1.0,
+    "prefill_tps": 73.4,
+    "decode_tps": 90.9,
+    "peak_ram_mb": 80.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-79fcf97aa8",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "Could you send John an email to ask what meeting time suits him.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"What meeting time suits John\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"No email tool available. create_reminder creates reminders for a clock time. 'John' -> text, 'tomorrow' -> date 2026-06-11.\",\"confidence\":0.3978,\"prefill_tps\":70.2,\"decode_tps\":85.5,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[\"create_reminder.text\",\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.791333615,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "What meeting time suits John",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "No email tool available. create_reminder creates reminders for a clock time. 'John' -> text, 'tomorrow' -> date 2026-06-11.",
+    "confidence": 0.3978,
+    "prefill_tps": 70.2,
+    "decode_tps": 85.5,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.text",
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-7a51aac562",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "erase my appointment for march seven",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"remove_list_item\",\"arguments\":{\"list\":\"to-do\",\"item\":\"appointment\"}}],\"reasoning\":\"'erase' -> remove_list_item; 'appointment' -> list 'appointment'; 'march seven' -> item 'appointment'\",\"confidence\":0.9520,\"prefill_tps\":70.5,\"decode_tps\":89.7,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.130926548000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "remove_list_item",
+      "arguments": {
+       "list": "to-do",
+       "item": "appointment"
+      }
+     }
+    ],
+    "reasoning": "'erase' -> remove_list_item; 'appointment' -> list 'appointment'; 'march seven' -> item 'appointment'",
+    "confidence": 0.952,
+    "prefill_tps": 70.5,
+    "decode_tps": 89.7,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-3d7c6915e4",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "Don't add milk to grocery list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"milk\"}}],\"reasoning\":\"'Don't add milk' -> add_list_item; list 'grocery' from query; item 'milk' from query.\",\"confidence\":1.0000,\"prefill_tps\":73.4,\"decode_tps\":93.2,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 7.869030172999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "milk"
+      }
+     }
+    ],
+    "reasoning": "'Don't add milk' -> add_list_item; list 'grocery' from query; item 'milk' from query.",
+    "confidence": 1.0,
+    "prefill_tps": 73.4,
+    "decode_tps": 93.2,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "n3-c14f0cef32",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D7A5AJP23KEFPT57BDJBR",
+   "prompt": "Remove paper towels from the shopping list.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"paper towels\"}}],\"suppressed_calls\":[],\"reasoning\":\"list 'shopping' from 'shopping list'; item 'paper towels' from query.\",\"confidence\":0.9912,\"prefill_tps\":72.0,\"decode_tps\":86.0,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.459144050000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "paper towels"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "list 'shopping' from 'shopping list'; item 'paper towels' from query.",
+    "confidence": 0.9912,
+    "prefill_tps": 72.0,
+    "decode_tps": 86.0,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-e7f9779465",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D1QC5351FMM1YK0R1B83R",
+   "prompt": "add laundry detergent to the list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"laundry detergent\"}}],\"reasoning\":\"list 'shopping' from 'laundry detergent'\",\"confidence\":0.9849,\"prefill_tps\":73.4,\"decode_tps\":90.3,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.877556506999994,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "laundry detergent"
+      }
+     }
+    ],
+    "reasoning": "list 'shopping' from 'laundry detergent'",
+    "confidence": 0.9849,
+    "prefill_tps": 73.4,
+    "decode_tps": 90.3,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "n3-658095b40a",
+   "rep": 0,
+   "cpu": "unknown | GenuineIntel fam 6 model 85 step unknown | simd avx2,avx512f,avx512_vnni,avx512bw,fma | flags#63f5c0d0cd | ncpu 17 | task ta-01M35D4HFVNDDHMPEVXB53FYQR",
+   "prompt": "Could you get babysitting added to the to-do list.",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"to-do\",\"item\":\"babysitting\"}}],\"suppressed_calls\":[],\"reasoning\":\"'get babysitting added to the to-do list' -> add_list_item with list 'to-do' and item 'babysitting'.\",\"confidence\":1.0000,\"prefill_tps\":75.0,\"decode_tps\":93.3,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 7.956186994999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "to-do",
+       "item": "babysitting"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'get babysitting added to the to-do list' -> add_list_item with list 'to-do' and item 'babysitting'.",
+    "confidence": 1.0,
+    "prefill_tps": 75.0,
+    "decode_tps": 93.3,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ],
+ "missing": []
+}

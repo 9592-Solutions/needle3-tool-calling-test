@@ -1,0 +1,20 @@
+{"ts": "2026-09-22T16:24:55.709038+00:00", "label": "after prep", "openrouter": 0.61726, "openrouter_limit": 4, "modal": 0.6564, "observed_total": 1.27366}
+{"ts": "2026-09-22T16:25:00.797399+00:00", "label": "tier1 start", "openrouter": 0.61726, "openrouter_limit": 4, "modal": 0.6564, "observed_total": 1.27366}
+{"ts": "2026-09-22T17:08:18.973723+00:00", "label": "tier1 end", "openrouter": 0.76655, "openrouter_limit": 4, "modal": 0.87723, "observed_total": 1.64378}
+{"ts": "2026-09-22T17:08:20.975625+00:00", "label": "after tier1", "openrouter": 0.76655, "openrouter_limit": 4, "modal": 0.87815, "observed_total": 1.6447}
+{"ts": "2026-09-22T19:42:13.026019+00:00", "label": "latency", "openrouter": 0.76655, "openrouter_limit": 4, "modal": 0.8784, "observed_total": 1.64495, "stage_worst": 1.1, "projected": 2.74495, "fires": true}
+{"ts": "2026-09-22T20:29:17.019035+00:00", "label": "after latency", "openrouter": 0.79179, "openrouter_limit": 4, "modal": 1.09831, "observed_total": 1.89009}
+{"ts": "2026-09-22T20:31:14.037806+00:00", "label": "repeats", "openrouter": 0.79179, "openrouter_limit": 4, "modal": 1.09855, "observed_total": 1.89034, "stage_worst": 0.15, "projected": 2.04034, "fires": true}
+{"ts": "2026-09-22T20:40:03.084380+00:00", "label": "after repeats", "openrouter": 0.80706, "openrouter_limit": 4, "modal": 1.11626, "observed_total": 1.92332}
+{"ts": "2026-09-22T20:40:08.156364+00:00", "label": "V-BASE", "openrouter": 0.80706, "openrouter_limit": 4, "modal": 1.11626, "observed_total": 1.92332, "stage_worst": 0.149, "projected": 2.07232, "fires": true}
+{"ts": "2026-09-22T21:16:59.649823+00:00", "label": "V-REL", "openrouter": 0.823, "openrouter_limit": 4, "modal": 1.14595, "observed_total": 1.96896, "stage_worst": 0.4179, "projected": 2.38686, "fires": true}
+{"ts": "2026-09-22T22:16:07.261534+00:00", "label": "V-ROOMREQ", "openrouter": 0.86871, "openrouter_limit": 4, "modal": 1.20594, "observed_total": 2.07465, "stage_worst": 0.4179, "projected": 2.49255, "fires": true}
+{"ts": "2026-09-22T23:00:50.943942+00:00", "label": "V-COUNT", "openrouter": 0.91163, "openrouter_limit": 4, "modal": 1.26398, "observed_total": 2.17561, "stage_worst": 0.2074, "projected": 2.38301, "fires": true}
+{"ts": "2026-09-22T23:50:30.417496+00:00", "label": "V-RENAME", "openrouter": 0.91163, "openrouter_limit": 4, "modal": 1.37134, "observed_total": 2.28297, "stage_worst": 0.149, "projected": 2.43197, "fires": true}
+{"ts": "2026-09-23T00:06:34.345911+00:00", "label": "V-DISPATCH", "openrouter": 0.92755, "openrouter_limit": 4, "modal": 1.39122, "observed_total": 2.31878, "stage_worst": 0.149, "projected": 2.46778, "fires": true}
+{"ts": "2026-09-23T00:41:32.861131+00:00", "label": "V-TIMER", "openrouter": 0.94045, "openrouter_limit": 4, "modal": 1.40109, "observed_total": 2.34154, "stage_worst": 0.1606, "projected": 2.50214, "fires": true}
+{"ts": "2026-09-23T01:01:11.530702+00:00", "label": "V-VENDOR", "openrouter": 0.95761, "openrouter_limit": 4, "modal": 1.41887, "observed_total": 2.37649, "stage_worst": 0.0687, "projected": 2.44519, "fires": true}
+{"ts": "2026-09-23T01:24:30.493932+00:00", "label": "V-TRIGGERS", "openrouter": 0.96414, "openrouter_limit": 4, "modal": 1.42795, "observed_total": 2.3921, "stage_worst": 0.2184, "projected": 2.6105, "fires": true}
+{"ts": "2026-09-23T02:07:18.250804+00:00", "label": "V-CONTRACT", "openrouter": 0.96414, "openrouter_limit": 4, "modal": 1.54329, "observed_total": 2.50743, "stage_worst": 0.1797, "projected": 2.68713, "fires": true}
+{"ts": "2026-09-23T02:10:31.371901+00:00", "label": "V-FORCED", "openrouter": 0.98722, "openrouter_limit": 4, "modal": 1.5444, "observed_total": 2.53162, "stage_worst": 0.0384, "projected": 2.57002, "fires": true}
+{"ts": "2026-09-23T02:50:55.356820+00:00", "label": "after diag", "openrouter": 0.98949, "openrouter_limit": 4, "modal": 1.56952, "observed_total": 2.55901}

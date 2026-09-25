@@ -1,0 +1,7 @@
+{"_note": "Declared 2026-09-22 before K1 was re-scored (DESIGN §13 D8). An engineer's labelled example is an utterance tagged with the action it asks for; MASSIVE's intent is that tag. S1 tool names.",
+ "home": {"iot_hue_lightoff": "set_lights_power", "iot_hue_lighton": "set_lights_power",
+          "iot_hue_lightchange": "set_lights_color", "iot_hue_lightdim": "set_lights_brightness",
+          "iot_hue_lightup": "set_lights_brightness", "iot_cleaning": "control_vacuum",
+          "iot_wemo_on": "set_plug_power", "iot_wemo_off": "set_plug_power"},
+ "desk": {"alarm_set": "set_alarm", "alarm_remove": "remove_alarm", "lists_createoradd": "add_list_item",
+          "lists_remove": "remove_list_item", "calendar_set": "create_reminder"}}

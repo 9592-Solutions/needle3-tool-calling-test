@@ -1,0 +1,89 @@
+## 1. Rules that apply to both apps
+
+- **R1 Atomic rule.** A request the app can only partly serve gets no action: `[]`. This includes
+  a supported action plus an unsupported one ("turn off the lights and make coffee"), a supported
+  action with an unsupported qualifier (a schedule, a recurrence, a condition, a duration, a
+  specific fixture the app cannot address, a relative amount the tool cannot express).
+- **R2 Two supported actions** in one request: both calls, as a multiset. The same action applied
+  to two targets is two calls ("turn off the kitchen and bedroom lights").
+- **R3 Negation, quotation, reported speech, hypotheticals, conditionals, questions about state**
+  ("don't turn on the lights", "she said turn on the lights", "what if I turned the lights on",
+  "if it gets dark turn on the lights", "are the lights on?"): `[]`.
+- **R4 Values must be evidenced or defaulted.** A required argument with no span in the request and
+  no declared default: `[]`. A value the app does not have (a room, colour, list the app lacks):
+  `[]`. A number outside the declared range: `[]` (never clamped).
+- **R5 Permitted normalisations** (declared before dev; the scorer applies them to every arm):
+  case and whitespace; number words to digits ("thirty" = 30); "percent" / "per cent" / "%";
+  int/float equality (50 = 50.0); the synonym tables in §2 and §3; for free text (§3), lowercase,
+  punctuation stripped, collapsed whitespace, a leading article or determiner removed
+  (`a, an, the, some, my`) and, for reminder text, a leading `to ` or `about ` removed.
+- **R6 Indirect wording is served when it names a state one tool controls** and exactly one
+  call follows from it: "it's too dark in the kitchen" is about light, so `light_power(kitchen,
+  on)`; "the floor is filthy" is about floors, so `vacuum(start)`. A statement about the user
+  rather than a controlled quantity ("time to sleep", "I'm off to work", "I need a wee") does not
+  name an action: `[]`.
+- **R7 Level implies power.** Where a request asks for a light level AND says "on" ("turn the
+  lights on to 50%"), both `[set_light_level]` and `[light_power on, set_light_level]` are accepted.
+  This is the only place alternative answers exist.
+- **R8 Descriptive words that change nothing** are ignored and do not make a request partial:
+  politeness, fillers and wake words ("olly", "please", "can you"), a reason ("so I can read"), an
+  alarm's purpose ("for my meeting"; alarms carry no label in this app).
+
+## 2. Home app
+
+The home has these rooms and nothing else: living room, kitchen, bedroom, bathroom, hallway,
+study. It has lights in every room (addressed per room, never per fixture), one robot vacuum and
+one smart plug. It has no thermostat, blinds, locks, speakers, TV, fan, coffee maker or oven.
+
+| canonical action | arguments | required | default |
+|---|---|---|---|
+| `light_power` | `room` ∈ ROOMS, `state` ∈ {on, off} | state | room = `here` |
+| `set_light_level` | `room` ∈ ROOMS, `level` integer 1..100 (percent) | level | room = `here` |
+| `set_light_color` | `room` ∈ ROOMS, `color` ∈ COLORS | color | room = `here` |
+| `vacuum` | `command` ∈ {start, stop, dock}, `room` ∈ ROOMS | command | room = `whole house` (start only) |
+| `smart_plug` | `state` ∈ {on, off} | state | none |
+
+**ROOMS** = `living room, kitchen, bedroom, bathroom, hallway, study, whole house, here`.
+Synonyms (the only ones): living room ← lounge, sitting room; bedroom ← bed room, my bedroom;
+hallway ← hall, corridor; whole house ← house, home, the flat, apartment, everywhere, all rooms,
+"all the lights" / "every light" when no room is named; here ← in here, this room, the room,
+my room. A room word outside ROOMS and its synonyms (garage, porch, garden, balcony, den, office,
+dining room, guest room, kids bedroom, basement, patio, game room, media room): `[]` under R4.
+Why `here` exists and is the default: 79 of 130 light requests in MASSIVE `iot` test name no room
+(DESIGN §2); a real home app acts on the room the speaker is in. This is the frozen
+required-argument policy; the room-required alternative is variant V-ROOMREQ (§4).
+
+**Light words**: light, lights, lamp, lamps, lighting, bulbs mean the room's lights. A request that
+picks one fixture out of several ("the left light", "the desk lamp", "the lamp next to the sofa",
+"the porch light") cannot be addressed by this app: `[]` under R1.
+
+**Levels**: integer 1..100, meaning percent. "full", "max", "maximum", "full brightness", "full
+power", "all the way" = 100; "half", "halfway" = 50. A bare number is a percent ("dim to seven" =
+7). 0 or "zero" is out of range: `[]`. A relative amount ("by twenty percent", "a bit", "a little
+more", "brighter", "dim the lights", "turn the lights down", "too bright") has no absolute value, so
+under the main contract it is `[]` (R4). Under V-REL it becomes `adjust_light_level`.
+
+**COLORS** = `red, orange, yellow, green, blue, purple, pink, white, warm white, cool white`.
+Synonyms: purple ← violet; warm white ← warm, warmer, warm light, soft white; cool white ← cool,
+cooler, cold white, daylight. A named colour with a shade modifier maps to the base colour
+("light blue", "dark blue", "bright red", "pale green", "yellowish" → blue, blue, red, green,
+yellow). Anything else is not a colour this app has: `[]` (lavender, turquoise, romantic, random,
+party mode, reading, dark, softer, vibrant, "something nice").
+
+**Vacuum**: vacuum, robot vacuum, roomba, cleaner, hoover, "clean/vacuum/hoover the <room>".
+`start` takes an optional room; `stop` and `dock` ("send it home", "back to its base") take none,
+and the scorer ignores a room argument on stop and dock. A surface instead of a room ("the
+carpet", "the floor", "the rug") is `start` with the default room. A schedule, time, date or
+recurrence ("at one pm", "daily", "tomorrow"): `[]` under R1.
+
+**Smart plug**: plug, smart plug, socket, smart socket, outlet, wemo, power socket, including a
+plug named by what is plugged in ("the rice cooker socket"). A request naming only an appliance
+("turn on the fan", "turn off the TV", "switch on the charger") does not say it is on the plug:
+`[]` under R4.
+
+**Indirect wording** (R6), declared cases: too dark / can't see / dark in here → `light_power(on)`;
+too bright → `[]` under main (no level), `adjust_light_level(down)` under V-REL; floor or carpet
+dirty, dusty, crumbs → `vacuum(start)` (room if named); cold, warm, hot, stuffy → `[]` (no
+thermostat); sleep, bed, leaving, arriving → `[]`.
+
+"turn out the lights" = off. "lights on full" is `set_light_level(100)` with R7.

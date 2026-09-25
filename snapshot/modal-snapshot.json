@@ -1,0 +1,142 @@
+{
+ "hf_repo": "Cactus-Compute/needle3",
+ "hf_revision": "b274efcb211a9eef48c9a88da4b43bd569696a39",
+ "gh_commit": "f189b23ebf34b98bcc8f9ee819249425c6623a32",
+ "cpu_model": "unknown",
+ "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+ "python": "3.12.6 (main, Sep 27 2024, 06:10:12) [GCC 12.2.0]",
+ "files": {
+  "needle3.cact": {
+   "sha256": "c9d915eca282ed42d1a09b143b592adb4cc6744ffe2d294adf5cfc5548170c38",
+   "bytes": 35335380
+  },
+  "linux-x86_64/needle": {
+   "sha256": "5eb163c5ed33bd914c103ef8eba2134c7bb2d97bafafdd69f410a4a3100e8c37",
+   "bytes": 1246880
+  },
+  "linux-x86_64/needle.h": {
+   "sha256": "3aa713942528d944598458cecb4a262f2cc49349bec63355f91df0b159964e55",
+   "bytes": 1187
+  },
+  "config.json": {
+   "sha256": "32f855edcc633c170e260763e00edb50dd9fbba73bcc6d49e7b85861b6eb7d25",
+   "bytes": 1273
+  },
+  "tokenizer/tokenizer.model": {
+   "sha256": "97dfd5666620b19875deba9e55953d312364e7763bd08bee428b94f1b9491b25",
+   "bytes": 126520
+  },
+  "python/cactus_needle-3.0.1-py3-none-manylinux2014_x86_64.whl": {
+   "sha256": "05770ef9a85686583968ea15f62f9ad44217e078efdaa99559d3208bb8a369b0",
+   "bytes": 536871
+  },
+  "README.md": {
+   "sha256": "f63d07574f8ef59f406756aea50f196f839507e5bbdb26d01e5278e42613d4d3",
+   "bytes": 7504
+  }
+ },
+ "libneedle_so_sha256": "978fce130aac08af506b5fe8bb2950da58e9479d0de69d972d9bd69db953568d",
+ "runner_help": {
+  "rc": 0,
+  "stdout": "usage: /opt/needle3/linux-x86_64/needle [--model needle3.cact] [--tools tools.json] [--system system.txt] [--prompt \"...\"] [--serve] [--port N] [--max N] [--depth N] [--threads N] [--forced] [--fail-input-overflow] [--tool-index path]\n  --model needle3.cact     the weights to run (required unless this build embeds them)\n  --tools tools.json       the functions the assistant may call, as a JSON array\n  --tool-index path        file holding this tool set's embeddings, reused when the schemas match\n  --system system.txt      session facts like date, locale, or device\n  --prompt \"...\"           answer one query and exit\n  --max N                  response token limit (default 512)\n  --depth N                endpoint-preserving ladder depth (2..full; default full)\n  --threads N              worker threads (default: the device's fast cores, at most 4)\n  --forced                 benchmark mode: always dispatch a call when tools are offered\n  --fail-input-overflow    refuse a turn that would not fit the context window instead of trimming it\n  --serve [--port N]       run an HTTP server (default port 8080): POST /complete {\"input\":\"...\"}, POST /reset\n",
+  "stderr": ""
+ },
+ "runner_version_strings": [],
+ "runner_needle_strings": [],
+ "libneedle_so_version_strings": [],
+ "libneedle_so_needle_strings": [],
+ "python_pkg": {
+  "file": "/usr/local/lib/python3.12/site-packages/needle/__init__.py",
+  "engine_versions": {
+   "2": "2.0.4",
+   "3": "3.0.1"
+  },
+  "pip_version": "Name: cactus-needle\nVersion: 3.0.1\nSummary: A 14MB foundation tool-calling model for tiny devices: inference, LoRA finetuning, and build.\nHome-page: \nAuthor: \nAuthor-email: \nLicense: Apache-2.0\nLocation: /usr/local/lib/python3.12/site-packages\nRequires: huggingface_hub\nRequired-by: \n"
+ },
+ "vendor_envs": {
+  "smart_home": {
+   "n_tools": 5,
+   "n_cases": 32,
+   "cases_sha256": "a2b6b57399f9f3d3cf6417a3da8d9c84a7ed3c1f850cc733a1cf2b19c354842b",
+   "tools_sha256": "4992b54bedf9644ba122cbf42e0fc96d761a4a9a92f21dbbaf5b016ad4e97cf8",
+   "categories": [
+    "invalid",
+    "irrelevant",
+    "missing",
+    "negation",
+    "parallel",
+    "positive"
+   ]
+  },
+  "media_player": {
+   "n_tools": 5,
+   "n_cases": 32,
+   "cases_sha256": "0c32b4fb7473304af1d1ac41c164ec8dce14061a6c2d5499e8947781c94ddf67",
+   "tools_sha256": "e8fc1d02e8ce51acda6a3cf9e0b79be5784c868f804cc290a532907e5dcbc458",
+   "categories": [
+    "invalid",
+    "irrelevant",
+    "missing",
+    "negation",
+    "parallel",
+    "positive"
+   ]
+  },
+  "productivity": {
+   "n_tools": 5,
+   "n_cases": 32,
+   "cases_sha256": "a484ebd29b9e962dc880f3272f2cd0b4202822e1b724033ac9b87420be144f63",
+   "tools_sha256": "2cd7d36fd7e2e99a27e95f3b2290aac85591c94666e8731f2e3e18a8f2696f85",
+   "categories": [
+    "invalid",
+    "irrelevant",
+    "missing",
+    "negation",
+    "parallel",
+    "positive"
+   ]
+  },
+  "wearable": {
+   "n_tools": 5,
+   "n_cases": 32,
+   "cases_sha256": "0c1901acb5d8af2092ae6fad4404e00c668cfd312de5371d8109cd6a37d92d67",
+   "tools_sha256": "0801ab84d1955edc023c107c7d2827d41fde29b4bbe4f2e6eda497624344998a",
+   "categories": [
+    "invalid",
+    "irrelevant",
+    "missing",
+    "negation",
+    "parallel",
+    "positive"
+   ]
+  },
+  "kitchen_appliance": {
+   "n_tools": 5,
+   "n_cases": 32,
+   "cases_sha256": "eca244a0605b2f2c30382e764c14b47be028dc2c40a11ea01088ad045d8acacf",
+   "tools_sha256": "1eef323d65e794a8b924b62acf03739af64e50ad9626815648355016710016c7",
+   "categories": [
+    "invalid",
+    "irrelevant",
+    "missing",
+    "negation",
+    "parallel",
+    "positive"
+   ]
+  },
+  "data_capture": {
+   "n_tools": 5,
+   "n_cases": 32,
+   "cases_sha256": "d17316d35ae2475ba16611e8b03ef0eb0a377e6a349fc03ce26506a6148edfb1",
+   "tools_sha256": "91a6ec153e47659c5e3ca3397a9dee586a6ed902c877de22a09c9bd5a0102eb0",
+   "categories": [
+    "invalid",
+    "irrelevant",
+    "missing",
+    "negation",
+    "parallel",
+    "positive"
+   ]
+  }
+ }
+}

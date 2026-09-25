@@ -1,0 +1,1313 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "name": "control_lights",
+    "description": "Turn lights on or off in a room, dim them to a brightness percentage, or set their color. A color request means action on. Never use this for blinds, fans, or any other device.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "room": {
+       "type": "string",
+       "enum": [
+        "kitchen",
+        "living_room",
+        "bedroom",
+        "study"
+       ],
+       "description": "The room to control."
+      },
+      "action": {
+       "type": "string",
+       "enum": [
+        "on",
+        "off",
+        "dim"
+       ],
+       "description": "on, off, or dim."
+      },
+      "brightness_percent": {
+       "type": "integer",
+       "description": "Brightness from 0 to 100. A dim request with a number must carry it in this same call.",
+       "minimum": 0,
+       "maximum": 100
+      },
+      "color": {
+       "type": "string",
+       "enum": [
+        "warm white",
+        "cool white",
+        "red",
+        "green",
+        "blue"
+       ],
+       "description": "The light color; include only when the user names one."
+      }
+     },
+     "required": [
+      "room",
+      "action"
+     ]
+    }
+   },
+   {
+    "name": "set_thermostat",
+    "description": "Set the home thermostat to a target temperature in degrees Celsius. This never controls fans, lights, or any other device.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "temperature": {
+       "type": "integer",
+       "description": "Target temperature in degrees Celsius.",
+       "minimum": 10,
+       "maximum": 30
+      }
+     },
+     "required": [
+      "temperature"
+     ]
+    }
+   },
+   {
+    "name": "control_fan",
+    "description": "Turn a room fan on or off, optionally at a stated speed. This never changes the thermostat.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "room": {
+       "type": "string",
+       "enum": [
+        "living_room",
+        "bedroom",
+        "study"
+       ],
+       "description": "The room whose fan to control."
+      },
+      "action": {
+       "type": "string",
+       "enum": [
+        "on",
+        "off"
+       ],
+       "description": "on or off."
+      },
+      "speed": {
+       "type": "string",
+       "enum": [
+        "low",
+        "medium",
+        "high"
+       ],
+       "description": "Fan speed; include only when stated."
+      }
+     },
+     "required": [
+      "room",
+      "action"
+     ]
+    }
+   },
+   {
+    "name": "control_blinds",
+    "description": "Open or close the window blinds in one stated room. Never pick the room yourself. Never use this for lights or the vacuum.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "room": {
+       "type": "string",
+       "enum": [
+        "kitchen",
+        "living_room",
+        "bedroom",
+        "study"
+       ],
+       "description": "The room whose blinds to move."
+      },
+      "action": {
+       "type": "string",
+       "enum": [
+        "open",
+        "close"
+       ],
+       "description": "open or close."
+      }
+     },
+     "required": [
+      "room",
+      "action"
+     ]
+    }
+   },
+   {
+    "name": "start_robot_vacuum",
+    "description": "Start or stop the robot vacuum, or send it back to its dock to charge.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "action": {
+       "type": "string",
+       "enum": [
+        "start",
+        "stop",
+        "dock"
+       ],
+       "description": "start, stop, or dock."
+      },
+      "room": {
+       "type": "string",
+       "enum": [
+        "kitchen",
+        "living_room",
+        "bedroom"
+       ],
+       "description": "The room to clean; include only when starting a run in a stated room."
+      }
+     },
+     "required": [
+      "action"
+     ]
+    }
+   }
+  ],
+  "system": "date: 2026-09-22 Tue 09:58; Map each explicit supported home action to exactly one declared call; never duplicate an action. Do not guess missing targets or values. Unsupported, invalid, ambiguous, and negated requests return no call.",
+  "depth": null,
+  "threads": 1,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpfpn40h1p/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmpfpn40h1p/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmppakvby4z/tools.json",
+    "--threads",
+    "1",
+    "--system",
+    "/tmp/tmppakvby4z/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "smart_home-00",
+   "prompt": "turn on the kitchen lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"kitchen\",\"action\":\"on\"}}],\"suppressed_calls\":[],\"reasoning\":\"'turn on' -> action 'on'; 'kitchen' -> room 'kitchen'; no brightness or color specified.\",\"confidence\":0.9705,\"prefill_tps\":88.9,\"decode_tps\":101.3,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 8.280531451,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "kitchen",
+       "action": "on"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn on' -> action 'on'; 'kitchen' -> room 'kitchen'; no brightness or color specified.",
+    "confidence": 0.9705,
+    "prefill_tps": 88.9,
+    "decode_tps": 101.3,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-01",
+   "prompt": "switch off the lights in the bedroom",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"bedroom\",\"action\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"'off' -> action 'off'; 'bedroom' -> room 'bedroom'; control_lights handles lights control.\",\"confidence\":0.9770,\"prefill_tps\":100.6,\"decode_tps\":104.8,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 16.373233543,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "bedroom",
+       "action": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'off' -> action 'off'; 'bedroom' -> room 'bedroom'; control_lights handles lights control.",
+    "confidence": 0.977,
+    "prefill_tps": 100.6,
+    "decode_tps": 104.8,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-02",
+   "prompt": "dim the living room lights to 35 percent",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"living_room\",\"action\":\"dim\",\"brightness_percent\":35}}],\"suppressed_calls\":[],\"reasoning\":\"room 'living_room' from 'living room'; action 'dim' from 'dim'; brightness_percent 35 from '35 percent'.\",\"confidence\":0.5233,\"prefill_tps\":92.3,\"decode_tps\":109.5,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.9768552669999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "living_room",
+       "action": "dim",
+       "brightness_percent": 35
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'living_room' from 'living room'; action 'dim' from 'dim'; brightness_percent 35 from '35 percent'.",
+    "confidence": 0.5233,
+    "prefill_tps": 92.3,
+    "decode_tps": 109.5,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-03",
+   "prompt": "turn on the study lights in warm white",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"study\",\"action\":\"on\",\"color\":\"warm white\"}}],\"suppressed_calls\":[],\"reasoning\":\"room 'study' from query; action 'on' from 'turn on'; color 'warm white' from query\",\"confidence\":0.9038,\"prefill_tps\":100.6,\"decode_tps\":99.2,\"peak_ram_mb\":80.7,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.589650796000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "study",
+       "action": "on",
+       "color": "warm white"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'study' from query; action 'on' from 'turn on'; color 'warm white' from query",
+    "confidence": 0.9038,
+    "prefill_tps": 100.6,
+    "decode_tps": 99.2,
+    "peak_ram_mb": 80.7,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-04",
+   "prompt": "put the bedroom lights on in blue",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"bedroom\",\"action\":\"on\",\"color\":\"blue\"}}],\"suppressed_calls\":[],\"reasoning\":\"room 'bedroom' from query; action 'on' from 'on'; color 'blue' from query; brightness_percent omitted.\",\"confidence\":0.9554,\"prefill_tps\":90.3,\"decode_tps\":107.0,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.984354708,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "bedroom",
+       "action": "on",
+       "color": "blue"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'bedroom' from query; action 'on' from 'on'; color 'blue' from query; brightness_percent omitted.",
+    "confidence": 0.9554,
+    "prefill_tps": 90.3,
+    "decode_tps": 107.0,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-05",
+   "prompt": "set the thermostat to 22 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_thermostat\",\"arguments\":{\"temperature\":22}}],\"suppressed_calls\":[],\"reasoning\":\"temperature 22 from '22 degrees'\",\"confidence\":1.0000,\"prefill_tps\":100.2,\"decode_tps\":112.5,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.26249262,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_thermostat",
+      "arguments": {
+       "temperature": 22
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "temperature 22 from '22 degrees'",
+    "confidence": 1.0,
+    "prefill_tps": 100.2,
+    "decode_tps": 112.5,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-06",
+   "prompt": "warm the house to 24 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_thermostat\",\"arguments\":{\"temperature\":24}}],\"suppressed_calls\":[],\"reasoning\":\"'warm' -> color 'warm white'; '24 degrees' -> temperature 24; set_thermostat tool.\",\"confidence\":1.0000,\"prefill_tps\":84.2,\"decode_tps\":108.6,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.803886145,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_thermostat",
+      "arguments": {
+       "temperature": 24
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'warm' -> color 'warm white'; '24 degrees' -> temperature 24; set_thermostat tool.",
+    "confidence": 1.0,
+    "prefill_tps": 84.2,
+    "decode_tps": 108.6,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-07",
+   "prompt": "cool the whole home down to 19 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_thermostat\",\"arguments\":{\"temperature\":19}}],\"suppressed_calls\":[],\"reasoning\":\"'cool the whole home down to 19 degrees' -> set_thermostat temperature 19, no other params\",\"confidence\":1.0000,\"prefill_tps\":100.9,\"decode_tps\":113.6,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.392360561,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_thermostat",
+      "arguments": {
+       "temperature": 19
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'cool the whole home down to 19 degrees' -> set_thermostat temperature 19, no other params",
+    "confidence": 1.0,
+    "prefill_tps": 100.9,
+    "decode_tps": 113.6,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-08",
+   "prompt": "turn on the bedroom fan",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_fan\",\"arguments\":{\"room\":\"bedroom\",\"action\":\"on\"}}],\"suppressed_calls\":[],\"reasoning\":\"room 'bedroom' from query; action 'on' from 'turn on'; speed omitted.\",\"confidence\":0.9710,\"prefill_tps\":87.7,\"decode_tps\":98.6,\"peak_ram_mb\":81.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.224844363999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_fan",
+      "arguments": {
+       "room": "bedroom",
+       "action": "on"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'bedroom' from query; action 'on' from 'turn on'; speed omitted.",
+    "confidence": 0.971,
+    "prefill_tps": 87.7,
+    "decode_tps": 98.6,
+    "peak_ram_mb": 81.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-09",
+   "prompt": "switch the study fan off",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_fan\",\"arguments\":{\"room\":\"study\",\"action\":\"off\"}}],\"suppressed_calls\":[],\"reasoning\":\"room 'study' from query; action 'off' from 'off'\",\"confidence\":0.9935,\"prefill_tps\":101.2,\"decode_tps\":91.4,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.478952091000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_fan",
+      "arguments": {
+       "room": "study",
+       "action": "off"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'study' from query; action 'off' from 'off'",
+    "confidence": 0.9935,
+    "prefill_tps": 101.2,
+    "decode_tps": 91.4,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-10",
+   "prompt": "turn on the living room fan at high speed",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_fan\",\"arguments\":{\"room\":\"living_room\",\"action\":\"on\",\"speed\":\"high\"}}],\"suppressed_calls\":[],\"reasoning\":\"room 'living_room' from 'living room'; action 'on' from 'turn on'; speed 'high' from 'high speed'\",\"confidence\":1.0000,\"prefill_tps\":87.2,\"decode_tps\":97.3,\"peak_ram_mb\":81.1,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.245199143000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_fan",
+      "arguments": {
+       "room": "living_room",
+       "action": "on",
+       "speed": "high"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'living_room' from 'living room'; action 'on' from 'turn on'; speed 'high' from 'high speed'",
+    "confidence": 1.0,
+    "prefill_tps": 87.2,
+    "decode_tps": 97.3,
+    "peak_ram_mb": 81.1,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-11",
+   "prompt": "run the study fan on low",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_fan\",\"arguments\":{\"room\":\"study\",\"action\":\"on\",\"speed\":\"low\"}}],\"suppressed_calls\":[],\"reasoning\":\"room 'study' from query; action 'on' from 'on'; speed 'low' from 'low'\",\"confidence\":0.9908,\"prefill_tps\":101.6,\"decode_tps\":100.9,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.5782098399999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_fan",
+      "arguments": {
+       "room": "study",
+       "action": "on",
+       "speed": "low"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'study' from query; action 'on' from 'on'; speed 'low' from 'low'",
+    "confidence": 0.9908,
+    "prefill_tps": 101.6,
+    "decode_tps": 100.9,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-12",
+   "prompt": "open the kitchen blinds",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_blinds\",\"arguments\":{\"room\":\"kitchen\",\"action\":\"open\"}}],\"suppressed_calls\":[],\"reasoning\":\"'open' -> action 'open'; 'kitchen' -> room 'kitchen'\",\"confidence\":0.9855,\"prefill_tps\":86.8,\"decode_tps\":103.7,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.923993672000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_blinds",
+      "arguments": {
+       "room": "kitchen",
+       "action": "open"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'open' -> action 'open'; 'kitchen' -> room 'kitchen'",
+    "confidence": 0.9855,
+    "prefill_tps": 86.8,
+    "decode_tps": 103.7,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-13",
+   "prompt": "close the blinds in the living room",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_blinds\",\"arguments\":{\"room\":\"living_room\",\"action\":\"close\"}}],\"suppressed_calls\":[],\"reasoning\":\"'close' -> action 'close'; 'living room' -> room 'living_room'\",\"confidence\":0.9941,\"prefill_tps\":100.3,\"decode_tps\":91.9,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.516103687000005,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_blinds",
+      "arguments": {
+       "room": "living_room",
+       "action": "close"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'close' -> action 'close'; 'living room' -> room 'living_room'",
+    "confidence": 0.9941,
+    "prefill_tps": 100.3,
+    "decode_tps": 91.9,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-14",
+   "prompt": "open up the bedroom blinds",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_blinds\",\"arguments\":{\"room\":\"bedroom\",\"action\":\"open\"}}],\"suppressed_calls\":[],\"reasoning\":\"'open up' -> action 'open'; 'bedroom' -> room 'bedroom'.\",\"confidence\":0.9856,\"prefill_tps\":85.4,\"decode_tps\":100.0,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.985809090000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_blinds",
+      "arguments": {
+       "room": "bedroom",
+       "action": "open"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'open up' -> action 'open'; 'bedroom' -> room 'bedroom'.",
+    "confidence": 0.9856,
+    "prefill_tps": 85.4,
+    "decode_tps": 100.0,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-15",
+   "prompt": "start the robot vacuum",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_robot_vacuum\",\"arguments\":{\"action\":\"start\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start the robot vacuum' -> action 'start'. No room specified, so room omitted.\",\"confidence\":0.9966,\"prefill_tps\":101.1,\"decode_tps\":99.9,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.436551537999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_robot_vacuum",
+      "arguments": {
+       "action": "start"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start the robot vacuum' -> action 'start'. No room specified, so room omitted.",
+    "confidence": 0.9966,
+    "prefill_tps": 101.1,
+    "decode_tps": 99.9,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-16",
+   "prompt": "start vacuuming the bedroom",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_robot_vacuum\",\"arguments\":{\"action\":\"start\",\"room\":\"bedroom\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start vacuuming' -> action 'start'; 'bedroom' -> room 'bedroom'.\",\"confidence\":0.9612,\"prefill_tps\":84.8,\"decode_tps\":94.8,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.2101480289999955,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_robot_vacuum",
+      "arguments": {
+       "action": "start",
+       "room": "bedroom"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start vacuuming' -> action 'start'; 'bedroom' -> room 'bedroom'.",
+    "confidence": 0.9612,
+    "prefill_tps": 84.8,
+    "decode_tps": 94.8,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-17",
+   "prompt": "stop the robot vacuum",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_robot_vacuum\",\"arguments\":{\"action\":\"stop\"}}],\"suppressed_calls\":[],\"reasoning\":\"'stop the robot vacuum' -> action 'stop'. No room specified, so room omitted.\",\"confidence\":0.9994,\"prefill_tps\":101.4,\"decode_tps\":106.4,\"peak_ram_mb\":80.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.358020238000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_robot_vacuum",
+      "arguments": {
+       "action": "stop"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'stop the robot vacuum' -> action 'stop'. No room specified, so room omitted.",
+    "confidence": 0.9994,
+    "prefill_tps": 101.4,
+    "decode_tps": 106.4,
+    "peak_ram_mb": 80.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-18",
+   "prompt": "turn on the lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"living_room\",\"action\":\"on\"}}],\"reasoning\":\"'turn on the lights' -> action 'on'. No room specified, so room 'living_room' default.\",\"confidence\":0.9922,\"prefill_tps\":80.6,\"decode_tps\":99.2,\"peak_ram_mb\":81.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.278548102000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "living_room",
+       "action": "on"
+      }
+     }
+    ],
+    "reasoning": "'turn on the lights' -> action 'on'. No room specified, so room 'living_room' default.",
+    "confidence": 0.9922,
+    "prefill_tps": 80.6,
+    "decode_tps": 99.2,
+    "peak_ram_mb": 81.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-19",
+   "prompt": "set the thermostat to something comfortable",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_thermostat\",\"arguments\":{\"temperature\":25}}],\"reasoning\":\"'comfortable' implies lowering temperature; set_thermostat with temperature 75 from 'comfortable'\",\"confidence\":0.0000,\"prefill_tps\":100.3,\"decode_tps\":60.2,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[\"set_thermostat.temperature\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.781568653000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_thermostat",
+      "arguments": {
+       "temperature": 25
+      }
+     }
+    ],
+    "reasoning": "'comfortable' implies lowering temperature; set_thermostat with temperature 75 from 'comfortable'",
+    "confidence": 0.0,
+    "prefill_tps": 100.3,
+    "decode_tps": 60.2,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [
+      "set_thermostat.temperature"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-20",
+   "prompt": "open the blinds",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"control_blinds\",\"arguments\":{\"room\":\"living_room\",\"action\":\"open\"}}],\"reasoning\":\"'open' -> action 'open'; 'blinds' -> control_blinds; room omitted as not specified\",\"confidence\":0.8144,\"prefill_tps\":79.8,\"decode_tps\":95.3,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.324764947000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "control_blinds",
+      "arguments": {
+       "room": "living_room",
+       "action": "open"
+      }
+     }
+    ],
+    "reasoning": "'open' -> action 'open'; 'blinds' -> control_blinds; room omitted as not specified",
+    "confidence": 0.8144,
+    "prefill_tps": 79.8,
+    "decode_tps": 95.3,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-21",
+   "prompt": "turn the fan on",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"control_fan\",\"arguments\":{\"room\":\"living_room\",\"action\":\"on\"}}],\"reasoning\":\"'fan on' -> action 'on'. No room specified, so room 'living_room' default.\",\"confidence\":0.9884,\"prefill_tps\":101.1,\"decode_tps\":107.2,\"peak_ram_mb\":80.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.473591886000008,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "control_fan",
+      "arguments": {
+       "room": "living_room",
+       "action": "on"
+      }
+     }
+    ],
+    "reasoning": "'fan on' -> action 'on'. No room specified, so room 'living_room' default.",
+    "confidence": 0.9884,
+    "prefill_tps": 101.1,
+    "decode_tps": 107.2,
+    "peak_ram_mb": 80.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-22",
+   "prompt": "lock the back door",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_robot_vacuum\",\"arguments\":{\"action\":\"dock\"}}],\"suppressed_calls\":[],\"reasoning\":\"'lock the back door' means return robot vacuum to dock. action 'dock'.\",\"confidence\":0.9207,\"prefill_tps\":77.8,\"decode_tps\":99.9,\"peak_ram_mb\":81.3,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.3374948889999985,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_robot_vacuum",
+      "arguments": {
+       "action": "dock"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'lock the back door' means return robot vacuum to dock. action 'dock'.",
+    "confidence": 0.9207,
+    "prefill_tps": 77.8,
+    "decode_tps": 99.9,
+    "peak_ram_mb": 81.3,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-23",
+   "prompt": "check whether the robot vacuum is charging",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_robot_vacuum\",\"arguments\":{\"action\":\"start\",\"room\":\"living_room\"}}],\"suppressed_calls\":[],\"reasoning\":\"'check whether the robot vacuum is charging' -> start_robot_vacuum action 'start' room 'living_room' (implied from 'robot vacuum').\",\"confidence\":1.0000,\"prefill_tps\":99.0,\"decode_tps\":107.1,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.655405905999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_robot_vacuum",
+      "arguments": {
+       "action": "start",
+       "room": "living_room"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'check whether the robot vacuum is charging' -> start_robot_vacuum action 'start' room 'living_room' (implied from 'robot vacuum').",
+    "confidence": 1.0,
+    "prefill_tps": 99.0,
+    "decode_tps": 107.1,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-24",
+   "prompt": "play some jazz in the living room",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_blinds\",\"arguments\":{\"room\":\"living_room\",\"action\":\"open\"}}],\"suppressed_calls\":[],\"reasoning\":\"'play some jazz' -> action 'play', 'living room' -> room 'living_room'.\",\"confidence\":0.7295,\"prefill_tps\":81.7,\"decode_tps\":98.7,\"peak_ram_mb\":80.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.5522981410000085,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_blinds",
+      "arguments": {
+       "room": "living_room",
+       "action": "open"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'play some jazz' -> action 'play', 'living room' -> room 'living_room'.",
+    "confidence": 0.7295,
+    "prefill_tps": 81.7,
+    "decode_tps": 98.7,
+    "peak_ram_mb": 80.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-25",
+   "prompt": "don't turn on the study lights",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"study\",\"action\":\"on\"}}],\"suppressed_calls\":[],\"reasoning\":\"Prohibition on turning on study lights. Alternative: control_lights with room 'study', action 'on'.\",\"confidence\":0.9749,\"prefill_tps\":100.0,\"decode_tps\":103.0,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.612350019999994,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "study",
+       "action": "on"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Prohibition on turning on study lights. Alternative: control_lights with room 'study', action 'on'.",
+    "confidence": 0.9749,
+    "prefill_tps": 100.0,
+    "decode_tps": 103.0,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "smart_home-26",
+   "prompt": "do not close the living room blinds",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_blinds\",\"arguments\":{\"room\":\"living_room\",\"action\":\"close\"}}],\"suppressed_calls\":[],\"reasoning\":\"Prohibition on closeing blinds. Alternative request: close living room blinds. room 'living_room', action 'close'.\",\"confidence\":0.9966,\"prefill_tps\":83.3,\"decode_tps\":102.8,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 6.1104415260000025,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_blinds",
+      "arguments": {
+       "room": "living_room",
+       "action": "close"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "Prohibition on closeing blinds. Alternative request: close living room blinds. room 'living_room', action 'close'.",
+    "confidence": 0.9966,
+    "prefill_tps": 83.3,
+    "decode_tps": 102.8,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "smart_home-27",
+   "prompt": "never run the vacuum while I am on a call",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"start_robot_vacuum\",\"arguments\":{\"action\":\"start\"}}],\"reasoning\":\"'never run the vacuum' -> start_robot_vacuum action 'start'. No room specified, so omit optional room.\",\"confidence\":1.0000,\"prefill_tps\":98.2,\"decode_tps\":104.3,\"peak_ram_mb\":80.5,\"validation\":{\"ungrounded\":[],\"negation\":true}}\n",
+   "stderr": "",
+   "wall_s": 5.635339407999993,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "start_robot_vacuum",
+      "arguments": {
+       "action": "start"
+      }
+     }
+    ],
+    "reasoning": "'never run the vacuum' -> start_robot_vacuum action 'start'. No room specified, so omit optional room.",
+    "confidence": 1.0,
+    "prefill_tps": 98.2,
+    "decode_tps": 104.3,
+    "peak_ram_mb": 80.5,
+    "validation": {
+     "ungrounded": [],
+     "negation": true
+    }
+   }
+  },
+  {
+   "id": "smart_home-28",
+   "prompt": "dim the bedroom lights to 150 percent",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"bedroom\",\"action\":\"dim\"}}],\"suppressed_calls\":[],\"reasoning\":\"room 'bedroom' from query; action 'dim' from 'dim'; brightness_percent 150 from '150 percent'.\",\"confidence\":0.6766,\"prefill_tps\":88.4,\"decode_tps\":99.9,\"peak_ram_mb\":81.8,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.289342120000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "bedroom",
+       "action": "dim"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "room 'bedroom' from query; action 'dim' from 'dim'; brightness_percent 150 from '150 percent'.",
+    "confidence": 0.6766,
+    "prefill_tps": 88.4,
+    "decode_tps": 99.9,
+    "peak_ram_mb": 81.8,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-29",
+   "prompt": "set the thermostat to 40 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"set_thermostat\",\"arguments\":{\"temperature\":20}}],\"reasoning\":\"'40 degrees' -> temperature 40.\",\"confidence\":0.0000,\"prefill_tps\":99.5,\"decode_tps\":48.7,\"peak_ram_mb\":80.1,\"validation\":{\"ungrounded\":[\"set_thermostat.temperature\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 5.59858697899999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "set_thermostat",
+      "arguments": {
+       "temperature": 20
+      }
+     }
+    ],
+    "reasoning": "'40 degrees' -> temperature 40.",
+    "confidence": 0.0,
+    "prefill_tps": 99.5,
+    "decode_tps": 48.7,
+    "peak_ram_mb": 80.1,
+    "validation": {
+     "ungrounded": [
+      "set_thermostat.temperature"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-30",
+   "prompt": "turn off the bedroom lights and set the thermostat to 18 degrees",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"control_lights\",\"arguments\":{\"room\":\"bedroom\",\"action\":\"off\"}},{\"name\":\"set_thermostat\",\"arguments\":{\"temperature\":18}}],\"suppressed_calls\":[],\"reasoning\":\"'turn off the bedroom lights' -> room 'bedroom', action 'off'; 'set the thermostat to 18 degrees' -> temperature 18\",\"confidence\":0.9604,\"prefill_tps\":90.3,\"decode_tps\":100.8,\"peak_ram_mb\":81.2,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.320560842000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "control_lights",
+      "arguments": {
+       "room": "bedroom",
+       "action": "off"
+      }
+     },
+     {
+      "name": "set_thermostat",
+      "arguments": {
+       "temperature": 18
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'turn off the bedroom lights' -> room 'bedroom', action 'off'; 'set the thermostat to 18 degrees' -> temperature 18",
+    "confidence": 0.9604,
+    "prefill_tps": 90.3,
+    "decode_tps": 100.8,
+    "peak_ram_mb": 81.2,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "smart_home-31",
+   "prompt": "start the vacuum in the kitchen and open the living room blinds",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"start_robot_vacuum\",\"arguments\":{\"action\":\"start\",\"room\":\"kitchen\"}},{\"name\":\"control_blinds\",\"arguments\":{\"room\":\"kitchen\",\"action\":\"open\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start the vacuum in the kitchen' -> action 'start', room 'kitchen'; 'open the living room blinds' -> room 'living_room', action 'open'\",\"confidence\":0.8913,\"prefill_tps\":97.9,\"decode_tps\":95.8,\"peak_ram_mb\":80.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 6.033958612000006,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "start_robot_vacuum",
+      "arguments": {
+       "action": "start",
+       "room": "kitchen"
+      }
+     },
+     {
+      "name": "control_blinds",
+      "arguments": {
+       "room": "kitchen",
+       "action": "open"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start the vacuum in the kitchen' -> action 'start', room 'kitchen'; 'open the living room blinds' -> room 'living_room', action 'open'",
+    "confidence": 0.8913,
+    "prefill_tps": 97.9,
+    "decode_tps": 95.8,
+    "peak_ram_mb": 80.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

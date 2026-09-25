@@ -1,0 +1,25 @@
+{"id": "n3-d3c0a30757", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-9e8085d62c", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-d7131cc7a3", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-b968d302ee", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-667864d577", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-44447edfdf", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-705663fe0f", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-a8631b78d7", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-0322c1a57b", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-d869f681b8", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-040bbb5403", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-794737cb00", "arm": "hassil", "schema": "S1-home", "pred": [{"name": "set_lights_power", "arguments": {"room": "whole house", "power": "off"}}], "pred_canonical": [{"action": "light_power", "args": {"room": "whole house", "state": "off"}}]}
+{"id": "n3-b8353afad0", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-b4311aec4a", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-829f327edd", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-36651e0dbc", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-bab4a8336c", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-1a55c6a523", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-ba9b1b709b", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-bcf6bf795b", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-3fa15dc4e5", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-867fb797ba", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-a2a17023ee", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-396ad3ca0a", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}
+{"id": "n3-bb29d43ca3", "arm": "hassil", "schema": "S1-home", "pred": [], "pred_canonical": []}

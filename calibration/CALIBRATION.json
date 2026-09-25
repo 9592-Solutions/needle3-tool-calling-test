@@ -1,0 +1,2607 @@
+{
+ "rule": {
+  "ceiling": 0.05,
+  "min_accepted": 20,
+  "risk": "wrong executions / executed",
+  "choose": "lowest observed threshold meeting both"
+ },
+ "cells": {
+  "S1-home": {
+   "n": 120,
+   "strata": {
+    "A1": 24,
+    "A2": 11,
+    "A3": 1,
+    "N1": 51,
+    "N2": 7,
+    "N3": 26
+   },
+   "outcomes_proposal": {
+    "wrong_call": 51,
+    "correct_action": 17,
+    "correct_nonaction": 43,
+    "needless_refusal": 1,
+    "technical_failure": 8
+   },
+   "empty_kinds": {
+    "engine_suppressed": 31,
+    "validation_flagged": 7,
+    "model_empty": 14
+   },
+   "returned": 68,
+   "no_gate": {
+    "threshold": -1.0,
+    "executed": 68,
+    "wrong_executed": 51,
+    "correct_executed": 17,
+    "risk": 0.75,
+    "risk_wilson95": [
+     0.6356,
+     0.8377
+    ],
+    "coverage_all": 0.5667,
+    "wrong_exec_per_request": 0.425,
+    "deferred_returned": 0
+   },
+   "operating_point": null,
+   "lowest_risk_with_20_accepted": {
+    "threshold": 0.902,
+    "executed": 48,
+    "wrong_executed": 33,
+    "correct_executed": 15,
+    "risk": 0.6875,
+    "risk_wilson95": [
+     0.5467,
+     0.8005
+    ],
+    "coverage_all": 0.4,
+    "wrong_exec_per_request": 0.275,
+    "deferred_returned": 20
+   },
+   "auroc_correct_vs_wrong_among_returned": 0.5663,
+   "reliability": [
+    {
+     "bin": [
+      0.0,
+      0.1
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.1,
+      0.2
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.2,
+      0.3
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.3,
+      0.4
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.4,
+      0.5
+     ],
+     "n": 3,
+     "correct": 0,
+     "mean_conf": 0.4365,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.5615
+     ]
+    },
+    {
+     "bin": [
+      0.5,
+      0.6
+     ],
+     "n": 3,
+     "correct": 0,
+     "mean_conf": 0.5508,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.5615
+     ]
+    },
+    {
+     "bin": [
+      0.6,
+      0.7
+     ],
+     "n": 1,
+     "correct": 1,
+     "mean_conf": 0.6921,
+     "acc": 1.0,
+     "wilson95": [
+      0.2065,
+      1
+     ]
+    },
+    {
+     "bin": [
+      0.7,
+      0.8
+     ],
+     "n": 8,
+     "correct": 0,
+     "mean_conf": 0.7493,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.3244
+     ]
+    },
+    {
+     "bin": [
+      0.8,
+      0.9
+     ],
+     "n": 5,
+     "correct": 1,
+     "mean_conf": 0.8423,
+     "acc": 0.2,
+     "wilson95": [
+      0.0362,
+      0.6245
+     ]
+    },
+    {
+     "bin": [
+      0.9,
+      1.0
+     ],
+     "n": 48,
+     "correct": 15,
+     "mean_conf": 0.9734,
+     "acc": 0.3125,
+     "wilson95": [
+      0.1995,
+      0.4533
+     ]
+    }
+   ],
+   "curve": [
+    {
+     "threshold": 0.4015,
+     "executed": 68,
+     "wrong_executed": 51,
+     "correct_executed": 17,
+     "risk": 0.75,
+     "risk_wilson95": [
+      0.6356,
+      0.8377
+     ],
+     "coverage_all": 0.5667,
+     "wrong_exec_per_request": 0.425,
+     "deferred_returned": 0
+    },
+    {
+     "threshold": 0.4295,
+     "executed": 67,
+     "wrong_executed": 50,
+     "correct_executed": 17,
+     "risk": 0.7463,
+     "risk_wilson95": [
+      0.6307,
+      0.8351
+     ],
+     "coverage_all": 0.5583,
+     "wrong_exec_per_request": 0.4167,
+     "deferred_returned": 1
+    },
+    {
+     "threshold": 0.4784,
+     "executed": 66,
+     "wrong_executed": 49,
+     "correct_executed": 17,
+     "risk": 0.7424,
+     "risk_wilson95": [
+      0.6257,
+      0.8325
+     ],
+     "coverage_all": 0.55,
+     "wrong_exec_per_request": 0.4083,
+     "deferred_returned": 2
+    },
+    {
+     "threshold": 0.5409,
+     "executed": 65,
+     "wrong_executed": 48,
+     "correct_executed": 17,
+     "risk": 0.7385,
+     "risk_wilson95": [
+      0.6205,
+      0.8298
+     ],
+     "coverage_all": 0.5417,
+     "wrong_exec_per_request": 0.4,
+     "deferred_returned": 3
+    },
+    {
+     "threshold": 0.5426,
+     "executed": 64,
+     "wrong_executed": 47,
+     "correct_executed": 17,
+     "risk": 0.7344,
+     "risk_wilson95": [
+      0.6152,
+      0.827
+     ],
+     "coverage_all": 0.5333,
+     "wrong_exec_per_request": 0.3917,
+     "deferred_returned": 4
+    },
+    {
+     "threshold": 0.5688,
+     "executed": 63,
+     "wrong_executed": 46,
+     "correct_executed": 17,
+     "risk": 0.7302,
+     "risk_wilson95": [
+      0.6097,
+      0.8242
+     ],
+     "coverage_all": 0.525,
+     "wrong_exec_per_request": 0.3833,
+     "deferred_returned": 5
+    },
+    {
+     "threshold": 0.6921,
+     "executed": 62,
+     "wrong_executed": 45,
+     "correct_executed": 17,
+     "risk": 0.7258,
+     "risk_wilson95": [
+      0.6041,
+      0.8212
+     ],
+     "coverage_all": 0.5167,
+     "wrong_exec_per_request": 0.375,
+     "deferred_returned": 6
+    },
+    {
+     "threshold": 0.7173,
+     "executed": 61,
+     "wrong_executed": 45,
+     "correct_executed": 16,
+     "risk": 0.7377,
+     "risk_wilson95": [
+      0.6156,
+      0.8316
+     ],
+     "coverage_all": 0.5083,
+     "wrong_exec_per_request": 0.375,
+     "deferred_returned": 7
+    },
+    {
+     "threshold": 0.7199,
+     "executed": 60,
+     "wrong_executed": 44,
+     "correct_executed": 16,
+     "risk": 0.7333,
+     "risk_wilson95": [
+      0.6099,
+      0.8287
+     ],
+     "coverage_all": 0.5,
+     "wrong_exec_per_request": 0.3667,
+     "deferred_returned": 8
+    },
+    {
+     "threshold": 0.7326,
+     "executed": 59,
+     "wrong_executed": 43,
+     "correct_executed": 16,
+     "risk": 0.7288,
+     "risk_wilson95": [
+      0.604,
+      0.8256
+     ],
+     "coverage_all": 0.4917,
+     "wrong_exec_per_request": 0.3583,
+     "deferred_returned": 9
+    },
+    {
+     "threshold": 0.7438,
+     "executed": 58,
+     "wrong_executed": 42,
+     "correct_executed": 16,
+     "risk": 0.7241,
+     "risk_wilson95": [
+      0.598,
+      0.8225
+     ],
+     "coverage_all": 0.4833,
+     "wrong_exec_per_request": 0.35,
+     "deferred_returned": 10
+    },
+    {
+     "threshold": 0.7547,
+     "executed": 57,
+     "wrong_executed": 41,
+     "correct_executed": 16,
+     "risk": 0.7193,
+     "risk_wilson95": [
+      0.5917,
+      0.8192
+     ],
+     "coverage_all": 0.475,
+     "wrong_exec_per_request": 0.3417,
+     "deferred_returned": 11
+    },
+    {
+     "threshold": 0.7599,
+     "executed": 56,
+     "wrong_executed": 40,
+     "correct_executed": 16,
+     "risk": 0.7143,
+     "risk_wilson95": [
+      0.5852,
+      0.8158
+     ],
+     "coverage_all": 0.4667,
+     "wrong_exec_per_request": 0.3333,
+     "deferred_returned": 12
+    },
+    {
+     "threshold": 0.78,
+     "executed": 55,
+     "wrong_executed": 39,
+     "correct_executed": 16,
+     "risk": 0.7091,
+     "risk_wilson95": [
+      0.5786,
+      0.8123
+     ],
+     "coverage_all": 0.4583,
+     "wrong_exec_per_request": 0.325,
+     "deferred_returned": 13
+    },
+    {
+     "threshold": 0.7859,
+     "executed": 54,
+     "wrong_executed": 38,
+     "correct_executed": 16,
+     "risk": 0.7037,
+     "risk_wilson95": [
+      0.5717,
+      0.8086
+     ],
+     "coverage_all": 0.45,
+     "wrong_exec_per_request": 0.3167,
+     "deferred_returned": 14
+    },
+    {
+     "threshold": 0.826,
+     "executed": 53,
+     "wrong_executed": 37,
+     "correct_executed": 16,
+     "risk": 0.6981,
+     "risk_wilson95": [
+      0.5646,
+      0.8048
+     ],
+     "coverage_all": 0.4417,
+     "wrong_exec_per_request": 0.3083,
+     "deferred_returned": 15
+    },
+    {
+     "threshold": 0.8313,
+     "executed": 52,
+     "wrong_executed": 37,
+     "correct_executed": 15,
+     "risk": 0.7115,
+     "risk_wilson95": [
+      0.5773,
+      0.8167
+     ],
+     "coverage_all": 0.4333,
+     "wrong_exec_per_request": 0.3083,
+     "deferred_returned": 16
+    },
+    {
+     "threshold": 0.8381,
+     "executed": 51,
+     "wrong_executed": 36,
+     "correct_executed": 15,
+     "risk": 0.7059,
+     "risk_wilson95": [
+      0.57,
+      0.8129
+     ],
+     "coverage_all": 0.425,
+     "wrong_exec_per_request": 0.3,
+     "deferred_returned": 17
+    },
+    {
+     "threshold": 0.8394,
+     "executed": 50,
+     "wrong_executed": 35,
+     "correct_executed": 15,
+     "risk": 0.7,
+     "risk_wilson95": [
+      0.5625,
+      0.809
+     ],
+     "coverage_all": 0.4167,
+     "wrong_exec_per_request": 0.2917,
+     "deferred_returned": 18
+    },
+    {
+     "threshold": 0.8766,
+     "executed": 49,
+     "wrong_executed": 34,
+     "correct_executed": 15,
+     "risk": 0.6939,
+     "risk_wilson95": [
+      0.5547,
+      0.8048
+     ],
+     "coverage_all": 0.4083,
+     "wrong_exec_per_request": 0.2833,
+     "deferred_returned": 19
+    },
+    {
+     "threshold": 0.902,
+     "executed": 48,
+     "wrong_executed": 33,
+     "correct_executed": 15,
+     "risk": 0.6875,
+     "risk_wilson95": [
+      0.5467,
+      0.8005
+     ],
+     "coverage_all": 0.4,
+     "wrong_exec_per_request": 0.275,
+     "deferred_returned": 20
+    },
+    {
+     "threshold": 0.9046,
+     "executed": 47,
+     "wrong_executed": 33,
+     "correct_executed": 14,
+     "risk": 0.7021,
+     "risk_wilson95": [
+      0.5602,
+      0.8135
+     ],
+     "coverage_all": 0.3917,
+     "wrong_exec_per_request": 0.275,
+     "deferred_returned": 21
+    },
+    {
+     "threshold": 0.9074,
+     "executed": 46,
+     "wrong_executed": 33,
+     "correct_executed": 13,
+     "risk": 0.7174,
+     "risk_wilson95": [
+      0.5745,
+      0.8268
+     ],
+     "coverage_all": 0.3833,
+     "wrong_exec_per_request": 0.275,
+     "deferred_returned": 22
+    },
+    {
+     "threshold": 0.9075,
+     "executed": 45,
+     "wrong_executed": 33,
+     "correct_executed": 12,
+     "risk": 0.7333,
+     "risk_wilson95": [
+      0.5896,
+      0.8404
+     ],
+     "coverage_all": 0.375,
+     "wrong_exec_per_request": 0.275,
+     "deferred_returned": 23
+    },
+    {
+     "threshold": 0.9204,
+     "executed": 44,
+     "wrong_executed": 32,
+     "correct_executed": 12,
+     "risk": 0.7273,
+     "risk_wilson95": [
+      0.5815,
+      0.8365
+     ],
+     "coverage_all": 0.3667,
+     "wrong_exec_per_request": 0.2667,
+     "deferred_returned": 24
+    },
+    {
+     "threshold": 0.9218,
+     "executed": 43,
+     "wrong_executed": 32,
+     "correct_executed": 11,
+     "risk": 0.7442,
+     "risk_wilson95": [
+      0.5976,
+      0.8507
+     ],
+     "coverage_all": 0.3583,
+     "wrong_exec_per_request": 0.2667,
+     "deferred_returned": 25
+    },
+    {
+     "threshold": 0.9223,
+     "executed": 42,
+     "wrong_executed": 31,
+     "correct_executed": 11,
+     "risk": 0.7381,
+     "risk_wilson95": [
+      0.5893,
+      0.847
+     ],
+     "coverage_all": 0.35,
+     "wrong_exec_per_request": 0.2583,
+     "deferred_returned": 26
+    },
+    {
+     "threshold": 0.9335,
+     "executed": 41,
+     "wrong_executed": 30,
+     "correct_executed": 11,
+     "risk": 0.7317,
+     "risk_wilson95": [
+      0.5807,
+      0.8431
+     ],
+     "coverage_all": 0.3417,
+     "wrong_exec_per_request": 0.25,
+     "deferred_returned": 27
+    },
+    {
+     "threshold": 0.9344,
+     "executed": 40,
+     "wrong_executed": 29,
+     "correct_executed": 11,
+     "risk": 0.725,
+     "risk_wilson95": [
+      0.5716,
+      0.8389
+     ],
+     "coverage_all": 0.3333,
+     "wrong_exec_per_request": 0.2417,
+     "deferred_returned": 28
+    },
+    {
+     "threshold": 0.9377,
+     "executed": 39,
+     "wrong_executed": 28,
+     "correct_executed": 11,
+     "risk": 0.7179,
+     "risk_wilson95": [
+      0.5622,
+      0.8346
+     ],
+     "coverage_all": 0.325,
+     "wrong_exec_per_request": 0.2333,
+     "deferred_returned": 29
+    },
+    {
+     "threshold": 0.9398,
+     "executed": 38,
+     "wrong_executed": 28,
+     "correct_executed": 10,
+     "risk": 0.7368,
+     "risk_wilson95": [
+      0.5799,
+      0.8503
+     ],
+     "coverage_all": 0.3167,
+     "wrong_exec_per_request": 0.2333,
+     "deferred_returned": 30
+    },
+    {
+     "threshold": 0.9571,
+     "executed": 37,
+     "wrong_executed": 28,
+     "correct_executed": 9,
+     "risk": 0.7568,
+     "risk_wilson95": [
+      0.5988,
+      0.8664
+     ],
+     "coverage_all": 0.3083,
+     "wrong_exec_per_request": 0.2333,
+     "deferred_returned": 31
+    },
+    {
+     "threshold": 0.9629,
+     "executed": 36,
+     "wrong_executed": 27,
+     "correct_executed": 9,
+     "risk": 0.75,
+     "risk_wilson95": [
+      0.5893,
+      0.8625
+     ],
+     "coverage_all": 0.3,
+     "wrong_exec_per_request": 0.225,
+     "deferred_returned": 32
+    },
+    {
+     "threshold": 0.9652,
+     "executed": 35,
+     "wrong_executed": 26,
+     "correct_executed": 9,
+     "risk": 0.7429,
+     "risk_wilson95": [
+      0.5793,
+      0.8584
+     ],
+     "coverage_all": 0.2917,
+     "wrong_exec_per_request": 0.2167,
+     "deferred_returned": 33
+    },
+    {
+     "threshold": 0.9708,
+     "executed": 34,
+     "wrong_executed": 25,
+     "correct_executed": 9,
+     "risk": 0.7353,
+     "risk_wilson95": [
+      0.5688,
+      0.854
+     ],
+     "coverage_all": 0.2833,
+     "wrong_exec_per_request": 0.2083,
+     "deferred_returned": 34
+    },
+    {
+     "threshold": 0.9734,
+     "executed": 33,
+     "wrong_executed": 25,
+     "correct_executed": 8,
+     "risk": 0.7576,
+     "risk_wilson95": [
+      0.5898,
+      0.8717
+     ],
+     "coverage_all": 0.275,
+     "wrong_exec_per_request": 0.2083,
+     "deferred_returned": 35
+    },
+    {
+     "threshold": 0.9756,
+     "executed": 32,
+     "wrong_executed": 24,
+     "correct_executed": 8,
+     "risk": 0.75,
+     "risk_wilson95": [
+      0.5789,
+      0.8675
+     ],
+     "coverage_all": 0.2667,
+     "wrong_exec_per_request": 0.2,
+     "deferred_returned": 36
+    },
+    {
+     "threshold": 0.9784,
+     "executed": 31,
+     "wrong_executed": 23,
+     "correct_executed": 8,
+     "risk": 0.7419,
+     "risk_wilson95": [
+      0.5675,
+      0.863
+     ],
+     "coverage_all": 0.2583,
+     "wrong_exec_per_request": 0.1917,
+     "deferred_returned": 37
+    },
+    {
+     "threshold": 0.9803,
+     "executed": 30,
+     "wrong_executed": 22,
+     "correct_executed": 8,
+     "risk": 0.7333,
+     "risk_wilson95": [
+      0.5555,
+      0.8582
+     ],
+     "coverage_all": 0.25,
+     "wrong_exec_per_request": 0.1833,
+     "deferred_returned": 38
+    },
+    {
+     "threshold": 0.9806,
+     "executed": 29,
+     "wrong_executed": 21,
+     "correct_executed": 8,
+     "risk": 0.7241,
+     "risk_wilson95": [
+      0.5428,
+      0.853
+     ],
+     "coverage_all": 0.2417,
+     "wrong_exec_per_request": 0.175,
+     "deferred_returned": 39
+    },
+    {
+     "threshold": 0.9811,
+     "executed": 28,
+     "wrong_executed": 21,
+     "correct_executed": 7,
+     "risk": 0.75,
+     "risk_wilson95": [
+      0.5664,
+      0.8732
+     ],
+     "coverage_all": 0.2333,
+     "wrong_exec_per_request": 0.175,
+     "deferred_returned": 40
+    },
+    {
+     "threshold": 0.9823,
+     "executed": 27,
+     "wrong_executed": 20,
+     "correct_executed": 7,
+     "risk": 0.7407,
+     "risk_wilson95": [
+      0.5532,
+      0.8683
+     ],
+     "coverage_all": 0.225,
+     "wrong_exec_per_request": 0.1667,
+     "deferred_returned": 41
+    },
+    {
+     "threshold": 0.9858,
+     "executed": 26,
+     "wrong_executed": 19,
+     "correct_executed": 7,
+     "risk": 0.7308,
+     "risk_wilson95": [
+      0.5392,
+      0.863
+     ],
+     "coverage_all": 0.2167,
+     "wrong_exec_per_request": 0.1583,
+     "deferred_returned": 42
+    },
+    {
+     "threshold": 0.9865,
+     "executed": 25,
+     "wrong_executed": 18,
+     "correct_executed": 7,
+     "risk": 0.72,
+     "risk_wilson95": [
+      0.5242,
+      0.8572
+     ],
+     "coverage_all": 0.2083,
+     "wrong_exec_per_request": 0.15,
+     "deferred_returned": 43
+    },
+    {
+     "threshold": 0.9872,
+     "executed": 24,
+     "wrong_executed": 18,
+     "correct_executed": 6,
+     "risk": 0.75,
+     "risk_wilson95": [
+      0.551,
+      0.88
+     ],
+     "coverage_all": 0.2,
+     "wrong_exec_per_request": 0.15,
+     "deferred_returned": 44
+    },
+    {
+     "threshold": 0.9891,
+     "executed": 23,
+     "wrong_executed": 18,
+     "correct_executed": 5,
+     "risk": 0.7826,
+     "risk_wilson95": [
+      0.581,
+      0.9034
+     ],
+     "coverage_all": 0.1917,
+     "wrong_exec_per_request": 0.15,
+     "deferred_returned": 45
+    },
+    {
+     "threshold": 0.9902,
+     "executed": 22,
+     "wrong_executed": 17,
+     "correct_executed": 5,
+     "risk": 0.7727,
+     "risk_wilson95": [
+      0.5656,
+      0.8988
+     ],
+     "coverage_all": 0.1833,
+     "wrong_exec_per_request": 0.1417,
+     "deferred_returned": 46
+    },
+    {
+     "threshold": 0.9906,
+     "executed": 21,
+     "wrong_executed": 16,
+     "correct_executed": 5,
+     "risk": 0.7619,
+     "risk_wilson95": [
+      0.5491,
+      0.8937
+     ],
+     "coverage_all": 0.175,
+     "wrong_exec_per_request": 0.1333,
+     "deferred_returned": 47
+    },
+    {
+     "threshold": 0.9908,
+     "executed": 20,
+     "wrong_executed": 15,
+     "correct_executed": 5,
+     "risk": 0.75,
+     "risk_wilson95": [
+      0.5313,
+      0.8881
+     ],
+     "coverage_all": 0.1667,
+     "wrong_exec_per_request": 0.125,
+     "deferred_returned": 48
+    },
+    {
+     "threshold": 0.9913,
+     "executed": 19,
+     "wrong_executed": 14,
+     "correct_executed": 5,
+     "risk": 0.7368,
+     "risk_wilson95": [
+      0.5121,
+      0.8819
+     ],
+     "coverage_all": 0.1583,
+     "wrong_exec_per_request": 0.1167,
+     "deferred_returned": 49
+    },
+    {
+     "threshold": 0.9934,
+     "executed": 18,
+     "wrong_executed": 13,
+     "correct_executed": 5,
+     "risk": 0.7222,
+     "risk_wilson95": [
+      0.4913,
+      0.875
+     ],
+     "coverage_all": 0.15,
+     "wrong_exec_per_request": 0.1083,
+     "deferred_returned": 50
+    },
+    {
+     "threshold": 0.9951,
+     "executed": 17,
+     "wrong_executed": 13,
+     "correct_executed": 4,
+     "risk": 0.7647,
+     "risk_wilson95": [
+      0.5274,
+      0.9045
+     ],
+     "coverage_all": 0.1417,
+     "wrong_exec_per_request": 0.1083,
+     "deferred_returned": 51
+    },
+    {
+     "threshold": 0.9964,
+     "executed": 16,
+     "wrong_executed": 12,
+     "correct_executed": 4,
+     "risk": 0.75,
+     "risk_wilson95": [
+      0.505,
+      0.8982
+     ],
+     "coverage_all": 0.1333,
+     "wrong_exec_per_request": 0.1,
+     "deferred_returned": 52
+    },
+    {
+     "threshold": 0.9969,
+     "executed": 15,
+     "wrong_executed": 11,
+     "correct_executed": 4,
+     "risk": 0.7333,
+     "risk_wilson95": [
+      0.4805,
+      0.891
+     ],
+     "coverage_all": 0.125,
+     "wrong_exec_per_request": 0.0917,
+     "deferred_returned": 53
+    },
+    {
+     "threshold": 0.9979,
+     "executed": 12,
+     "wrong_executed": 8,
+     "correct_executed": 4,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.3906,
+      0.8619
+     ],
+     "coverage_all": 0.1,
+     "wrong_exec_per_request": 0.0667,
+     "deferred_returned": 56
+    },
+    {
+     "threshold": 0.9987,
+     "executed": 11,
+     "wrong_executed": 7,
+     "correct_executed": 4,
+     "risk": 0.6364,
+     "risk_wilson95": [
+      0.3538,
+      0.8483
+     ],
+     "coverage_all": 0.0917,
+     "wrong_exec_per_request": 0.0583,
+     "deferred_returned": 57
+    },
+    {
+     "threshold": 1.0,
+     "executed": 10,
+     "wrong_executed": 6,
+     "correct_executed": 4,
+     "risk": 0.6,
+     "risk_wilson95": [
+      0.3127,
+      0.8318
+     ],
+     "coverage_all": 0.0833,
+     "wrong_exec_per_request": 0.05,
+     "deferred_returned": 58
+    }
+   ]
+  },
+  "S1-desk": {
+   "n": 108,
+   "strata": {
+    "A1": 1,
+    "A2": 4,
+    "A3": 13,
+    "N1": 51,
+    "N2": 15,
+    "N3": 24
+   },
+   "outcomes_proposal": {
+    "correct_nonaction": 86,
+    "needless_refusal": 14,
+    "technical_failure": 5,
+    "wrong_call": 1,
+    "correct_action": 2
+   },
+   "empty_kinds": {
+    "validation_flagged": 64,
+    "engine_suppressed": 34,
+    "model_empty": 7
+   },
+   "returned": 3,
+   "no_gate": {
+    "threshold": -1.0,
+    "executed": 3,
+    "wrong_executed": 1,
+    "correct_executed": 2,
+    "risk": 0.3333,
+    "risk_wilson95": [
+     0.0615,
+     0.7923
+    ],
+    "coverage_all": 0.0278,
+    "wrong_exec_per_request": 0.0093,
+    "deferred_returned": 0
+   },
+   "operating_point": null,
+   "lowest_risk_with_20_accepted": null,
+   "auroc_correct_vs_wrong_among_returned": 0.5,
+   "reliability": [
+    {
+     "bin": [
+      0.0,
+      0.1
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.1,
+      0.2
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.2,
+      0.3
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.3,
+      0.4
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.4,
+      0.5
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.5,
+      0.6
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.6,
+      0.7
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.7,
+      0.8
+     ],
+     "n": 1,
+     "correct": 1,
+     "mean_conf": 0.735,
+     "acc": 1.0,
+     "wilson95": [
+      0.2065,
+      1
+     ]
+    },
+    {
+     "bin": [
+      0.8,
+      0.9
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.9,
+      1.0
+     ],
+     "n": 2,
+     "correct": 1,
+     "mean_conf": 0.9959,
+     "acc": 0.5,
+     "wilson95": [
+      0.0945,
+      0.9055
+     ]
+    }
+   ],
+   "curve": [
+    {
+     "threshold": 0.735,
+     "executed": 3,
+     "wrong_executed": 1,
+     "correct_executed": 2,
+     "risk": 0.3333,
+     "risk_wilson95": [
+      0.0615,
+      0.7923
+     ],
+     "coverage_all": 0.0278,
+     "wrong_exec_per_request": 0.0093,
+     "deferred_returned": 0
+    },
+    {
+     "threshold": 0.9917,
+     "executed": 2,
+     "wrong_executed": 1,
+     "correct_executed": 1,
+     "risk": 0.5,
+     "risk_wilson95": [
+      0.0945,
+      0.9055
+     ],
+     "coverage_all": 0.0185,
+     "wrong_exec_per_request": 0.0093,
+     "deferred_returned": 1
+    },
+    {
+     "threshold": 1.0,
+     "executed": 1,
+     "wrong_executed": 0,
+     "correct_executed": 1,
+     "risk": 0.0,
+     "risk_wilson95": [
+      0,
+      0.7935
+     ],
+     "coverage_all": 0.0093,
+     "wrong_exec_per_request": 0.0,
+     "deferred_returned": 2
+    }
+   ]
+  },
+  "S0-home": {
+   "n": 120,
+   "strata": {
+    "A1": 24,
+    "A2": 11,
+    "A3": 1,
+    "N1": 51,
+    "N2": 7,
+    "N3": 26
+   },
+   "outcomes_proposal": {
+    "wrong_call": 42,
+    "correct_action": 21,
+    "correct_nonaction": 43,
+    "needless_refusal": 3,
+    "technical_failure": 11
+   },
+   "empty_kinds": {
+    "engine_suppressed": 35,
+    "validation_flagged": 4,
+    "model_empty": 18
+   },
+   "returned": 63,
+   "no_gate": {
+    "threshold": -1.0,
+    "executed": 63,
+    "wrong_executed": 42,
+    "correct_executed": 21,
+    "risk": 0.6667,
+    "risk_wilson95": [
+     0.5437,
+     0.7705
+    ],
+    "coverage_all": 0.525,
+    "wrong_exec_per_request": 0.35,
+    "deferred_returned": 0
+   },
+   "operating_point": null,
+   "lowest_risk_with_20_accepted": {
+    "threshold": 0.9969,
+    "executed": 22,
+    "wrong_executed": 14,
+    "correct_executed": 8,
+    "risk": 0.6364,
+    "risk_wilson95": [
+     0.4295,
+     0.8027
+    ],
+    "coverage_all": 0.1833,
+    "wrong_exec_per_request": 0.1167,
+    "deferred_returned": 41
+   },
+   "auroc_correct_vs_wrong_among_returned": 0.5159,
+   "reliability": [
+    {
+     "bin": [
+      0.0,
+      0.1
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.1,
+      0.2
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.2,
+      0.3
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.3,
+      0.4
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.4,
+      0.5
+     ],
+     "n": 1,
+     "correct": 0,
+     "mean_conf": 0.4332,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.7935
+     ]
+    },
+    {
+     "bin": [
+      0.5,
+      0.6
+     ],
+     "n": 1,
+     "correct": 0,
+     "mean_conf": 0.5751,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.7935
+     ]
+    },
+    {
+     "bin": [
+      0.6,
+      0.7
+     ],
+     "n": 3,
+     "correct": 0,
+     "mean_conf": 0.6551,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.5615
+     ]
+    },
+    {
+     "bin": [
+      0.7,
+      0.8
+     ],
+     "n": 3,
+     "correct": 2,
+     "mean_conf": 0.7773,
+     "acc": 0.6667,
+     "wilson95": [
+      0.2077,
+      0.9385
+     ]
+    },
+    {
+     "bin": [
+      0.8,
+      0.9
+     ],
+     "n": 4,
+     "correct": 1,
+     "mean_conf": 0.853,
+     "acc": 0.25,
+     "wilson95": [
+      0.0456,
+      0.6994
+     ]
+    },
+    {
+     "bin": [
+      0.9,
+      1.0
+     ],
+     "n": 51,
+     "correct": 18,
+     "mean_conf": 0.9803,
+     "acc": 0.3529,
+     "wilson95": [
+      0.2363,
+      0.4901
+     ]
+    }
+   ],
+   "curve": [
+    {
+     "threshold": 0.4332,
+     "executed": 63,
+     "wrong_executed": 42,
+     "correct_executed": 21,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.5437,
+      0.7705
+     ],
+     "coverage_all": 0.525,
+     "wrong_exec_per_request": 0.35,
+     "deferred_returned": 0
+    },
+    {
+     "threshold": 0.5751,
+     "executed": 62,
+     "wrong_executed": 41,
+     "correct_executed": 21,
+     "risk": 0.6613,
+     "risk_wilson95": [
+      0.5372,
+      0.7666
+     ],
+     "coverage_all": 0.5167,
+     "wrong_exec_per_request": 0.3417,
+     "deferred_returned": 1
+    },
+    {
+     "threshold": 0.6221,
+     "executed": 61,
+     "wrong_executed": 40,
+     "correct_executed": 21,
+     "risk": 0.6557,
+     "risk_wilson95": [
+      0.5305,
+      0.7625
+     ],
+     "coverage_all": 0.5083,
+     "wrong_exec_per_request": 0.3333,
+     "deferred_returned": 2
+    },
+    {
+     "threshold": 0.6591,
+     "executed": 60,
+     "wrong_executed": 39,
+     "correct_executed": 21,
+     "risk": 0.65,
+     "risk_wilson95": [
+      0.5236,
+      0.7583
+     ],
+     "coverage_all": 0.5,
+     "wrong_exec_per_request": 0.325,
+     "deferred_returned": 3
+    },
+    {
+     "threshold": 0.6842,
+     "executed": 59,
+     "wrong_executed": 38,
+     "correct_executed": 21,
+     "risk": 0.6441,
+     "risk_wilson95": [
+      0.5166,
+      0.754
+     ],
+     "coverage_all": 0.4917,
+     "wrong_exec_per_request": 0.3167,
+     "deferred_returned": 4
+    },
+    {
+     "threshold": 0.7397,
+     "executed": 58,
+     "wrong_executed": 37,
+     "correct_executed": 21,
+     "risk": 0.6379,
+     "risk_wilson95": [
+      0.5093,
+      0.7495
+     ],
+     "coverage_all": 0.4833,
+     "wrong_exec_per_request": 0.3083,
+     "deferred_returned": 5
+    },
+    {
+     "threshold": 0.7953,
+     "executed": 57,
+     "wrong_executed": 37,
+     "correct_executed": 20,
+     "risk": 0.6491,
+     "risk_wilson95": [
+      0.5194,
+      0.76
+     ],
+     "coverage_all": 0.475,
+     "wrong_exec_per_request": 0.3083,
+     "deferred_returned": 6
+    },
+    {
+     "threshold": 0.7968,
+     "executed": 56,
+     "wrong_executed": 36,
+     "correct_executed": 20,
+     "risk": 0.6429,
+     "risk_wilson95": [
+      0.5119,
+      0.7554
+     ],
+     "coverage_all": 0.4667,
+     "wrong_exec_per_request": 0.3,
+     "deferred_returned": 7
+    },
+    {
+     "threshold": 0.8446,
+     "executed": 55,
+     "wrong_executed": 36,
+     "correct_executed": 19,
+     "risk": 0.6545,
+     "risk_wilson95": [
+      0.5225,
+      0.7664
+     ],
+     "coverage_all": 0.4583,
+     "wrong_exec_per_request": 0.3,
+     "deferred_returned": 8
+    },
+    {
+     "threshold": 0.8465,
+     "executed": 54,
+     "wrong_executed": 35,
+     "correct_executed": 19,
+     "risk": 0.6481,
+     "risk_wilson95": [
+      0.5148,
+      0.7618
+     ],
+     "coverage_all": 0.45,
+     "wrong_exec_per_request": 0.2917,
+     "deferred_returned": 9
+    },
+    {
+     "threshold": 0.8557,
+     "executed": 53,
+     "wrong_executed": 35,
+     "correct_executed": 18,
+     "risk": 0.6604,
+     "risk_wilson95": [
+      0.5259,
+      0.7731
+     ],
+     "coverage_all": 0.4417,
+     "wrong_exec_per_request": 0.2917,
+     "deferred_returned": 10
+    },
+    {
+     "threshold": 0.8653,
+     "executed": 52,
+     "wrong_executed": 34,
+     "correct_executed": 18,
+     "risk": 0.6538,
+     "risk_wilson95": [
+      0.518,
+      0.7685
+     ],
+     "coverage_all": 0.4333,
+     "wrong_exec_per_request": 0.2833,
+     "deferred_returned": 11
+    },
+    {
+     "threshold": 0.9056,
+     "executed": 51,
+     "wrong_executed": 33,
+     "correct_executed": 18,
+     "risk": 0.6471,
+     "risk_wilson95": [
+      0.5099,
+      0.7637
+     ],
+     "coverage_all": 0.425,
+     "wrong_exec_per_request": 0.275,
+     "deferred_returned": 12
+    },
+    {
+     "threshold": 0.9224,
+     "executed": 50,
+     "wrong_executed": 33,
+     "correct_executed": 17,
+     "risk": 0.66,
+     "risk_wilson95": [
+      0.5215,
+      0.7756
+     ],
+     "coverage_all": 0.4167,
+     "wrong_exec_per_request": 0.275,
+     "deferred_returned": 13
+    },
+    {
+     "threshold": 0.925,
+     "executed": 49,
+     "wrong_executed": 33,
+     "correct_executed": 16,
+     "risk": 0.6735,
+     "risk_wilson95": [
+      0.5338,
+      0.7879
+     ],
+     "coverage_all": 0.4083,
+     "wrong_exec_per_request": 0.275,
+     "deferred_returned": 14
+    },
+    {
+     "threshold": 0.9334,
+     "executed": 48,
+     "wrong_executed": 32,
+     "correct_executed": 16,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.5254,
+      0.7832
+     ],
+     "coverage_all": 0.4,
+     "wrong_exec_per_request": 0.2667,
+     "deferred_returned": 15
+    },
+    {
+     "threshold": 0.9341,
+     "executed": 47,
+     "wrong_executed": 31,
+     "correct_executed": 16,
+     "risk": 0.6596,
+     "risk_wilson95": [
+      0.5167,
+      0.7783
+     ],
+     "coverage_all": 0.3917,
+     "wrong_exec_per_request": 0.2583,
+     "deferred_returned": 16
+    },
+    {
+     "threshold": 0.9397,
+     "executed": 46,
+     "wrong_executed": 31,
+     "correct_executed": 15,
+     "risk": 0.6739,
+     "risk_wilson95": [
+      0.5297,
+      0.7913
+     ],
+     "coverage_all": 0.3833,
+     "wrong_exec_per_request": 0.2583,
+     "deferred_returned": 17
+    },
+    {
+     "threshold": 0.9405,
+     "executed": 45,
+     "wrong_executed": 31,
+     "correct_executed": 14,
+     "risk": 0.6889,
+     "risk_wilson95": [
+      0.5433,
+      0.8047
+     ],
+     "coverage_all": 0.375,
+     "wrong_exec_per_request": 0.2583,
+     "deferred_returned": 18
+    },
+    {
+     "threshold": 0.9408,
+     "executed": 44,
+     "wrong_executed": 31,
+     "correct_executed": 13,
+     "risk": 0.7045,
+     "risk_wilson95": [
+      0.5578,
+      0.8184
+     ],
+     "coverage_all": 0.3667,
+     "wrong_exec_per_request": 0.2583,
+     "deferred_returned": 19
+    },
+    {
+     "threshold": 0.9586,
+     "executed": 43,
+     "wrong_executed": 30,
+     "correct_executed": 13,
+     "risk": 0.6977,
+     "risk_wilson95": [
+      0.5489,
+      0.814
+     ],
+     "coverage_all": 0.3583,
+     "wrong_exec_per_request": 0.25,
+     "deferred_returned": 20
+    },
+    {
+     "threshold": 0.9623,
+     "executed": 42,
+     "wrong_executed": 29,
+     "correct_executed": 13,
+     "risk": 0.6905,
+     "risk_wilson95": [
+      0.5397,
+      0.8093
+     ],
+     "coverage_all": 0.35,
+     "wrong_exec_per_request": 0.2417,
+     "deferred_returned": 21
+    },
+    {
+     "threshold": 0.9626,
+     "executed": 41,
+     "wrong_executed": 29,
+     "correct_executed": 12,
+     "risk": 0.7073,
+     "risk_wilson95": [
+      0.5552,
+      0.8239
+     ],
+     "coverage_all": 0.3417,
+     "wrong_exec_per_request": 0.2417,
+     "deferred_returned": 22
+    },
+    {
+     "threshold": 0.965,
+     "executed": 40,
+     "wrong_executed": 28,
+     "correct_executed": 12,
+     "risk": 0.7,
+     "risk_wilson95": [
+      0.5457,
+      0.8193
+     ],
+     "coverage_all": 0.3333,
+     "wrong_exec_per_request": 0.2333,
+     "deferred_returned": 23
+    },
+    {
+     "threshold": 0.9652,
+     "executed": 39,
+     "wrong_executed": 27,
+     "correct_executed": 12,
+     "risk": 0.6923,
+     "risk_wilson95": [
+      0.5358,
+      0.8143
+     ],
+     "coverage_all": 0.325,
+     "wrong_exec_per_request": 0.225,
+     "deferred_returned": 24
+    },
+    {
+     "threshold": 0.9684,
+     "executed": 38,
+     "wrong_executed": 26,
+     "correct_executed": 12,
+     "risk": 0.6842,
+     "risk_wilson95": [
+      0.5254,
+      0.8092
+     ],
+     "coverage_all": 0.3167,
+     "wrong_exec_per_request": 0.2167,
+     "deferred_returned": 25
+    },
+    {
+     "threshold": 0.9687,
+     "executed": 37,
+     "wrong_executed": 25,
+     "correct_executed": 12,
+     "risk": 0.6757,
+     "risk_wilson95": [
+      0.5146,
+      0.8037
+     ],
+     "coverage_all": 0.3083,
+     "wrong_exec_per_request": 0.2083,
+     "deferred_returned": 26
+    },
+    {
+     "threshold": 0.9703,
+     "executed": 36,
+     "wrong_executed": 24,
+     "correct_executed": 12,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.5033,
+      0.7979
+     ],
+     "coverage_all": 0.3,
+     "wrong_exec_per_request": 0.2,
+     "deferred_returned": 27
+    },
+    {
+     "threshold": 0.9724,
+     "executed": 35,
+     "wrong_executed": 23,
+     "correct_executed": 12,
+     "risk": 0.6571,
+     "risk_wilson95": [
+      0.4915,
+      0.7917
+     ],
+     "coverage_all": 0.2917,
+     "wrong_exec_per_request": 0.1917,
+     "deferred_returned": 28
+    },
+    {
+     "threshold": 0.9741,
+     "executed": 34,
+     "wrong_executed": 23,
+     "correct_executed": 11,
+     "risk": 0.6765,
+     "risk_wilson95": [
+      0.5084,
+      0.8087
+     ],
+     "coverage_all": 0.2833,
+     "wrong_exec_per_request": 0.1917,
+     "deferred_returned": 29
+    },
+    {
+     "threshold": 0.9831,
+     "executed": 33,
+     "wrong_executed": 22,
+     "correct_executed": 11,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.4961,
+      0.8025
+     ],
+     "coverage_all": 0.275,
+     "wrong_exec_per_request": 0.1833,
+     "deferred_returned": 30
+    },
+    {
+     "threshold": 0.9883,
+     "executed": 32,
+     "wrong_executed": 22,
+     "correct_executed": 10,
+     "risk": 0.6875,
+     "risk_wilson95": [
+      0.5143,
+      0.8205
+     ],
+     "coverage_all": 0.2667,
+     "wrong_exec_per_request": 0.1833,
+     "deferred_returned": 31
+    },
+    {
+     "threshold": 0.9884,
+     "executed": 31,
+     "wrong_executed": 21,
+     "correct_executed": 10,
+     "risk": 0.6774,
+     "risk_wilson95": [
+      0.5014,
+      0.8143
+     ],
+     "coverage_all": 0.2583,
+     "wrong_exec_per_request": 0.175,
+     "deferred_returned": 32
+    },
+    {
+     "threshold": 0.9886,
+     "executed": 30,
+     "wrong_executed": 20,
+     "correct_executed": 10,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.4878,
+      0.8077
+     ],
+     "coverage_all": 0.25,
+     "wrong_exec_per_request": 0.1667,
+     "deferred_returned": 33
+    },
+    {
+     "threshold": 0.989,
+     "executed": 29,
+     "wrong_executed": 19,
+     "correct_executed": 10,
+     "risk": 0.6552,
+     "risk_wilson95": [
+      0.4734,
+      0.8006
+     ],
+     "coverage_all": 0.2417,
+     "wrong_exec_per_request": 0.1583,
+     "deferred_returned": 34
+    },
+    {
+     "threshold": 0.99,
+     "executed": 28,
+     "wrong_executed": 18,
+     "correct_executed": 10,
+     "risk": 0.6429,
+     "risk_wilson95": [
+      0.4583,
+      0.7929
+     ],
+     "coverage_all": 0.2333,
+     "wrong_exec_per_request": 0.15,
+     "deferred_returned": 35
+    },
+    {
+     "threshold": 0.9909,
+     "executed": 27,
+     "wrong_executed": 18,
+     "correct_executed": 9,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.4782,
+      0.8136
+     ],
+     "coverage_all": 0.225,
+     "wrong_exec_per_request": 0.15,
+     "deferred_returned": 36
+    },
+    {
+     "threshold": 0.991,
+     "executed": 26,
+     "wrong_executed": 18,
+     "correct_executed": 8,
+     "risk": 0.6923,
+     "risk_wilson95": [
+      0.5001,
+      0.835
+     ],
+     "coverage_all": 0.2167,
+     "wrong_exec_per_request": 0.15,
+     "deferred_returned": 37
+    },
+    {
+     "threshold": 0.9952,
+     "executed": 25,
+     "wrong_executed": 17,
+     "correct_executed": 8,
+     "risk": 0.68,
+     "risk_wilson95": [
+      0.4841,
+      0.828
+     ],
+     "coverage_all": 0.2083,
+     "wrong_exec_per_request": 0.1417,
+     "deferred_returned": 38
+    },
+    {
+     "threshold": 0.9954,
+     "executed": 24,
+     "wrong_executed": 16,
+     "correct_executed": 8,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.4671,
+      0.8203
+     ],
+     "coverage_all": 0.2,
+     "wrong_exec_per_request": 0.1333,
+     "deferred_returned": 39
+    },
+    {
+     "threshold": 0.9963,
+     "executed": 23,
+     "wrong_executed": 15,
+     "correct_executed": 8,
+     "risk": 0.6522,
+     "risk_wilson95": [
+      0.4489,
+      0.8119
+     ],
+     "coverage_all": 0.1917,
+     "wrong_exec_per_request": 0.125,
+     "deferred_returned": 40
+    },
+    {
+     "threshold": 0.9969,
+     "executed": 22,
+     "wrong_executed": 14,
+     "correct_executed": 8,
+     "risk": 0.6364,
+     "risk_wilson95": [
+      0.4295,
+      0.8027
+     ],
+     "coverage_all": 0.1833,
+     "wrong_exec_per_request": 0.1167,
+     "deferred_returned": 41
+    },
+    {
+     "threshold": 0.9973,
+     "executed": 21,
+     "wrong_executed": 14,
+     "correct_executed": 7,
+     "risk": 0.6667,
+     "risk_wilson95": [
+      0.4537,
+      0.8281
+     ],
+     "coverage_all": 0.175,
+     "wrong_exec_per_request": 0.1167,
+     "deferred_returned": 42
+    },
+    {
+     "threshold": 0.9984,
+     "executed": 20,
+     "wrong_executed": 13,
+     "correct_executed": 7,
+     "risk": 0.65,
+     "risk_wilson95": [
+      0.4329,
+      0.8188
+     ],
+     "coverage_all": 0.1667,
+     "wrong_exec_per_request": 0.1083,
+     "deferred_returned": 43
+    },
+    {
+     "threshold": 0.9985,
+     "executed": 19,
+     "wrong_executed": 12,
+     "correct_executed": 7,
+     "risk": 0.6316,
+     "risk_wilson95": [
+      0.4104,
+      0.8085
+     ],
+     "coverage_all": 0.1583,
+     "wrong_exec_per_request": 0.1,
+     "deferred_returned": 44
+    },
+    {
+     "threshold": 0.9986,
+     "executed": 18,
+     "wrong_executed": 11,
+     "correct_executed": 7,
+     "risk": 0.6111,
+     "risk_wilson95": [
+      0.3862,
+      0.797
+     ],
+     "coverage_all": 0.15,
+     "wrong_exec_per_request": 0.0917,
+     "deferred_returned": 45
+    },
+    {
+     "threshold": 0.9989,
+     "executed": 17,
+     "wrong_executed": 10,
+     "correct_executed": 7,
+     "risk": 0.5882,
+     "risk_wilson95": [
+      0.3601,
+      0.7839
+     ],
+     "coverage_all": 0.1417,
+     "wrong_exec_per_request": 0.0833,
+     "deferred_returned": 46
+    },
+    {
+     "threshold": 0.9991,
+     "executed": 16,
+     "wrong_executed": 9,
+     "correct_executed": 7,
+     "risk": 0.5625,
+     "risk_wilson95": [
+      0.3318,
+      0.769
+     ],
+     "coverage_all": 0.1333,
+     "wrong_exec_per_request": 0.075,
+     "deferred_returned": 47
+    },
+    {
+     "threshold": 1.0,
+     "executed": 15,
+     "wrong_executed": 9,
+     "correct_executed": 6,
+     "risk": 0.6,
+     "risk_wilson95": [
+      0.3575,
+      0.8018
+     ],
+     "coverage_all": 0.125,
+     "wrong_exec_per_request": 0.075,
+     "deferred_returned": 48
+    }
+   ]
+  },
+  "S0-desk": {
+   "n": 108,
+   "strata": {
+    "A1": 1,
+    "A2": 4,
+    "A3": 13,
+    "N1": 51,
+    "N2": 15,
+    "N3": 24
+   },
+   "outcomes_proposal": {
+    "correct_nonaction": 80,
+    "needless_refusal": 14,
+    "technical_failure": 5,
+    "wrong_call": 9
+   },
+   "empty_kinds": {
+    "engine_suppressed": 37,
+    "validation_flagged": 56,
+    "model_empty": 6
+   },
+   "returned": 9,
+   "no_gate": {
+    "threshold": -1.0,
+    "executed": 9,
+    "wrong_executed": 9,
+    "correct_executed": 0,
+    "risk": 1.0,
+    "risk_wilson95": [
+     0.7008,
+     1
+    ],
+    "coverage_all": 0.0833,
+    "wrong_exec_per_request": 0.0833,
+    "deferred_returned": 0
+   },
+   "operating_point": null,
+   "lowest_risk_with_20_accepted": null,
+   "auroc_correct_vs_wrong_among_returned": null,
+   "reliability": [
+    {
+     "bin": [
+      0.0,
+      0.1
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.1,
+      0.2
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.2,
+      0.3
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.3,
+      0.4
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.4,
+      0.5
+     ],
+     "n": 0,
+     "correct": 0,
+     "mean_conf": null,
+     "acc": null,
+     "wilson95": null
+    },
+    {
+     "bin": [
+      0.5,
+      0.6
+     ],
+     "n": 2,
+     "correct": 0,
+     "mean_conf": 0.5423,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.6576
+     ]
+    },
+    {
+     "bin": [
+      0.6,
+      0.7
+     ],
+     "n": 2,
+     "correct": 0,
+     "mean_conf": 0.6369,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.6576
+     ]
+    },
+    {
+     "bin": [
+      0.7,
+      0.8
+     ],
+     "n": 1,
+     "correct": 0,
+     "mean_conf": 0.7437,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.7935
+     ]
+    },
+    {
+     "bin": [
+      0.8,
+      0.9
+     ],
+     "n": 1,
+     "correct": 0,
+     "mean_conf": 0.8993,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.7935
+     ]
+    },
+    {
+     "bin": [
+      0.9,
+      1.0
+     ],
+     "n": 3,
+     "correct": 0,
+     "mean_conf": 0.99,
+     "acc": 0.0,
+     "wilson95": [
+      0,
+      0.5615
+     ]
+    }
+   ],
+   "curve": [
+    {
+     "threshold": 0.5239,
+     "executed": 9,
+     "wrong_executed": 9,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.7008,
+      1
+     ],
+     "coverage_all": 0.0833,
+     "wrong_exec_per_request": 0.0833,
+     "deferred_returned": 0
+    },
+    {
+     "threshold": 0.5606,
+     "executed": 8,
+     "wrong_executed": 8,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.6756,
+      1
+     ],
+     "coverage_all": 0.0741,
+     "wrong_exec_per_request": 0.0741,
+     "deferred_returned": 1
+    },
+    {
+     "threshold": 0.6031,
+     "executed": 7,
+     "wrong_executed": 7,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.6457,
+      1
+     ],
+     "coverage_all": 0.0648,
+     "wrong_exec_per_request": 0.0648,
+     "deferred_returned": 2
+    },
+    {
+     "threshold": 0.6708,
+     "executed": 6,
+     "wrong_executed": 6,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.6097,
+      1.0
+     ],
+     "coverage_all": 0.0556,
+     "wrong_exec_per_request": 0.0556,
+     "deferred_returned": 3
+    },
+    {
+     "threshold": 0.7437,
+     "executed": 5,
+     "wrong_executed": 5,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.5655,
+      1
+     ],
+     "coverage_all": 0.0463,
+     "wrong_exec_per_request": 0.0463,
+     "deferred_returned": 4
+    },
+    {
+     "threshold": 0.8993,
+     "executed": 4,
+     "wrong_executed": 4,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.5101,
+      1
+     ],
+     "coverage_all": 0.037,
+     "wrong_exec_per_request": 0.037,
+     "deferred_returned": 5
+    },
+    {
+     "threshold": 0.9764,
+     "executed": 3,
+     "wrong_executed": 3,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.4385,
+      1
+     ],
+     "coverage_all": 0.0278,
+     "wrong_exec_per_request": 0.0278,
+     "deferred_returned": 6
+    },
+    {
+     "threshold": 0.9937,
+     "executed": 2,
+     "wrong_executed": 2,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.3424,
+      1
+     ],
+     "coverage_all": 0.0185,
+     "wrong_exec_per_request": 0.0185,
+     "deferred_returned": 7
+    },
+    {
+     "threshold": 1.0,
+     "executed": 1,
+     "wrong_executed": 1,
+     "correct_executed": 0,
+     "risk": 1.0,
+     "risk_wilson95": [
+      0.2065,
+      1
+     ],
+     "coverage_all": 0.0093,
+     "wrong_exec_per_request": 0.0093,
+     "deferred_returned": 8
+    }
+   ]
+  }
+ },
+ "sensitivity": {
+  "S1-home": {
+   "flagged_counted": {
+    "outcomes_proposal": {
+     "wrong_call": 58,
+     "correct_action": 17,
+     "correct_nonaction": 36,
+     "needless_refusal": 1,
+     "technical_failure": 8
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 75,
+     "wrong_executed": 58,
+     "correct_executed": 17,
+     "risk": 0.7733,
+     "risk_wilson95": [
+      0.6666,
+      0.8534
+     ],
+     "coverage_all": 0.625,
+     "wrong_exec_per_request": 0.4833,
+     "deferred_returned": 0
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": {
+     "threshold": 0.902,
+     "executed": 51,
+     "wrong_executed": 36,
+     "correct_executed": 15,
+     "risk": 0.7059,
+     "risk_wilson95": [
+      0.57,
+      0.8129
+     ],
+     "coverage_all": 0.425,
+     "wrong_exec_per_request": 0.3,
+     "deferred_returned": 24
+    }
+   },
+   "balanced_strata": {
+    "strata_present": {
+     "A1": 24,
+     "A2": 11,
+     "A3": 1,
+     "N1": 51,
+     "N2": 7,
+     "N3": 26
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 68,
+     "risk_weighted": 0.5566,
+     "coverage_weighted": 0.6635
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": {
+     "threshold": 0.902,
+     "executed": 48,
+     "risk_weighted": 0.4276,
+     "coverage_weighted": 0.4754
+    }
+   }
+  },
+  "S1-desk": {
+   "flagged_counted": {
+    "outcomes_proposal": {
+     "wrong_call": 62,
+     "correct_nonaction": 36,
+     "correct_action": 5,
+     "technical_failure": 5
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 67,
+     "wrong_executed": 62,
+     "correct_executed": 5,
+     "risk": 0.9254,
+     "risk_wilson95": [
+      0.8369,
+      0.9677
+     ],
+     "coverage_all": 0.6204,
+     "wrong_exec_per_request": 0.5741,
+     "deferred_returned": 0
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": {
+     "threshold": 0.8938,
+     "executed": 20,
+     "wrong_executed": 16,
+     "correct_executed": 4,
+     "risk": 0.8,
+     "risk_wilson95": [
+      0.584,
+      0.9193
+     ],
+     "coverage_all": 0.1852,
+     "wrong_exec_per_request": 0.1481,
+     "deferred_returned": 47
+    }
+   },
+   "balanced_strata": {
+    "strata_present": {
+     "A1": 1,
+     "A2": 4,
+     "A3": 13,
+     "N1": 51,
+     "N2": 15,
+     "N3": 24
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 3,
+     "risk_weighted": 0.0323,
+     "coverage_weighted": 0.2153
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": null
+   }
+  },
+  "S0-home": {
+   "flagged_counted": {
+    "outcomes_proposal": {
+     "wrong_call": 46,
+     "correct_action": 21,
+     "correct_nonaction": 39,
+     "needless_refusal": 3,
+     "technical_failure": 11
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 67,
+     "wrong_executed": 46,
+     "correct_executed": 21,
+     "risk": 0.6866,
+     "risk_wilson95": [
+      0.568,
+      0.7849
+     ],
+     "coverage_all": 0.5583,
+     "wrong_exec_per_request": 0.3833,
+     "deferred_returned": 0
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": {
+     "threshold": 0.9969,
+     "executed": 22,
+     "wrong_executed": 14,
+     "correct_executed": 8,
+     "risk": 0.6364,
+     "risk_wilson95": [
+      0.4295,
+      0.8027
+     ],
+     "coverage_all": 0.1833,
+     "wrong_exec_per_request": 0.1167,
+     "deferred_returned": 45
+    }
+   },
+   "balanced_strata": {
+    "strata_present": {
+     "A1": 24,
+     "A2": 11,
+     "A3": 1,
+     "N1": 51,
+     "N2": 7,
+     "N3": 26
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 63,
+     "risk_weighted": 0.4434,
+     "coverage_weighted": 0.6079
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": {
+     "threshold": 0.7397,
+     "executed": 58,
+     "risk_weighted": 0.4244,
+     "coverage_weighted": 0.5879
+    }
+   }
+  },
+  "S0-desk": {
+   "flagged_counted": {
+    "outcomes_proposal": {
+     "correct_nonaction": 37,
+     "wrong_call": 62,
+     "correct_action": 3,
+     "technical_failure": 5,
+     "needless_refusal": 1
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 65,
+     "wrong_executed": 62,
+     "correct_executed": 3,
+     "risk": 0.9538,
+     "risk_wilson95": [
+      0.8729,
+      0.9842
+     ],
+     "coverage_all": 0.6019,
+     "wrong_exec_per_request": 0.5741,
+     "deferred_returned": 0
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": {
+     "threshold": 0.8457,
+     "executed": 30,
+     "wrong_executed": 27,
+     "correct_executed": 3,
+     "risk": 0.9,
+     "risk_wilson95": [
+      0.7438,
+      0.9654
+     ],
+     "coverage_all": 0.2778,
+     "wrong_exec_per_request": 0.25,
+     "deferred_returned": 35
+    }
+   },
+   "balanced_strata": {
+    "strata_present": {
+     "A1": 1,
+     "A2": 4,
+     "A3": 13,
+     "N1": 51,
+     "N2": 15,
+     "N3": 24
+    },
+    "no_gate": {
+     "threshold": -1.0,
+     "executed": 9,
+     "risk_weighted": 1.0,
+     "coverage_weighted": 0.0889
+    },
+    "operating_point": null,
+    "lowest_risk_with_20_accepted": null
+   }
+  }
+ }
+}

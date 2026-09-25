@@ -1,0 +1,98 @@
+{"id": "massive-train-10495", "gold": [[]], "stratum": "N1", "rule": "R4 list 'furniture' not in LISTS"}
+{"id": "massive-train-10592", "gold": [[]], "stratum": "N1", "rule": "creating a list is not a capability"}
+{"id": "massive-train-10987", "gold": [[]], "stratum": "N1", "rule": "deleting a whole list is not a capability"}
+{"id": "massive-dev-5202", "gold": [[]], "stratum": "N1", "rule": "R4 room 'drawing hall' (drawing room) not in ROOMS"}
+{"id": "massive-dev-7675", "gold": [[{"action": "create_reminder", "args": {"text": "upcoming meeting", "time": "04:00", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "reminder with clock time and date today (\u00a73 reminders)"}
+{"id": "massive-train-7473", "gold": [[{"action": "create_reminder", "args": {"text": "meeting with my teacher", "time": "17:00", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "reminder, time and date resolved"}
+{"id": "massive-train-4493", "gold": [[]], "stratum": "N1", "rule": "colour 'random' not in COLORS"}
+{"id": "massive-train-10740", "gold": [[]], "stratum": "N3", "rule": "question about list state (R3)"}
+{"id": "massive-train-7060", "gold": [[]], "stratum": "N2", "rule": "R4 offset from teleconference with no stated time"}
+{"id": "massive-train-8136", "gold": [[{"action": "create_reminder", "args": {"text": "three p m meeting", "time": "11:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "reminder time 11 am tomorrow; 3 pm is part of the event text"}
+{"id": "massive-train-8169", "gold": [[]], "stratum": "N1", "rule": "reminder at 'sunday night' has no clock time: vague time (R1)"}
+{"id": "massive-train-3601", "gold": [[]], "stratum": "N2", "rule": "R4 reminder text missing"}
+{"id": "massive-train-3510", "gold": [[{"action": "light_power", "args": {"room": "bathroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power; the home has one bathroom"}
+{"id": "massive-train-4794", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power bedroom off"}
+{"id": "massive-train-10618", "gold": [[]], "stratum": "N1", "rule": "creating a list is not a capability"}
+{"id": "massive-train-10543", "gold": [[]], "stratum": "N1", "rule": "creating a list is not a capability"}
+{"id": "massive-train-2748", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "orange"}}]], "stratum": "A1", "rule": "set_light_color, room default here"}
+{"id": "massive-train-1905", "gold": [[{"action": "set_light_level", "args": {"room": "here", "level": 40}}]], "stratum": "A3", "rule": "absolute level, number word normalised"}
+{"id": "massive-train-4781", "gold": [[]], "stratum": "N2", "rule": "R4 bare 1-12 hour with no am/pm is ambiguous"}
+{"id": "massive-dev-415", "gold": [[]], "stratum": "N2", "rule": "no value or action follows from 'good sleep' (R6/R4)"}
+{"id": "massive-train-1482", "gold": [[{"action": "set_light_color", "args": {"room": "living room", "color": "red"}}]], "stratum": "A1", "rule": "set_light_color living room red"}
+{"id": "massive-train-8650", "gold": [[]], "stratum": "N1", "rule": "R1 reminder plus calendar event (unsupported)"}
+{"id": "massive-train-7081", "gold": [[{"action": "create_reminder", "args": {"text": "meeting", "time": "17:00", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "reminder at the named event time, today"}
+{"id": "massive-train-8776", "gold": [[]], "stratum": "N2", "rule": "R4 reminder text missing"}
+{"id": "massive-train-10454", "gold": [[{"action": "remove_from_list", "args": {"item": "bread", "list": "shopping"}}]], "stratum": "A1", "rule": "remove_from_list"}
+{"id": "massive-dev-11084", "gold": [[{"action": "remove_from_list", "args": {"item": "milk", "list": "shopping"}}]], "stratum": "A1", "rule": "remove_from_list"}
+{"id": "massive-dev-10458", "gold": [[]], "stratum": "N1", "rule": "removing a whole list is not a capability"}
+{"id": "massive-train-1899", "gold": [[{"action": "set_light_level", "args": {"room": "here", "level": 70}}]], "stratum": "A3", "rule": "absolute level 70 with number word"}
+{"id": "massive-train-7176", "gold": [[]], "stratum": "N1", "rule": "R1 'mark the date' calendar entry beside reminder (past 2017 date)"}
+{"id": "massive-train-3155", "gold": [[{"action": "set_alarm", "args": {"time": "07:30", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "relative time computed from stated 8 am tomorrow"}
+{"id": "massive-dev-11200", "gold": [[]], "stratum": "N1", "rule": "removing a whole list is not a capability"}
+{"id": "massive-train-4633", "gold": [[{"action": "light_power", "args": {"room": "bedroom", "state": "off"}}]], "stratum": "A1", "rule": "light_power bedroom off"}
+{"id": "massive-train-1898", "gold": [[]], "stratum": "N1", "rule": "R4 room 'balcony' not in ROOMS"}
+{"id": "massive-train-8779", "gold": [[{"action": "create_reminder", "args": {"text": "check the oven", "time": "14:45", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "relative time in 15 minutes"}
+{"id": "massive-train-6054", "gold": [[{"action": "light_power", "args": {"room": "kitchen", "state": "off"}}]], "stratum": "A2", "rule": "conversational wording, light_power off"}
+{"id": "massive-train-11184", "gold": [[]], "stratum": "N2", "rule": "fragment, not a request"}
+{"id": "massive-train-10544", "gold": [[]], "stratum": "N1", "rule": "creating a list is not a capability"}
+{"id": "massive-train-1480", "gold": [[]], "stratum": "N1", "rule": "'softer' is not a colour in COLORS"}
+{"id": "massive-train-5042", "gold": [[{"action": "set_alarm", "args": {"time": "12:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "12 pm = noon; next occurrence tomorrow"}
+{"id": "massive-train-6844", "gold": [[{"action": "create_reminder", "args": {"text": "tennis game with peter", "time": "16:00", "date": "2026-06-14"}}]], "stratum": "A3", "rule": "sunday = 2026-06-14"}
+{"id": "massive-train-7192", "gold": [[{"action": "create_reminder", "args": {"text": "wishing a friend", "time": "10:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "reminder tomorrow 10 am"}
+{"id": "massive-train-2714", "gold": [[]], "stratum": "N1", "rule": "'vibrant' is not a colour in COLORS"}
+{"id": "massive-train-8389", "gold": [[{"action": "create_reminder", "args": {"text": "have a meeting with andrew", "time": "14:00", "date": "2026-06-15"}}]], "stratum": "A3", "rule": "monday = 2026-06-15"}
+{"id": "massive-train-4096", "gold": [[{"action": "set_alarm", "args": {"time": "08:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "8 am next occurrence tomorrow"}
+{"id": "massive-train-4035", "gold": [[]], "stratum": "N2", "rule": "bare fragment, no action stated"}
+{"id": "massive-train-2746", "gold": [[{"action": "set_light_color", "args": {"room": "living room", "color": "yellow"}}]], "stratum": "A1", "rule": "set_light_color"}
+{"id": "massive-train-9180", "gold": [[{"action": "create_reminder", "args": {"text": "meeting with john", "time": "09:00", "date": "2026-06-17"}}]], "stratum": "A3", "rule": "wednesday = first occurrence strictly after today, 2026-06-17"}
+{"id": "massive-dev-11212", "gold": [[]], "stratum": "N1", "rule": "playlists/list create-delete not a capability"}
+{"id": "massive-train-7127", "gold": [[{"action": "create_reminder", "args": {"text": "send the presentation", "time": "13:00", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "reminder with explicit today and 1 pm"}
+{"id": "massive-train-2541", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A1", "rule": "set_light_color default room"}
+{"id": "massive-train-3053", "gold": [[]], "stratum": "N1", "rule": "R1 'kids bedroom' not in ROOMS makes request partial"}
+{"id": "massive-train-7790", "gold": [[{"action": "create_reminder", "args": {"text": "business meet", "time": "11:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "11 am next occurrence tomorrow"}
+{"id": "massive-train-7626", "gold": [[{"action": "create_reminder", "args": {"text": "pay the electricity bill", "time": "09:00", "date": "2026-06-13"}}]], "stratum": "A3", "rule": "saturday = 2026-06-13"}
+{"id": "massive-dev-6823", "gold": [[]], "stratum": "N1", "rule": "vague date 'this weekend' (R1)"}
+{"id": "massive-train-611", "gold": [[{"action": "set_alarm", "args": {"time": "07:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "next morning 7 am = tomorrow"}
+{"id": "massive-train-11222", "gold": [[]], "stratum": "N1", "rule": "deleting a whole list is not a capability"}
+{"id": "massive-train-2136", "gold": [[{"action": "remove_alarm", "args": {"time": "04:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "remove_alarm, next occurrence of 4 am"}
+{"id": "massive-train-10959", "gold": [[]], "stratum": "N2", "rule": "R4 item missing"}
+{"id": "massive-train-10934", "gold": [[{"action": "add_to_list", "args": {"item": "walk the dog", "list": "to-do"}}]], "stratum": "A1", "rule": "add_to_list to-do"}
+{"id": "massive-dev-2822", "gold": [[{"action": "set_light_color", "args": {"room": "whole house", "color": "red"}}]], "stratum": "A1", "rule": "house = whole house"}
+{"id": "massive-train-11237", "gold": [[{"action": "add_to_list", "args": {"item": "bananas", "list": "shopping"}}]], "stratum": "A1", "rule": "grocery list = shopping"}
+{"id": "massive-train-1214", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "blue"}}]], "stratum": "A1", "rule": "set_light_color default room"}
+{"id": "massive-train-8983", "gold": [[]], "stratum": "N3", "rule": "conditional trigger 'when i get home' (R3)"}
+{"id": "massive-train-3085", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "cool white"}}]], "stratum": "A2", "rule": "indirect wording; cooler = cool white"}
+{"id": "massive-train-8262", "gold": [[]], "stratum": "N2", "rule": "R4 no time: event time unknown"}
+{"id": "massive-dev-2841", "gold": [[{"action": "set_light_color", "args": {"room": "living room", "color": "red"}}]], "stratum": "A1", "rule": "set_light_color"}
+{"id": "massive-train-4165", "gold": [[{"action": "set_light_color", "args": {"room": "bathroom", "color": "yellow"}}]], "stratum": "A1", "rule": "set_light_color"}
+{"id": "massive-train-7207", "gold": [[{"action": "create_reminder", "args": {"text": "check my clothes", "time": "15:30", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "relative time in an hour"}
+{"id": "massive-train-10977", "gold": [[]], "stratum": "N1", "rule": "deleting a whole list is not a capability"}
+{"id": "massive-train-11153", "gold": [[]], "stratum": "N1", "rule": "list 'hardware store' not in LISTS"}
+{"id": "massive-train-7812", "gold": [[]], "stratum": "N1", "rule": "vague time 'the night before', no clock time (R1)"}
+{"id": "massive-train-11235", "gold": [[{"action": "remove_from_list", "args": {"item": "bananas", "list": "shopping"}}]], "stratum": "A1", "rule": "remove_from_list"}
+{"id": "massive-dev-11196", "gold": [[]], "stratum": "N1", "rule": "christmas list not in LISTS"}
+{"id": "massive-dev-10952", "gold": [[]], "stratum": "N1", "rule": "deleting a list is not a capability"}
+{"id": "massive-dev-2282", "gold": [[{"action": "set_light_color", "args": {"room": "whole house", "color": "blue"}}]], "stratum": "A1", "rule": "all lights of my house = whole house"}
+{"id": "massive-train-5972", "gold": [[]], "stratum": "N2", "rule": "no single alarm time; 'between eight and nine' ambiguous"}
+{"id": "massive-train-5046", "gold": [[]], "stratum": "N1", "rule": "R4 room 'den' not in ROOMS"}
+{"id": "massive-train-3735", "gold": [[{"action": "set_light_color", "args": {"room": "here", "color": "red"}}]], "stratum": "A1", "rule": "wake word ignored (R8); default room"}
+{"id": "massive-train-8780", "gold": [[]], "stratum": "N2", "rule": "R4 twelve thirty with no am/pm is ambiguous"}
+{"id": "massive-train-10845", "gold": [[]], "stratum": "N1", "rule": "christmas gift list not in LISTS"}
+{"id": "massive-dev-7043", "gold": [[{"action": "set_alarm", "args": {"time": "16:30", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "relative time two hours from now"}
+{"id": "massive-train-8077", "gold": [[{"action": "create_reminder", "args": {"text": "get the mail", "time": "14:40", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "relative time in ten minutes"}
+{"id": "massive-train-2719", "gold": [[]], "stratum": "N2", "rule": "'five hundred and thirty' = bare 5:30, no am/pm (R4)"}
+{"id": "massive-train-6949", "gold": [[{"action": "create_reminder", "args": {"text": "next meeting with my boss", "time": "11:00", "date": "2026-06-15"}}]], "stratum": "A3", "rule": "next monday = 2026-06-15"}
+{"id": "massive-train-60", "gold": [[{"action": "remove_alarm", "args": {"time": "07:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "stop = cancel the 7 am alarm, next occurrence"}
+{"id": "massive-dev-3242", "gold": [[]], "stratum": "N2", "rule": "'one hundred and thirty' = bare 1:30, no am/pm (R4)"}
+{"id": "massive-train-6822", "gold": [[]], "stratum": "N1", "rule": "vague date 'this weekend' (R1)"}
+{"id": "massive-dev-10545", "gold": [[]], "stratum": "N1", "rule": "creating a list is not a capability"}
+{"id": "massive-train-3152", "gold": [[{"action": "remove_alarm", "args": {"time": "06:00", "date": "2026-06-11"}}]], "stratum": "A3", "rule": "remove_alarm next occurrence of 6 am"}
+{"id": "massive-train-2052", "gold": [[{"action": "light_power", "args": {"room": "living room", "state": "off"}}]], "stratum": "A1", "rule": "'shut the lights' = off"}
+{"id": "massive-train-8478", "gold": [[{"action": "create_reminder", "args": {"text": "meeting", "time": "17:00", "date": "2026-06-10"}}]], "stratum": "A3", "rule": "reminder at 5 pm today"}
+{"id": "massive-train-3181", "gold": [[{"action": "set_alarm", "args": {"time": "08:00", "date": "2026-06-16"}}]], "stratum": "A3", "rule": "next tuesday = 2026-06-16"}
+{"id": "massive-train-10502", "gold": [[{"action": "add_to_list", "args": {"item": "pasta", "list": "shopping"}}, {"action": "add_to_list", "args": {"item": "milk", "list": "shopping"}}]], "stratum": "A3", "rule": "R2 two items, two calls"}
+{"id": "massive-train-2565", "gold": [[{"action": "set_alarm", "args": {"time": "05:00", "date": "2026-06-14"}}]], "stratum": "A3", "rule": "five in the morning, sunday = 2026-06-14"}
+{"id": "massive-train-2817", "gold": [[{"action": "light_power", "args": {"room": "living room", "state": "on"}}]], "stratum": "A2", "rule": "R6 dark in the room = light on"}
+{"id": "massive-train-8660", "gold": [[]], "stratum": "N1", "rule": "recurrence 'tuesdays' and no text (R1)"}
+{"id": "massive-train-7042", "gold": "ambiguous", "stratum": "N2", "rule": "\u00a76 case 10: 'reminder alarm' names both"}
+{"id": "massive-dev-11096", "gold": [[]], "stratum": "N1", "rule": "list 'santana music' not in LISTS / delete list"}

@@ -1,0 +1,50 @@
+{
+ "needle S1 home": {
+  "train_acc": 0.5931,
+  "dev_acc": 0.6,
+  "gap": -0.0069,
+  "gap_95ci": [
+   -0.1119,
+   0.0955
+  ],
+  "n_train": 369,
+  "n_dev": 55,
+  "intents": 18
+ },
+ "needle S1 desk": {
+  "train_acc": 0.6995,
+  "dev_acc": 0.6462,
+  "gap": 0.0534,
+  "gap_95ci": [
+   -0.0583,
+   0.1705
+  ],
+  "n_train": 360,
+  "n_dev": 65,
+  "intents": 9
+ },
+ "deepseek-v4-flash-0731 schema (selection only)": {
+  "train_acc": 0.8537,
+  "dev_acc": 0.8,
+  "gap": 0.0537,
+  "gap_95ci": [
+   -0.0518,
+   0.1671
+  ],
+  "n_train": 182,
+  "n_dev": 35,
+  "intents": 17
+ },
+ "deepseek-v4-flash native (selection only)": {
+  "train_acc": 0.7869,
+  "dev_acc": 0.7429,
+  "gap": 0.0441,
+  "gap_95ci": [
+   -0.0862,
+   0.1825
+  ],
+  "n_train": 182,
+  "n_dev": 35,
+  "intents": 17
+ }
+}

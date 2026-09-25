@@ -1,0 +1,159 @@
+{
+ "dev_n": 325,
+ "cells": {
+  "home/N2": 11,
+  "home/N1": 61,
+  "home/N3": 29,
+  "home/A1": 27,
+  "home/A3": 7,
+  "home/A2": 23,
+  "desk/N3": 38,
+  "desk/N2": 24,
+  "desk/N1": 67,
+  "desk/A3": 31,
+  "desk/A2": 4,
+  "desk/A1": 3
+ },
+ "arms": {
+  "K0-S1": {
+   "tuned": {
+    "k": 1,
+    "mu": 1,
+    "tau_quantile": 0.3,
+    "tau": {
+     "home": 1.4599353075027466,
+     "desk": 1.7199054956436157
+    },
+    "macro": 0.6185,
+    "micro": 0.6246
+   },
+   "n_docs": {
+    "home": 75,
+    "desk": 75
+   }
+  },
+  "K0-S0": {
+   "tuned": {
+    "k": 1,
+    "mu": 1,
+    "tau_quantile": 0.5,
+    "tau": {
+     "home": 1.8894966840744019,
+     "desk": 2.103935718536377
+    },
+    "macro": 0.6041,
+    "micro": 0.6738
+   },
+   "n_docs": {
+    "home": 75,
+    "desk": 75
+   }
+  },
+  "K1-S1": {
+   "tuned": {
+    "k": 1,
+    "mu": 1,
+    "tau_quantile": 0.2,
+    "tau": {
+     "home": 1.9272738695144653,
+     "desk": 2.8494081497192383
+    },
+    "macro": 0.5287,
+    "micro": 0.5323
+   },
+   "n_docs": {
+    "home": 173,
+    "desk": 237
+   }
+  },
+  "K1-S0": {
+   "tuned": {
+    "k": 3,
+    "mu": 1,
+    "tau_quantile": 0.4,
+    "tau": {
+     "home": 2.4260263442993164,
+     "desk": 3.3841421604156494
+    },
+    "macro": 0.5307,
+    "micro": 0.5877
+   },
+   "n_docs": {
+    "home": 173,
+    "desk": 237
+   }
+  },
+  "K1-firstbank-S1": {
+   "tuned": {
+    "k": 5,
+    "mu": 0,
+    "tau_quantile": 0.4,
+    "tau": {
+     "home": 1.6090073585510254,
+     "desk": 2.1446096897125244
+    },
+    "macro": 0.5304,
+    "micro": 0.5662
+   },
+   "n_docs": {
+    "home": 43,
+    "desk": 37
+   }
+  },
+  "K1-firstbank-S0": {
+   "tuned": {
+    "k": 5,
+    "mu": 0,
+    "tau_quantile": 0.4,
+    "tau": {
+     "home": 1.6090073585510254,
+     "desk": 2.1446096897125244
+    },
+    "macro": 0.5332,
+    "micro": 0.5785
+   },
+   "n_docs": {
+    "home": 43,
+    "desk": 37
+   }
+  },
+  "K1-firstbank-none-S1": {
+   "tuned": {
+    "k": 3,
+    "mu": 1,
+    "tau_quantile": 0.1,
+    "tau": {
+     "home": 1.973737359046936,
+     "desk": 2.477891445159912
+    },
+    "macro": 0.5498,
+    "micro": 0.7015
+   },
+   "n_docs": {
+    "home": 196,
+    "desk": 180
+   }
+  },
+  "K1-firstbank-none-S0": {
+   "tuned": {
+    "k": 3,
+    "mu": 1,
+    "tau_quantile": 0.1,
+    "tau": {
+     "home": 1.973737359046936,
+     "desk": 2.477891445159912
+    },
+    "macro": 0.552,
+    "micro": 0.7046
+   },
+   "n_docs": {
+    "home": 196,
+    "desk": 180
+   }
+  },
+  "always-decline": {
+   "macro": 0.5,
+   "micro": 0.7077
+  }
+ }
+}

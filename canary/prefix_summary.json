@@ -1,0 +1,46 @@
+{
+ "deepseek__deepseek-v4-flash-0731 general": {
+  "orig_exact": "0/60",
+  "para_exact": "0/60",
+  "orig_mean_similarity": 0.3669,
+  "para_mean_similarity": 0.3393,
+  "paired_diff": 0.0277,
+  "diff_95ci": [
+   -0.0177,
+   0.0729
+  ]
+ },
+ "deepseek__deepseek-v4-flash-0731 guided": {
+  "orig_exact": "0/60",
+  "para_exact": "0/60",
+  "orig_mean_similarity": 0.3706,
+  "para_mean_similarity": 0.3172,
+  "paired_diff": 0.0534,
+  "diff_95ci": [
+   0.0075,
+   0.1008
+  ]
+ },
+ "deepseek__deepseek-v4-flash general": {
+  "orig_exact": "0/60",
+  "para_exact": "0/60",
+  "orig_mean_similarity": 0.3316,
+  "para_mean_similarity": 0.3106,
+  "paired_diff": 0.021,
+  "diff_95ci": [
+   -0.028,
+   0.0675
+  ]
+ },
+ "deepseek__deepseek-v4-flash guided": {
+  "orig_exact": "0/60",
+  "para_exact": "0/60",
+  "orig_mean_similarity": 0.3616,
+  "para_mean_similarity": 0.298,
+  "paired_diff": 0.0637,
+  "diff_95ci": [
+   0.0174,
+   0.1121
+  ]
+ }
+}

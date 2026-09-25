@@ -1,0 +1,1205 @@
+{
+ "cfg": {
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "set_alarm",
+     "description": "Set an alarm (wake me up) at a clock time, on a date if one is given.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "time": {
+        "type": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "clock time in 24-hour HH:MM, e.g. 07:30 for 7:30 am or 19:30 for 7:30 pm"
+       },
+       "date": {
+        "type": "string",
+        "format": "date",
+        "description": "ISO date YYYY-MM-DD, e.g. 2026-06-12"
+       }
+      },
+      "required": [
+       "time"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "remove_alarm",
+     "description": "Remove (cancel, delete, turn off) the alarm set at a clock time, on a date if one is given.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "time": {
+        "type": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "clock time in 24-hour HH:MM, e.g. 07:30 for 7:30 am or 19:30 for 7:30 pm"
+       },
+       "date": {
+        "type": "string",
+        "format": "date",
+        "description": "ISO date YYYY-MM-DD, e.g. 2026-06-12"
+       }
+      },
+      "required": [
+       "time"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_list_item",
+     "description": "Add one item to the shopping list, the to-do list or the packing list.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "list": {
+        "type": "string",
+        "enum": [
+         "shopping",
+         "to-do",
+         "packing"
+        ],
+        "description": "shopping (grocery, groceries), to-do (to do, tasks) or packing (trip, travel)"
+       },
+       "item": {
+        "type": "string",
+        "description": "the one item, in the user's words, e.g. two bottles of milk"
+       }
+      },
+      "required": [
+       "list",
+       "item"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "remove_list_item",
+     "description": "Remove (take off, delete) one item from the shopping list, the to-do list or the packing list.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "list": {
+        "type": "string",
+        "enum": [
+         "shopping",
+         "to-do",
+         "packing"
+        ],
+        "description": "shopping (grocery, groceries), to-do (to do, tasks) or packing (trip, travel)"
+       },
+       "item": {
+        "type": "string",
+        "description": "the one item, in the user's words, e.g. two bottles of milk"
+       }
+      },
+      "required": [
+       "list",
+       "item"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "create_reminder",
+     "description": "Create a reminder (remind me, don't let me forget) at a clock time on a date.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "text": {
+        "type": "string",
+        "description": "what to be reminded about, in the user's words, e.g. take the bins out"
+       },
+       "time": {
+        "type": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+        "description": "clock time in 24-hour HH:MM, e.g. 07:30 for 7:30 am or 19:30 for 7:30 pm",
+        "default": "09:00"
+       },
+       "date": {
+        "type": "string",
+        "format": "date",
+        "description": "ISO date YYYY-MM-DD, e.g. 2026-06-12"
+       }
+      },
+      "required": [
+       "text"
+      ]
+     }
+    }
+   }
+  ],
+  "system": "date: 2026-06-10 Wed 14:30; locale: en-US",
+  "depth": null,
+  "threads": 4,
+  "forced": false,
+  "overflow_flag": true
+ },
+ "containers": [
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmptelpn2dn/tools.json",
+    "--threads",
+    "4",
+    "--system",
+    "/tmp/tmptelpn2dn/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpxrm0tub1/tools.json",
+    "--threads",
+    "4",
+    "--system",
+    "/tmp/tmpxrm0tub1/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpr63rf8oa/tools.json",
+    "--threads",
+    "4",
+    "--system",
+    "/tmp/tmpr63rf8oa/system.txt",
+    "--fail-input-overflow"
+   ]
+  },
+  {
+   "cpu_model": "unknown",
+   "argv_base": [
+    "/opt/needle3/linux-x86_64/needle",
+    "--model",
+    "/opt/needle3/needle3.cact",
+    "--tools",
+    "/tmp/tmpg2dvtg4u/tools.json",
+    "--threads",
+    "4",
+    "--system",
+    "/tmp/tmpg2dvtg4u/system.txt",
+    "--fail-input-overflow"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "pf-d-7366",
+   "prompt": "please set a reminder of raju marriage on thirty first of march twenty seventeen",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"raju marriage\",\"time\":\"23:20\",\"date\":\"2026-03-30\"}}],\"suppressed_calls\":[],\"reasoning\":\"'raju marriage' -> text 'raju marriage'; 'thirty first of march twenty seventeen' -> time '23:20' (first of march = 23:20); date 2026-03-30 from 'thirty first of march'\",\"confidence\":0.6519,\"prefill_tps\":416.1,\"decode_tps\":283.8,\"peak_ram_mb\":84.6,\"validation\":{\"ungrounded\":[\"create_reminder.time\",\"create_reminder.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.8648190669999998,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "raju marriage",
+       "time": "23:20",
+       "date": "2026-03-30"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'raju marriage' -> text 'raju marriage'; 'thirty first of march twenty seventeen' -> time '23:20' (first of march = 23:20); date 2026-03-30 from 'thirty first of march'",
+    "confidence": 0.6519,
+    "prefill_tps": 416.1,
+    "decode_tps": 283.8,
+    "peak_ram_mb": 84.6,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time",
+      "create_reminder.date"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-8963",
+   "prompt": "please let me know about my birthday",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"birthday\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'let me know about my birthday' asks for birthday info -> get_reminder with text 'birthday'\",\"confidence\":0.6990,\"prefill_tps\":355.5,\"decode_tps\":234.6,\"peak_ram_mb\":83.3,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.8742048260000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "birthday",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'let me know about my birthday' asks for birthday info -> get_reminder with text 'birthday'",
+    "confidence": 0.699,
+    "prefill_tps": 355.5,
+    "decode_tps": 234.6,
+    "peak_ram_mb": 83.3,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-11153",
+   "prompt": "add mop to hardware store list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"mop\"}}],\"reasoning\":\"list 'hardware store' from query; item 'mop' from query; add_list_item tool\",\"confidence\":0.9885,\"prefill_tps\":385.9,\"decode_tps\":257.8,\"peak_ram_mb\":85.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.7499842509999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "mop"
+      }
+     }
+    ],
+    "reasoning": "list 'hardware store' from query; item 'mop' from query; add_list_item tool",
+    "confidence": 0.9885,
+    "prefill_tps": 385.9,
+    "decode_tps": 257.8,
+    "peak_ram_mb": 85.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-1436",
+   "prompt": "what alarms do i got",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_alarm\",\"arguments\":{\"time\":\"07:30\"}}],\"suppressed_calls\":[],\"reasoning\":\"'what alarms' -> get_alarms with no arguments.\",\"confidence\":0.3874,\"prefill_tps\":179.2,\"decode_tps\":157.3,\"peak_ram_mb\":82.0,\"validation\":{\"ungrounded\":[\"remove_alarm.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0228351599999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_alarm",
+      "arguments": {
+       "time": "07:30"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'what alarms' -> get_alarms with no arguments.",
+    "confidence": 0.3874,
+    "prefill_tps": 179.2,
+    "decode_tps": 157.3,
+    "peak_ram_mb": 82.0,
+    "validation": {
+     "ungrounded": [
+      "remove_alarm.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-4099",
+   "prompt": "just to confirm you set the alarm to go off at eight hundred",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_alarm\",\"arguments\":{\"time\":\"08:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'set the alarm' -> set_alarm; 'eight hundred' -> time '08:00'; no date given so omitted\",\"confidence\":0.8468,\"prefill_tps\":398.5,\"decode_tps\":257.2,\"peak_ram_mb\":86.2,\"validation\":{\"ungrounded\":[\"set_alarm.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.6905799000000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_alarm",
+      "arguments": {
+       "time": "08:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'set the alarm' -> set_alarm; 'eight hundred' -> time '08:00'; no date given so omitted",
+    "confidence": 0.8468,
+    "prefill_tps": 398.5,
+    "decode_tps": 257.2,
+    "peak_ram_mb": 86.2,
+    "validation": {
+     "ungrounded": [
+      "set_alarm.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-7324",
+   "prompt": "notify me when i am supposed to attend the dance recital on march fifth",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"attend the dance recital\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'attend the dance recital' -> text 'attend the dance recital'; 'march fifth' -> date '2026-03-05' (March fifth is a month-day relative to system date 2026-06-10); no time given so default 09:00\",\"confidence\":0.6921,\"prefill_tps\":373.3,\"decode_tps\":244.9,\"peak_ram_mb\":83.1,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.075592741,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "attend the dance recital",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'attend the dance recital' -> text 'attend the dance recital'; 'march fifth' -> date '2026-03-05' (March fifth is a month-day relative to system date 2026-06-10); no time given so default 09:00",
+    "confidence": 0.6921,
+    "prefill_tps": 373.3,
+    "decode_tps": 244.9,
+    "peak_ram_mb": 83.1,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-509",
+   "prompt": "which alarms do i have",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No tool lists alarms; only set_alarm exists which sets a new alarm. No read/list tool exists.\",\"confidence\":0.8274,\"prefill_tps\":388.6,\"decode_tps\":247.6,\"peak_ram_mb\":87.5}\n",
+   "stderr": "",
+   "wall_s": 1.668261782,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No tool lists alarms; only set_alarm exists which sets a new alarm. No read/list tool exists.",
+    "confidence": 0.8274,
+    "prefill_tps": 388.6,
+    "decode_tps": 247.6,
+    "peak_ram_mb": 87.5
+   }
+  },
+  {
+   "id": "pf-d-9021",
+   "prompt": "set an office meeting reminder for the next three days",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"office meeting reminder\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'office meeting reminder' -> create_reminder with text 'office meeting reminder'; 'next three days' relative to 2026-06-10 -> 2026-06-13; time default 09:00\",\"confidence\":0.9421,\"prefill_tps\":175.9,\"decode_tps\":159.6,\"peak_ram_mb\":80.9,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.215856812,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "office meeting reminder",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'office meeting reminder' -> create_reminder with text 'office meeting reminder'; 'next three days' relative to 2026-06-10 -> 2026-06-13; time default 09:00",
+    "confidence": 0.9421,
+    "prefill_tps": 175.9,
+    "decode_tps": 159.6,
+    "peak_ram_mb": 80.9,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-11192",
+   "prompt": "please remove dallas from my travel itinerary",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"remove_list_item\",\"arguments\":{\"list\":\"to-do\",\"item\":\"dallas\"}}],\"reasoning\":\"'remove dallas from my travel itinerary' -> remove_list_item list 'travel itinerary', item 'dallas'.\",\"confidence\":1.0000,\"prefill_tps\":407.9,\"decode_tps\":272.3,\"peak_ram_mb\":83.9,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.7649204739999993,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "remove_list_item",
+      "arguments": {
+       "list": "to-do",
+       "item": "dallas"
+      }
+     }
+    ],
+    "reasoning": "'remove dallas from my travel itinerary' -> remove_list_item list 'travel itinerary', item 'dallas'.",
+    "confidence": 1.0,
+    "prefill_tps": 407.9,
+    "decode_tps": 272.3,
+    "peak_ram_mb": 83.9,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-10454",
+   "prompt": "delete bread from shopping list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"bread\"}}],\"suppressed_calls\":[],\"reasoning\":\"list 'shopping' from query; item 'bread' from query; remove_list_item removes item\",\"confidence\":1.0000,\"prefill_tps\":381.2,\"decode_tps\":228.7,\"peak_ram_mb\":86.4,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.8701648580000008,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "bread"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "list 'shopping' from query; item 'bread' from query; remove_list_item removes item",
+    "confidence": 1.0,
+    "prefill_tps": 381.2,
+    "decode_tps": 228.7,
+    "peak_ram_mb": 86.4,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-8396",
+   "prompt": "can you set a reminder for wednesday at one p. m. for my meeting",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"meeting\",\"time\":\"11:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'set a reminder' -> create_reminder; 'wednesday' relative to 2026-06-10 Wed -> 2026-06-17; 'one p. m.' -> time '11:00'; date '2026-06-17'\",\"confidence\":0.6983,\"prefill_tps\":395.7,\"decode_tps\":260.9,\"peak_ram_mb\":86.3,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.833011172,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "meeting",
+       "time": "11:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'set a reminder' -> create_reminder; 'wednesday' relative to 2026-06-10 Wed -> 2026-06-17; 'one p. m.' -> time '11:00'; date '2026-06-17'",
+    "confidence": 0.6983,
+    "prefill_tps": 395.7,
+    "decode_tps": 260.9,
+    "peak_ram_mb": 86.3,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-8583",
+   "prompt": "add an event for july thirtieth named birthday",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"event for birthday\"}}],\"reasoning\":\"'july thirtieth' -> date 2026-07-30; 'birthday' -> list 'birthday'; item 'event' from query\",\"confidence\":0.5445,\"prefill_tps\":223.1,\"decode_tps\":174.8,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[\"add_list_item.item\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.083298458999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "event for birthday"
+      }
+     }
+    ],
+    "reasoning": "'july thirtieth' -> date 2026-07-30; 'birthday' -> list 'birthday'; item 'event' from query",
+    "confidence": 0.5445,
+    "prefill_tps": 223.1,
+    "decode_tps": 174.8,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [
+      "add_list_item.item"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-3163",
+   "prompt": "what alarms have i set for tomorrow",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_alarm\",\"arguments\":{\"time\":\"07:30\",\"date\":\"2026-06-11\"}}],\"suppressed_calls\":[],\"reasoning\":\"'tomorrow' relative to 2026-06-10 Wed -> 2026-06-11 Thu; time not specified so use default 07:30; date '2026-06-11' from system date\",\"confidence\":0.5902,\"prefill_tps\":317.9,\"decode_tps\":274.0,\"peak_ram_mb\":84.1,\"validation\":{\"ungrounded\":[\"remove_alarm.time\",\"remove_alarm.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.714089616999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_alarm",
+      "arguments": {
+       "time": "07:30",
+       "date": "2026-06-11"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'tomorrow' relative to 2026-06-10 Wed -> 2026-06-11 Thu; time not specified so use default 07:30; date '2026-06-11' from system date",
+    "confidence": 0.5902,
+    "prefill_tps": 317.9,
+    "decode_tps": 274.0,
+    "peak_ram_mb": 84.1,
+    "validation": {
+     "ungrounded": [
+      "remove_alarm.time",
+      "remove_alarm.date"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-10747",
+   "prompt": "erase that item from my list",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"remove_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"that item\"}}],\"reasoning\":\"'erase that item' -> remove_list_item; list 'shopping' from 'shopping list'; item 'that item' from query.\",\"confidence\":0.9942,\"prefill_tps\":376.0,\"decode_tps\":243.5,\"peak_ram_mb\":81.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.851453597999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "remove_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "that item"
+      }
+     }
+    ],
+    "reasoning": "'erase that item' -> remove_list_item; list 'shopping' from 'shopping list'; item 'that item' from query.",
+    "confidence": 0.9942,
+    "prefill_tps": 376.0,
+    "decode_tps": 243.5,
+    "peak_ram_mb": 81.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-2430",
+   "prompt": "please check alarms",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_alarm\",\"arguments\":{\"time\":\"07:30\",\"date\":\"2026-06-10\"}}],\"suppressed_calls\":[],\"reasoning\":\"User wants to check alarms. No time specified, so use default '07:30' as a reasonable default.\",\"confidence\":0.6983,\"prefill_tps\":385.9,\"decode_tps\":253.5,\"peak_ram_mb\":86.5,\"validation\":{\"ungrounded\":[\"set_alarm.time\",\"set_alarm.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.748394522999999,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_alarm",
+      "arguments": {
+       "time": "07:30",
+       "date": "2026-06-10"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "User wants to check alarms. No time specified, so use default '07:30' as a reasonable default.",
+    "confidence": 0.6983,
+    "prefill_tps": 385.9,
+    "decode_tps": 253.5,
+    "peak_ram_mb": 86.5,
+    "validation": {
+     "ungrounded": [
+      "set_alarm.time",
+      "set_alarm.date"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-8891",
+   "prompt": "mark on my calendar",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"mark on my calendar\",\"time\":\"07:30\"}}],\"suppressed_calls\":[],\"reasoning\":\"'mark on my calendar' means create a reminder for tomorrow morning. Time not specified, use 07:30 as default.\",\"confidence\":0.4330,\"prefill_tps\":188.3,\"decode_tps\":174.2,\"peak_ram_mb\":85.7,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.0322887519999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "mark on my calendar",
+       "time": "07:30"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'mark on my calendar' means create a reminder for tomorrow morning. Time not specified, use 07:30 as default.",
+    "confidence": 0.433,
+    "prefill_tps": 188.3,
+    "decode_tps": 174.2,
+    "peak_ram_mb": 85.7,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-6863",
+   "prompt": "remind me off about my tomorrow meeting sharply at ten",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"off about my tomorrow meeting\",\"time\":\"10:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me off' -> create_reminder; 'tomorrow meeting' -> date 2026-06-11; 'ten' -> 10:00.\",\"confidence\":0.2561,\"prefill_tps\":410.0,\"decode_tps\":270.9,\"peak_ram_mb\":83.9,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.6863183520000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "off about my tomorrow meeting",
+       "time": "10:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me off' -> create_reminder; 'tomorrow meeting' -> date 2026-06-11; 'ten' -> 10:00.",
+    "confidence": 0.2561,
+    "prefill_tps": 410.0,
+    "decode_tps": 270.9,
+    "peak_ram_mb": 83.9,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-7618",
+   "prompt": "remind me about my next meeting with joe one hour before",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"next meeting with joe\",\"time\":\"14:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me about my next meeting with joe one hour before' -> create_reminder with text 'next meeting with joe', time '14:00' from 'one hour before'\",\"confidence\":0.9815,\"prefill_tps\":380.9,\"decode_tps\":242.9,\"peak_ram_mb\":82.0,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.8930435360000004,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "next meeting with joe",
+       "time": "14:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me about my next meeting with joe one hour before' -> create_reminder with text 'next meeting with joe', time '14:00' from 'one hour before'",
+    "confidence": 0.9815,
+    "prefill_tps": 380.9,
+    "decode_tps": 242.9,
+    "peak_ram_mb": 82.0,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-7800",
+   "prompt": "set a reminder",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"reminder\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'reminder' maps to create_reminder; text 'reminder' from query; time defaults to 09:00.\",\"confidence\":0.7772,\"prefill_tps\":369.5,\"decode_tps\":248.9,\"peak_ram_mb\":81.5,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.7287139220000007,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "reminder",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'reminder' maps to create_reminder; text 'reminder' from query; time defaults to 09:00.",
+    "confidence": 0.7772,
+    "prefill_tps": 369.5,
+    "decode_tps": 248.9,
+    "peak_ram_mb": 81.5,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-10972",
+   "prompt": "make a new list for school supplies",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"school supplies\"}}],\"reasoning\":\"'new list for school supplies' -> add_list_item list 'school supplies' item 'school supplies'.\",\"confidence\":1.0000,\"prefill_tps\":162.9,\"decode_tps\":173.3,\"peak_ram_mb\":83.0,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.1201352390000014,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "school supplies"
+      }
+     }
+    ],
+    "reasoning": "'new list for school supplies' -> add_list_item list 'school supplies' item 'school supplies'.",
+    "confidence": 1.0,
+    "prefill_tps": 162.9,
+    "decode_tps": 173.3,
+    "peak_ram_mb": 83.0,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-11240",
+   "prompt": "i want you to create a list for me",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[{\"name\":\"add_list_item\",\"arguments\":{\"list\":\"shopping\",\"item\":\"create\"}}],\"reasoning\":\"'create a list' maps to add_list_item; list 'shopping' from context; item 'two bottles of milk' from query.\",\"confidence\":1.0000,\"prefill_tps\":410.7,\"decode_tps\":276.3,\"peak_ram_mb\":84.6,\"validation\":{\"ungrounded\":[],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.7601911870000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [
+     {
+      "name": "add_list_item",
+      "arguments": {
+       "list": "shopping",
+       "item": "create"
+      }
+     }
+    ],
+    "reasoning": "'create a list' maps to add_list_item; list 'shopping' from context; item 'two bottles of milk' from query.",
+    "confidence": 1.0,
+    "prefill_tps": 410.7,
+    "decode_tps": 276.3,
+    "peak_ram_mb": 84.6,
+    "validation": {
+     "ungrounded": [],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-7475",
+   "prompt": "send a notice to the me and a group members reminding us of the new date for the meeting",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"new date for the meeting\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'send a notice to the me and a group members' -> create_reminder with text 'new date for the meeting', time default 09:00.\",\"confidence\":0.9206,\"prefill_tps\":384.4,\"decode_tps\":237.4,\"peak_ram_mb\":83.0,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.8801316329999995,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "new date for the meeting",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'send a notice to the me and a group members' -> create_reminder with text 'new date for the meeting', time default 09:00.",
+    "confidence": 0.9206,
+    "prefill_tps": 384.4,
+    "decode_tps": 237.4,
+    "peak_ram_mb": 83.0,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-6846",
+   "prompt": "remind me an email to my sister",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"email to my sister\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me' maps to create_reminder; 'email to my sister' is the text; no time given so default 09:00.\",\"confidence\":0.8786,\"prefill_tps\":391.0,\"decode_tps\":255.0,\"peak_ram_mb\":83.2,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.787538661000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "email to my sister",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me' maps to create_reminder; 'email to my sister' is the text; no time given so default 09:00.",
+    "confidence": 0.8786,
+    "prefill_tps": 391.0,
+    "decode_tps": 255.0,
+    "peak_ram_mb": 83.2,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-6163",
+   "prompt": "forget alarm",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"remove_alarm\",\"arguments\":{\"time\":\"07:30\"}}],\"suppressed_calls\":[],\"reasoning\":\"'forget alarm' means remove alarm. time not specified, use 07:30 as default.\",\"confidence\":0.6740,\"prefill_tps\":138.4,\"decode_tps\":170.2,\"peak_ram_mb\":84.4,\"validation\":{\"ungrounded\":[\"remove_alarm.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 2.9816385929999996,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "remove_alarm",
+      "arguments": {
+       "time": "07:30"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'forget alarm' means remove alarm. time not specified, use 07:30 as default.",
+    "confidence": 0.674,
+    "prefill_tps": 138.4,
+    "decode_tps": 170.2,
+    "peak_ram_mb": 84.4,
+    "validation": {
+     "ungrounded": [
+      "remove_alarm.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-x1",
+   "prompt": "start a 25 minute timer",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"start a 25 minute timer\",\"time\":\"09:00\"}}],\"suppressed_calls\":[],\"reasoning\":\"'start a 25 minute timer' -> create_reminder with text 'start a 25 minute timer' and time '09:00' from context of a timer.\",\"confidence\":0.9640,\"prefill_tps\":405.9,\"decode_tps\":272.4,\"peak_ram_mb\":85.4,\"validation\":{\"ungrounded\":[\"create_reminder.time\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.7064515769999993,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "start a 25 minute timer",
+       "time": "09:00"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'start a 25 minute timer' -> create_reminder with text 'start a 25 minute timer' and time '09:00' from context of a timer.",
+    "confidence": 0.964,
+    "prefill_tps": 405.9,
+    "decode_tps": 272.4,
+    "peak_ram_mb": 85.4,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.time"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-x2",
+   "prompt": "search the web for pasta recipes",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No web search or browser tool is available.\",\"confidence\":1.0000,\"prefill_tps\":361.7,\"decode_tps\":230.3,\"peak_ram_mb\":81.2}\n",
+   "stderr": "",
+   "wall_s": 1.6941575960000002,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No web search or browser tool is available.",
+    "confidence": 1.0,
+    "prefill_tps": 361.7,
+    "decode_tps": 230.3,
+    "peak_ram_mb": 81.2
+   }
+  },
+  {
+   "id": "pf-d-x3",
+   "prompt": "translate good morning into french",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[],\"suppressed_calls\":[],\"reasoning\":\"No translation tool available.\",\"confidence\":0.9781,\"prefill_tps\":384.3,\"decode_tps\":246.1,\"peak_ram_mb\":86.3}\n",
+   "stderr": "",
+   "wall_s": 1.6072034890000015,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [],
+    "suppressed_calls": [],
+    "reasoning": "No translation tool available.",
+    "confidence": 0.9781,
+    "prefill_tps": 384.3,
+    "decode_tps": 246.1,
+    "peak_ram_mb": 86.3
+   }
+  },
+  {
+   "id": "pf-d-x4",
+   "prompt": "set an alarm for tomorrow at 7 am",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"set_alarm\",\"arguments\":{\"time\":\"07:00\",\"date\":\"2026-06-11\"}}],\"suppressed_calls\":[],\"reasoning\":\"'tomorrow' relative to 2026-06-10 Wed -> 2026-06-11 Thu; '7 am' -> time '07:00'; no date given so omitted\",\"confidence\":0.7197,\"prefill_tps\":166.5,\"decode_tps\":173.1,\"peak_ram_mb\":82.6,\"validation\":{\"ungrounded\":[\"set_alarm.time\",\"set_alarm.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 3.2960738749999976,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "set_alarm",
+      "arguments": {
+       "time": "07:00",
+       "date": "2026-06-11"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'tomorrow' relative to 2026-06-10 Wed -> 2026-06-11 Thu; '7 am' -> time '07:00'; no date given so omitted",
+    "confidence": 0.7197,
+    "prefill_tps": 166.5,
+    "decode_tps": 173.1,
+    "peak_ram_mb": 82.6,
+    "validation": {
+     "ungrounded": [
+      "set_alarm.time",
+      "set_alarm.date"
+     ],
+     "negation": false
+    }
+   }
+  },
+  {
+   "id": "pf-d-x5",
+   "prompt": "remind me to call mum on friday at 6 pm",
+   "rc": 0,
+   "stdout": "{\"type\":\"call\",\"success\":true,\"error\":null,\"error_code\":null,\"reason\":null,\"function_calls\":[{\"name\":\"create_reminder\",\"arguments\":{\"text\":\"call mum\",\"date\":\"2026-06-13\"}}],\"suppressed_calls\":[],\"reasoning\":\"'remind me' -> create_reminder; 'call mum' -> text; 'friday at 6 pm' -> date 2026-06-13 Fri, time 18:00\",\"confidence\":0.4444,\"prefill_tps\":419.3,\"decode_tps\":272.8,\"peak_ram_mb\":84.0,\"validation\":{\"ungrounded\":[\"create_reminder.date\"],\"negation\":false}}\n",
+   "stderr": "",
+   "wall_s": 1.7516328300000001,
+   "parsed": {
+    "type": "call",
+    "success": true,
+    "error": null,
+    "error_code": null,
+    "reason": null,
+    "function_calls": [
+     {
+      "name": "create_reminder",
+      "arguments": {
+       "text": "call mum",
+       "date": "2026-06-13"
+      }
+     }
+    ],
+    "suppressed_calls": [],
+    "reasoning": "'remind me' -> create_reminder; 'call mum' -> text; 'friday at 6 pm' -> date 2026-06-13 Fri, time 18:00",
+    "confidence": 0.4444,
+    "prefill_tps": 419.3,
+    "decode_tps": 272.8,
+    "peak_ram_mb": 84.0,
+    "validation": {
+     "ungrounded": [
+      "create_reminder.date"
+     ],
+     "negation": false
+    }
+   }
+  }
+ ]
+}

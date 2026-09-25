@@ -1,0 +1,198 @@
+{
+ "home": [
+  {
+   "id": "pf-h-5394",
+   "prompt": "turn socket off"
+  },
+  {
+   "id": "pf-h-3659",
+   "prompt": "company coming over turn on the vacuum cleaner right now"
+  },
+  {
+   "id": "pf-h-5807",
+   "prompt": "you can also add additional switches to your home to control more devices"
+  },
+  {
+   "id": "pf-h-2945",
+   "prompt": "turn off the lamp in the living room"
+  },
+  {
+   "id": "pf-h-1612",
+   "prompt": "time constrain"
+  },
+  {
+   "id": "pf-h-2037",
+   "prompt": "change lights to red"
+  },
+  {
+   "id": "pf-h-2349",
+   "prompt": "replace the current light colors in the house with dark ones"
+  },
+  {
+   "id": "pf-h-2750",
+   "prompt": "i need one cup of coffee"
+  },
+  {
+   "id": "pf-h-3042",
+   "prompt": "turn light off"
+  },
+  {
+   "id": "pf-h-4245",
+   "prompt": "please make me a coffee using the coffee machine"
+  },
+  {
+   "id": "pf-h-3501",
+   "prompt": "turn house lights off"
+  },
+  {
+   "id": "pf-h-865",
+   "prompt": "robot do the whole house now"
+  },
+  {
+   "id": "pf-h-3430",
+   "prompt": "can you please put the vacuum on"
+  },
+  {
+   "id": "pf-h-3324",
+   "prompt": "please turn off the wemo plug"
+  },
+  {
+   "id": "pf-h-3733",
+   "prompt": "olly make the lights blue please"
+  },
+  {
+   "id": "pf-h-209",
+   "prompt": "please make the lights reading friendly"
+  },
+  {
+   "id": "pf-h-664",
+   "prompt": "turn the lights down"
+  },
+  {
+   "id": "pf-h-2836",
+   "prompt": "switch up the color of the lights in the house"
+  },
+  {
+   "id": "pf-h-2310",
+   "prompt": "turn the lights down to seven"
+  },
+  {
+   "id": "pf-h-5803",
+   "prompt": "more light"
+  },
+  {
+   "id": "pf-h-1502",
+   "prompt": "turn the left light off"
+  },
+  {
+   "id": "pf-h-1853",
+   "prompt": "i would love a less bright up room"
+  },
+  {
+   "id": "pf-h-1152",
+   "prompt": "use vacuum cleaner in the hall"
+  },
+  {
+   "id": "pf-h-4556",
+   "prompt": "please make some coffee for me"
+  }
+ ],
+ "desk": [
+  {
+   "id": "pf-d-7366",
+   "prompt": "please set a reminder of raju marriage on thirty first of march twenty seventeen"
+  },
+  {
+   "id": "pf-d-8963",
+   "prompt": "please let me know about my birthday"
+  },
+  {
+   "id": "pf-d-11153",
+   "prompt": "add mop to hardware store list"
+  },
+  {
+   "id": "pf-d-1436",
+   "prompt": "what alarms do i got"
+  },
+  {
+   "id": "pf-d-4099",
+   "prompt": "just to confirm you set the alarm to go off at eight hundred"
+  },
+  {
+   "id": "pf-d-7324",
+   "prompt": "notify me when i am supposed to attend the dance recital on march fifth"
+  },
+  {
+   "id": "pf-d-509",
+   "prompt": "which alarms do i have"
+  },
+  {
+   "id": "pf-d-9021",
+   "prompt": "set an office meeting reminder for the next three days"
+  },
+  {
+   "id": "pf-d-11192",
+   "prompt": "please remove dallas from my travel itinerary"
+  },
+  {
+   "id": "pf-d-10454",
+   "prompt": "delete bread from shopping list"
+  },
+  {
+   "id": "pf-d-8396",
+   "prompt": "can you set a reminder for wednesday at one p. m. for my meeting"
+  },
+  {
+   "id": "pf-d-8583",
+   "prompt": "add an event for july thirtieth named birthday"
+  },
+  {
+   "id": "pf-d-3163",
+   "prompt": "what alarms have i set for tomorrow"
+  },
+  {
+   "id": "pf-d-10747",
+   "prompt": "erase that item from my list"
+  },
+  {
+   "id": "pf-d-2430",
+   "prompt": "please check alarms"
+  },
+  {
+   "id": "pf-d-8891",
+   "prompt": "mark on my calendar"
+  },
+  {
+   "id": "pf-d-6863",
+   "prompt": "remind me off about my tomorrow meeting sharply at ten"
+  },
+  {
+   "id": "pf-d-7618",
+   "prompt": "remind me about my next meeting with joe one hour before"
+  },
+  {
+   "id": "pf-d-7800",
+   "prompt": "set a reminder"
+  },
+  {
+   "id": "pf-d-10972",
+   "prompt": "make a new list for school supplies"
+  },
+  {
+   "id": "pf-d-11240",
+   "prompt": "i want you to create a list for me"
+  },
+  {
+   "id": "pf-d-7475",
+   "prompt": "send a notice to the me and a group members reminding us of the new date for the meeting"
+  },
+  {
+   "id": "pf-d-6846",
+   "prompt": "remind me an email to my sister"
+  },
+  {
+   "id": "pf-d-6163",
+   "prompt": "forget alarm"
+  }
+ ]
+}

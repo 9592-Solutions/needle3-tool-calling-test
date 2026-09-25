@@ -1,0 +1,681 @@
+<repo>/modal/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+<repo>/modal/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/<app-run>
+✓ Created objects.
+├── 🔨 Created mount 
+│   <repo>/modal/needle_modal.py
+├── 🔨 Created function _download_pinned.
+├── 🔨 Created function snapshot.
+├── 🔨 Created function run_native.
+└── 🔨 Created function vendor_harness.
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 1: 16 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 143 model 49 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 2: 15 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | GenuineIntel fam 6 model 106 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 3: 15 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 4: 15 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 5: 13 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 6: 9 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 7: 8 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 8: 6 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | GenuineIntel fam 6 model 143 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 9: 6 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 17 step unk']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 10: 3 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 11: 3 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 12: 2 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 17 step unk', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 13: 2 chunk(s) landed elsewhere: ['unknown | GenuineIntel fam 6 model 143 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 14: 2 chunk(s) landed elsewhere: ['unknown | GenuineIntel fam 6 model 143 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 15: 2 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 16: 2 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 17: 2 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn', 'unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 18: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 19: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 20: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 21: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 22: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 23: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 24: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+try 25: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+try 26: 1 chunk(s) landed elsewhere: ['unknown | AuthenticAMD fam 175 model 1 step unkn']
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+/root/needle_modal.py:116: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=3600, max_inputs=1)
+/root/needle_modal.py:161: DeprecationError: 2025-12-16: The `max_inputs` parameter is deprecated. Please set `single_use_containers=True` instead.
+  @app.function(cpu=1.0, memory=1024, timeout=1800, max_inputs=1)
+wrote ../runs/sealed/out/needle/needle_S0_desk_test.json
+Stopping app - uncaught exception raised locally: SystemExit(0).

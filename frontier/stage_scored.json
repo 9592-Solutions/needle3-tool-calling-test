@@ -1,0 +1,266 @@
+{
+ "rule": "Score LLM-arm runs on the selection partition and compute the frontier (DESIGN \u00a74.2 steps 3-5).\n\nAccuracy axis: exact contract accuracy (harness/score.py), the DESIGN \u00a713 D6 axis (per app: half act accuracy,\nhalf the mean over N1/N2/N3; then the mean over apps; ambiguous items excluded). Cost axis: OBSERVED billed dollars\nper 1,000 requests (sum of usage.cost / calls * 1000). A technical failure (no parse, failed call) counts wrong.\n\nRule, fixed before any number (DESIGN \u00a74.2 step 5): drop dominated candidates (another at least as accurate\nand no more expensive, one strictly); advance (a) the cheapest frontier candidate whose paired, family-\nclustered bootstrap 95% interval for (best minus it) includes zero, and (b) the most accurate frontier\ncandidate. Families: an item is its own family on the config side (no paired phrasings), so the bootstrap\nresamples items, stratified by app x stratum.\n\nusage: python3 frontier/score_frontier.py <run_dir> <out.json> [--items screen|selection]\n",
+ "candidates": [
+  {
+   "model": "inclusionai/ling-3.0-flash",
+   "host": "Novita",
+   "contract": "native",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.7044,
+   "micro_acc": 0.7449,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.00982,
+   "usd": 0.00336,
+   "served_by": {
+    "Novita": 342
+   },
+   "outcomes": {
+    "correct_nonaction": 185,
+    "correct_action": 69,
+    "wrong_call": 60,
+    "needless_refusal": 27
+   },
+   "dominated_by": [],
+   "gap_to_best": 0.091,
+   "gap_ci": [
+    0.034,
+    0.1485
+   ]
+  },
+  {
+   "model": "deepseek/deepseek-v4-flash",
+   "host": "OpenInference",
+   "contract": "schema",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.6456,
+   "micro_acc": 0.6481,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.0296,
+   "usd": 0.010123,
+   "served_by": {
+    "OpenInference": 342
+   },
+   "outcomes": {
+    "correct_nonaction": 137,
+    "correct_action": 84,
+    "wrong_call": 117,
+    "needless_refusal": 3
+   }
+  },
+  {
+   "model": "deepseek/deepseek-v4-flash-0731",
+   "host": "Sail Research",
+   "contract": "schema",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.7954,
+   "micro_acc": 0.8065,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.05975,
+   "usd": 0.020435,
+   "served_by": {
+    "Sail Research": 342
+   },
+   "outcomes": {
+    "correct_nonaction": 182,
+    "correct_action": 93,
+    "wrong_call": 65,
+    "needless_refusal": 1
+   },
+   "dominated_by": [],
+   "gap_to_best": 0.0,
+   "gap_ci": [
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "model": "google/gemma-4-26b-a4b-it",
+   "host": "DekaLLM",
+   "contract": "native",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.7269,
+   "micro_acc": 0.7009,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.06559,
+   "usd": 0.022431,
+   "served_by": {
+    "DekaLLM": 342
+   },
+   "outcomes": {
+    "correct_nonaction": 150,
+    "correct_action": 89,
+    "wrong_call": 101,
+    "needless_refusal": 1
+   },
+   "dominated_by": [
+    "deepseek/deepseek-v4-flash-0731"
+   ]
+  },
+  {
+   "model": "deepseek/deepseek-v4-flash",
+   "host": "OpenInference",
+   "contract": "native",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.7256,
+   "micro_acc": 0.7155,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.06731,
+   "usd": 0.023021,
+   "served_by": {
+    "OpenInference": 342
+   },
+   "outcomes": {
+    "wrong_call": 94,
+    "correct_nonaction": 159,
+    "correct_action": 85,
+    "needless_refusal": 3
+   },
+   "dominated_by": [
+    "deepseek/deepseek-v4-flash-0731",
+    "google/gemma-4-26b-a4b-it"
+   ]
+  },
+  {
+   "model": "nvidia/nemotron-3.5-lightning",
+   "host": "Phala",
+   "contract": "native",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.6215,
+   "micro_acc": 0.5806,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.06738,
+   "usd": 0.023043,
+   "served_by": {
+    "Phala": 342
+   },
+   "outcomes": {
+    "wrong_call": 142,
+    "correct_nonaction": 111,
+    "correct_action": 87,
+    "needless_refusal": 1
+   }
+  },
+  {
+   "model": "deepseek/deepseek-v4-flash-0731",
+   "host": "Sail Research",
+   "contract": "native",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.6541,
+   "micro_acc": 0.6745,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.07609,
+   "usd": 0.026021,
+   "served_by": {
+    "Sail Research": 342
+   },
+   "outcomes": {
+    "wrong_call": 110,
+    "correct_nonaction": 150,
+    "correct_action": 80,
+    "needless_refusal": 1
+   }
+  },
+  {
+   "model": "nvidia/nemotron-3.5-lightning",
+   "host": "Phala",
+   "contract": "schema",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.6486,
+   "micro_acc": 0.6481,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.09009,
+   "usd": 0.030811,
+   "served_by": {
+    "Phala": 342
+   },
+   "outcomes": {
+    "correct_nonaction": 134,
+    "wrong_call": 119,
+    "correct_action": 87,
+    "needless_refusal": 1
+   },
+   "dominated_by": [
+    "deepseek/deepseek-v4-flash-0731",
+    "inclusionai/ling-3.0-flash",
+    "deepseek/deepseek-v4-flash",
+    "google/gemma-4-26b-a4b-it"
+   ]
+  }
+ ],
+ "frontier": [
+  {
+   "model": "inclusionai/ling-3.0-flash",
+   "host": "Novita",
+   "contract": "native",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.7044,
+   "micro_acc": 0.7449,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.00982,
+   "usd": 0.00336,
+   "served_by": {
+    "Novita": 342
+   },
+   "outcomes": {
+    "correct_nonaction": 185,
+    "correct_action": 69,
+    "wrong_call": 60,
+    "needless_refusal": 27
+   },
+   "dominated_by": [],
+   "gap_to_best": 0.091,
+   "gap_ci": [
+    0.034,
+    0.1485
+   ]
+  },
+  {
+   "model": "deepseek/deepseek-v4-flash-0731",
+   "host": "Sail Research",
+   "contract": "schema",
+   "n": 342,
+   "n_scored": 341,
+   "macro_acc": 0.7954,
+   "micro_acc": 0.8065,
+   "technical_failures": 0,
+   "unserved_429": 0,
+   "usd_per_1k": 0.05975,
+   "usd": 0.020435,
+   "served_by": {
+    "Sail Research": 342
+   },
+   "outcomes": {
+    "correct_nonaction": 182,
+    "correct_action": 93,
+    "wrong_call": 65,
+    "needless_refusal": 1
+   },
+   "dominated_by": [],
+   "gap_to_best": 0.0,
+   "gap_ci": [
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "advance_cheapest_within_noise": "deepseek/deepseek-v4-flash-0731",
+ "advance_most_accurate": "deepseek/deepseek-v4-flash-0731"
+}
