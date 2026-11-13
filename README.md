@@ -4,7 +4,7 @@ This repository holds everything behind our test of Needle 3, Cactus Compute's 1
 model: the code, the 600 test requests, every system's raw answers, the scoring and the results. We tested it
 because it is sold as a small model an app can ship to turn what a user says into function calls, and we wanted
 to know how often it picks the right call, how often it correctly does nothing, and how that compares with a
-cheap hosted LLM and with keyword matching. The video is here: TO-FILL-ON-PUBLISH. We publish the material so
+cheap hosted LLM and with keyword matching. The video is here: https://www.youtube.com/watch?v=HYqRclqfNsU. We publish the material so
 anyone, Cactus included, can check the numbers or rerun them.
 
 The headline, from `RESULTS.md` §0: on the 600 sealed requests, Needle 3 scores 0.545 [0.505, 0.585] on exact
